@@ -77,7 +77,7 @@ Zin = Z0 * (Zload*cosh(gamma) + Z0*sinh(gamma))/ (Zload*sinh(gamma)+Z0*cosh(gamm
     is the NT (arbitrary two port network) card. This card specifies the admittance
     matrix for an arbitrary two port. You only need 3 complex numbers, because the
     matrix is symmetric. Here's a quick summary of the format of the card:</p>
-<p><tt>NT, &lt;tag1&gt;,&lt;seg1&gt;,&lt;tag2&gt;,&lt;seg2&gt;, &lt;Y11R&gt;,&lt;Y11I&gt;,&lt;Y12R&gt;,&lt;Y12I&gt;,&lt;Y22R&gt;,&lt;Y22I&gt;</tt></p>
+<p><span style="font-family: monospace">NT, &lt;tag1&gt;,&lt;seg1&gt;,&lt;tag2&gt;,&lt;seg2&gt;, &lt;Y11R&gt;,&lt;Y11I&gt;,&lt;Y12R&gt;,&lt;Y12I&gt;,&lt;Y22R&gt;,&lt;Y22I&gt;</span></p>
 <p>So all we need to do is convert the &quot;admittance&quot; form of the transmission
     line equation (above) into a matrix, and, hopefully, come up with some simple
     equations to allow cranking out NT cards from useful things about the transmission

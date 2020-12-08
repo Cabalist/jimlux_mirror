@@ -23,39 +23,39 @@
     between the charges, and acts either directly towards each other (opposite
     charges) or away from each other (same sign of charge).</p>
 <p>&#160;</p>
-<p><tt>F(vector) = k * q1 * q2 / r12^2 * direction(r12)</tt></p>
+<p><span style="font-family: monospace">F(vector) = k * q1 * q2 / r12^2 * direction(r12)</span></p>
 <p>where</p>
 <blockquote>
-    <p><tt>k = 1 / (4 * pi * epsilon) = 8.99E9 Newton
-        Meter^2/Coulomb^2</tt></p>
-    <p>where <tt>epsilon</tt> is the dielectric constant of the medium ( =
+    <p><span style="font-family: monospace">k = 1 / (4 * pi * epsilon) = 8.99E9 Newton
+        Meter^2/Coulomb^2</span></p>
+    <p>where <span style="font-family: monospace">epsilon</span> is the dielectric constant of the medium ( =
         8.85E-12 for vacuum)</p>
 </blockquote>
-<p><tt>r12</tt> is the scalar distance from point 1 to point 2</p>
-<p><tt>direction (r12)</tt> is a unit vector from point 1 to point 2</p>
-<p>&#160;<tt>q1,q2</tt> are charges on each point</p>
+<p><span style="font-family: monospace">r12</span> is the scalar distance from point 1 to point 2</p>
+<p><span style="font-family: monospace">direction (r12)</span> is a unit vector from point 1 to point 2</p>
+<p>&#160;<span style="font-family: monospace">q1,q2</span> are charges on each point</p>
 <h4>Capacitance of two parallel plates</h4>
 <blockquote>
-    <p><tt>C = epsilon * Area / DistanceBetweenPlates</tt></p>
+    <p><span style="font-family: monospace">C = epsilon * Area / DistanceBetweenPlates</span></p>
 </blockquote>
 <p>this neglects fringing effects, which for plates that are smaller than, say, 10 times
     the spacing, are pretty significant.</p>
 <h4>Capacitance of two concentric cylinders (e.g. coaxial cable)</h4>
 <blockquote>
-    <p><tt>C = 2 * pi * epsilon * length / ln(
-        rOuter/rInner)</tt></p>
+    <p><span style="font-family: monospace">C = 2 * pi * epsilon * length / ln(
+        rOuter/rInner)</span></p>
 </blockquote>
-<p>this assumes <tt>length</tt> &gt;&gt; <tt>r</tt></p>
+<p>this assumes <span style="font-family: monospace">length</span> &gt;&gt; <span style="font-family: monospace">r</span></p>
 <h4>Capacitance of two concentric spheres</h4>
 <blockquote>
-    <p><tt>C = 4 * pi * epsilon * rInner * rOuter/ (rOuter
-        - rInner)</tt></p>
+    <p><span style="font-family: monospace">C = 4 * pi * epsilon * rInner * rOuter/ (rOuter
+        - rInner)</span></p>
 </blockquote>
-<p>as <tt>rOuter</tt> goes to infinity, the fraction <tt>rOuter/(rOuter-rInner)</tt> goes to
+<p>as <span style="font-family: monospace">rOuter</span> goes to infinity, the fraction <span style="font-family: monospace">rOuter/(rOuter-rInner)</span> goes to
     one, leading to the following handy equation:</p>
 <h4>Capacitance of isolated sphere</h4>
 <blockquote>
-    <p><tt>C = 4*pi*epsilon*radius = approx 111.2 pF/meter</tt></p>
+    <p><span style="font-family: monospace">C = 4*pi*epsilon*radius = approx 111.2 pF/meter</span></p>
 </blockquote>
 <p>this equation is derived from the equation for two concentric (nested) spheres,
     and letting the radius of the outer sphere go to infinity.</p>

@@ -6,72 +6,13 @@
     <META NAME="description" CONTENT="Jim Lux's radio home page">
 
     <TITLE>Jim Lux's (old) Radio Sub-Website</TITLE>
-    <SCRIPT language="javascript"><!--
-    begin;
-    script;
 
-    function getCookieVal(offset) {
-      var endstr = document.cookie.indexOf(';', offset);
-      if (endstr == -1)
-        endstr = document.cookie.length;
-      return unescape(document.cookie.substring(offset, endstr));
-    }
-
-    function GetCookie(name) {
-      var arg = name + '=';
-      var alen = arg.length;
-      var clen = document.cookie.length;
-      var i = 0;
-      while (i < clen) {
-        var j = i + alen;
-        if (document.cookie.substring(i, j) == arg)
-          return getCookieVal(j);
-        i = document.cookie.indexOf(' ', i) + 1;
-        if (i == 0) break;
-      }
-      return null;
-    }
-
-    function SetCookie(name, value, expires, path, domain, secure) {
-      document.cookie = name + '=' + escape(value) +
-          ((expires) ? '; expires=' + expires.toGMTString() : '') +
-          ((path) ? '; path =' + path : '') +
-          ((domain) ? '; domain=' + domain : '') +
-          ((secure) ? '; secure' : '');
-    }
-
-    function DeleteCookie(name, path, domain) {
-      if (GetCookie(name)) {
-        document.cookie = name + '=' +
-            ((path) ? '; path=' + path : '') +
-            ((domain) ? '; domain=' + domain : '') +
-            '; expires=Thu, 01-Jan-70 00:00:01 GMT';
-      }
-    }
-
-    var exp = new Date();
-    exp.setTime(exp.getTime() + (30 * 24 * 60 * 60 * 1000));
-
-    function amt() {
-      var count = GetCookie('radiocount');
-      if (count == null) {
-        SetCookie('radiocount', '1');
-        return 1;
-      } else {
-        var newcount = parseInt(count) + 1;
-        DeleteCookie('radiocount');
-        SetCookie('radiocount', newcount, exp);
-        return count;
-      }
-    }
-
-    // -- End Hiding Here --></SCRIPT>
 </HEAD>
 <BODY LINK="#0000FF" VLINK="#800080">
 
-<CENTER>
+<div style="text-align: center;">
     <H3> Jim Lux's (old) Radio Web site</H3>
-</CENTER>
+</div>
 
 <h3>Stuff about radio</h3>
 <p>Professional and Amateur (Yes, I am a ham: W6RMK (Extra Class); but I also
@@ -85,10 +26,7 @@
         Voltage Handbook</a></p>
 <p>15 Jan 2006</p>
 <p>
-    <SCRIPT language="javascript"><!--
-    Hide;
-    document.write('You\'ve been here <b>' + amt() + '</b> times.');
-    // -- end hiding here --></SCRIPT>
+
 </p>
 <P>&nbsp;</P>
 

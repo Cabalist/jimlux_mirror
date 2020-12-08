@@ -17,36 +17,36 @@
     and use, where a little overdesign can be tolerated, approximations to the field are just as useful.</p>
 <p>The mean or average field is just the voltage difference divided by the distance between the
     conductors. For the proverbial infinite flat plates, this makes the calculation simple.</p>
-<p><tt>Emax = Eaverage = V / Distance</tt></p>
+<p><span style="font-family: monospace">Emax = Eaverage = V / Distance</span></p>
 <h4>For two concentric cylinders (i.e. like coaxial cable) the maximum field is:</h4>
-<p><tt>Emax = V / ( Rinner * LN( Router / Rinner))</tt></p>
+<p><span style="font-family: monospace">Emax = V / ( Rinner * LN( Router / Rinner))</span></p>
 <p>where:<br>
-    <tt>Rinner</tt> is radius of the inner electrode<br>
-    <tt>Router</tt> is the radius of the outer electrode<br>
-    <tt>LN()</tt> is the log base e of the argument<br>
-    <tt>V</tt> is the voltage between the electrodes</p>
+    <span style="font-family: monospace">Rinner</span> is radius of the inner electrode<br>
+    <span style="font-family: monospace">Router</span> is the radius of the outer electrode<br>
+    <span style="font-family: monospace">LN()</span> is the log base e of the argument<br>
+    <span style="font-family: monospace">V</span> is the voltage between the electrodes</p>
 <h4>For concentric spheres, using the same variables, the maximum field is:</h4>
-<p><tt>Emax = V * Router / (Rinner *(Router - Rinner))</tt></p>
+<p><span style="font-family: monospace">Emax = V * Router / (Rinner *(Router - Rinner))</span></p>
 <p>&nbsp;</p>
 <h4>For two parallel cylinders of equal radius:</h4>
-<p><tt>Emax = V * SQRT(D^2 - 4 * R^2)/ (2 * R*(D-R)*INVCOSH(D/(2*R)))</tt></p>
-<p>approx equal to: <tt>V / (2*R) * LN(D/R)</tt> if D&gt;&gt;R</p>
+<p><span style="font-family: monospace">Emax = V * SQRT(D^2 - 4 * R^2)/ (2 * R*(D-R)*INVCOSH(D/(2*R)))</span></p>
+<p>approx equal to: <span style="font-family: monospace">V / (2*R) * LN(D/R)</span> if D&gt;&gt;R</p>
 <p>where:<br>
-    <tt>D</tt> is distance between the centers of the conductors<br>
-    <tt>R</tt> is the radius of the conductors</p>
+    <span style="font-family: monospace">D</span> is distance between the centers of the conductors<br>
+    <span style="font-family: monospace">R</span> is the radius of the conductors</p>
 <h4>For two spheres:</h4>
-<p><tt>Emax = approximately V/S * F</tt><br>
+<p><span style="font-family: monospace">Emax = approximately V/S * F</span><br>
 </p>
 <p>where:<br>
-    <tt>S</tt> is spacing between spheres <tt>= D - 2*R</tt><br>
-    <tt>F</tt> is a field enhancement factor = </p>
-<p><tt>F = (S/R+1) * sqrt( (S/R+1)^2+8)/4</tt></p>
+    <span style="font-family: monospace">S</span> is spacing between spheres <span style="font-family: monospace">= D - 2*R</span><br>
+    <span style="font-family: monospace">F</span> is a field enhancement factor = </p>
+<p><span style="font-family: monospace">F = (S/R+1) * sqrt( (S/R+1)^2+8)/4</span></p>
 <p>&nbsp;</p>
-<p>For spheres, if S&gt;&gt;R then <tt>Emax = approx V/ (2*R)</tt></p>
+<p>For spheres, if S&gt;&gt;R then <span style="font-family: monospace">Emax = approx V/ (2*R)</span></p>
 <h4>For other configurations:</h4>
-<p><tt>Emax = Eaverage * F</tt></p>
-<p>For sphere/plane: <tt>F = 0.94*Spacing/Radius + 0.8</tt></p>
-<p>For cylinder/plane: <tt>F = 0.25 * Spacing / Radius + 1.0</tt></p>
+<p><span style="font-family: monospace">Emax = Eaverage * F</span></p>
+<p>For sphere/plane: <span style="font-family: monospace">F = 0.94*Spacing/Radius + 0.8</span></p>
+<p>For cylinder/plane: <span style="font-family: monospace">F = 0.25 * Spacing / Radius + 1.0</span></p>
 <p>&nbsp;</p>
 <hr>
 <p>Copyright 1998, Jim Lux / efield1.htm / 12 March 1998 / <a href="hvmain.htm">Back to HV Home</a> / <a href="../index.htm">Back to home page</a> / <a href="mailto:jimlux@earthlink.net">Mail to Jim</a></p>

@@ -27,18 +27,18 @@
     type generators&#160;operating in room air, however, the E field limit is usually
     applicable.</p>
 <blockquote>
-    <p><tt>Field at surface of a sphere = Voltage / Radius of Sphere</tt></p>
+    <p><span style="font-family: monospace">Field at surface of a sphere = Voltage / Radius of Sphere</span></p>
 </blockquote>
 <p>So, we use the handy approximation of 30 kV/cm for the breakdown strength of air and rearrange
     the equation a bit to get:</p>
 <blockquote>
-    <p><tt>MaxVoltage = 30 kV * Radius(cm)</tt></p>
+    <p><span style="font-family: monospace">MaxVoltage = 30 kV * Radius(cm)</span></p>
 </blockquote>
 <p>The classic Franklin Lee designed Van deGraaff from Scientific American has
     an upper electrode about 14 inches in diameter which actually has a minimum
     radius of curvature of about 7 inches (it is a &quot;squashed&quot; sphere).</p>
 <blockquote>
-    <p><tt>MaxVoltage = 30 kV/cm * 17.5 cm = 525 kV</tt></p>
+    <p><span style="font-family: monospace">MaxVoltage = 30 kV/cm * 17.5 cm = 525 kV</span></p>
 </blockquote>
 <p>The generator is advertised as reaching 400 kV, which is probably a realistic assessment, given that
     it isn't perfectly smooth and that there is an insulating column between the sphereoid and the ground
@@ -50,17 +50,17 @@
     Note that here, we'll use the real radius of the sphereoid, as opposed to the
     breakdown voltage calculation, where we used the smallest radius of curvature.</p>
 <blockquote>
-    <p><tt>r = 7 inches = .178 meters</tt></p>
-    <p><tt>Csphere = 4*pi*epsilon*r = 111.2 pF/meter * .178 meters = 19.8
-        pF</tt></p>
+    <p><span style="font-family: monospace">r = 7 inches = .178 meters</span></p>
+    <p><span style="font-family: monospace">Csphere = 4*pi*epsilon*r = 111.2 pF/meter * .178 meters = 19.8
+        pF</span></p>
 </blockquote>
 <p>Now, let's calculate the stored energy: Is it a crack or a bang when we discharge it?</p>
 <blockquote>
-    <p><tt>Energy = 0.5 * C * V^2</tt></p>
-    <p><tt>Energy = 0.5 * 19.8E-12 * 4E5^2 = 1.5 Joules</tt></p>
+    <p><span style="font-family: monospace">Energy = 0.5 * C * V^2</span></p>
+    <p><span style="font-family: monospace">Energy = 0.5 * 19.8E-12 * 4E5^2 = 1.5 Joules</span></p>
 </blockquote>
-<p>(A handy form of the energy equation is: <tt>Energy (Joules)= 1/2 * C(microfarads) *
-    V(kilovolts) ^2</tt>. The units nicely cancel.)</p>
+<p>(A handy form of the energy equation is: <span style="font-family: monospace">Energy (Joules)= 1/2 * C(microfarads) *
+    V(kilovolts) ^2</span>. The units nicely cancel.)</p>
 <hr>
 <h4><a name="vdgforce">Force</a> from 400 kV Van deGraaff on a grounded sphere</h4>
 <p>Pretty much the first thing people do when they get a demonstration Van deGraaff

@@ -27,25 +27,25 @@
     the return is shifted by a radian frequency of &quot;doppler&quot;. The two
     signals are:</p>
 <blockquote>
-    <p><tt>Vout = cos(omega * t)<br>
-        Vin = cos((omega+doppler)*t)</tt></p>
+    <p><span style="font-family: monospace">Vout = cos(omega * t)<br>
+        Vin = cos((omega+doppler)*t)</span></p>
 </blockquote>
 <p>The inphase mixer forms the product:</p>
 <blockquote>
-    <p><tt>Imixer = cos(omega*t) * cos( (omega+doppler)*t)<br>
-    </tt><tt>= 1/2*cos( omega*t
-        + (omega+doppler)*t) + 1/2*cos( omega*t - (omega+doppler)*t))</tt></p>
+    <p><span style="font-family: monospace">Imixer = cos(omega*t) * cos( (omega+doppler)*t)<br>
+    </span><span style="font-family: monospace">= 1/2*cos( omega*t
+        + (omega+doppler)*t) + 1/2*cos( omega*t - (omega+doppler)*t))</span></p>
 </blockquote>
 <p>The quadrature mixer forms the product:</p>
 <blockquote>
-    <p><tt>Qmixer = sin(omega*t) * cos( (omega+doppler)*t) <br>
-        = 1/2*sin( omega*t + (omega+doppler)*t) + 1/2*sin( omega*t - (omega+doppler)*t))</tt></p>
+    <p><span style="font-family: monospace">Qmixer = sin(omega*t) * cos( (omega+doppler)*t) <br>
+        = 1/2*sin( omega*t + (omega+doppler)*t) + 1/2*sin( omega*t - (omega+doppler)*t))</span></p>
 </blockquote>
 <p>ignoring the sum term (which is at 20 GHz, and doesn't make it very far) we
     get:</p>
 <blockquote>
-    <p><tt>Imixer = 1/2*cos( (omega- omega+doppler)*t) = 1/2*cos(doppler*t)<br>
-        Qmixer = 1/2 * sin( (omega- omega+doppler)*t) = 1/2*sin(doppler*t)</tt></p>
+    <p><span style="font-family: monospace">Imixer = 1/2*cos( (omega- omega+doppler)*t) = 1/2*cos(doppler*t)<br>
+        Qmixer = 1/2 * sin( (omega- omega+doppler)*t) = 1/2*sin(doppler*t)</span></p>
 </blockquote>
 <p>These are just a pair of sinusoids with the Qmixer signal 90 degrees lagging
     the Imixer signal (if doppler&gt;0). If doppler is negative, Q will lead I.

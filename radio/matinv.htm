@@ -59,30 +59,32 @@
     cofactor of. The signs of the cofactors alternate, just as when computing the
     determinant </p>
 <p>For example, if the original matrix [M] is</p>
-<pre align="center">
+<pre style="text-align: center">
         a b c
         d e f
         g h i</pre>
 <div align="center"></div>
-<table width="75%" border="1" align="center">
+<table style="width:75%;border:1px" align="center">
     <tr>
         <td>
             <p>the cofactor of the upper left element is</p>
-            <pre align="center">     |e f|
-     |h i|</pre>
+            <pre style="text-align: center" >
+            |e f|
+            |h i|
+            </pre>
             <p>which is = (ei - hf)</p>
         </td>
         <td>
             <p>the cofactor of the upper center element is</p>
-            <pre align="center">     _ |d f|
+            <pre style="text-align: center">     _ |d f|
      &nbsp;&nbsp;|g i|</pre>
             <p>= - (di - gf)</p>
         </td>
         <td>
             <p>the cofactor of the upper right element is</p>
-            <pre align="center">     |d e|
+            <pre style="text-align: center">     |d e|
      |g h|</pre>
-            <p align="left">= (dh - ge)</p>
+            <p style="text-align: left">= (dh - ge)</p>
         </td>
     </tr>
 </table>
@@ -91,7 +93,8 @@
 <p>and the determinant is simply det(M) = a(ei-hf)-b(di - gf)+c(dh-ge). If we
     label the cofactors in the above array as A, B, C, etc. corresponding to the
     elements, the adjoint matrix would be:</p>
-<pre align="center">	A D G
+<pre style="text-align: center">
+    A D G
     B E H
     C F I</pre>
 <p align="left">The inverse of the original matrix is the adjoint, scaled by 1/det(M).</p>

@@ -65,21 +65,21 @@ element is then simply the Voltage over the Current.
     power which is discussed in the <A HREF="/radio/antenna/phased/pwrdiv.htm">page
         on power division</A>. More information is available on <A HREF="/radio/math/wyedelta.htm#synth">pi
         and L network synthesis.</A>
-<P><IMG SRC="images/pi2l.gif" NOSAVE HEIGHT=168 WIDTH=480> <BR>
+<P><IMG SRC="images/pi2l.gif"  HEIGHT=168 WIDTH=480> <BR>
     We now have a low pass pi network feeding a low pass L network. The
     output capacitor on the pi network and the input capacitor on the L network
     can be combined.&nbsp; All of the feed sides of the pi networks will be
     connected in parallel. So, we redraw the circuit to show it as a capacitor
     (at the feed end) feeding a lowpass T network which then feeds the antenna.
 
-<P><IMG SRC="images/candt.gif" NOSAVE HEIGHT=82 WIDTH=350>
+<P><IMG SRC="images/candt.gif"  HEIGHT=82 WIDTH=350>
 <P>The next step is to transform the T network into an equivalent pi network,
     using a standard transformation which is also <A HREF="/radio/math/wyedelta.htm#pit">documented</A>.
-<P><IMG SRC="images/ttopi.gif" NOSAVE HEIGHT=103 WIDTH=285> <BR>
+<P><IMG SRC="images/ttopi.gif"  HEIGHT=103 WIDTH=285> <BR>
     And, the final step is to pull the first shunt C of the pi out and
     combine it with the original pi network shunt C, leaving just an L network
 
-<P><IMG SRC="images/adjl.gif" NOSAVE HEIGHT=107 WIDTH=278>
+<P><IMG SRC="images/adjl.gif"  HEIGHT=107 WIDTH=278>
 <P>Of course, in an actual system, some of the shunt X of the pi networks
     will turn out to be positive (i.e. inductive). However, since they wind
     up being combined in parallel with other shunt X's, some of which will

@@ -22,10 +22,10 @@
     called the decibel (dB). Watch out for the form depending on whether you are
     working with powers (usual), or with voltages or currents and an assumed constant
     impedance (where power varies as the square of either).</p>
-<p><tt>dB = 10 * log10 (power ratio)<br>
-</tt><tt>power ratio = 10^(dB/10)<br>
+<p><span style="font-family: monospace">dB = 10 * log10 (power ratio)<br>
+</span><span style="font-family: monospace">power ratio = 10^(dB/10)<br>
     db = 20 * log10(voltage ratio) -or- dB = 20 * log10(current ratio)<br>
-    voltage or current ratio = 10^(dB/20)</tt></p>
+    voltage or current ratio = 10^(dB/20)</span></p>
 <p>The other likely candidate for the base of the log is e (=2.71828...), which
     has nice properties in equations, etc., and just seems to fall out of all sorts
     of natural phenomena (unlike 10, which is popular because we have 10 fingers).
@@ -34,17 +34,17 @@
     the guy who popularized the use of logs for computation (viz. Napier's Bones).
     Nepers are used with voltage (or magnitude) ratios, so watch out when converting
     back and forth between Nepers and dB.</p>
-<p><tt>Np = ln (voltage ratio)<br>
-</tt><tt>voltage ratio = exp(Np)</tt></p>
+<p><span style="font-family: monospace">Np = ln (voltage ratio)<br>
+</span><span style="font-family: monospace">voltage ratio = exp(Np)</span></p>
 <p>You can convert back and forth pretty easily using standard log and exponent
     identities: log[base y](x) = log(x)/log(y).</p>
-<p><tt>dB = 20 * log10( exp(Np)) = 20 * ln(exp(Np)/ln(10) = 20/ln(10) * Np = 8.688...
-    * Np</tt><br>
-    <tt>Np = ln(10^(dB/20)) = ln(10)*exp(ln(dB/20)) = ln(10) * dB/20 = ln(10)/20
-        * dB = 0.115129.. * dB</tt></p>
+<p><span style="font-family: monospace">dB = 20 * log10( exp(Np)) = 20 * ln(exp(Np)/ln(10) = 20/ln(10) * Np = 8.688...
+    * Np</span><br>
+    <span style="font-family: monospace">Np = ln(10^(dB/20)) = ln(10)*exp(ln(dB/20)) = ln(10) * dB/20 = ln(10)/20
+        * dB = 0.115129.. * dB</span></p>
 <p>Here are some really long values for the constants (handy for cutting and pasting):</p>
-<p><tt>Np = dB * 0.115129255</tt></p>
-<p><tt>dB = Np * 8.685889638</tt></p>
+<p><span style="font-family: monospace">Np = dB * 0.115129255</span></p>
+<p><span style="font-family: monospace">dB = Np * 8.685889638</span></p>
 <h4>References:</h4>
 <p><a href="http://www.its.bldrdoc.gov/fs-1037/dir-024/_3502.htm">http://www.its.bldrdoc.gov/fs-1037/dir-024/_3502.htm</a> definition of Neper</p>
 <p><a href="http://www.its.bldrdoc.gov/fs-1037/dir-010/_1468.htm">http://www.its.bldrdoc.gov/fs-1037/dir-010/_1468.htm</a> definition of dB</p>
