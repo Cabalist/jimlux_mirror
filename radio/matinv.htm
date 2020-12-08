@@ -1,118 +1,123 @@
 <html>
 <head>
-<title>Matrix Inversion</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>Matrix Inversion</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 </head>
 
 <body bgcolor="#FFFFFF">
 <h2>Inverting Matrices</h2>
-<p>Inverting a matrix turns out to be quite useful, although not for the classic 
-  example of solving a set of simultaneous equations, for which other, better, 
-  methods exist. In particular, with phased array antenna calculations, you need 
-  to invert admittance matrices (produced as an output from a MOM code, like NEC) 
-  into mutual impedance matrices.</p>
-<p>The theory of matrix inversion, etc, is better left to textbooks. Suffice it 
-  to say that the problem is one of finding a matrix [B] such that [A][B] = I, 
-  where I is the identity matrix. There are a variety of published programs for 
-  doing matrix inversion, typically by elimination, described in the next section; 
-  for example, MS Basic came with example code for it, and of course, the Numerical 
-  Recipes books stuff.), although normally, the matrix isn't composed of complex 
-  numbers. Links are at the bottom of this page. You can also compute it explicitly 
-  by calculating the adjoint matrix from cofactors and scaling by the determinant, 
-  which is described in more detail below.</p>
+<p>Inverting a matrix turns out to be quite useful, although not for the classic
+    example of solving a set of simultaneous equations, for which other, better,
+    methods exist. In particular, with phased array antenna calculations, you need
+    to invert admittance matrices (produced as an output from a MOM code, like NEC)
+    into mutual impedance matrices.</p>
+<p>The theory of matrix inversion, etc, is better left to textbooks. Suffice it
+    to say that the problem is one of finding a matrix [B] such that [A][B] = I,
+    where I is the identity matrix. There are a variety of published programs for
+    doing matrix inversion, typically by elimination, described in the next section;
+    for example, MS Basic came with example code for it, and of course, the Numerical
+    Recipes books stuff.), although normally, the matrix isn't composed of complex
+    numbers. Links are at the bottom of this page. You can also compute it explicitly
+    by calculating the adjoint matrix from cofactors and scaling by the determinant,
+    which is described in more detail below.</p>
 <h3>Inversion by elimination</h3>
-<p>For moderate and big matrices, the straightforward way is to do a form of Gaussian 
-  elimination.</p>
+<p>For moderate and big matrices, the straightforward way is to do a form of Gaussian
+    elimination.</p>
 <ul>
-  <li> Start with the matrix and an identity matrix of the same size.</li>
-  <li> Then, you start by picking a row where the first element is non-zero (called 
-    a pivot row). You add that row to the other rows, scaling it by a constant 
-    such that the first element of the other rows becomes zero. That is: if the 
-    pivot row starts with A, and the row you are processing starts with B, you 
-    would scale the pivot row by -B/A, so that when they are added, the first 
-    element in B becomes zero.</li>
-  <li> Each time you do the scale and add operation, do the same thing to the 
-    identity matrix. In our example, you would take the &quot;pivot row&quot; 
-    of the identity matrix, multiply by -B/A and add it to the corresponding row 
-    of the identity matrix.</li>
-  <li>Now, the first column of the matrix is all zero, except for the pivot row. 
-    Next, choose a row in which the second element is non-zero and repeat the 
-    process.</li>
-  <li>Repeat for each column.Eventually, you will have a matrix where only the 
-    diagonal elements are non-zero. If you get to a situation where an entire 
-    row is zero, the original matrix is singular, and has no inverse.</li>
-  <li> Scale each row by 1/x, where x is the non-zero value (repeating the scaling 
-    on the target matrix) and you are done.</li>
+    <li> Start with the matrix and an identity matrix of the same size.</li>
+    <li> Then, you start by picking a row where the first element is non-zero (called
+        a pivot row). You add that row to the other rows, scaling it by a constant
+        such that the first element of the other rows becomes zero. That is: if the
+        pivot row starts with A, and the row you are processing starts with B, you
+        would scale the pivot row by -B/A, so that when they are added, the first
+        element in B becomes zero.
+    </li>
+    <li> Each time you do the scale and add operation, do the same thing to the
+        identity matrix. In our example, you would take the &quot;pivot row&quot;
+        of the identity matrix, multiply by -B/A and add it to the corresponding row
+        of the identity matrix.
+    </li>
+    <li>Now, the first column of the matrix is all zero, except for the pivot row.
+        Next, choose a row in which the second element is non-zero and repeat the
+        process.
+    </li>
+    <li>Repeat for each column.Eventually, you will have a matrix where only the
+        diagonal elements are non-zero. If you get to a situation where an entire
+        row is zero, the original matrix is singular, and has no inverse.
+    </li>
+    <li> Scale each row by 1/x, where x is the non-zero value (repeating the scaling
+        on the target matrix) and you are done.
+    </li>
 </ul>
 <h3>Inversion by using the adjoint matrix</h3>
-<p>For small matrices (2,3,4) calculating the inverse by scaling the adjoint is 
-  easier. The adjoint matrix is computed by taking the transpose of a matrix where 
-  each element is cofactor of the corresponding element in the source matrix. 
-  The cofactor is the determinant of the matrix created by taking the original 
-  matrix and removing the row and column for the element you are calculating the 
-  cofactor of. The signs of the cofactors alternate, just as when computing the 
-  determinant </p>
+<p>For small matrices (2,3,4) calculating the inverse by scaling the adjoint is
+    easier. The adjoint matrix is computed by taking the transpose of a matrix where
+    each element is cofactor of the corresponding element in the source matrix.
+    The cofactor is the determinant of the matrix created by taking the original
+    matrix and removing the row and column for the element you are calculating the
+    cofactor of. The signs of the cofactors alternate, just as when computing the
+    determinant </p>
 <p>For example, if the original matrix [M] is</p>
 <pre align="center"><font face="Courier New, Courier, mono">		a b c
-		d e f
-		g h i</font></pre>
+        d e f
+        g h i</font></pre>
 <div align="center"></div>
 <table width="75%" border="1" align="center">
-  <tr> 
-    <td> 
-      <p>the cofactor of the upper left element is</p>
-      <pre align="center">     |e f|
+    <tr>
+        <td>
+            <p>the cofactor of the upper left element is</p>
+            <pre align="center">     |e f|
      |h i|</pre>
-      <p>which is = (ei - hf)</p>
-    </td>
-    <td> 
-      <p>the cofactor of the upper center element is</p>
-      <pre align="center">     _ |d f|
+            <p>which is = (ei - hf)</p>
+        </td>
+        <td>
+            <p>the cofactor of the upper center element is</p>
+            <pre align="center">     _ |d f|
      &nbsp;&nbsp;|g i|</pre>
-      <p>= - (di - gf)</p>
-    </td>
-    <td> 
-      <p>the cofactor of the upper right element is</p>
-      <pre align="center">     |d e|
+            <p>= - (di - gf)</p>
+        </td>
+        <td>
+            <p>the cofactor of the upper right element is</p>
+            <pre align="center">     |d e|
      |g h|</pre>
-      <p align="left">= (dh - ge)</p>
-    </td>
-  </tr>
+            <p align="left">= (dh - ge)</p>
+        </td>
+    </tr>
 </table>
 <div align="center"></div>
 <p>&nbsp;</p>
-<p>and the determinant is simply det(M) = a(ei-hf)-b(di - gf)+c(dh-ge). If we 
-  label the cofactors in the above array as A, B, C, etc. corresponding to the 
-  elements, the adjoint matrix would be:</p>
+<p>and the determinant is simply det(M) = a(ei-hf)-b(di - gf)+c(dh-ge). If we
+    label the cofactors in the above array as A, B, C, etc. corresponding to the
+    elements, the adjoint matrix would be:</p>
 <pre align="center">	A D G
-   	B E H
-  	C F I</pre>
+    B E H
+    C F I</pre>
 <p align="left">The inverse of the original matrix is the adjoint, scaled by 1/det(M).</p>
-<p align="left">I've built a few Excel spreadsheets to calculate the inverses 
-  of 2x2, 3x3, and 4x4 matrices, using the above method and using Excel's complex 
-  math functions. Download them here: (<a href="software/inv2x2.xls">inv2x2.xls 
-  15 kb</a>) (<a href="software/inv3x3.xls">inv3x3.xls 20 kb</a>) (<a href="software/inv4x4.xls">inv4x4.xls 
-  29kb</a>). Note that this technique is computationally expensive because a lot 
-  of the multiplies get repeated (for instance, you calculate cofactors to calculate 
-  the determinant by Cramer's rule, then calculate them again for the adjoint), 
-  and it probably scales as O(n!). </p>
+<p align="left">I've built a few Excel spreadsheets to calculate the inverses
+    of 2x2, 3x3, and 4x4 matrices, using the above method and using Excel's complex
+    math functions. Download them here: (<a href="software/inv2x2.xls">inv2x2.xls
+        15 kb</a>) (<a href="software/inv3x3.xls">inv3x3.xls 20 kb</a>) (<a href="software/inv4x4.xls">inv4x4.xls
+        29kb</a>). Note that this technique is computationally expensive because a lot
+    of the multiplies get repeated (for instance, you calculate cofactors to calculate
+    the determinant by Cramer's rule, then calculate them again for the adjoint),
+    and it probably scales as O(n!). </p>
 <h3>Links and references</h3>
-<p>Here are some links I found (for which I make no claims of quality) just doing 
-  a search for &quot;matrix inversion&quot;:</p>
+<p>Here are some links I found (for which I make no claims of quality) just doing
+    a search for &quot;matrix inversion&quot;:</p>
 <ul>
-  <li> From Mike Dinolfo, a C++ template:<br><a href="http://users.erols.com/mdinolfo/matrix.htm">
-    http://users.erols.com/mdinolfo/matrix.htm</a></li>
-  <li> From the Brandeis Helical Package, a version of the Fortran code from Numerical 
-    Recipes:<br><a href="    http://www.rose.brandeis.edu/users/derosier/BHP/brandeis-helical-package/doc/matrix-inversion.html">
-    http://www.rose.brandeis.edu/users/derosier/BHP/brandeis-helical-package/doc/matrix-inversion.html</a></li>
+    <li> From Mike Dinolfo, a C++ template:<br><a href="http://users.erols.com/mdinolfo/matrix.htm">
+        http://users.erols.com/mdinolfo/matrix.htm</a></li>
+    <li> From the Brandeis Helical Package, a version of the Fortran code from Numerical
+        Recipes:<br><a href="    http://www.rose.brandeis.edu/users/derosier/BHP/brandeis-helical-package/doc/matrix-inversion.html">
+            http://www.rose.brandeis.edu/users/derosier/BHP/brandeis-helical-package/doc/matrix-inversion.html</a></li>
 </ul>
-<p>A textbook reference (from my undergrad matrix math course) which describes 
-  all of the above:</p>
-<p>Reiner, I., <i>Introduction to Matrix Theory and Linear Algebra</i>, Holt Rinehart 
-  Winston, 1971</p>
+<p>A textbook reference (from my undergrad matrix math course) which describes
+    all of the above:</p>
+<p>Reiner, I., <i>Introduction to Matrix Theory and Linear Algebra</i>, Holt Rinehart
+    Winston, 1971</p>
 <hr>
-<p>matinv.htm - 28 June 2000 - <a href="mailto:jimlux@earthlink.net?Subject=Matrix%20Inversion">Jim 
-  Lux<br>
-  </a>revised 25 Jan 2001 (fixed missing - in middle cofactor of 3x3 determinant)</p>
+<p>matinv.htm - 28 June 2000 - <a href="mailto:jimlux@earthlink.net?Subject=Matrix%20Inversion">Jim
+    Lux<br>
+</a>revised 25 Jan 2001 (fixed missing - in middle cofactor of 3x3 determinant)</p>
 </body>
 </html>

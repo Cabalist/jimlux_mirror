@@ -1,97 +1,97 @@
 <html>
 <head>
-<title>Matching Helical Antenna</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>Matching Helical Antenna</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 </head>
 
 <body bgcolor="#FFFFFF">
 <p>Matching the helix to 50 ohms</p>
-<p>One technique used for matching a helical antenna (typically 120-140 ohms) 
-  to a feed line (50 or 75 ohms) is to use the bottom of the first turn as a tapered 
-  transmission line from the feed at the periphery. One could spend some time 
-  analyzing this in horrid detail (none of which would be replicated with usual 
-  construction tolerances), or you can do it empirically (which is what most folks 
-  do). Some analysis is useful to get a feel for what to expect though. There 
-  is probably a shortest possible length for the tapered line, as well as an optimal 
-  shape (exponential spacing variation, as it happens), but given the usual construction 
-  tolerances, we just bend it until it works. If someone has a pointer to a more 
-  complete theoretical treatment, I'd love to reference it. (There are some papers 
-  in IEEE Transactions on this).</p>
-<p>One way to think of it is as a single wire above a ground plane. Two formulae 
-  are commonly applied here (one being an approximation of the other):</p>
+<p>One technique used for matching a helical antenna (typically 120-140 ohms)
+    to a feed line (50 or 75 ohms) is to use the bottom of the first turn as a tapered
+    transmission line from the feed at the periphery. One could spend some time
+    analyzing this in horrid detail (none of which would be replicated with usual
+    construction tolerances), or you can do it empirically (which is what most folks
+    do). Some analysis is useful to get a feel for what to expect though. There
+    is probably a shortest possible length for the tapered line, as well as an optimal
+    shape (exponential spacing variation, as it happens), but given the usual construction
+    tolerances, we just bend it until it works. If someone has a pointer to a more
+    complete theoretical treatment, I'd love to reference it. (There are some papers
+    in IEEE Transactions on this).</p>
+<p>One way to think of it is as a single wire above a ground plane. Two formulae
+    are commonly applied here (one being an approximation of the other):</p>
 <table width="75%" border="0">
-  <tr>
-    <td>
-      <p>Z = 138 * log<sub>10</sub>(4h/d)</p>
-      <p>where:<br>
-        d is the diameter<br>
-        h is the height of the conductor above the ground plane.</p>
-</td>
-    <td><img src="../images/lineplane.gif" width="198" height="192"></td>
-  </tr>
+    <tr>
+        <td>
+            <p>Z = 138 * log<sub>10</sub>(4h/d)</p>
+            <p>where:<br>
+                d is the diameter<br>
+                h is the height of the conductor above the ground plane.</p>
+        </td>
+        <td><img src="../images/lineplane.gif" width="198" height="192"></td>
+    </tr>
 </table>
 <p>&nbsp;</p>
-<p>This is essentially a restatement of the standard two wire transmission line 
-  equation, where the ground plane provides an image of the conductor:</p>
+<p>This is essentially a restatement of the standard two wire transmission line
+    equation, where the ground plane provides an image of the conductor:</p>
 <table width="75%" border="0">
-  <tr>
-    <td>
-      <p>Z =120 * cosh<sup>-1</sup>(D/d)<br>
-        = 276 log<sub>10</sub>(2D/d)</p>
-      <p>&nbsp;</p>
-      <p>where:<br>
-        D is distance between conductors<br>
-        d is the diameter of the conductors</p>
-</td>
-    <td><img src="../images/lineplane2.gif" width="203" height="288"></td>
-  </tr>
+    <tr>
+        <td>
+            <p>Z =120 * cosh<sup>-1</sup>(D/d)<br>
+                = 276 log<sub>10</sub>(2D/d)</p>
+            <p>&nbsp;</p>
+            <p>where:<br>
+                D is distance between conductors<br>
+                d is the diameter of the conductors</p>
+        </td>
+        <td><img src="../images/lineplane2.gif" width="203" height="288"></td>
+    </tr>
 </table>
-<p>For the &quot;strip conductor&quot; case (i.e. using copper foil tape or shim 
-  stock), modeling as a coplanar transmission line would be a good bet. It gets 
-  even more complicated when one considers that the conductor (in the strip case, 
-  especially) is often mounted on some sort of dielectric.</p>
+<p>For the &quot;strip conductor&quot; case (i.e. using copper foil tape or shim
+    stock), modeling as a coplanar transmission line would be a good bet. It gets
+    even more complicated when one considers that the conductor (in the strip case,
+    especially) is often mounted on some sort of dielectric.</p>
 <table width="75%" border="0">
-  <tr>
-    <td><img src="../images/stripline.gif" width="265" height="348"></td>
-    <td><img src="../images/stripline2.gif" width="265" height="447"></td>
-  </tr>
+    <tr>
+        <td><img src="../images/stripline.gif" width="265" height="348"></td>
+        <td><img src="../images/stripline2.gif" width="265" height="447"></td>
+    </tr>
 </table>
 <p>&nbsp;</p>
 <h3>Some calculations for typical sizes of interest</h3>
-<p>Assuming we want to match 140 ohms to 50, the important thing is the h/d ratio. 
+<p>Assuming we want to match 140 ohms to 50, the important thing is the h/d ratio.
 </p>
 <ul>
-  <li>140 ohms: h/d = 2.5</li>
-  <li>50 ohms: h/d = 0.575</li>
+    <li>140 ohms: h/d = 2.5</li>
+    <li>50 ohms: h/d = 0.575</li>
 </ul>
-<p>note that in the 50 ohm case, the actual clearance between the conductor and 
-  the ground plane is pretty small:<br>
-  clearance = h-d/2<br>
-  h = 0.575 * d<br>
-  so clearance = 0.575*d - 0.5*d = 0.075 * d</p>
-<p>For an antenna using AWG #10 wire for the helix conductor (approximately 0.1&quot; 
-  in diameter), the clearance is .0075 inches (around the thickness of a couple 
-  sheets of paper!).</p>
-<p>I didn't find a handy reference for using a flat conductor perpendicular to 
-  the ground plane, but a reasonable assumption might be to consider it a round 
-  conductor where the diameter is half the width of the sheet.</p>
+<p>note that in the 50 ohm case, the actual clearance between the conductor and
+    the ground plane is pretty small:<br>
+    clearance = h-d/2<br>
+    h = 0.575 * d<br>
+    so clearance = 0.575*d - 0.5*d = 0.075 * d</p>
+<p>For an antenna using AWG #10 wire for the helix conductor (approximately 0.1&quot;
+    in diameter), the clearance is .0075 inches (around the thickness of a couple
+    sheets of paper!).</p>
+<p>I didn't find a handy reference for using a flat conductor perpendicular to
+    the ground plane, but a reasonable assumption might be to consider it a round
+    conductor where the diameter is half the width of the sheet.</p>
 <h3>Just how good a match do you need, anyway</h3>
-<p>In the case where the receiver or transmitter is close to the antenna (i.e. 
-  not much transmission line), one might not need a very good match, since there 
-  is little power being lost in line resistance. The input (for receivers) and 
-  output (for transmitters) impedances of many radios isn't particularly well 
-  characterized either. All you can really count on is that the numbers in the 
-  spec sheet were obtained with 50 ohm test equipment. For all you know, changing 
-  the match might actually make it work better. Of course, it might also make 
-  a harmonic problem worse (i.e. the manufacturer was depending on a good match 
-  at the desired, and a bad match (or no worse) at the harmonics).</p>
-<p>The basic approach I use is to use a matching technique that is fairly broadband, 
-  verify that the impedance is in the right general area and doesn't have any 
-  huge bumps or dips (indicative of some other problems), and just try it out.</p>
+<p>In the case where the receiver or transmitter is close to the antenna (i.e.
+    not much transmission line), one might not need a very good match, since there
+    is little power being lost in line resistance. The input (for receivers) and
+    output (for transmitters) impedances of many radios isn't particularly well
+    characterized either. All you can really count on is that the numbers in the
+    spec sheet were obtained with 50 ohm test equipment. For all you know, changing
+    the match might actually make it work better. Of course, it might also make
+    a harmonic problem worse (i.e. the manufacturer was depending on a good match
+    at the desired, and a bad match (or no worse) at the harmonics).</p>
+<p>The basic approach I use is to use a matching technique that is fairly broadband,
+    verify that the impedance is in the right general area and doesn't have any
+    huge bumps or dips (indicative of some other problems), and just try it out.</p>
 <hr>
 radio/helixmatch.htm - 3 December 2001 - Jim Lux <a href="helix900.htm"><br>
-900 MHz helical antennas</a> - <a href="../index.htm">radio home page</a> - <a href="../../index.htm">Jim's 
-home page</a>
+    900 MHz helical antennas</a> - <a href="../index.htm">radio home page</a> - <a href="../../index.htm">Jim's
+    home page</a>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 </body>

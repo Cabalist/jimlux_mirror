@@ -1,72 +1,79 @@
 <html>
 <head>
-<title>Robot Requirements</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>Robot Requirements</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 </head>
 
 <body bgcolor="#FFFFFF">
 <h2>Robot Requirements</h2>
-<p>This is a discussion of some generalized robot requirements for some applications 
-  of interest (to me).</p>
+<p>This is a discussion of some generalized robot requirements for some applications
+    of interest (to me).</p>
 <h3>Application 1 - Remote Exploration</h3>
-<p>While exploring in person is interesting, there are times you wish that something 
-  else could do some of the tedious footwork. Perhaps you are looking for artifacts 
-  of some sort. Rather than spend a lot of hot dusty or damp rainy days trudging 
-  around until you see something that looks interesting, you could control the 
-  robot from the relative comfort of home.</p>
-<p>I've driven enough robots around now to know that having an autonomous searcher 
-  that automatically traverses an area in some systematic way is a pipe-dream. 
-  You sort of have to count on a (at best) 1:1 ratio of &quot;operator controlling 
-  time&quot; to &quot;robot operating time&quot;, although, you your controlling 
-  time may not be simultaneous with the operating time. That is, the robot isn't 
-  a time saver, per se. What it could do is save the time and resources getting 
-  to and from a general area. For instance, one could spend an hour each day, 
-  moving the robot forward a bit, picking strategic things to look at, etc. (This 
-  is the generic Mars Rover scenario... Most folks don't realize that Sojurner's 
-  top speed was 0.6 meters <i>per minute</i>. That's a blazing 1 cm/second, and 
-  I dare you to move something by hand that slowly.)</p>
+<p>While exploring in person is interesting, there are times you wish that something
+    else could do some of the tedious footwork. Perhaps you are looking for artifacts
+    of some sort. Rather than spend a lot of hot dusty or damp rainy days trudging
+    around until you see something that looks interesting, you could control the
+    robot from the relative comfort of home.</p>
+<p>I've driven enough robots around now to know that having an autonomous searcher
+    that automatically traverses an area in some systematic way is a pipe-dream.
+    You sort of have to count on a (at best) 1:1 ratio of &quot;operator controlling
+    time&quot; to &quot;robot operating time&quot;, although, you your controlling
+    time may not be simultaneous with the operating time. That is, the robot isn't
+    a time saver, per se. What it could do is save the time and resources getting
+    to and from a general area. For instance, one could spend an hour each day,
+    moving the robot forward a bit, picking strategic things to look at, etc. (This
+    is the generic Mars Rover scenario... Most folks don't realize that Sojurner's
+    top speed was 0.6 meters <i>per minute</i>. That's a blazing 1 cm/second, and
+    I dare you to move something by hand that slowly.)</p>
 <ul>
-  <li>The data link needs to support a sufficient rate to send command sequences, 
-    and to get data and telemetry back.</li>
-  <li>The robot needs sufficient mobility to traverse areas of interest. As a 
-    working assumption, say it has to be able to go on any normal hiking trail. 
-    What about crossing over/through a standard barbed wire fence?</li>
-  <li>High resolution imaging (non real time) is necessary for mobility planning. 
-    It might be nice to get multiple images from different angles/viewpoints.</li>
-  <li>Some form of &quot;suicide avoidance&quot; should be implemented, so that 
-    you don't drive over a hidden cliff, etc.</li>
-  <li>The power source should be such that a fairly long duration operation can 
-    be conducted (i.e. months). This would mean either fuel driven generators 
-    or solar power, since I doubt that any practical form of storage battery would 
-    work.</li>
-  <li>Navigation is mostly outdoors, so GPS type navigation is probably sufficient 
-    (especially with differential correction)</li>
+    <li>The data link needs to support a sufficient rate to send command sequences,
+        and to get data and telemetry back.
+    </li>
+    <li>The robot needs sufficient mobility to traverse areas of interest. As a
+        working assumption, say it has to be able to go on any normal hiking trail.
+        What about crossing over/through a standard barbed wire fence?
+    </li>
+    <li>High resolution imaging (non real time) is necessary for mobility planning.
+        It might be nice to get multiple images from different angles/viewpoints.
+    </li>
+    <li>Some form of &quot;suicide avoidance&quot; should be implemented, so that
+        you don't drive over a hidden cliff, etc.
+    </li>
+    <li>The power source should be such that a fairly long duration operation can
+        be conducted (i.e. months). This would mean either fuel driven generators
+        or solar power, since I doubt that any practical form of storage battery would
+        work.
+    </li>
+    <li>Navigation is mostly outdoors, so GPS type navigation is probably sufficient
+        (especially with differential correction)
+    </li>
 </ul>
 <p>Some locomotion alternatives are discussed <a href="loco.htm">here</a>.</p>
 <h3>Application 2 - A toy to play with</h3>
-<p>Driving a remote controlled vehicle is fun. It has to move fast enough to be 
-  interesting, but not so fast that it's dangerous. The robot is controlled in 
-  nearly real time, so the remote control link has to have sufficient bandwidth 
-  to do this. The toy could also serve as a testbed for developing technologies 
-  and algorithms for the more sophisticated exploration rover.</p>
+<p>Driving a remote controlled vehicle is fun. It has to move fast enough to be
+    interesting, but not so fast that it's dangerous. The robot is controlled in
+    nearly real time, so the remote control link has to have sufficient bandwidth
+    to do this. The toy could also serve as a testbed for developing technologies
+    and algorithms for the more sophisticated exploration rover.</p>
 <h3>Application 3 - Survey robot</h3>
-<p>I've thought of this as a flying robot of some sort that can carry some sensor 
-  package over some terrain. The sensor might be electromagnetic (ground pulse 
-  radar) or imaging. For this, some form of autonomous scanning might actually 
-  be useful and feasible.</p>
+<p>I've thought of this as a flying robot of some sort that can carry some sensor
+    package over some terrain. The sensor might be electromagnetic (ground pulse
+    radar) or imaging. For this, some form of autonomous scanning might actually
+    be useful and feasible.</p>
 <p>Ideas: </p>
 <ul>
-  <li>Blimps - Tough to operate in any sort of wind, because the mass of the propulsion 
-    system gets high, but BYU is working on a medium sized R/C blimp that might 
-    be appropriate</li>
-  <li>Powered Parachute - More portable. </li>
+    <li>Blimps - Tough to operate in any sort of wind, because the mass of the propulsion
+        system gets high, but BYU is working on a medium sized R/C blimp that might
+        be appropriate
+    </li>
+    <li>Powered Parachute - More portable.</li>
 </ul>
 <h3>Reference information</h3>
 <p>Trail standards: http://www.nps.gov/romo/Backcountry%20pdf%20files/F%20-%20Trail%20Standards%20Summary-Detail.pdf</p>
 <p><a href="rocksize.htm">Rock Size distributions </a></p>
 <hr>
-robot/robotreqs.htm - 28 November 2001 - <a href="mailto:jimlux@earthlink.net?Subject=Robot%20Requirements">Jim 
-Lux</a><br>
+robot/robotreqs.htm - 28 November 2001 - <a href="mailto:jimlux@earthlink.net?Subject=Robot%20Requirements">Jim
+    Lux</a><br>
 <a href="index.htm">robot home page</a> - Jim's <a href="../index.htm">Home page</a>
 <p>&nbsp;</p>
 </body>

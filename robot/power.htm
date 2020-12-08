@@ -1,7 +1,7 @@
 <html>
 <head>
-<title>BucketBot Power Distribution</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>BucketBot Power Distribution</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 </head>
 
 <body bgcolor="#FFFFFF">
@@ -10,65 +10,71 @@
 <p>&nbsp;</p>
 <h3>Loads</h3>
 <p>The DC power loads can be grouped as follows</p>
-<dl> 
-  <dt>Traction Motors</dt>
-  <dd> High peak currents (tens of amps), lots of switching noise on the bus from 
-    the PWM controllers</dd>
-  <dt>Computers/Controllers</dt>
-  <dd>Fairly low current (tens of mA) The current design uses a RabbitCore which 
-    draws very little power(&lt;1W), but if, in a future incarnation, I retrofit 
-    some form of laptop to the robot, a different power distribution and supply 
-    scheme might be necessary.</dd>
-  <dt>Peripherals</dt>
-  <dd> Some high currents, but switchable. Examples are power for the servos (hobby 
-    type) controlled by the SSC and the video camera.</dd>
-  <dt>Radios</dt>
-  <dd> Small current, except when high power is needed (transmitting video, for 
-    instance).</dd>
+<dl>
+    <dt>Traction Motors</dt>
+    <dd> High peak currents (tens of amps), lots of switching noise on the bus from
+        the PWM controllers
+    </dd>
+    <dt>Computers/Controllers</dt>
+    <dd>Fairly low current (tens of mA) The current design uses a RabbitCore which
+        draws very little power(&lt;1W), but if, in a future incarnation, I retrofit
+        some form of laptop to the robot, a different power distribution and supply
+        scheme might be necessary.
+    </dd>
+    <dt>Peripherals</dt>
+    <dd> Some high currents, but switchable. Examples are power for the servos (hobby
+        type) controlled by the SSC and the video camera.
+    </dd>
+    <dt>Radios</dt>
+    <dd> Small current, except when high power is needed (transmitting video, for
+        instance).
+    </dd>
 </dl>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <h3>Batteries</h3>
-<p>Primary power is provided by a set of 12V 7AH high rate &quot;gel cells&quot;. 
-  These are the usual &quot;bricks&quot; that you see all over the place, and 
-  are a model designed for higher rate discharge (but not as high as the &quot;UPS 
-  duty&quot; ones that are designed to be discharged in 20 minutes).</p>
-The original design (and current, as of 16 Nov) uses a pair of batteries, one 
-for each motor, because the Novak Electronic Speed controllers only run up to 
-12V, even though the motors are actually 24V motors. When the Vantec controller 
-is installed, the batteries will be rewired for 24V. At 12V, the speed of the 
-robot over the ground is quite manageable (less than 1m/sec), even at 100% duty 
+<p>Primary power is provided by a set of 12V 7AH high rate &quot;gel cells&quot;.
+    These are the usual &quot;bricks&quot; that you see all over the place, and
+    are a model designed for higher rate discharge (but not as high as the &quot;UPS
+    duty&quot; ones that are designed to be discharged in 20 minutes).</p>
+The original design (and current, as of 16 Nov) uses a pair of batteries, one
+for each motor, because the Novak Electronic Speed controllers only run up to
+12V, even though the motors are actually 24V motors. When the Vantec controller
+is installed, the batteries will be rewired for 24V. At 12V, the speed of the
+robot over the ground is quite manageable (less than 1m/sec), even at 100% duty
 cycle, which is nice when letting the kids drive it.
-<p>As I add the processor, more batteries will be added. Multiple batteries, although 
-  adding weight, have proven to be more reliable for the following reasons:</p>
+<p>As I add the processor, more batteries will be added. Multiple batteries, although
+    adding weight, have proven to be more reliable for the following reasons:</p>
 <ul>
-  <li>The power source for the traction motors (and, more importantly, the PWM 
-    controllers) tends to get a lot of switching noise, which wreaks havoc on 
-    the power for analog and low power digital circuitry.</li>
-  <li>If the traction motor batteries go dead (or the fuse blows, etc.), you still 
-    have power for the processor and radios, so you can &quot;call for help&quot;.</li>
+    <li>The power source for the traction motors (and, more importantly, the PWM
+        controllers) tends to get a lot of switching noise, which wreaks havoc on
+        the power for analog and low power digital circuitry.
+    </li>
+    <li>If the traction motor batteries go dead (or the fuse blows, etc.), you still
+        have power for the processor and radios, so you can &quot;call for help&quot;.
+    </li>
 </ul>
-<p>On Roger, I used some 24V DC/DC converters to generate isolated 5V power, but, 
-  the converters weren't very efficient (large unloaded static current draw) and 
-  they introduced noise of their own. I have some newer Vicor 24V to 5V DC/DC 
-  converters which are more efficient which I might try using.</p>
-<p>The issue that hasn't been resolved yet is whether to use 4 batteries all told, 
-  2 for traction power, 1 for computers, and 1 for radios.</p>
+<p>On Roger, I used some 24V DC/DC converters to generate isolated 5V power, but,
+    the converters weren't very efficient (large unloaded static current draw) and
+    they introduced noise of their own. I have some newer Vicor 24V to 5V DC/DC
+    converters which are more efficient which I might try using.</p>
+<p>The issue that hasn't been resolved yet is whether to use 4 batteries all told,
+    2 for traction power, 1 for computers, and 1 for radios.</p>
 <h3>Charging</h3>
-<p>For now, I charge the batteries separately using an off the shelf external 
-  12V battery charger. It would be nice to have a single &quot;charging port&quot;, 
-  but that would require switching the traction batteries from series (24V) to 
-  parallel. A single DPDT switch (or relay) can do this (rearrange series to parallel). 
-  An even better solution might be a 3P- or 4PDT that switches all the batteries 
-  from &quot;use&quot; to &quot;charge&quot;, because the single DPDT scheme can 
-  potentially connect 24V to the 12V charger. Putting a diode in series to block 
-  reverse current will prevent the charger from working properly (because of the 
-  0.6V drop across the diode).</p>
+<p>For now, I charge the batteries separately using an off the shelf external
+    12V battery charger. It would be nice to have a single &quot;charging port&quot;,
+    but that would require switching the traction batteries from series (24V) to
+    parallel. A single DPDT switch (or relay) can do this (rearrange series to parallel).
+    An even better solution might be a 3P- or 4PDT that switches all the batteries
+    from &quot;use&quot; to &quot;charge&quot;, because the single DPDT scheme can
+    potentially connect 24V to the 12V charger. Putting a diode in series to block
+    reverse current will prevent the charger from working properly (because of the
+    0.6V drop across the diode).</p>
 <p><img src="images/serparswitch.gif" width="225" height="203"><img src="images/serparswitch2.gif" width="493" height="317"></p>
 <p>&nbsp;</p>
 <hr>
-robot/power.htm - 16 November 2001 - <a href="bucketbot.htm">back to bucket bot</a> 
+robot/power.htm - 16 November 2001 - <a href="bucketbot.htm">back to bucket bot</a>
 - <a href="index.htm">back to robots</a> <br>
-back to <a href="../index.htm">Jim's home page</a> - Copyright 2001 Jim Lux (<a href="mailto:jimlux@earthlink.net?subject=BucketBot%20Power">mail</a>) 
+back to <a href="../index.htm">Jim's home page</a> - Copyright 2001 Jim Lux (<a href="mailto:jimlux@earthlink.net?subject=BucketBot%20Power">mail</a>)
 </body>
 </html>

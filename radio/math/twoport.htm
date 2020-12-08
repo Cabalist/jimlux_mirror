@@ -1,355 +1,373 @@
 <html>
 <head>
-<title>Two Port Matrix stuff</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta name="keywords" content="two port matrix, two port matrix conversion, Z matrix, Y matrix, Pi network, T network">
+    <title>Two Port Matrix stuff</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta name="keywords" content="two port matrix, two port matrix conversion, Z matrix, Y matrix, Pi network, T network">
 </head>
 
 <body bgcolor="#FFFFFF">
 <h2>Two Port Matrices</h2>
-<p>A handy way of manipulating multiple things is to consider them as generalized 
-  two port networks, represented by a 2x2 matrix. There are 4 forms I have found 
-  useful:</p>
-<p>Z (impedance) matrix, which gives the voltages at each port given the currents: 
-  [V]=[Z][I]</p>
-<p>Y (admittance) matrix, which gives the currents at each port given the voltages: 
-  [I]=[Y][V]. The admittance matrix is the foundation of nodal network analysis 
-  programs (like SPICE), which build a row of the matrix for each node, making 
-  use of the fact that the sum of all currents into a given node must be zero.</p>
-<p>ABCD (chain or transmission line) matrix, which gives voltage and current at 
-  one port, given voltage and current at the other.</p>
-<p>S (scattering parameters), which works in terms of incident and reflected waves, 
-  and is very popular in microwave work.</p>
+<p>A handy way of manipulating multiple things is to consider them as generalized
+    two port networks, represented by a 2x2 matrix. There are 4 forms I have found
+    useful:</p>
+<p>Z (impedance) matrix, which gives the voltages at each port given the currents:
+    [V]=[Z][I]</p>
+<p>Y (admittance) matrix, which gives the currents at each port given the voltages:
+    [I]=[Y][V]. The admittance matrix is the foundation of nodal network analysis
+    programs (like SPICE), which build a row of the matrix for each node, making
+    use of the fact that the sum of all currents into a given node must be zero.</p>
+<p>ABCD (chain or transmission line) matrix, which gives voltage and current at
+    one port, given voltage and current at the other.</p>
+<p>S (scattering parameters), which works in terms of incident and reflected waves,
+    and is very popular in microwave work.</p>
 <h3>Conversion among forms</h3>
-<p>One often needs to convert from one form to another. Z and Y matrices are fairly 
-  straightforward to convert, one being the matrix inverse of the other. ABCD 
-  matrices are a bit trickier. In any case, for the limited 2x2 case, explicit 
-  equations can be written.</p>
+<p>One often needs to convert from one form to another. Z and Y matrices are fairly
+    straightforward to convert, one being the matrix inverse of the other. ABCD
+    matrices are a bit trickier. In any case, for the limited 2x2 case, explicit
+    equations can be written.</p>
 <table width="92%" border="1">
-  <tr> 
-    <td>&nbsp;</td>
-    <td> 
-      <div align="center">Z</div>
-    </td>
-    <td> 
-      <div align="center">Y</div>
-    </td>
-    <td> 
-      <div align="center">ABCD</div>
-    </td>
-    <td>S</td>
-  </tr>
-  <tr> 
-    <td>Z</td>
-    <td> 
-      <div align="center"> 
-        <table width="75%" border="1">
-          <tr> 
-            <td>Z11</td>
-            <td>Z12</td>
-          </tr>
-          <tr> 
-            <td>Z21</td>
-            <td>Z22</td>
-          </tr>
-        </table>
-      </div>
-    </td>
-    <td> 
-      <div align="center"> 
-        <table width="75%" border="1">
-          <tr> 
-            <td>Y22/det(Y)</td>
-            <td>-Y12/det(Y)</td>
-          </tr>
-          <tr> 
-            <td>-Y21/det(Y)</td>
-            <td>Y11/det(Y)</td>
-          </tr>
-        </table>
-      </div>
-    </td>
-    <td> 
-      <div align="center"> 
-        <table width="75%" border="1">
-          <tr> 
-            <td>A/C</td>
-            <td>det(T)/C</td>
-          </tr>
-          <tr> 
-            <td>1/C</td>
-            <td>D/C</td>
-          </tr>
-        </table>
-      </div>
-    </td>
-    <td>
-      <table width="75%" border="1">
-        <tr> 
-          <td>(1+S11)(1-S22</td>
-          <td>S21</td>
-        </tr>
-        <tr> 
-          <td>S12</td>
-          <td>S22</td>
-        </tr>
-      </table>
-      <br>
-      denom=(1-S11)(1-S22)-S12*S21</td>
-  </tr>
-  <tr> 
-    <td>Y</td>
-    <td> 
-      <div align="center"> 
-        <table width="75%" border="1">
-          <tr> 
-            <td>Z22/det(Z)</td>
-            <td>-Z12/det(Z)</td>
-          </tr>
-          <tr> 
-            <td>-Z21/det(Z)</td>
-            <td>Z11/det(Z)</td>
-          </tr>
-        </table>
-      </div>
-    </td>
-    <td> 
-      <div align="center"> 
-        <table width="75%" border="1">
-          <tr> 
-            <td>Y11</td>
-            <td>Y12</td>
-          </tr>
-          <tr> 
-            <td>Y21</td>
-            <td>Y22</td>
-          </tr>
-        </table>
-      </div>
-    </td>
-    <td> 
-      <div align="center"> 
-        <table width="75%" border="1">
-          <tr> 
-            <td>D/B</td>
-            <td>-det(T)/B</td>
-          </tr>
-          <tr> 
-            <td>-1/B</td>
-            <td>A/B</td>
-          </tr>
-        </table>
-      </div>
-    </td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr> 
-    <td>ABCD</td>
-    <td> 
-      <div align="center"> 
-        <table width="75%" border="1">
-          <tr> 
-            <td>Z11/Z21</td>
-            <td>det(Z)/Z21</td>
-          </tr>
-          <tr> 
-            <td>1/Z21</td>
-            <td>Z22/Z21</td>
-          </tr>
-        </table>
-      </div>
-    </td>
-    <td> 
-      <div align="center"> 
-        <table width="75%" border="1">
-          <tr> 
-            <td>-Y22/Y21</td>
-            <td>-1/Y21</td>
-          </tr>
-          <tr> 
-            <td>-det(Y)/Y21</td>
-            <td>-Y11/Y12</td>
-          </tr>
-        </table>
-      </div>
-    </td>
-    <td> 
-      <div align="center"> 
-        <table width="75%" border="1">
-          <tr> 
-            <td>A</td>
-            <td>B</td>
-          </tr>
-          <tr> 
-            <td>C</td>
-            <td>D</td>
-          </tr>
-        </table>
-      </div>
-    </td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr> 
-    <td>S</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>
-      <table width="75%" border="1">
-        <tr> 
-          <td>S11</td>
-          <td>S12</td>
-        </tr>
-        <tr> 
-          <td>S21</td>
-          <td>S22</td>
-        </tr>
-      </table>
-    </td>
-  </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>
+            <div align="center">Z</div>
+        </td>
+        <td>
+            <div align="center">Y</div>
+        </td>
+        <td>
+            <div align="center">ABCD</div>
+        </td>
+        <td>S</td>
+    </tr>
+    <tr>
+        <td>Z</td>
+        <td>
+            <div align="center">
+                <table width="75%" border="1">
+                    <tr>
+                        <td>Z11</td>
+                        <td>Z12</td>
+                    </tr>
+                    <tr>
+                        <td>Z21</td>
+                        <td>Z22</td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+        <td>
+            <div align="center">
+                <table width="75%" border="1">
+                    <tr>
+                        <td>Y22/det(Y)</td>
+                        <td>-Y12/det(Y)</td>
+                    </tr>
+                    <tr>
+                        <td>-Y21/det(Y)</td>
+                        <td>Y11/det(Y)</td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+        <td>
+            <div align="center">
+                <table width="75%" border="1">
+                    <tr>
+                        <td>A/C</td>
+                        <td>det(T)/C</td>
+                    </tr>
+                    <tr>
+                        <td>1/C</td>
+                        <td>D/C</td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+        <td>
+            <table width="75%" border="1">
+                <tr>
+                    <td>(1+S11)(1-S22</td>
+                    <td>S21</td>
+                </tr>
+                <tr>
+                    <td>S12</td>
+                    <td>S22</td>
+                </tr>
+            </table>
+            <br>
+            denom=(1-S11)(1-S22)-S12*S21
+        </td>
+    </tr>
+    <tr>
+        <td>Y</td>
+        <td>
+            <div align="center">
+                <table width="75%" border="1">
+                    <tr>
+                        <td>Z22/det(Z)</td>
+                        <td>-Z12/det(Z)</td>
+                    </tr>
+                    <tr>
+                        <td>-Z21/det(Z)</td>
+                        <td>Z11/det(Z)</td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+        <td>
+            <div align="center">
+                <table width="75%" border="1">
+                    <tr>
+                        <td>Y11</td>
+                        <td>Y12</td>
+                    </tr>
+                    <tr>
+                        <td>Y21</td>
+                        <td>Y22</td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+        <td>
+            <div align="center">
+                <table width="75%" border="1">
+                    <tr>
+                        <td>D/B</td>
+                        <td>-det(T)/B</td>
+                    </tr>
+                    <tr>
+                        <td>-1/B</td>
+                        <td>A/B</td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>ABCD</td>
+        <td>
+            <div align="center">
+                <table width="75%" border="1">
+                    <tr>
+                        <td>Z11/Z21</td>
+                        <td>det(Z)/Z21</td>
+                    </tr>
+                    <tr>
+                        <td>1/Z21</td>
+                        <td>Z22/Z21</td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+        <td>
+            <div align="center">
+                <table width="75%" border="1">
+                    <tr>
+                        <td>-Y22/Y21</td>
+                        <td>-1/Y21</td>
+                    </tr>
+                    <tr>
+                        <td>-det(Y)/Y21</td>
+                        <td>-Y11/Y12</td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+        <td>
+            <div align="center">
+                <table width="75%" border="1">
+                    <tr>
+                        <td>A</td>
+                        <td>B</td>
+                    </tr>
+                    <tr>
+                        <td>C</td>
+                        <td>D</td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>S</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>
+            <table width="75%" border="1">
+                <tr>
+                    <td>S11</td>
+                    <td>S12</td>
+                </tr>
+                <tr>
+                    <td>S21</td>
+                    <td>S22</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
 </table>
-<p>The conversions to and from S parameters are a bit more complex, because of 
-  the need to add and subtract the termination resistance. Note that the denominator 
-  is the determininant of the matrices</p>
+<p>The conversions to and from S parameters are a bit more complex, because of
+    the need to add and subtract the termination resistance. Note that the denominator
+    is the determininant of the matrices</p>
 <table width="75%" border="1">
-  <tr> 
-    <td> 
-      <div align="center"> 
-        <table width="51%" border="1">
-          <tr> 
-            <td>1 - S11</td>
-            <td>S21</td>
-          </tr>
-          <tr> 
-            <td>S12</td>
-            <td>1 - S22</td>
-          </tr>
-        </table>
-      </div>
-    </td>
-    <td> 
-      <div align="center"> 
-        <table width="47%" border="1">
-          <tr> 
-            <td>Z11 + 1</td>
-            <td>Z12</td>
-          </tr>
-          <tr> 
-            <td>Z11</td>
-            <td>Z22 +1</td>
-          </tr>
-        </table>
-      </div>
-    </td>
-  </tr>
+    <tr>
+        <td>
+            <div align="center">
+                <table width="51%" border="1">
+                    <tr>
+                        <td>1 - S11</td>
+                        <td>S21</td>
+                    </tr>
+                    <tr>
+                        <td>S12</td>
+                        <td>1 - S22</td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+        <td>
+            <div align="center">
+                <table width="47%" border="1">
+                    <tr>
+                        <td>Z11 + 1</td>
+                        <td>Z12</td>
+                    </tr>
+                    <tr>
+                        <td>Z11</td>
+                        <td>Z22 +1</td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+    </tr>
 </table>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <table width="66%" border="1">
-  <tr> 
-    <td width="50%"><u>(1+S11)*(1-S22)+S12*S21</u><br>
-      (1-S11)*(1-S22)-S12*S21 </td>
-    <td width="50%" height="50%"> 
-      <div align="center"><u>2*S12</u><br>
-        (1-S11)*(1-S22)-S12*S21 </div>
-    </td>
-  </tr>
-  <tr> 
-    <td width="50%">2 * S21/<br>
-      (1-S11)*(1-S22)-S12*S21 </td>
-    <td width="50%" height="50%">(1+S22)*(1-s11)+S12*S21/<br>
-      (1-S11)*(1-S22)-S12*S21 </td>
-  </tr>
+    <tr>
+        <td width="50%"><u>(1+S11)*(1-S22)+S12*S21</u><br>
+            (1-S11)*(1-S22)-S12*S21
+        </td>
+        <td width="50%" height="50%">
+            <div align="center"><u>2*S12</u><br>
+                (1-S11)*(1-S22)-S12*S21
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td width="50%">2 * S21/<br>
+            (1-S11)*(1-S22)-S12*S21
+        </td>
+        <td width="50%" height="50%">(1+S22)*(1-s11)+S12*S21/<br>
+            (1-S11)*(1-S22)-S12*S21
+        </td>
+    </tr>
 </table>
 <p>&nbsp;</p>
 <table width="66%" border="1">
-  <tr> 
-    <td width="50%" height="50%">(Z11-1)*(Z22+1)-Z12*Z21 /<br>
-      (Z11+1)*(Z22+1)-Z12*Z21 </td>
-    <td width="50%" height="50%">2*Z12/<br>
-      (Z11+1)*(Z22+1)-Z12*Z21 </td>
-  </tr>
-  <tr> 
-    <td width="50%" height="50%">2 * Z21/<br>
-      (Z11+1)*(Z22+1)-Z12*Z21</td>
-    <td width="50%" height="50%">(Z11+1)*(Z22-1)-Z12*Z21/<br>
-      (Z11+1)*(Z22+1)-Z12*Z21</td>
-  </tr>
+    <tr>
+        <td width="50%" height="50%">(Z11-1)*(Z22+1)-Z12*Z21 /<br>
+            (Z11+1)*(Z22+1)-Z12*Z21
+        </td>
+        <td width="50%" height="50%">2*Z12/<br>
+            (Z11+1)*(Z22+1)-Z12*Z21
+        </td>
+    </tr>
+    <tr>
+        <td width="50%" height="50%">2 * Z21/<br>
+            (Z11+1)*(Z22+1)-Z12*Z21
+        </td>
+        <td width="50%" height="50%">(Z11+1)*(Z22-1)-Z12*Z21/<br>
+            (Z11+1)*(Z22+1)-Z12*Z21
+        </td>
+    </tr>
 </table>
 <p>Y and S conversions</p>
 <table width="66%" border="1">
-  <tr> 
-    <td width="50%"><u>(1+S22)*(1-S11)+S12*S21</u><br>
-      (1+S11)*(1+S22)-S12*S21 </td>
-    <td width="50%" height="50%"> 
-      <div align="center"><u>-2*S12</u><br>
-        (1+S11)*(1+S22)-S12*S21 </div>
-    </td>
-  </tr>
-  <tr> 
-    <td width="50%">-2 * S21/<br>
-      (1+S11)*(1+S22)-S12*S21 </td>
-    <td width="50%" height="50%">(1+S22)*(1-s11)+S12*S21/<br>
-      (1+S11)*(1+S22)-S12*S21 </td>
-  </tr>
+    <tr>
+        <td width="50%"><u>(1+S22)*(1-S11)+S12*S21</u><br>
+            (1+S11)*(1+S22)-S12*S21
+        </td>
+        <td width="50%" height="50%">
+            <div align="center"><u>-2*S12</u><br>
+                (1+S11)*(1+S22)-S12*S21
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td width="50%">-2 * S21/<br>
+            (1+S11)*(1+S22)-S12*S21
+        </td>
+        <td width="50%" height="50%">(1+S22)*(1-s11)+S12*S21/<br>
+            (1+S11)*(1+S22)-S12*S21
+        </td>
+    </tr>
 </table>
 <p>&nbsp;</p>
 <table width="66%" border="1">
-  <tr> 
-    <td width="50%" height="50%">(1-Y11)*(1+Y22)+Y12*Y21 /<br>
-      (Y11+1)*(Y22+1)-Y12*Y21 </td>
-    <td width="50%" height="50%">-2*Y12/<br>
-      (Y11+1)*(Y22+1)-Y12*Y21 </td>
-  </tr>
-  <tr> 
-    <td width="50%" height="50%">-2 * Y21/<br>
-      (Y11+1)*(Y22+1)-Y12*Y21</td>
-    <td width="50%" height="50%">(1+Y11)*(1-Y22)+Y12*Y21/<br>
-      (Y11+1)*(Y22+1)-Y12*Y21</td>
-  </tr>
+    <tr>
+        <td width="50%" height="50%">(1-Y11)*(1+Y22)+Y12*Y21 /<br>
+            (Y11+1)*(Y22+1)-Y12*Y21
+        </td>
+        <td width="50%" height="50%">-2*Y12/<br>
+            (Y11+1)*(Y22+1)-Y12*Y21
+        </td>
+    </tr>
+    <tr>
+        <td width="50%" height="50%">-2 * Y21/<br>
+            (Y11+1)*(Y22+1)-Y12*Y21
+        </td>
+        <td width="50%" height="50%">(1+Y11)*(1-Y22)+Y12*Y21/<br>
+            (Y11+1)*(Y22+1)-Y12*Y21
+        </td>
+    </tr>
 </table>
 <p>&nbsp;</p>
-<p>This <a href="software/twoport.xls">Excel spreadsheet</a> contains conversions 
-  among Z, Y, and ABCD matrices. You can copy and paste the relevant cells as 
-  needed. Two forms are provided: the first has the real and imaginary components 
-  in separate cells, and should work in almost any form of spreadsheet; the second 
-  uses the complex math functions provided in the Analysis ToolPak.</p>
+<p>This <a href="software/twoport.xls">Excel spreadsheet</a> contains conversions
+    among Z, Y, and ABCD matrices. You can copy and paste the relevant cells as
+    needed. Two forms are provided: the first has the real and imaginary components
+    in separate cells, and should work in almost any form of spreadsheet; the second
+    uses the complex math functions provided in the Analysis ToolPak.</p>
 <h3>Z matrix for a T network</h3>
-<p>To generate the Z matrix for a T network, here are the equations. Note that 
-  it degenerates in some cases.</p>
+<p>To generate the Z matrix for a T network, here are the equations. Note that
+    it degenerates in some cases.</p>
 <table width="75%" border="1">
-  <tr>
-    <td><img src="images/tnet.gif" width="230" height="116"></td>
-    <td>z11 = Z1 + Z3<br>
-      z22 = Z2 + Z3<br>
-      z21,z12 = Z3</td>
-  </tr>
+    <tr>
+        <td><img src="images/tnet.gif" width="230" height="116"></td>
+        <td>z11 = Z1 + Z3<br>
+            z22 = Z2 + Z3<br>
+            z21,z12 = Z3
+        </td>
+    </tr>
 </table>
 <p>&nbsp;</p>
 <h3>Y matrix for a Pi network</h3>
 <p>To generate the Y matrix for a Pi network, here are the equations.</p>
 <table width="75%" border="1">
-  <tr>
-    <td><img src="images/pinet.gif" width="230" height="113"></td>
-    <td>
-      <p>y11 = Ya + Yc = 1/Za + 1/Zc<br>
-        y22 = Yb + Yc = 1/Zb + 1/Zc<br>
-        y21,y12 = Yc = 1/Zc</p>
-      </td>
-  </tr>
+    <tr>
+        <td><img src="images/pinet.gif" width="230" height="113"></td>
+        <td>
+            <p>y11 = Ya + Yc = 1/Za + 1/Zc<br>
+                y22 = Yb + Yc = 1/Zb + 1/Zc<br>
+                y21,y12 = Yc = 1/Zc</p>
+        </td>
+    </tr>
 </table>
 <p>&nbsp;</p>
 <h3>More reference information</h3>
-<p>Most network analysis textbooks cover this in some detail. The reference I've 
-  used the most is:<br>
-  M.E. Van Valkenburg, <i>Network Analysis</i>, 2nd ed., Prentice-Hall, 1964 (There's 
-  probably a newer edition)</p>
-<p>S parameters are covered by HP applications notes (especially AN95 and AN95-1), 
-  and a nice writeup at http://www.sandiego.edu/~ekim/e194rfs01/sparm2.pdf</p>
+<p>Most network analysis textbooks cover this in some detail. The reference I've
+    used the most is:<br>
+    M.E. Van Valkenburg, <i>Network Analysis</i>, 2nd ed., Prentice-Hall, 1964 (There's
+    probably a newer edition)</p>
+<p>S parameters are covered by HP applications notes (especially AN95 and AN95-1),
+    and a nice writeup at http://www.sandiego.edu/~ekim/e194rfs01/sparm2.pdf</p>
 <p>http://cp.literature.agilent.com/litweb/pdf/5952-1087.pdf</p>
-<p>radio/math/twoport.htm - 31 Dec 2002 - <a href="mailto:jimlux@earthlink.net?Subject=Two%20Ports">Jim 
-  Lux</a><br>
-  (<a href="index.htm">radio math index</a>) (<a href="../index.htm">radio index</a>) 
-  (<a href="http://home.earthlink.net/%7Ejimlux/index.htm">Jim's home page</a>)</p>
+<p>radio/math/twoport.htm - 31 Dec 2002 - <a href="mailto:jimlux@earthlink.net?Subject=Two%20Ports">Jim
+    Lux</a><br>
+    (<a href="index.htm">radio math index</a>) (<a href="../index.htm">radio index</a>)
+    (<a href="http://home.earthlink.net/%7Ejimlux/index.htm">Jim's home page</a>)</p>
 </body>
 </html>

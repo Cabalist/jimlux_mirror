@@ -1,64 +1,64 @@
 <html>
 <head>
-<title>Tesla Coil Topload and Spark Modeling</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>Tesla Coil Topload and Spark Modeling</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 </head>
 
 <body bgcolor="#FFFFFF">
 <p>Thoughts on advanced modeling of sparks and toploads</p>
 <p>&nbsp;</p>
-<p>The simple TC model which has stood the test of time is pretty simple. The 
-  coupled LC resonators, with the top load modeled as a single capacitor, and 
-  an empirical model of the spark as a 220k resistor with a several pF capacitor. 
-  The spark model was developed by Terry Fritz on the TCML in around 2001/2002 
-  by adjusting a SPICE model to match measured data on a test coil, based on some 
-  discussions on the TCML back in June 1998.</p>
+<p>The simple TC model which has stood the test of time is pretty simple. The
+    coupled LC resonators, with the top load modeled as a single capacitor, and
+    an empirical model of the spark as a 220k resistor with a several pF capacitor.
+    The spark model was developed by Terry Fritz on the TCML in around 2001/2002
+    by adjusting a SPICE model to match measured data on a test coil, based on some
+    discussions on the TCML back in June 1998.</p>
 <p><img src="images/tc1model.png" width="842" height="217"></p>
-<p>While this model seems to replicate the primary/secondary behavior as far as 
-  currents and voltages pretty well, it doesn't necessarily give much insight 
-  into what makes big sparks. That is, there is obviously some fairly complex 
-  interaction between the growth of the spark and the flow of charge into the 
-  topload from the secondary inductor. If for no other reason, the physical topload 
-  is often on the order of a meter across, and it takes finite time for the charge 
-  to flow from one side to the other to support the leader growth. For this reason, 
-  I propose a somewhat more complex model of the spark and the topload.</p>
-<p>First, a model of the spark. Based on the discussion in Bazelyan and Raizer 
-  (Spark Discharge, CRC Press, 1998), I think the spark can be modeled as a gradually 
-  growing distributed R and C. As described in B&amp;R, a leader grows by charge 
-  flowing through the spark channel accumulating at the leader head, which they 
-  suggest might be effectively modeled as a 1 cm sphere. Eventually, enough charge 
-  accumulates so that the field on that sphere exceeds the local breakdown strength 
-  of the air (30kV/cm), and a new extension of the channel occurs. The current 
-  flowing in the channel also serves to keep the channel hot and conductive, in 
-  the face of radiative and conduction cooling. As long as charge is available 
-  to extend the channel, the spark will continue to grow:which is how a multi-meter 
-  spark can bridge a distance where the average field is only a few kV/meter, 
-  well below the 3MV/meter breakdown for air. In the diagram below, I've indicated 
-  spark gaps, but in actuality, I think it would be modeled as a conditional statement 
-  in some lines of code, not as trying to actually model a spark gap. Likewise 
-  the spark channel is shown as a sort of lossy transmission line RLC, but in 
-  reality, some time varying model like that of Goncz is probably more appropriate.</p>
+<p>While this model seems to replicate the primary/secondary behavior as far as
+    currents and voltages pretty well, it doesn't necessarily give much insight
+    into what makes big sparks. That is, there is obviously some fairly complex
+    interaction between the growth of the spark and the flow of charge into the
+    topload from the secondary inductor. If for no other reason, the physical topload
+    is often on the order of a meter across, and it takes finite time for the charge
+    to flow from one side to the other to support the leader growth. For this reason,
+    I propose a somewhat more complex model of the spark and the topload.</p>
+<p>First, a model of the spark. Based on the discussion in Bazelyan and Raizer
+    (Spark Discharge, CRC Press, 1998), I think the spark can be modeled as a gradually
+    growing distributed R and C. As described in B&amp;R, a leader grows by charge
+    flowing through the spark channel accumulating at the leader head, which they
+    suggest might be effectively modeled as a 1 cm sphere. Eventually, enough charge
+    accumulates so that the field on that sphere exceeds the local breakdown strength
+    of the air (30kV/cm), and a new extension of the channel occurs. The current
+    flowing in the channel also serves to keep the channel hot and conductive, in
+    the face of radiative and conduction cooling. As long as charge is available
+    to extend the channel, the spark will continue to grow:which is how a multi-meter
+    spark can bridge a distance where the average field is only a few kV/meter,
+    well below the 3MV/meter breakdown for air. In the diagram below, I've indicated
+    spark gaps, but in actuality, I think it would be modeled as a conditional statement
+    in some lines of code, not as trying to actually model a spark gap. Likewise
+    the spark channel is shown as a sort of lossy transmission line RLC, but in
+    reality, some time varying model like that of Goncz is probably more appropriate.</p>
 <p><img src="images/sparkmodel.png" width="791" height="494"></p>
 <p>&nbsp;</p>
-<p>The challenge is, of course, in choosing appropriate values for the resistance, 
-  the capacitance, and the &quot;jump distance&quot; or &quot;modeling increment 
-  size&quot;. The capacitance can probably be selected based on data in B&amp;R.. 
-  it will be on the order of a few pF/meter. Likewise, the inductance is on the 
-  order of 1 uH/meter. Resistive losses in the channel can also be estimated from 
-  the well known properties of sparks with the measured current in the sparks. 
-  (e.g. the measurements made by Greg Leyh on Electrum, or data on free burning 
-  arcs from Somerville or Cobine). The jump length might be best estimated by 
-  using the known propagation velocity of a spark, around 2-3 m/microsecond.</p>
-<p>It's also true that on the scale of the spark channel, the top load cannot 
-  be considered as a point source capacitor, but rather, it's time domain properties 
-  must be considered, perhaps as a network of transmission lines or distributed 
-  LC networks. There should be some sort of FDTD Transmission Line model (after 
-  Yee) that would be suitable.</p>
+<p>The challenge is, of course, in choosing appropriate values for the resistance,
+    the capacitance, and the &quot;jump distance&quot; or &quot;modeling increment
+    size&quot;. The capacitance can probably be selected based on data in B&amp;R..
+    it will be on the order of a few pF/meter. Likewise, the inductance is on the
+    order of 1 uH/meter. Resistive losses in the channel can also be estimated from
+    the well known properties of sparks with the measured current in the sparks.
+    (e.g. the measurements made by Greg Leyh on Electrum, or data on free burning
+    arcs from Somerville or Cobine). The jump length might be best estimated by
+    using the known propagation velocity of a spark, around 2-3 m/microsecond.</p>
+<p>It's also true that on the scale of the spark channel, the top load cannot
+    be considered as a point source capacitor, but rather, it's time domain properties
+    must be considered, perhaps as a network of transmission lines or distributed
+    LC networks. There should be some sort of FDTD Transmission Line model (after
+    Yee) that would be suitable.</p>
 <p><img src="images/tc2model.png" width="682" height="442"></p>
 <p><img src="images/tc3model.png" width="842" height="217"></p>
 <p>&nbsp;</p>
-<p>tcsparkmodel.htm - Copyright 2011, <a href="mailto:jimlux@earthlink.net?subject=TC%20Spark%20Models">James 
-  Lux<br>
-  </a>revised 18 May 2011</p>
+<p>tcsparkmodel.htm - Copyright 2011, <a href="mailto:jimlux@earthlink.net?subject=TC%20Spark%20Models">James
+    Lux<br>
+</a>revised 18 May 2011</p>
 </body>
 </html>

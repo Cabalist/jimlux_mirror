@@ -1,117 +1,117 @@
 <html>
 <head>
-<title>Catenary Curves</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>Catenary Curves</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 </head>
 
 <body bgcolor="#FFFFFF">
 <h2>Catenary Curves</h2>
-<p>The catenary is the shape that a free hanging flexible cable or wire assumes. 
-  The following gives equations for the case where the wire is of uniform mass 
-  per unit length, and the supporting points are at the same height. Cases where 
-  the ends are not at the same height, or where there are point loads (i.e. dipole 
-  antennas supported at ends with a feedline hanging in the middle), can also 
-  be calculated, but these equations won't do it. (They are &quot;left as an exercise 
-  for the reader&quot;...&lt;grin&gt;)</p>
+<p>The catenary is the shape that a free hanging flexible cable or wire assumes.
+    The following gives equations for the case where the wire is of uniform mass
+    per unit length, and the supporting points are at the same height. Cases where
+    the ends are not at the same height, or where there are point loads (i.e. dipole
+    antennas supported at ends with a feedline hanging in the middle), can also
+    be calculated, but these equations won't do it. (They are &quot;left as an exercise
+    for the reader&quot;...&lt;grin&gt;)</p>
 <p>The picture below defines some terminology and the reference points.</p>
 <p><img src="images/catenary.gif" width="689" height="245"></p>
 <p>We assume that the origin is at the center of the span.</p>
 <p>Total span = L<br>
-  Sag in the cable = h<br>
-  So, the coordinates of the endpoints are (+/- L/2,h).</p>
+    Sag in the cable = h<br>
+    So, the coordinates of the endpoints are (+/- L/2,h).</p>
 <p>The weight per unit length = w</p>
 <p>Total length of wire/cable = S</p>
 <p>Length along the cable from the origin = s</p>
-<p>Fh is the horizontal force component everywhere, and is equal to half the tension 
-  at the center.</p>
+<p>Fh is the horizontal force component everywhere, and is equal to half the tension
+    at the center.</p>
 <p></p>
 <h3>Equations </h3>
 <p>The horizontal force, in terms of total cable length and sag is</p>
 <blockquote>
-  <p>Fh = w / (8*h) * (S^2 - 4*h^2)</p>
+    <p>Fh = w / (8*h) * (S^2 - 4*h^2)</p>
 </blockquote>
 <p>The y coordinate (height) of any point in terms of the horizontal force</p>
 <blockquote>
-  <p>y= Fh / w * (cosh(w * x / Fh - 1 ) )</p>
+    <p>y= Fh / w * (cosh(w * x / Fh - 1 ) )</p>
 </blockquote>
 <p>The span, given horizontal force, weight, and length of cable</p>
 <blockquote>
-  <p>L = (2 * Fh / w ) * arcsinh(S * w / (2 * Fh))</p>
+    <p>L = (2 * Fh / w ) * arcsinh(S * w / (2 * Fh))</p>
 </blockquote>
-<p>The total cable length, given span and horizontal force (useful for computing 
-  how long a span can be supported)</p>
+<p>The total cable length, given span and horizontal force (useful for computing
+    how long a span can be supported)</p>
 <blockquote>
-  <p>S = (2 * Fh / w ) * sinh( w * L / (2 * Fh))</p>
+    <p>S = (2 * Fh / w ) * sinh( w * L / (2 * Fh))</p>
 </blockquote>
 <p>The arc length from origin (center):</p>
 <blockquote>
-  <p> s = Fh / w * sinh(w * x / Fh)</p>
+    <p> s = Fh / w * sinh(w * x / Fh)</p>
 </blockquote>
 <p>&nbsp;</p>
 <h3>Tension</h3>
-<p>It's also useful to know the peak tension in the cable, which occurs at the 
-  end points. The Vertical force at support is </p>
+<p>It's also useful to know the peak tension in the cable, which occurs at the
+    end points. The Vertical force at support is </p>
 <blockquote>
-  <p> Fv = w * S / 2,</p>
+    <p> Fv = w * S / 2,</p>
 </blockquote>
-<p> <i>i.e.</i> the total weight of the cable divided by two. And, the Horizontal 
-  force, computed above, is Fh. So the tension is simply the combination of the 
-  two:</p>
+<p><i>i.e.</i> the total weight of the cable divided by two. And, the Horizontal
+    force, computed above, is Fh. So the tension is simply the combination of the
+    two:</p>
 <p></p>
-<blockquote> 
-  <p> T^2 = Fh^2 + (w * S / 2)^2</p>
+<blockquote>
+    <p> T^2 = Fh^2 + (w * S / 2)^2</p>
 </blockquote>
-<p>The minimum tension is, of course, Fh, at the center point where the cable 
-  doesn't support any of it's own weight. If you need the tension in between, 
-  you just need to compute the vertical force at a given point, which is equal 
-  to the weight of the cable from that point to the center (<i>i.e.</i> s*w).</p>
+<p>The minimum tension is, of course, Fh, at the center point where the cable
+    doesn't support any of it's own weight. If you need the tension in between,
+    you just need to compute the vertical force at a given point, which is equal
+    to the weight of the cable from that point to the center (<i>i.e.</i> s*w).</p>
 <h3>Unequal supports (approximate)</h3>
-<p>Some equations assuming that the cable forms a parabola (generally a good approximation 
-  if the sag is not too great) taken from the Reference Data for Radio Engineers 
-  book: </p>
+<p>Some equations assuming that the cable forms a parabola (generally a good approximation
+    if the sag is not too great) taken from the Reference Data for Radio Engineers
+    book: </p>
 <p>Two supports, 1 and 2, at heights h1 and h2, respectively<br>
-  The low point is L1/2 from the lower support and L2/2 from the higher support.<br>
-  L0 is the distance between the supports in a straight line<br>
-  L is the distance between the supports in a horizontal distance<br>
-  S is the total cable length<br>
-  w is the weight per unit length<br>
-  T is the tension in a straight line parallel to the line between supports<br>
-  Fh is the horizontal component of the tension<br>
-  alpha is the angle above the horizontal from support 1 to support 2</p>
+    The low point is L1/2 from the lower support and L2/2 from the higher support.<br>
+    L0 is the distance between the supports in a straight line<br>
+    L is the distance between the supports in a horizontal distance<br>
+    S is the total cable length<br>
+    w is the weight per unit length<br>
+    T is the tension in a straight line parallel to the line between supports<br>
+    Fh is the horizontal component of the tension<br>
+    alpha is the angle above the horizontal from support 1 to support 2</p>
 <p>h = h0 = w*L0^2*cos(alpha)/(8*T)</p>
 <p>h1 = w*L1^2/(8*Fh)<br>
-  h2 = w*L2^2/(8*Fh)</p>
+    h2 = w*L2^2/(8*Fh)</p>
 <p>L1/2 = L/2 - ( (h2-h1)*Fh*cos(alpha)/(w*L))<br>
-  L2/2 = L/2 + ((h2-h1)*Fh*cos(alpha)/(w*L))</p>
+    L2/2 = L/2 + ((h2-h1)*Fh*cos(alpha)/(w*L))</p>
 <p>S = L + 4/3 *( h1^2/L1 + h2^2/L2)</p>
 <p><img src="images/catenary2.gif" width="749" height="275"></p>
 <h3>Some worked examples</h3>
-<p>Assume a 40 meter dipole, supported in three points, center and the two ends, 
-  made of AWG#12 copper wire. The actual &quot;leg length&quot; is only 10 meters 
-  nominally, and we want to allow no more than 10 cm (4&quot;) of sag. Will the 
-  wire fail?</p>
-<p>Looking up copper wire in the tables: AWG 12 is 2.05 mm in diameter, and weighs 
-  29.4 kg/km, with an area of 3.309 sq mm. The breaking strength of the wire is 
-  337 pounds for hard drawn (65.7 kips), Medium hard drawn 51kips, 261.6lb, soft 
-  38.5kips, 197.5lb. Copper clad steel is much stronger at 711 or 770 pounds for 
-  40% and 30% copper respectively.</p>
+<p>Assume a 40 meter dipole, supported in three points, center and the two ends,
+    made of AWG#12 copper wire. The actual &quot;leg length&quot; is only 10 meters
+    nominally, and we want to allow no more than 10 cm (4&quot;) of sag. Will the
+    wire fail?</p>
+<p>Looking up copper wire in the tables: AWG 12 is 2.05 mm in diameter, and weighs
+    29.4 kg/km, with an area of 3.309 sq mm. The breaking strength of the wire is
+    337 pounds for hard drawn (65.7 kips), Medium hard drawn 51kips, 261.6lb, soft
+    38.5kips, 197.5lb. Copper clad steel is much stronger at 711 or 770 pounds for
+    40% and 30% copper respectively.</p>
 <h3></h3>
-<p>Calculating: Fh = 36 N; The span will be 9.997 meters; The tension is 37.03N, 
-  for a stress of 10.9 MPa. This is well below the failure loads for copper wire, 
-  even soft annealed.</p>
+<p>Calculating: Fh = 36 N; The span will be 9.997 meters; The tension is 37.03N,
+    for a stress of 10.9 MPa. This is well below the failure loads for copper wire,
+    even soft annealed.</p>
 <h3>Excel spreadsheet</h3>
-<p>An excel spreadsheet with the equations for the equal support height case and 
-  adding in wind forces can be found <a href="software/catenary.xls">here</a>.</p>
-<p>Wind loads are added to the gravity load; worst case.. normally, they'd act 
-  at right angles, so you could take the square root of the sum of the squares. 
-  The load is calculated by assuming a Cd of 1.2 (typical for round cylinders 
-  at these Reynolds numbers)</p>
+<p>An excel spreadsheet with the equations for the equal support height case and
+    adding in wind forces can be found <a href="software/catenary.xls">here</a>.</p>
+<p>Wind loads are added to the gravity load; worst case.. normally, they'd act
+    at right angles, so you could take the square root of the sum of the squares.
+    The load is calculated by assuming a Cd of 1.2 (typical for round cylinders
+    at these Reynolds numbers)</p>
 <h3>References:</h3>
 <p>http://www.du.edu/~jcalvert/math/catenary.htm </p>
-<p>radio/math/catenary.htm - 1 April 2003 - <a href="mailto:w6rmk@earthlink.net?Subject=Catenary%20cables">Jim 
-  Lux</a><br>
-  (<a href="index.htm">math home page</a>) (<a href="../index.htm">radio home 
-  page</a>) (<a href="http://home.earthlink.net/%7Ejimlux/index.htm">Jim's home 
-  page</a>)</p>
+<p>radio/math/catenary.htm - 1 April 2003 - <a href="mailto:w6rmk@earthlink.net?Subject=Catenary%20cables">Jim
+    Lux</a><br>
+    (<a href="index.htm">math home page</a>) (<a href="../index.htm">radio home
+        page</a>) (<a href="http://home.earthlink.net/%7Ejimlux/index.htm">Jim's home
+        page</a>)</p>
 </body>
 </html>

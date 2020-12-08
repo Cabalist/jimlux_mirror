@@ -1,50 +1,50 @@
 <html>
 <head>
-<title>GPS Frequency Stabilized HF Data Links</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>GPS Frequency Stabilized HF Data Links</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 </head>
 
 <body bgcolor="#FFFFFF">
 <h2>GPS Frequency Stabilization of HF Data Links</h2>
-<p>There is a need for automated HF digital data links that don't require active 
-  operator intervention. An example would be a HF APRS station broadcasting GPS 
-  position data. Unfortunately, most amateur HF data links are quite narrow band 
-  (few hundred Hz channel) and require fairly precise tuning (10 Hz) for decent 
-  error performance.Typical synthesized consumer HF transceivers don't have very 
-  good frequency accuracy: a typical spec of 100ppm would be good, and at 10 MHz, 
-  this is 1 kHz . I think the use of narrowband schemes and tight frequency tolerance 
-  is mostly for historical reasons, since they evolved from RTTY (45 baud 170 
-  Hz shift) and HF Packet modems based on Bell 202 standard. Certainly, there 
-  isn't any good performance or legal reason to use such a narrow bandwidth. For 
-  a manually established link, the operator just tunes up and down, watching the 
-  tuning indicator on the modem. This is not acceptable for an automated link.</p>
-<p>Several solutions are possible: 1) Use a better transceiver with better frequency 
-  stability (some transceivers have TCXO's as an option); 2) Use a modulation 
-  scheme that is wider-band and tolerant of mistuning (or that has AFC); and 3) 
-  determine the tuning error and correct it on the fly. Strategy 1 is expensive, 
-  or possibly not available. Strategy 2 has the problem of incompatibility with 
-  the existing installed base, and further, the high signal density in some areas 
-  and limited receiver instantaneous dynamic range means that you need narrow 
-  IF filters for adjacent channel rejection. </p>
-<p>This page discusses a scheme for the third strategy, measuring the transmitter 
-  (and hence the receiver) frequency error, and then retuning to account for the 
-  error. The scheme is simple, and uses parts of the system that already are there 
-  for a typical APRS GPS tracker. The idea is to use the 1pps tick from the gps 
-  receiver as a timing gate for a frequency counter to measure the actual transmitted 
-  frequency of the transmitter. Typical commodity GPS receivers (that have a 1pps 
-  output) are accurate to 500 nSec, or 0.5 ppm, on the 1pps output, when moving. 
-  This is sufficient to get 10 Hz measurement (and hence) tuning accuracy on HF 
-  links in the 30meter band (10 MHz).</p>
-<p><img src="images/mobile.png" width="521" height="485" alt="mobile"> </p>
-<p>A simple frequency counter, which could be as simple as a 8 or 16 bit counter, 
-  measures a sample of the transmitted carrier. (you could also measure some significant 
-  internal signal from the transceiver, if available). The measured frequency 
-  is then used to change the transmitter/receiver frequency, either by changing 
-  the frequencies in the AFSK modem, or by sending actual commands to the transceiver. 
-  The counter can be very simple, because we are really only interested in the 
-  difference in frequency from that expected, since we have sent a tuning command 
-  to the transceiver (either explicitly, or as a channel select). For instance, 
-  a 16 bit counter would give a range of +/- 32 kHz to work with.</p>
+<p>There is a need for automated HF digital data links that don't require active
+    operator intervention. An example would be a HF APRS station broadcasting GPS
+    position data. Unfortunately, most amateur HF data links are quite narrow band
+    (few hundred Hz channel) and require fairly precise tuning (10 Hz) for decent
+    error performance.Typical synthesized consumer HF transceivers don't have very
+    good frequency accuracy: a typical spec of 100ppm would be good, and at 10 MHz,
+    this is 1 kHz . I think the use of narrowband schemes and tight frequency tolerance
+    is mostly for historical reasons, since they evolved from RTTY (45 baud 170
+    Hz shift) and HF Packet modems based on Bell 202 standard. Certainly, there
+    isn't any good performance or legal reason to use such a narrow bandwidth. For
+    a manually established link, the operator just tunes up and down, watching the
+    tuning indicator on the modem. This is not acceptable for an automated link.</p>
+<p>Several solutions are possible: 1) Use a better transceiver with better frequency
+    stability (some transceivers have TCXO's as an option); 2) Use a modulation
+    scheme that is wider-band and tolerant of mistuning (or that has AFC); and 3)
+    determine the tuning error and correct it on the fly. Strategy 1 is expensive,
+    or possibly not available. Strategy 2 has the problem of incompatibility with
+    the existing installed base, and further, the high signal density in some areas
+    and limited receiver instantaneous dynamic range means that you need narrow
+    IF filters for adjacent channel rejection. </p>
+<p>This page discusses a scheme for the third strategy, measuring the transmitter
+    (and hence the receiver) frequency error, and then retuning to account for the
+    error. The scheme is simple, and uses parts of the system that already are there
+    for a typical APRS GPS tracker. The idea is to use the 1pps tick from the gps
+    receiver as a timing gate for a frequency counter to measure the actual transmitted
+    frequency of the transmitter. Typical commodity GPS receivers (that have a 1pps
+    output) are accurate to 500 nSec, or 0.5 ppm, on the 1pps output, when moving.
+    This is sufficient to get 10 Hz measurement (and hence) tuning accuracy on HF
+    links in the 30meter band (10 MHz).</p>
+<p><img src="images/mobile.png" width="521" height="485" alt="mobile"></p>
+<p>A simple frequency counter, which could be as simple as a 8 or 16 bit counter,
+    measures a sample of the transmitted carrier. (you could also measure some significant
+    internal signal from the transceiver, if available). The measured frequency
+    is then used to change the transmitter/receiver frequency, either by changing
+    the frequencies in the AFSK modem, or by sending actual commands to the transceiver.
+    The counter can be very simple, because we are really only interested in the
+    difference in frequency from that expected, since we have sent a tuning command
+    to the transceiver (either explicitly, or as a channel select). For instance,
+    a 16 bit counter would give a range of +/- 32 kHz to work with.</p>
 <hr>
 <p>hflink.htm - 24 January 2000, Jim Lux</p>
 <p>&nbsp;</p>

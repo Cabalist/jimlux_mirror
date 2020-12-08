@@ -1,60 +1,63 @@
 <html>
 <head>
-<title>Dimmers</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>Dimmers</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 </head>
 
 <body bgcolor="#FFFFFF">
 <h2>Dimmers</h2>
-<p>The simple Triac light dimmer (or ceiling fan speed controller) has a lot of 
-  uses. However the simplicity of design, while perfectly suited to nice, well 
-  behaved resistive loads, doesn't work so well for loads that are reactive, or 
-  vary a lot during a half cycle (like a transformer driving a spark gap or discharge 
-  tube). </p>
+<p>The simple Triac light dimmer (or ceiling fan speed controller) has a lot of
+    uses. However the simplicity of design, while perfectly suited to nice, well
+    behaved resistive loads, doesn't work so well for loads that are reactive, or
+    vary a lot during a half cycle (like a transformer driving a spark gap or discharge
+    tube). </p>
 <p>&nbsp;</p>
 <table width="75%" border="0">
-  <tr>
-    <td>Here is the &quot;canonical&quot; TRIAC dimmer schematic. The R and C 
-      form a phase shift (delay) network which delays the line voltage. When the 
-      voltage across the diac gets big enough, it conducts, triggering the triac 
-      ON. In older designs, a neon bulb was used instead of the diac. There are 
-      also devices called Quadracs which combine the diac and triac in one package.</td>
-    <td><img src="images/dimmer1.gif" width="172" height="104"></td>
-  </tr>
+    <tr>
+        <td>Here is the &quot;canonical&quot; TRIAC dimmer schematic. The R and C
+            form a phase shift (delay) network which delays the line voltage. When the
+            voltage across the diac gets big enough, it conducts, triggering the triac
+            ON. In older designs, a neon bulb was used instead of the diac. There are
+            also devices called Quadracs which combine the diac and triac in one package.
+        </td>
+        <td><img src="images/dimmer1.gif" width="172" height="104"></td>
+    </tr>
 </table>
 <table width="75%" border="0">
-  <tr>
-    <td>Here is the usual &quot;two terminal&quot; dimmer schematic. Note that 
-      the voltage across the phase shift network is the voltage across the triac. 
-      For resistive loads, this makes almost no difference, but, for inductive 
-      or capacitive loads, this might not be true, since the load current and 
-      voltage may not be in phase.</td>
-    <td><img src="images/dimmer2.gif" width="172" height="134"></td>
-  </tr>
+    <tr>
+        <td>Here is the usual &quot;two terminal&quot; dimmer schematic. Note that
+            the voltage across the phase shift network is the voltage across the triac.
+            For resistive loads, this makes almost no difference, but, for inductive
+            or capacitive loads, this might not be true, since the load current and
+            voltage may not be in phase.
+        </td>
+        <td><img src="images/dimmer2.gif" width="172" height="134"></td>
+    </tr>
 </table>
 <table width="75%" border="0">
-  <tr>
-    <td>This is a conceptual view of how the triac dimmer looks, using the back 
-      to back SCR model of a triac. This isn't perfectly accurate, but will serve 
-      to illustrate the problem. Note that on a positive going half cycle, when 
-      the voltage across the diac gets high enough, it conducts, and D2 will turn 
-      on. But, for a negative going half cycle, the path to turn on D1 is through 
-      the load. If the load isn't a nice resistive one, this might cause triggering 
-      problems.</td>
-    <td><img src="images/dimmer3.gif" width="214" height="113"></td>
-  </tr>
+    <tr>
+        <td>This is a conceptual view of how the triac dimmer looks, using the back
+            to back SCR model of a triac. This isn't perfectly accurate, but will serve
+            to illustrate the problem. Note that on a positive going half cycle, when
+            the voltage across the diac gets high enough, it conducts, and D2 will turn
+            on. But, for a negative going half cycle, the path to turn on D1 is through
+            the load. If the load isn't a nice resistive one, this might cause triggering
+            problems.
+        </td>
+        <td><img src="images/dimmer3.gif" width="214" height="113"></td>
+    </tr>
 </table>
-<p>Reactive loads can sometimes be tamed by the expedient of putting a resistive 
-  load in parallel. A small light bulb or a resistor works well. More sophisticated 
-  phase control circuits use isolated trigger circuits (using transformers or 
-  optoisolators) to generate very consistent trigger pulses. For some loads, preceding 
-  the dimmer with a bridge rectifier might help improve the consistency, because 
-  the polarity of the pulses will always be the same. Another approach is to put 
-  the bridge around the dimmer, as illustrated in the figure below. </p>
+<p>Reactive loads can sometimes be tamed by the expedient of putting a resistive
+    load in parallel. A small light bulb or a resistor works well. More sophisticated
+    phase control circuits use isolated trigger circuits (using transformers or
+    optoisolators) to generate very consistent trigger pulses. For some loads, preceding
+    the dimmer with a bridge rectifier might help improve the consistency, because
+    the polarity of the pulses will always be the same. Another approach is to put
+    the bridge around the dimmer, as illustrated in the figure below. </p>
 <p><img src="images/dimmer4.gif" width="136" height="105"></p>
 <hr>
-hv/dimmer.htm - 1 November 2001 - <a href="hvmain.htm">hv main page</a> - <a href="http://home.earthlink.net/%7Ejimlux/index.htm">Jim's 
-home page</a> - <a href="mailto:jimlux@earthlink.net?Subject=Dimmers">mail to 
-Jim Lux</a> 
+hv/dimmer.htm - 1 November 2001 - <a href="hvmain.htm">hv main page</a> - <a href="http://home.earthlink.net/%7Ejimlux/index.htm">Jim's
+    home page</a> - <a href="mailto:jimlux@earthlink.net?Subject=Dimmers">mail to
+    Jim Lux</a>
 </body>
 </html>

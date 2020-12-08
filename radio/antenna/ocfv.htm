@@ -1,24 +1,24 @@
 <html>
 <head>
-<title>Off Center Fed Inverted V Dipole</title>
-<meta name="keywords" content="Off Center Fed Dipole, Inverted V Dipole, WARC Bands, NEC Model, antenna, amateur radio">
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>Off Center Fed Inverted V Dipole</title>
+    <meta name="keywords" content="Off Center Fed Dipole, Inverted V Dipole, WARC Bands, NEC Model, antenna, amateur radio">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 </head>
 
 <body bgcolor="#FFFFFF">
 <p>Off Center Fed Inverted V Dipole</p>
-<p>This was an investigation into whether an inverted V dipole, notionally cut 
-  for 20m, could be fed offcenter to work on 20, 17, 15, 12, AND 10. The summary 
-  is that you can find a spot where it will be reasonably resonant on 10 and 20 
-  (i.e. two half waves or a single half wave), but the rest is impossible.</p>
-<p>A NEC model file was built, and run using 4NEC2 to step through the possible 
-  feed points. The dipole is modeled as 2 arms, each with 50 segments (so, about 
-  10 cm/segment) and a bridging segment at the apex. Here's the model and a rendering 
-  of the antenna, fed in the 20 m band, showing high current in the middle where 
-  you would expect it.</p>
+<p>This was an investigation into whether an inverted V dipole, notionally cut
+    for 20m, could be fed offcenter to work on 20, 17, 15, 12, AND 10. The summary
+    is that you can find a spot where it will be reasonably resonant on 10 and 20
+    (i.e. two half waves or a single half wave), but the rest is impossible.</p>
+<p>A NEC model file was built, and run using 4NEC2 to step through the possible
+    feed points. The dipole is modeled as 2 arms, each with 50 segments (so, about
+    10 cm/segment) and a bridging segment at the apex. Here's the model and a rendering
+    of the antenna, fed in the 20 m band, showing high current in the middle where
+    you would expect it.</p>
 <table width="75%" border="0">
-  <tr>
-    <td><pre>
+    <tr>
+        <td><pre>
 CM Off center fed inverted V
 CM 
 CM built on a 10m square...
@@ -42,28 +42,29 @@ LD	5	0	0	0	5.8E7
 EX	0	101	iseg	00	1	0
 FR	0	1	0	0	14.3	0.1
 XQ
-EN</pre></td>
-    <td><img src="images/ocfv.gif" width="623" height="575"></td>
-  </tr>
+EN</pre>
+        </td>
+        <td><img src="images/ocfv.gif" width="623" height="575"></td>
+    </tr>
 </table>
-<p>I used the &quot;EVALUATE&quot; feature of the 4NEC2 optimizer to change the 
-  feedpoint segment number within the wire on one side. 4NEC2 generates a file 
-  called &quot;optimizer.log&quot;, which you can paste into an Excel spreadsheet 
-  for later processing. A separate run is needed for each frequency, so I did 
-  5 runs, at: 14.2, 18.110, 21.3, 24.93, and 28.3 MHz. Here are some results plotted, 
-  first, the magnitude of the feed point impedance as a function of the feed point 
-  position.</p>
+<p>I used the &quot;EVALUATE&quot; feature of the 4NEC2 optimizer to change the
+    feedpoint segment number within the wire on one side. 4NEC2 generates a file
+    called &quot;optimizer.log&quot;, which you can paste into an Excel spreadsheet
+    for later processing. A separate run is needed for each frequency, so I did
+    5 runs, at: 14.2, 18.110, 21.3, 24.93, and 28.3 MHz. Here are some results plotted,
+    first, the magnitude of the feed point impedance as a function of the feed point
+    position.</p>
 <p><img src="images/ocfvmagz.gif" width="645" height="456"></p>
-<p> I also used Excel to calculate the SWR, plotting that, then fooled with changing 
-  the assumed source impedance. Here's a plot of the VSWR with a 250 ohm (resistive) 
-  source. You can see that the match on 10 and 10 isn't all that bad, but you 
-  can't even see the match for the other bands.</p>
+<p> I also used Excel to calculate the SWR, plotting that, then fooled with changing
+    the assumed source impedance. Here's a plot of the VSWR with a 250 ohm (resistive)
+    source. You can see that the match on 10 and 10 isn't all that bad, but you
+    can't even see the match for the other bands.</p>
 <p><img src="images/ocfvswr.gif" width="514" height="333"></p>
-<p>If you want to fool around yourself, here is the <a href="data/ocfv.nec">NEC 
-  source deck</a> and the <a href="data/ocfvz.xls">Excel Spreadsheet</a>. </p>
-<p>radio/antenna/ocfv.htm - 21 March 2003 - <a href="mailto:w6rmk@earthlink.net?Subject=Off%20Center%20Fed%20Inverted%20V%20Dipole">Jim 
-  Lux</a><br>
-  (<a href="index.htm">antenna page</a>) (<a href="../index.htm">radio page</a>) 
-  (<a href="http://home.earthlink.net/%7Ejimlux/index.htm">Jim's home page</a>)</p>
+<p>If you want to fool around yourself, here is the <a href="data/ocfv.nec">NEC
+    source deck</a> and the <a href="data/ocfvz.xls">Excel Spreadsheet</a>. </p>
+<p>radio/antenna/ocfv.htm - 21 March 2003 - <a href="mailto:w6rmk@earthlink.net?Subject=Off%20Center%20Fed%20Inverted%20V%20Dipole">Jim
+    Lux</a><br>
+    (<a href="index.htm">antenna page</a>) (<a href="../index.htm">radio page</a>)
+    (<a href="http://home.earthlink.net/%7Ejimlux/index.htm">Jim's home page</a>)</p>
 </body>
 </html>

@@ -1,57 +1,57 @@
 <html>
 <head>
-<title>Fusor Math</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta name="keywords" content="FUSOR, FARNSWORTH, CROSS SECTION, NUCLEAR">
+    <title>Fusor Math</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta name="keywords" content="FUSOR, FARNSWORTH, CROSS SECTION, NUCLEAR">
 </head>
 
 <body bgcolor="#FFFFFF">
 <h2>Fusor Math</h2>
-<p>First, a quote from R.W. Hamming: &quot;The purpose of computing is insight, 
-  not numbers.&quot; Use the math to get a feel for what is going on, but don't 
-  expect it to predict everything that will happen.</p>
-<p>This page has descriptions and sample calculations for things of interest for 
-  fusorites:</p>
+<p>First, a quote from R.W. Hamming: &quot;The purpose of computing is insight,
+    not numbers.&quot; Use the math to get a feel for what is going on, but don't
+    expect it to predict everything that will happen.</p>
+<p>This page has descriptions and sample calculations for things of interest for
+    fusorites:</p>
 <p><a href="#rates">Reaction Rates and Cross Sections</a></p>
 <p><a href="#detection">Detection Rates</a></p>
 <p>&nbsp;</p>
 <h3><a name="rates"></a>Reaction Rates</h3>
-<p>Nuclear reaction parameters are usually described in terms of their &quot;cross 
-  section&quot; (sigma, &sigma; ), given in barns (1E-24 cm2) (as in &quot;can't 
-  hit the broad side of a..&quot;). A barn is roughly the actual physical cross 
-  section of a typical nucleus, so, amusing name aside, it is of a scale that 
-  is useful. The cross section relates to a simple physical model of a beam of 
-  point particles (i.e. infinitely small) travelling through a field of targets, 
-  each with an area, perpendicular to the beam. (<a href="crosssectionanalogy.htm">An 
-  analogy</a> describing cross section) The event rate (or reaction rate) is simply</p>
+<p>Nuclear reaction parameters are usually described in terms of their &quot;cross
+    section&quot; (sigma, &sigma; ), given in barns (1E-24 cm2) (as in &quot;can't
+    hit the broad side of a..&quot;). A barn is roughly the actual physical cross
+    section of a typical nucleus, so, amusing name aside, it is of a scale that
+    is useful. The cross section relates to a simple physical model of a beam of
+    point particles (i.e. infinitely small) travelling through a field of targets,
+    each with an area, perpendicular to the beam. (<a href="crosssectionanalogy.htm">An
+        analogy</a> describing cross section) The event rate (or reaction rate) is simply</p>
 <p>events / time = cross section * Intensity of beam * number density of targets</p>
-<p>where the intensity of the beam is specified in terms o fthe number of particles 
-  per unit time crossing an area (A) that is the cross section of the beam (i.e. 
-  it is particles/second/area)</p>
-<p>The number density of targets is the number of targets in a unit volume (for 
-  gases, this is easy, PV=nRT).</p>
-<p>This equation gives you the number of collisions per unit time. Of course, 
-  not every collision results in some specified reaction, so you could add a probability 
-  to the equation, and get the real number of events:</p>
+<p>where the intensity of the beam is specified in terms o fthe number of particles
+    per unit time crossing an area (A) that is the cross section of the beam (i.e.
+    it is particles/second/area)</p>
+<p>The number density of targets is the number of targets in a unit volume (for
+    gases, this is easy, PV=nRT).</p>
+<p>This equation gives you the number of collisions per unit time. Of course,
+    not every collision results in some specified reaction, so you could add a probability
+    to the equation, and get the real number of events:</p>
 <p>events/time = probability * cross section * intensity * numberdensity</p>
-<p>As it happens, the actual physical cross section of a nucleus isn't actually 
-  measureable (since it would require interacting with something, and that interaction 
-  would have a probability that is &lt;1, and quantum effects would bite you, 
-  etc.), so we use what you can measure (reaction rates), and calculate back to 
-  effective cross section (i.e. area), which folds in the probability and the 
-  physical cross section, as well as the relative sizes of target and projectile, 
-  etc.</p>
+<p>As it happens, the actual physical cross section of a nucleus isn't actually
+    measureable (since it would require interacting with something, and that interaction
+    would have a probability that is &lt;1, and quantum effects would bite you,
+    etc.), so we use what you can measure (reaction rates), and calculate back to
+    effective cross section (i.e. area), which folds in the probability and the
+    physical cross section, as well as the relative sizes of target and projectile,
+    etc.</p>
 <p>&nbsp;</p>
 <h3>A practical example</h3>
-<p>Lets say we want to calculate the reaction rate of a beam of deuterons hitting 
-  a stationary target of deuterium gas. The beam current will be 1 mA, and it's 
-  cross sectional area will be 1 cm^2. The target is a cell of deuterium at 20degrees 
-  C at a pressure of 1E-3 torr that is 1 cm thick. Finally, lets assume that the 
-  deuteron beam has an energy of 50 keV.</p>
+<p>Lets say we want to calculate the reaction rate of a beam of deuterons hitting
+    a stationary target of deuterium gas. The beam current will be 1 mA, and it's
+    cross sectional area will be 1 cm^2. The target is a cell of deuterium at 20degrees
+    C at a pressure of 1E-3 torr that is 1 cm thick. Finally, lets assume that the
+    deuteron beam has an energy of 50 keV.</p>
 <h4>Step1: What is the beam intensity?</h4>
-<p> We know the current: 1 mA, so we know how many deuterons per second are flowing 
-  in the beam: 6.24E15 /second (1 Amp = 1 Coulomb/second = 6.242E18 electrons/second). 
-  We've got the area of the beam as well (1 cm^2).</p>
+<p> We know the current: 1 mA, so we know how many deuterons per second are flowing
+    in the beam: 6.24E15 /second (1 Amp = 1 Coulomb/second = 6.242E18 electrons/second).
+    We've got the area of the beam as well (1 cm^2).</p>
 <h4>Step 2: What is the target number density?</h4>
 <p> Use PV=nRT, rearranged as n/V = P/RT.</p>
 <p>R = 8314.3 J/(kmol K)</p>
@@ -61,48 +61,48 @@
 <p>54.7E-12 * 6.022E23 atoms/mol = 3.29E13 atoms/cc</p>
 <h4>Step 3: look up the cross section for the reaction of interest</h4>
 <p>50 keV d(d,n) reaction.. 4.55E-3 barn (= 4.55E-27 sq cm)</p>
-<p>Fusor reactions of interest can be found at <a href="sigma.htm" target="_blank">sigma.htm</a> 
-  (which will open a new window in the browser)</p>
+<p>Fusor reactions of interest can be found at <a href="sigma.htm" target="_blank">sigma.htm</a>
+    (which will open a new window in the browser)</p>
 <h4>Step 4: multiply it out...</h4>
-<p>reaction rate = 4.55E-27 cm^2 * 6.24E15 /(cm^2*second) * 3.29E13 atoms/cc * 
-  1 cc (target vol)</p>
+<p>reaction rate = 4.55E-27 cm^2 * 6.24E15 /(cm^2*second) * 3.29E13 atoms/cc *
+    1 cc (target vol)</p>
 <p>= 934 reactions/second</p>
 <p>&nbsp;</p>
 <h3><a name="detection"></a>Detection rates</h3>
-<p>There are a LOT of factors that go into detection probabilities. There is first 
-  the geometric issue (the particles of interest may go in all directions, but 
-  your sensor only covers some), which can be influenced by the angular distribution 
-  of the particles. For instance, a beam of deuterons hitting a stationary deuterium 
-  target does NOT send all the neutrons off in a nice spherical distribution. 
-  And, depending on the particle, the ones that don't head right towards the detector 
-  might get scattered off something else and then wind up at the detector anyway.</p>
-<p>Finally, there is a detector efficiency issue (i.e. the detector doesn't necessarily 
-  detect every particle). Depending on the detector, the sensitivity might vary 
-  with particle energy as well.</p>
-<p>However for a first approximation, a simple calculation will suffice. Assume 
-  that the particles of interest are emerging from a point source, and evenly 
-  distributed over a sphere. Then, imagine a sphere at the radius of your detector. 
-  All you need to do is calculate the fraction of that sphere that your detector 
-  occupies:</p>
-<p>Detection rate = reaction rate * (diameter of detector^2) / (16 * distance 
-  to detector^2)</p>
+<p>There are a LOT of factors that go into detection probabilities. There is first
+    the geometric issue (the particles of interest may go in all directions, but
+    your sensor only covers some), which can be influenced by the angular distribution
+    of the particles. For instance, a beam of deuterons hitting a stationary deuterium
+    target does NOT send all the neutrons off in a nice spherical distribution.
+    And, depending on the particle, the ones that don't head right towards the detector
+    might get scattered off something else and then wind up at the detector anyway.</p>
+<p>Finally, there is a detector efficiency issue (i.e. the detector doesn't necessarily
+    detect every particle). Depending on the detector, the sensitivity might vary
+    with particle energy as well.</p>
+<p>However for a first approximation, a simple calculation will suffice. Assume
+    that the particles of interest are emerging from a point source, and evenly
+    distributed over a sphere. Then, imagine a sphere at the radius of your detector.
+    All you need to do is calculate the fraction of that sphere that your detector
+    occupies:</p>
+<p>Detection rate = reaction rate * (diameter of detector^2) / (16 * distance
+    to detector^2)</p>
 <h4>A sample calculation</h4>
-<p>Assume a 2&quot; diameter BC-720 neutron scintillator, at 30 cm from the center 
-  of the reaction described in the previous example, which yields about 934 neutrons/second.</p>
+<p>Assume a 2&quot; diameter BC-720 neutron scintillator, at 30 cm from the center
+    of the reaction described in the previous example, which yields about 934 neutrons/second.</p>
 <p>Calculating:</p>
 <p>detection rate = 934 * 5.08^2 / (16 * 30^2) = 934 * 1.79E-3</p>
 <p>= 1.67 potential detections/second.</p>
-<p>In practice, the neutron detector might have an efficiency much less than 100%. 
-  Note also that if you move the detector closer, the rate gets higher faster: 
-  halving the distance will quadruple the detection rate. (Of course, moving it 
-  closer might also introduce noise and other artifacts)</p>
+<p>In practice, the neutron detector might have an efficiency much less than 100%.
+    Note also that if you move the detector closer, the rate gets higher faster:
+    halving the distance will quadruple the detection rate. (Of course, moving it
+    closer might also introduce noise and other artifacts)</p>
 <hr>
 <p>nuc/fusormath.htm - 6 January 1999, Jim Lux<br>
-  revised 13 April 2004 - fixed error in ratio of areas<br>
-  <a href="mailto:jimlux@earthlink.net?subject=fusormath.htm">jimlux@earthlink.net</a> 
-  <br>
-  <a href="index.htm">Nuclear home page</a> | <a href="http://home.earthlink.net/%7Ejimlux/index.htm">Jim's 
-  Home page</a></p>
+    revised 13 April 2004 - fixed error in ratio of areas<br>
+    <a href="mailto:jimlux@earthlink.net?subject=fusormath.htm">jimlux@earthlink.net</a>
+    <br>
+    <a href="index.htm">Nuclear home page</a> | <a href="http://home.earthlink.net/%7Ejimlux/index.htm">Jim's
+        Home page</a></p>
 <p>&nbsp;</p>
 <p>&nbsp; </p>
 </body>

@@ -1,58 +1,58 @@
 <html>
 <head>
-<title>LinxTechnologies module mods</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>LinxTechnologies module mods</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 </head>
 
 <body bgcolor="#FFFFFF">
 <h2>Linx Technologies Modules, Boards, and Modifications</h2>
-<p>I have a set of the <a href="http://www.linxtechnologies.com/" target="_blank">Linx 
-  Technologies</a> 900 MHz band modules intended for Part 15 use, and the evaluation 
-  boards on which to test them. In fact, I think you can't buy just one or two 
-  of the modules by themselves, since the mfr is aiming at mass sales, and wants 
-  to restrict sales to folks who might operate them illegally. These are very 
-  useful modules, and work great.</p>
-<p>For Part 15 use, removable antennas have to use a connector not generally available, 
-  so the Linx eval modules use reverse polarity SMA connectors (that is, the male 
-  thread is the male connector). Personally, I don't think that an SMA connector 
-  is generally any more available than the funky RP one, since firms like Pasternak 
-  sell the RP SMAs, as well as the RP TNCs and other connectors that the Part15 
-  supply world is fond of.</p>
-<p>Anyway, I modified one of the Linx boards to use standard polarity SMAs. This 
-  involves sacrificing the RP SMAs currently soldered in (I couldn't get all the 
-  solder off all 5 pins at the same time) by cutting the connector up with a pair 
-  of big cutters, then removing the pieces one by one. Now I can connect the modules 
-  to another antenna, like the <a href="antenna/helix900.htm">900 MHz helices</a>.</p>
-<p>I modified the boards further to run the RTS line from the RS232 interface 
-  chip (MAX232) to the Tx power down (PwrDn*) control, allowing the host device 
-  to control the half duplex comms. It turns out (of course) that the sense of 
-  the signal is wrong, so an NPN transistor serves as an inverter between the 
-  MAX232 and the Tx module.</p>
-<p>For use in the ham bands, you have to identify your transmitter periodically. 
-  It's not real clear what the minimum requirement is, especially for a data link, 
-  using some homegrown comm protocol. One reference says you can ID in ASCII, 
-  but I decided to take the easy way, and ID with Morse Code by just keying the 
-  Tx on and off using the power down line, nominally connected to the RTS line. 
-  (It's also how I ID the video carrier...)</p>
+<p>I have a set of the <a href="http://www.linxtechnologies.com/" target="_blank">Linx
+    Technologies</a> 900 MHz band modules intended for Part 15 use, and the evaluation
+    boards on which to test them. In fact, I think you can't buy just one or two
+    of the modules by themselves, since the mfr is aiming at mass sales, and wants
+    to restrict sales to folks who might operate them illegally. These are very
+    useful modules, and work great.</p>
+<p>For Part 15 use, removable antennas have to use a connector not generally available,
+    so the Linx eval modules use reverse polarity SMA connectors (that is, the male
+    thread is the male connector). Personally, I don't think that an SMA connector
+    is generally any more available than the funky RP one, since firms like Pasternak
+    sell the RP SMAs, as well as the RP TNCs and other connectors that the Part15
+    supply world is fond of.</p>
+<p>Anyway, I modified one of the Linx boards to use standard polarity SMAs. This
+    involves sacrificing the RP SMAs currently soldered in (I couldn't get all the
+    solder off all 5 pins at the same time) by cutting the connector up with a pair
+    of big cutters, then removing the pieces one by one. Now I can connect the modules
+    to another antenna, like the <a href="antenna/helix900.htm">900 MHz helices</a>.</p>
+<p>I modified the boards further to run the RTS line from the RS232 interface
+    chip (MAX232) to the Tx power down (PwrDn*) control, allowing the host device
+    to control the half duplex comms. It turns out (of course) that the sense of
+    the signal is wrong, so an NPN transistor serves as an inverter between the
+    MAX232 and the Tx module.</p>
+<p>For use in the ham bands, you have to identify your transmitter periodically.
+    It's not real clear what the minimum requirement is, especially for a data link,
+    using some homegrown comm protocol. One reference says you can ID in ASCII,
+    but I decided to take the easy way, and ID with Morse Code by just keying the
+    Tx on and off using the power down line, nominally connected to the RTS line.
+    (It's also how I ID the video carrier...)</p>
 <p>W6RMK = di-dah-dah,dah-di-di-di-dit ,di-dah-dit, dah-dah, dah-di-dah</p>
 <p>= 1,1, 3,1, 3, 3,<br>
-  3,1, 1,1, 1,1, 1,1, 1,3,<br>
-  1,1, 3,1, 1,3,<br>
-  3,1, 3,3,<br>
-  3,1, 1,1, 3,3</p>
+    3,1, 1,1, 1,1, 1,1, 1,3,<br>
+    1,1, 3,1, 1,3,<br>
+    3,1, 3,3,<br>
+    3,1, 1,1, 3,3</p>
 <p>900 MHz Band Plan</p>
-<p>If one is using the Linx modules as an amateur, particularly if you are running 
-  more power or a gain antenna, you should really be aware of the nominal 33 cm 
-  Band Plan. The following diagram shows the ARRL approved Band Plan (which doesn't 
-  have the force of law or regulation, but still is a good thing to follow) compared 
-  with the Linx module channels. It looks like Channel 0 and Channel 5 are appropriate 
-  for use.</p>
+<p>If one is using the Linx modules as an amateur, particularly if you are running
+    more power or a gain antenna, you should really be aware of the nominal 33 cm
+    Band Plan. The following diagram shows the ARRL approved Band Plan (which doesn't
+    have the force of law or regulation, but still is a good thing to follow) compared
+    with the Linx module channels. It looks like Channel 0 and Channel 5 are appropriate
+    for use.</p>
 <p><img src="images/plan33.gif" width="411" height="829"></p>
 <hr>
 <br>
-radio/linx.htm - 19 December 2001 - <a href="index.htm">back to Radio home</a> 
-- <a href="../index.htm">Jim's Home</a> - mail to <a href="mailto:jimlux@earthlink.net?Subject=Linx%20Mods">Jim 
-Lux</a> 
+radio/linx.htm - 19 December 2001 - <a href="index.htm">back to Radio home</a>
+- <a href="../index.htm">Jim's Home</a> - mail to <a href="mailto:jimlux@earthlink.net?Subject=Linx%20Mods">Jim
+    Lux</a>
 <p>&nbsp;</p>
 <p>&nbsp; </p>
 </body>

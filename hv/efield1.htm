@@ -3,29 +3,29 @@
 <html>
 
 <head>
-<title>Estimating maximum E-field</title>
-<meta name="GENERATOR" content="Microsoft FrontPage 1.1">
+    <title>Estimating maximum E-field</title>
+    <meta name="GENERATOR" content="Microsoft FrontPage 1.1">
 </head>
 
 <body>
 <h2>Estimating the magnitude of the Electric Field</h2>
 <p>&#160;</p>
-<p>A lot of practical high voltage design requires knowing what the maximum E-field is, for insulation 
-design, corona reduction, etc. The exact field can, of course, be calculated numerically by solving 
-Laplace's equation over a suitable field with appropriate boundary conditions. As complicated and 
-time consuming as this is, it is necessary when performance is critical, in integrated circuit design, 
-designs for absolute minimum cost, and so forth. However, for more run of the mill experimentation 
-and use, where a little overdesign can be tolerated, approximations to the field are just as useful.</p>
-<p>The mean or average field is just the voltage difference divided by the distance between the 
-conductors. For the proverbial infinite flat plates, this makes the calculation simple.</p>
+<p>A lot of practical high voltage design requires knowing what the maximum E-field is, for insulation
+    design, corona reduction, etc. The exact field can, of course, be calculated numerically by solving
+    Laplace's equation over a suitable field with appropriate boundary conditions. As complicated and
+    time consuming as this is, it is necessary when performance is critical, in integrated circuit design,
+    designs for absolute minimum cost, and so forth. However, for more run of the mill experimentation
+    and use, where a little overdesign can be tolerated, approximations to the field are just as useful.</p>
+<p>The mean or average field is just the voltage difference divided by the distance between the
+    conductors. For the proverbial infinite flat plates, this makes the calculation simple.</p>
 <p><tt>Emax = Eaverage = V / Distance</tt></p>
 <h4>For two concentric cylinders (i.e. like coaxial cable) the maximum field is:</h4>
 <p><tt>Emax = V / ( Rinner * LN( Router / Rinner))</tt></p>
 <p>where:<br>
-<tt>Rinner</tt> is radius of the inner electrode<br>
-<tt>Router</tt> is the radius of the outer electrode<br>
-<tt>LN()</tt> is the log base e of the argument<br>
-<tt>V</tt> is the voltage between the electrodes</p>
+    <tt>Rinner</tt> is radius of the inner electrode<br>
+    <tt>Router</tt> is the radius of the outer electrode<br>
+    <tt>LN()</tt> is the log base e of the argument<br>
+    <tt>V</tt> is the voltage between the electrodes</p>
 <h4>For concentric spheres, using the same variables, the maximum field is:</h4>
 <p><tt>Emax = V * Router / (Rinner *(Router - Rinner))</tt></p>
 <p>&nbsp;</p>
@@ -33,14 +33,14 @@ conductors. For the proverbial infinite flat plates, this makes the calculation 
 <p><tt>Emax = V * SQRT(D^2 - 4 * R^2)/ (2 * R*(D-R)*INVCOSH(D/(2*R)))</tt></p>
 <p>approx equal to: <tt>V / (2*R) * LN(D/R)</tt> if D&gt;&gt;R</p>
 <p>where:<br>
-<tt>D</tt> is distance between the centers of the conductors<br>
-<tt>R</tt> is the radius of the conductors</p>
+    <tt>D</tt> is distance between the centers of the conductors<br>
+    <tt>R</tt> is the radius of the conductors</p>
 <h4>For two spheres:</h4>
 <p><tt>Emax = approximately V/S * F</tt><br>
 </p>
 <p>where:<br>
-<tt>S</tt> is spacing between spheres <tt>= D - 2*R</tt><br>
-<tt>F</tt> is a field enhancement factor = </p>
+    <tt>S</tt> is spacing between spheres <tt>= D - 2*R</tt><br>
+    <tt>F</tt> is a field enhancement factor = </p>
 <p><tt>F = (S/R+1) * sqrt( (S/R+1)^2+8)/4</tt></p>
 <p>&nbsp;</p>
 <p>For spheres, if S&gt;&gt;R then <tt>Emax = approx V/ (2*R)</tt></p>

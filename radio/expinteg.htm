@@ -1,7 +1,7 @@
 <html>
 <head>
-<title>Exponential (sine and cosine) integrals</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>Exponential (sine and cosine) integrals</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 </head>
 
 <body bgcolor="#FFFFFF">
@@ -9,24 +9,24 @@
 <p>The cosine and sine integrals are defined by:</p>
 <p>Ci(x) = EulersConstant + ln(x) + integral[0, infinity]( (cos(t)-1)/t dt)</p>
 <p>Si(x) = integral[0,infinity]( sin(t)/t dt)</p>
-<p>There are some identities to handle various signs of the arguments, and so 
-  forth (obviously, it is a challenge to take Ci(-1)).</p>
-<p> <a href="euler.htm">Euler's constant</a> is approximately 0.57721556... It 
-  pops up (oddly enough) in the Exponential integrals, but also in reference to 
-  prime numbers and other number theory areas. My <a href="euler.htm">Euler's 
-  Constant page</a> has a bunch more detail, and some links to web sites that 
-  give a lot more information on this sort of thing, if you are curious (I was).</p>
-<p>The <a href="http://www.ulib.org/webRoot/Books/Numerical_Recipes/">Numerical Recipes in 
-  Fortran book </a>has a Fortran subroutine for calculating sine and cosine integrals 
-  using a series expansions. A pdf version of the book section is at:</p>
+<p>There are some identities to handle various signs of the arguments, and so
+    forth (obviously, it is a challenge to take Ci(-1)).</p>
+<p><a href="euler.htm">Euler's constant</a> is approximately 0.57721556... It
+    pops up (oddly enough) in the Exponential integrals, but also in reference to
+    prime numbers and other number theory areas. My <a href="euler.htm">Euler's
+        Constant page</a> has a bunch more detail, and some links to web sites that
+    give a lot more information on this sort of thing, if you are curious (I was).</p>
+<p>The <a href="http://www.ulib.org/webRoot/Books/Numerical_Recipes/">Numerical Recipes in
+    Fortran book </a>has a Fortran subroutine for calculating sine and cosine integrals
+    using a series expansions. A pdf version of the book section is at:</p>
 <blockquote>
-  <p><a href="http://www.ulib.org/webRoot/Books/Numerical_Recipes/bookfpdf/f6-9.pdf"> 
-    http://www.ulib.org/webRoot/Books/Numerical_Recipes/bookfpdf/f6-9.pdf</a> 
-  </p>
+    <p><a href="http://www.ulib.org/webRoot/Books/Numerical_Recipes/bookfpdf/f6-9.pdf">
+        http://www.ulib.org/webRoot/Books/Numerical_Recipes/bookfpdf/f6-9.pdf</a>
+    </p>
 </blockquote>
-<p>A VisualBasic module to calculate sine and cosine integrals that I wrote is 
-  also available. (<a href="./download/ExponentialIntegral.bas">ExponentialIntegral.bas</a>) 
-  Both the Fortran and the VB routines calculate both Si and Ci at the same time.</p>
+<p>A VisualBasic module to calculate sine and cosine integrals that I wrote is
+    also available. (<a href="./download/ExponentialIntegral.bas">ExponentialIntegral.bas</a>)
+    Both the Fortran and the VB routines calculate both Si and Ci at the same time.</p>
 <hr width="50%" align="left">
 <p>expinteg.htm - 21 Sep 1999, Jim Lux</p>
 <p>&nbsp; </p>

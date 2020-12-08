@@ -1,9 +1,9 @@
 <HTML>
 <HEAD>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
-<META NAME="Generator" CONTENT="Microsoft Word 97">
-<TITLE>Measuring Watts and VARS with a VOM</TITLE>
-<META NAME="Template" CONTENT="C:\PROGRAM FILES\MICROSOFT OFFICE\OFFICE\html.dot">
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+    <META NAME="Generator" CONTENT="Microsoft Word 97">
+    <TITLE>Measuring Watts and VARS with a VOM</TITLE>
+    <META NAME="Template" CONTENT="C:\PROGRAM FILES\MICROSOFT OFFICE\OFFICE\html.dot">
 </HEAD>
 <BODY LINK="#0000ff" VLINK="#800080">
 
@@ -16,25 +16,28 @@
 <P>where theta is the phase difference between voltage and current. The term cos(theta) is the power factor, typically in the range .80-.95 for motors, fluorescent light ballasts, and the like.</P>
 <P>&nbsp;</P>
 <P>However, say all you have is a trusty multimeter, and you need to measure active power or power factor. With a suitable resistor and a variac, you can measure active power, reactive power, etc. Set up the following circuit:</P>
-<P>&nbsp;<IMG SRC="images/varvom1.gif" ALT="schematic of measurement setup" ></P>
+<P>&nbsp;<IMG SRC="images/varvom1.gif" ALT="schematic of measurement setup"></P>
 <P>The load is represented by a resistance (Rload) and a reactance (Xload) in series. The series resistor shouldn't be too big, say 2-10 ohms. Make sure it can dissipate the power. If your load is going to draw 10 amps, and you have a 10 ohm resistor, it is going to dissipate 1000 Watts. In use, you set the output of the variac to get the load voltage to be whatever its rated input voltage is, e.g. 115Volts. To do the calculation, you'll need the following measurements:</P>
 
 <UL>
-<LI>The RMS voltage at the load (call that V1) </LI>
-<LI>The RMS voltage out of the variac (call that V2) </LI>
-<LI>The RMS current through the load (call that I) </LI>
-<LI>The resistance of the series resistor (call that Rseries) </LI></UL>
+    <LI>The RMS voltage at the load (call that V1)</LI>
+    <LI>The RMS voltage out of the variac (call that V2)</LI>
+    <LI>The RMS current through the load (call that I)</LI>
+    <LI>The resistance of the series resistor (call that Rseries)</LI>
+</UL>
 
 <P>Now do the calculation:</P>
 <P>Resistive component of load</P>
 
 <UL>
-<LI>Rload = ((V2/I)^2 - (V1/I)^2 - Rseries^2)/(2 * Rseries) </LI></UL>
+    <LI>Rload = ((V2/I)^2 - (V1/I)^2 - Rseries^2)/(2 * Rseries)</LI>
+</UL>
 
 <P>Reactive Component of Load </P>
 
 <UL>
-<LI>Xload = sqrt( (V2/I)^2 - Rload^2) </LI></UL>
+    <LI>Xload = sqrt( (V2/I)^2 - Rload^2)</LI>
+</UL>
 
 <P>(Of course, you don't know the sign of the reactive component from this measurement.)&nbsp;</P>
 <P>Active power = Rload * I^2</P>
@@ -46,6 +49,10 @@
 <P>The above technique does not necessarily work for non-sinusoidal waveforms. A good example of a non-sinusoidal waveform is the current drawn by a capacitor input filter (e.g. the input of a switching power supply) or the output of a phase controlled light dimmer.</P>
 <P>&nbsp;</P>
 <P>About <A HREF="pfc.htm">power factor correction</A>.</P>
-<P><HR></P>
-<FONT SIZE=1><ADDRESS>Copyright 1998, Jim Lux/ revised 30 Apr 1998/ </FONT><A HREF="hvmain.htm"><FONT SIZE=1>HV Handbook</FONT></A><FONT SIZE=1> / </FONT><A HREF="../index.htm"><FONT SIZE=1>Jim's Home Page</FONT></A><FONT SIZE=1> / </FONT><A HREF="mailto:jimlux@earthlink.net"><FONT SIZE=1>Email to Jim</FONT></A></ADDRESS></BODY>
+<P>
+<HR>
+</P>
+<FONT SIZE=1>
+    <ADDRESS>Copyright 1998, Jim Lux/ revised 30 Apr 1998/
+</FONT><A HREF="hvmain.htm"><FONT SIZE=1>HV Handbook</FONT></A><FONT SIZE=1> / </FONT><A HREF="../index.htm"><FONT SIZE=1>Jim's Home Page</FONT></A><FONT SIZE=1> / </FONT><A HREF="mailto:jimlux@earthlink.net"><FONT SIZE=1>Email to Jim</FONT></A></ADDRESS></BODY>
 </HTML>

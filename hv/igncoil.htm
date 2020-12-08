@@ -1,113 +1,113 @@
 <html>
 <head>
-<title>Automotive Ignition Coils</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>Automotive Ignition Coils</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 </head>
 
 <body bgcolor="#FFFFFF">
 <h2>Automotive Ignition Coils</h2>
 <h3>Conventional coils</h3>
-<p>The conventional (Kettering) spark ignition system in automotive applications 
-  uses a coil which performs the dual functions of energy storage and voltage 
-  step up. It is typically about a 100:1 turns ratio. DC power is applied, producing 
-  a current of about 5 Amps through the 8 mH primary inductance, storing about 
-  100 mJoule of energy. When the current is interrupted the points opening, (The 
-  points are a set of contacts mechanically driven by a multilobed cam synchronized 
-  to the engine), the voltage rises (L di/dt) to around 300-400 volts, which is 
-  stepped up to around 30-40 kV (open circuit) in the secondary. </p>
-<p>The di/dt is limited to around 50 amps/millisecond by a capacitor (called a 
-  condensor, for historical reasons) across the set of points. If this capacitor 
-  isn't there, the rapid voltage rise as the points open causes an arc across 
-  the points, which absorbs some of the energy, and more important greatly reduces 
-  the di/dt, reducing the output voltage. (The points contacts also typically 
-  melt). Typical capacitances are around a microfarad ( i.e. it stores about the 
-  same amount of energy as the coil inductance does).</p>
-<p>In typical use the coil is connected in series with a ballast resistor of a 
-  few ohms to reduce the voltage, which in turn reduces the current through the 
-  coil so it doesn't burn up. The ballast resistor isn't used during cranking 
-  (when the battery voltage is usually reduced to around 6-8 volts). A typical 
-  DC coil resistance would be around an ohm, and at 12 Volts, the DC current would 
-  be 12Amps, dissipating more than a 100 watts.</p>
-<p>Approximate parameters from Motorola MC3334 ("high energy ignition circuit") data sheet  
-  (online data sheet at
- <a href="http://www.mot-sps.com/books/dl128/pdf/mc3334rev0f.pdf">http://www.mot-sps.com/books/dl128/pdf/mc3334rev0f.pdf</a>). 
-  The data sheet describes the chip as being used in aftermarket Delco (GM) five 
-  terminal ignition applications. </p>
-<p>Ignition coil specs: Leakage L - 0.6 mH, primary R = 0.43 ohms +/- 5% @ 25 
-  C, primary L = 7.5-8.6 mH @ 5A</p>
-<p>This seems to have very low resistance, which would be desirable in this application, 
-  where the control IC uses the pass transistor to limit the coil current.</p>
+<p>The conventional (Kettering) spark ignition system in automotive applications
+    uses a coil which performs the dual functions of energy storage and voltage
+    step up. It is typically about a 100:1 turns ratio. DC power is applied, producing
+    a current of about 5 Amps through the 8 mH primary inductance, storing about
+    100 mJoule of energy. When the current is interrupted the points opening, (The
+    points are a set of contacts mechanically driven by a multilobed cam synchronized
+    to the engine), the voltage rises (L di/dt) to around 300-400 volts, which is
+    stepped up to around 30-40 kV (open circuit) in the secondary. </p>
+<p>The di/dt is limited to around 50 amps/millisecond by a capacitor (called a
+    condensor, for historical reasons) across the set of points. If this capacitor
+    isn't there, the rapid voltage rise as the points open causes an arc across
+    the points, which absorbs some of the energy, and more important greatly reduces
+    the di/dt, reducing the output voltage. (The points contacts also typically
+    melt). Typical capacitances are around a microfarad ( i.e. it stores about the
+    same amount of energy as the coil inductance does).</p>
+<p>In typical use the coil is connected in series with a ballast resistor of a
+    few ohms to reduce the voltage, which in turn reduces the current through the
+    coil so it doesn't burn up. The ballast resistor isn't used during cranking
+    (when the battery voltage is usually reduced to around 6-8 volts). A typical
+    DC coil resistance would be around an ohm, and at 12 Volts, the DC current would
+    be 12Amps, dissipating more than a 100 watts.</p>
+<p>Approximate parameters from Motorola MC3334 ("high energy ignition circuit") data sheet
+    (online data sheet at
+    <a href="http://www.mot-sps.com/books/dl128/pdf/mc3334rev0f.pdf">http://www.mot-sps.com/books/dl128/pdf/mc3334rev0f.pdf</a>).
+    The data sheet describes the chip as being used in aftermarket Delco (GM) five
+    terminal ignition applications. </p>
+<p>Ignition coil specs: Leakage L - 0.6 mH, primary R = 0.43 ohms +/- 5% @ 25
+    C, primary L = 7.5-8.6 mH @ 5A</p>
+<p>This seems to have very low resistance, which would be desirable in this application,
+    where the control IC uses the pass transistor to limit the coil current.</p>
 <h3>Measurement data</h3>
-<p>You can measure the R,L, and C of the windings using a RLC bridge or other 
-  devices. However, you have to watch out in interpreting the results, because 
-  the core losses and distributed capacitance can throw things off. Measuring 
-  a real device, particularly one with two windings, is a non trivial matter, 
-  if you want to get real answers..</p>
+<p>You can measure the R,L, and C of the windings using a RLC bridge or other
+    devices. However, you have to watch out in interpreting the results, because
+    the core losses and distributed capacitance can throw things off. Measuring
+    a real device, particularly one with two windings, is a non trivial matter,
+    if you want to get real answers..</p>
 <h3>HEI Coils</h3>
-<p>Some measured data (BK Precision RLC meter) from HEI type coils (supplied by 
-  Robert Wroblewski). Wroblewski also measured the DC resistances using two different 
-  Digital Multimeters, getting different results (which is not entirely unexpected).</p>
+<p>Some measured data (BK Precision RLC meter) from HEI type coils (supplied by
+    Robert Wroblewski). Wroblewski also measured the DC resistances using two different
+    Digital Multimeters, getting different results (which is not entirely unexpected).</p>
 <p>Wells C834 HEI Ignition Coil, new with core.</p>
 <ul>
-  <li> Primary (yellow, red wires): 3.66mH, 1kHz, Q6.18 
-    <ul>
-      <li>R 144.9 ohms @ 1 kHz, 13 ohms @ 120 Hz</li>
-      <li>R dc 1.16 ohms w/Fluke 45, 0.5 with Wavetek 27xt</li>
-    </ul>
-  </li>
-  <li> Secondary (flat terminal, black wire): 31.0 H, 1kHz, Q7.06
-    <ul>
-      <li>R 1.4 Meg @ 1 kHz, 80.5 K @ 120 Hz</li>
-      <li>7.268 K w/Fluke 45, 7.1K w/Wavetek 27xt</li>
-    </ul>
-  </li>
+    <li> Primary (yellow, red wires): 3.66mH, 1kHz, Q6.18
+        <ul>
+            <li>R 144.9 ohms @ 1 kHz, 13 ohms @ 120 Hz</li>
+            <li>R dc 1.16 ohms w/Fluke 45, 0.5 with Wavetek 27xt</li>
+        </ul>
+    </li>
+    <li> Secondary (flat terminal, black wire): 31.0 H, 1kHz, Q7.06
+        <ul>
+            <li>R 1.4 Meg @ 1 kHz, 80.5 K @ 120 Hz</li>
+            <li>7.268 K w/Fluke 45, 7.1K w/Wavetek 27xt</li>
+        </ul>
+    </li>
 </ul>
-<p>Computed Rpri (from Q) = 3.7 ohms, which doesn't mesh with either AC measurements. 
-  However, the core losses are probably significant and contribute to the difference. 
-  Compare the without core measurements below. The difference in the primary DC 
-  resistance is probably due to the fairly low resistance (test leads make a difference) 
-  and possibly due to the inductance fooling the DMM.</p>
+<p>Computed Rpri (from Q) = 3.7 ohms, which doesn't mesh with either AC measurements.
+    However, the core losses are probably significant and contribute to the difference.
+    Compare the without core measurements below. The difference in the primary DC
+    resistance is probably due to the fairly low resistance (test leads make a difference)
+    and possibly due to the inductance fooling the DMM.</p>
 <p>&nbsp;</p>
 <h4>Without Cores...</h4>
 <p>Carquest HEI Ignition Coil, without core in clear silicone RTV.</p>
 <ul>
-  <li> Primary 191.5uH, 1kHz, Q2.03 
-    <ul>
-      <li>R 3.121 ohms @ 1 kHz, 0.553 @ 120 Hz</li>
-    </ul>
-  </li>
-  <li>Secondary 3.4 H, 1kHz, Q2.53
-    <ul>
-      <li>R 64.31 K @ 1 kHz, 8.054 K @ 120 Hz</li>
-    </ul>
-  </li>
+    <li> Primary 191.5uH, 1kHz, Q2.03
+        <ul>
+            <li>R 3.121 ohms @ 1 kHz, 0.553 @ 120 Hz</li>
+        </ul>
+    </li>
+    <li>Secondary 3.4 H, 1kHz, Q2.53
+        <ul>
+            <li>R 64.31 K @ 1 kHz, 8.054 K @ 120 Hz</li>
+        </ul>
+    </li>
 </ul>
 <p> Wells HEI Ignition Coil, without core in mineral oil.</p>
 <ul>
-  <li> Primary 205.4uH, 1kHz, Q1.89 
-    <ul>
-      <li>R 3.204 @ 1 kHz, 0.624 @ 120 Hz</li>
-    </ul>
-  </li>
-  <li> Secondary 3.9 H, 1kHz, Q2.07 
-    <ul>
-      <li>R 64.55 K @ 1 kHz, 8.693 K @ 120 Hz</li>
-    </ul>
-  </li>
+    <li> Primary 205.4uH, 1kHz, Q1.89
+        <ul>
+            <li>R 3.204 @ 1 kHz, 0.624 @ 120 Hz</li>
+        </ul>
+    </li>
+    <li> Secondary 3.9 H, 1kHz, Q2.07
+        <ul>
+            <li>R 64.55 K @ 1 kHz, 8.693 K @ 120 Hz</li>
+        </ul>
+    </li>
 </ul>
-<p>Calculating Rpri from Q and X(1.28 ohm) again, you get 0.68 ohm. The difference 
-  between the cored and uncored values is probably the core losses. Especially 
-  when compared to the typical numbers from the MC3334 data sheet, the latter 
-  resistance seems more believable.</p>
-<p>The increased apparent resistance at 1 kHz is probably due to the distributed 
-  capacitance within the coil. Some of the C cancels the basic L of the coil, 
-  reducing its measured inductance. Note the 120 Hz measurements are very close 
-  to the DC measurements.</p>
+<p>Calculating Rpri from Q and X(1.28 ohm) again, you get 0.68 ohm. The difference
+    between the cored and uncored values is probably the core losses. Especially
+    when compared to the typical numbers from the MC3334 data sheet, the latter
+    resistance seems more believable.</p>
+<p>The increased apparent resistance at 1 kHz is probably due to the distributed
+    capacitance within the coil. Some of the C cancels the basic L of the coil,
+    reducing its measured inductance. Note the 120 Hz measurements are very close
+    to the DC measurements.</p>
 <hr>
-<font size=1>Copyright 2000, Jim Lux / igncoil..htm / 21 April 2000 / </font><a href="hvmain.htm"><font size=1>Back 
-to HV Home</font></a><font size=1> / </font><a href="../index.htm"><font size=1>Back 
-to home page</font></a><font size=1> / </font><a href="mailto:jimlux@earthlink.net?Subject=Ignition%20Coil%20Page"><font size=1>Mail 
-to Jim</font></a> <br>
-revised 24 April 2000, added new measurements from R. Wroblewski 
+<font size=1>Copyright 2000, Jim Lux / igncoil..htm / 21 April 2000 / </font><a href="hvmain.htm"><font size=1>Back
+    to HV Home</font></a><font size=1> / </font><a href="../index.htm"><font size=1>Back
+    to home page</font></a><font size=1> / </font><a href="mailto:jimlux@earthlink.net?Subject=Ignition%20Coil%20Page"><font size=1>Mail
+    to Jim</font></a> <br>
+revised 24 April 2000, added new measurements from R. Wroblewski
 </body>
 </html>

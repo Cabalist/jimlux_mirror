@@ -3,82 +3,82 @@
 <html>
 
 <head>
-<title>Some practical electrostatic calculations</title>
-<meta name="GENERATOR" content="Microsoft FrontPage 1.1">
+    <title>Some practical electrostatic calculations</title>
+    <meta name="GENERATOR" content="Microsoft FrontPage 1.1">
 </head>
 
 <body>
 <h3>Some practical electrostatic calculations</h3>
-<p>It is often instructive to see a practical application of theoretical principles, so here are some 
-examples:</p>
+<p>It is often instructive to see a practical application of theoretical principles, so here are some
+    examples:</p>
 <ul>
-  <li><a href="#vdgmaxv">Maximum voltage on the Science First(tm) 400kV Van de Graaff 
-    generator</a></li>
-  <li><a href="#vdgcap">Capacitance and stored energy of the 400 kV Van deGraaff</a></li>
-<li><a href="#vdgforce">Force from the 400 kV Van de Graaf on a grounded sphere</a></li>
+    <li><a href="#vdgmaxv">Maximum voltage on the Science First(tm) 400kV Van de Graaff
+        generator</a></li>
+    <li><a href="#vdgcap">Capacitance and stored energy of the 400 kV Van deGraaff</a></li>
+    <li><a href="#vdgforce">Force from the 400 kV Van de Graaf on a grounded sphere</a></li>
 </ul>
 <p>&#160; </p>
 <hr>
-<h4><a name="vdgmaxv">Maximum</a> voltage on the Science First(tm) 400kV Van deGraaff 
-  generator</h4>
-<p>One limit on the maximum voltage that a Van deGraaff generator can reach is 
-  when the electric field strength at the surface of the sphere exceeds the breakdown 
-  for the insulating gas it is immersed in. The section on Van deGraaff generators 
-  describes other limitations such as arcing down the belt. For small demonstration 
-  type generators&#160;operating in room air, however, the E field limit is usually 
-  applicable.</p>
+<h4><a name="vdgmaxv">Maximum</a> voltage on the Science First(tm) 400kV Van deGraaff
+    generator</h4>
+<p>One limit on the maximum voltage that a Van deGraaff generator can reach is
+    when the electric field strength at the surface of the sphere exceeds the breakdown
+    for the insulating gas it is immersed in. The section on Van deGraaff generators
+    describes other limitations such as arcing down the belt. For small demonstration
+    type generators&#160;operating in room air, however, the E field limit is usually
+    applicable.</p>
 <blockquote>
-<p><tt>Field at surface of a sphere = Voltage / Radius of Sphere</tt></p>
+    <p><tt>Field at surface of a sphere = Voltage / Radius of Sphere</tt></p>
 </blockquote>
-<p>So, we use the handy approximation of 30 kV/cm for the breakdown strength of air and rearrange 
-the equation a bit to get:</p>
+<p>So, we use the handy approximation of 30 kV/cm for the breakdown strength of air and rearrange
+    the equation a bit to get:</p>
 <blockquote>
-<p><tt>MaxVoltage = 30 kV * Radius(cm)</tt></p>
+    <p><tt>MaxVoltage = 30 kV * Radius(cm)</tt></p>
 </blockquote>
-<p>The classic Franklin Lee designed Van deGraaff from Scientific American has 
-  an upper electrode about 14 inches in diameter which actually has a minimum 
-  radius of curvature of about 7 inches (it is a &quot;squashed&quot; sphere).</p>
+<p>The classic Franklin Lee designed Van deGraaff from Scientific American has
+    an upper electrode about 14 inches in diameter which actually has a minimum
+    radius of curvature of about 7 inches (it is a &quot;squashed&quot; sphere).</p>
 <blockquote>
-<p><tt>MaxVoltage = 30 kV/cm * 17.5 cm = 525 kV</tt></p>
+    <p><tt>MaxVoltage = 30 kV/cm * 17.5 cm = 525 kV</tt></p>
 </blockquote>
-<p>The generator is advertised as reaching 400 kV, which is probably a realistic assessment, given that 
-it isn't perfectly smooth and that there is an insulating column between the sphereoid and the ground 
-plane at the base.</p>
+<p>The generator is advertised as reaching 400 kV, which is probably a realistic assessment, given that
+    it isn't perfectly smooth and that there is an insulating column between the sphereoid and the ground
+    plane at the base.</p>
 <hr>
 <h4><a name="vdgcap">Capacitance</a> and stored energy of 400 kV Van deGraaff</h4>
-<p>While the upper electrode on that Van deGraaff isn't perfectly spherical, we 
-  can probably approximate it as one to calculate the capacitance and stored energy. 
-  Note that here, we'll use the real radius of the sphereoid, as opposed to the 
-  breakdown voltage calculation, where we used the smallest radius of curvature.</p>
+<p>While the upper electrode on that Van deGraaff isn't perfectly spherical, we
+    can probably approximate it as one to calculate the capacitance and stored energy.
+    Note that here, we'll use the real radius of the sphereoid, as opposed to the
+    breakdown voltage calculation, where we used the smallest radius of curvature.</p>
 <blockquote>
-<p><tt>r = 7 inches = .178 meters</tt></p>
-<p><tt>Csphere = 4*pi*epsilon*r = 111.2 pF/meter * .178 meters = 19.8 
-pF</tt></p>
+    <p><tt>r = 7 inches = .178 meters</tt></p>
+    <p><tt>Csphere = 4*pi*epsilon*r = 111.2 pF/meter * .178 meters = 19.8
+        pF</tt></p>
 </blockquote>
 <p>Now, let's calculate the stored energy: Is it a crack or a bang when we discharge it?</p>
 <blockquote>
-<p><tt>Energy = 0.5 * C * V^2</tt></p>
-<p><tt>Energy = 0.5 * 19.8E-12 * 4E5^2 = 1.5 Joules</tt></p>
+    <p><tt>Energy = 0.5 * C * V^2</tt></p>
+    <p><tt>Energy = 0.5 * 19.8E-12 * 4E5^2 = 1.5 Joules</tt></p>
 </blockquote>
-<p>(A handy form of the energy equation is: <tt>Energy (Joules)= 1/2 * C(microfarads) * 
-V(kilovolts) ^2</tt>. The units nicely cancel.)</p>
+<p>(A handy form of the energy equation is: <tt>Energy (Joules)= 1/2 * C(microfarads) *
+    V(kilovolts) ^2</tt>. The units nicely cancel.)</p>
 <hr>
 <h4><a name="vdgforce">Force</a> from 400 kV Van deGraaff on a grounded sphere</h4>
-<p>Pretty much the first thing people do when they get a demonstration Van deGraaff 
-  is to make sparks from the upper electrode. When I did this, I was amazed at 
-  the electrostatic force on the grounded electrode I was discharging to. It is 
-  one thing to intellectually know about Columb forces, and another to feel them 
-  in your arm muscles (or to watch them move the electrodes around). As it happens, 
-  calculating the field between two conducting spheres is a non trivial task because 
-  the charge isn't evenly distributed. However, let's approximate (since experiment 
-  will determine the exact number, we only need to know if it is a tiny force 
-  or a huge one).</p>
-<p>At 400 kV, the gap between the spheres will be a minimum of 10-15 cm. Let's use 15 cm spacing 
-of 15 cm radius spheres for the calculation. A first order approximation will use Coulomb's law, 
-and treat the sphere as a point charge at the center. First question: How much charge?</p>
+<p>Pretty much the first thing people do when they get a demonstration Van deGraaff
+    is to make sparks from the upper electrode. When I did this, I was amazed at
+    the electrostatic force on the grounded electrode I was discharging to. It is
+    one thing to intellectually know about Columb forces, and another to feel them
+    in your arm muscles (or to watch them move the electrodes around). As it happens,
+    calculating the field between two conducting spheres is a non trivial task because
+    the charge isn't evenly distributed. However, let's approximate (since experiment
+    will determine the exact number, we only need to know if it is a tiny force
+    or a huge one).</p>
+<p>At 400 kV, the gap between the spheres will be a minimum of 10-15 cm. Let's use 15 cm spacing
+    of 15 cm radius spheres for the calculation. A first order approximation will use Coulomb's law,
+    and treat the sphere as a point charge at the center. First question: How much charge?</p>
 <p>q = CV = 19.8E-12 * 400E3 = 7.920E-6 Coulombs</p>
-<p>I've approximated C as a sphere in free space, which certainly isn't the case, but will do for an 
-order of magnitude calculation</p>
+<p>I've approximated C as a sphere in free space, which certainly isn't the case, but will do for an
+    order of magnitude calculation</p>
 <p>Now, let's use Coulomb's law</p>
 <p>F = 1/(4*pi*epsilon) *q1 * q2 / r^2 = 1/111.2E-12 * 7.92E-6 * 7.92E-6 / (.45^2)</p>
 <p>= 2.78 Newtons (approximately)</p>

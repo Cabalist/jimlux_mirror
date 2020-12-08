@@ -1,41 +1,41 @@
 <html>
 <head>
-<title>RS-232 Interface to Passive Phased Array Controller</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>RS-232 Interface to Passive Phased Array Controller</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 </head>
 
 <body bgcolor="#FFFFFF">
 <h2>RS-232 Interface to Passive Phased Array Controller</h2>
-<p>A single RS232 port is used to control all the modified LDG QRP antenna tuners. 
-  A <a href="http://ww.maxim-ic.com/">Maxim</a> MAX208 RS-232 Transceiver chip 
-  is used for level shifting. This chip generates all the necessary bipolar power 
-  needed from the +5V system power. </p>
-<p>The TxD and RxD lines from the 68HC11 processors are all tied together. The 
-  TxD lines are configured (by default) as open drain, so they can share, providing 
-  that the processors don't all try to talk at once. A 5K resistor provides the 
-  pull up for the shared line.The original 1K pull up on the LDG board is disabled 
-  by cutting the trace, otherwise, a single 68HC11 would have to pull down all 
-  10 pullups: 100 ohms or 50 mA!</p>
-<p>The Reset* and XIRQ* lines are all active low, with pull ups on the LDG board, 
-  so an open collector driver using a discrete NPN transistor is driven from the 
-  outputs of the RS232 buffers for DTR and RTS respectively. This transistor does 
-  need to sink 50 mA, supplied by all the LDG boards together. The 1K base resistor 
-  will provide 3-4 mA of drive to the transistor, which should be sufficient to 
-  saturate it, no matter what sort of transistor is used. (I'm using 2N3904's) 
+<p>A single RS232 port is used to control all the modified LDG QRP antenna tuners.
+    A <a href="http://ww.maxim-ic.com/">Maxim</a> MAX208 RS-232 Transceiver chip
+    is used for level shifting. This chip generates all the necessary bipolar power
+    needed from the +5V system power. </p>
+<p>The TxD and RxD lines from the 68HC11 processors are all tied together. The
+    TxD lines are configured (by default) as open drain, so they can share, providing
+    that the processors don't all try to talk at once. A 5K resistor provides the
+    pull up for the shared line.The original 1K pull up on the LDG board is disabled
+    by cutting the trace, otherwise, a single 68HC11 would have to pull down all
+    10 pullups: 100 ohms or 50 mA!</p>
+<p>The Reset* and XIRQ* lines are all active low, with pull ups on the LDG board,
+    so an open collector driver using a discrete NPN transistor is driven from the
+    outputs of the RS232 buffers for DTR and RTS respectively. This transistor does
+    need to sink 50 mA, supplied by all the LDG boards together. The 1K base resistor
+    will provide 3-4 mA of drive to the transistor, which should be sufficient to
+    saturate it, no matter what sort of transistor is used. (I'm using 2N3904's)
 </p>
-<p>The 12V power is regulated to 5V for use by the Maxim chip, and as a reference 
-  against the pullups.</p>
-<p>The schematic below does not show all the capacitors needed by the MAX208 and 
-  filter devices. I also will probably add some LED's to monitor the levels for 
-  convenience. </p>
+<p>The 12V power is regulated to 5V for use by the Maxim chip, and as a reference
+    against the pullups.</p>
+<p>The schematic below does not show all the capacitors needed by the MAX208 and
+    filter devices. I also will probably add some LED's to monitor the levels for
+    convenience. </p>
 <p>&nbsp;</p>
 <p><img src="images/rs232if.gif" width="497" height="440" alt="RS-232 Interface Schematic 7kB"></p>
 <hr>
 <p>rs232if.htm - revised 16 September 1999, Jim Lux<br>
-  <a href="implement.htm">back to implementation details</a> | <a href="phased1.htm">back 
-  to Phased Arrays</a> | <a href="index.htm">radio home</a> <br>
-  <a href="../index.htm">Jim Lux home</a> <br>
-  email comments <a href="mailto:jimlux@earthlink.net?subject=LDG%20rs232%20interface">jimlux@earthlink.net</a> 
+    <a href="implement.htm">back to implementation details</a> | <a href="phased1.htm">back
+        to Phased Arrays</a> | <a href="index.htm">radio home</a> <br>
+    <a href="../index.htm">Jim Lux home</a> <br>
+    email comments <a href="mailto:jimlux@earthlink.net?subject=LDG%20rs232%20interface">jimlux@earthlink.net</a>
 </p>
 </body>
 </html>

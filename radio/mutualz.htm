@@ -1,164 +1,164 @@
 <html>
 <head>
-<title>Mutual Impedances</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>Mutual Impedances</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 </head>
 
 <body bgcolor="#FFFFFF">
 
 <h2>Mutual Impedances</h2>
-<p>Phased arrays are greatly affected by the mutual impedances between the elements, 
-  which can have a large effect on the element currents if the feed network doesn't 
-  take them into account.For instance, in most arrays, even if the element currents 
-  are the same, the element powers are not.</p>
-<p>There are a number of equations to calculate the mutual impedances, with varying 
-  degrees of fidelity, and for various configurations of dipoles in various orientations 
-  and relative positions. One can also use antenna modelling programs to calculate 
-  the mutual impedances even more accurately. I'm not sure that calculating to 
-  that degree is necessary, because the realities of construction precision and 
-  siting will probably have larger effects. </p>
-<p>Note also that the impedances at a phasing network will most likely be affected 
-  by the transmission lines. (<a href="tleqn.htm" target="_blank">transmission 
-  line equations</a>)</p>
+<p>Phased arrays are greatly affected by the mutual impedances between the elements,
+    which can have a large effect on the element currents if the feed network doesn't
+    take them into account.For instance, in most arrays, even if the element currents
+    are the same, the element powers are not.</p>
+<p>There are a number of equations to calculate the mutual impedances, with varying
+    degrees of fidelity, and for various configurations of dipoles in various orientations
+    and relative positions. One can also use antenna modelling programs to calculate
+    the mutual impedances even more accurately. I'm not sure that calculating to
+    that degree is necessary, because the realities of construction precision and
+    siting will probably have larger effects. </p>
+<p>Note also that the impedances at a phasing network will most likely be affected
+    by the transmission lines. (<a href="tleqn.htm" target="_blank">transmission
+        line equations</a>)</p>
 <h3>Example of mutual impedances within a linear array</h3>
-<p>Consider a linear array of 4 parallel half wave dipoles, spaced at 1/4 wavelength. 
-  (See <a href="zsquare.htm">here</a> for a square array of parallel dipoles.)</p>
+<p>Consider a linear array of 4 parallel half wave dipoles, spaced at 1/4 wavelength.
+    (See <a href="zsquare.htm">here</a> for a square array of parallel dipoles.)</p>
 <p align="left"><img src="images/linear4.gif" width="227" height="189"></p>
-<p>The self impedance is 72+j40 ohms (in normal use, the dipole would be cut slightly 
-  short to remove the reactive component). The mutual impedance to elements some 
-  distance away is calculated (and rounded to the nearest ohm) as:</p>
+<p>The self impedance is 72+j40 ohms (in normal use, the dipole would be cut slightly
+    short to remove the reactive component). The mutual impedance to elements some
+    distance away is calculated (and rounded to the nearest ohm) as:</p>
 <table width="41%" border="1">
-  <tr>
-    <td>Self</td>
-    <td>72 + j40</td>
-  </tr>
-  <tr>
-    <td>1/4 Wavelength</td>
-    <td>41 - j30</td>
-  </tr>
-  <tr>
-    <td>1/2 Wavelength</td>
-    <td>-13 - j25</td>
-  </tr>
-  <tr>
-    <td>3/4 Wavelength</td>
-    <td>-20 + j5</td>
-  </tr>
+    <tr>
+        <td>Self</td>
+        <td>72 + j40</td>
+    </tr>
+    <tr>
+        <td>1/4 Wavelength</td>
+        <td>41 - j30</td>
+    </tr>
+    <tr>
+        <td>1/2 Wavelength</td>
+        <td>-13 - j25</td>
+    </tr>
+    <tr>
+        <td>3/4 Wavelength</td>
+        <td>-20 + j5</td>
+    </tr>
 </table>
-<p>From these numbers we can construct a 4x4 matrix [Z] of self and mutual impedances 
-  among all 4 elements. This matrix is used in the equation:</p>
+<p>From these numbers we can construct a 4x4 matrix [Z] of self and mutual impedances
+    among all 4 elements. This matrix is used in the equation:</p>
 <p>[E] = [Z][I]</p>
-<p>where [E] is the vector of feed point voltages, and [I] are the feed point 
-  currents. For pattern synthesis, we want to assume a specified current distribution 
-  that will produce the desired radiation pattern. For instance, a simple distribution 
-  creates an &quot;end fire&quot; pattern: each element current has magnitude 
-  1 amp, and phased in 90 degree steps for each element. This results in the following 
-  feed point voltages which we can divide and multiply by the feed point current 
-  get the feed point impedances and powers. Apparent power is the product of the 
-  magnitude of voltage and current.</p>
+<p>where [E] is the vector of feed point voltages, and [I] are the feed point
+    currents. For pattern synthesis, we want to assume a specified current distribution
+    that will produce the desired radiation pattern. For instance, a simple distribution
+    creates an &quot;end fire&quot; pattern: each element current has magnitude
+    1 amp, and phased in 90 degree steps for each element. This results in the following
+    feed point voltages which we can divide and multiply by the feed point current
+    get the feed point impedances and powers. Apparent power is the product of the
+    magnitude of voltage and current.</p>
 <table width="94%" border="1">
-  <tr> 
-    <td>&nbsp;</td>
-    <td>1</td>
-    <td>2</td>
-    <td>3</td>
-    <td>4</td>
-  </tr>
-  <tr> 
-    <td>Voltage</td>
-    <td>120+j50</td>
-    <td>15 + j 85</td>
-    <td>-85 + j 15</td>
-    <td>-80 + j 50</td>
-  </tr>
-  <tr> 
-    <td>True Power (Watts) </td>
-    <td>120</td>
-    <td>85</td>
-    <td>85</td>
-    <td>50</td>
-  </tr>
-  <tr> 
-    <td>Reactive Power (Vars)</td>
-    <td>46</td>
-    <td>-15</td>
-    <td>-15</td>
-    <td>-76</td>
-  </tr>
-  <tr> 
-    <td>Apparent Power (VA)</td>
-    <td>128</td>
-    <td>86</td>
-    <td>86</td>
-    <td>91</td>
-  </tr>
-  <tr> 
-    <td>Feedpoint Impedance</td>
-    <td>120+j 50</td>
-    <td>85 - j 15</td>
-    <td>85 - j 15</td>
-    <td>50 - j 80</td>
-  </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>Voltage</td>
+        <td>120+j50</td>
+        <td>15 + j 85</td>
+        <td>-85 + j 15</td>
+        <td>-80 + j 50</td>
+    </tr>
+    <tr>
+        <td>True Power (Watts)</td>
+        <td>120</td>
+        <td>85</td>
+        <td>85</td>
+        <td>50</td>
+    </tr>
+    <tr>
+        <td>Reactive Power (Vars)</td>
+        <td>46</td>
+        <td>-15</td>
+        <td>-15</td>
+        <td>-76</td>
+    </tr>
+    <tr>
+        <td>Apparent Power (VA)</td>
+        <td>128</td>
+        <td>86</td>
+        <td>86</td>
+        <td>91</td>
+    </tr>
+    <tr>
+        <td>Feedpoint Impedance</td>
+        <td>120+j 50</td>
+        <td>85 - j 15</td>
+        <td>85 - j 15</td>
+        <td>50 - j 80</td>
+    </tr>
 </table>
-<p>Note that the total power of 340 watts is not divided equally among the elements; 
-  this is why phased arrays, in general, don't want to use an N-way power divider. 
-  Compare this to a single dipole (72+j40) with 1 amp flowing in it: E = 72 - 
-  j 40, true power is 72 watts, with a reactive power of -40 var.</p>
-<p>Another trivial case, a broadside pattern with all elements fed in phase, produces 
-  some interesting feed characteristics.</p>
+<p>Note that the total power of 340 watts is not divided equally among the elements;
+    this is why phased arrays, in general, don't want to use an N-way power divider.
+    Compare this to a single dipole (72+j40) with 1 amp flowing in it: E = 72 -
+    j 40, true power is 72 watts, with a reactive power of -40 var.</p>
+<p>Another trivial case, a broadside pattern with all elements fed in phase, produces
+    some interesting feed characteristics.</p>
 <table width="94%" border="1">
-  <tr> 
-    <td>&nbsp;</td>
-    <td>1</td>
-    <td>2</td>
-    <td>3</td>
-    <td>4</td>
-  </tr>
-  <tr> 
-    <td>Voltage</td>
-    <td>80 - j 90 </td>
-    <td>141 - j 125</td>
-    <td>141 - j 125</td>
-    <td>80 - j 90</td>
-  </tr>
-  <tr> 
-    <td>True Power (Watts) </td>
-    <td>80</td>
-    <td>141</td>
-    <td>141</td>
-    <td>80</td>
-  </tr>
-  <tr> 
-    <td>Reactive Power (Vars)</td>
-    <td>-90</td>
-    <td>-125</td>
-    <td>-125</td>
-    <td>-90</td>
-  </tr>
-  <tr> 
-    <td>Apparent Power (VA)</td>
-    <td>120</td>
-    <td>188</td>
-    <td>188</td>
-    <td>120</td>
-  </tr>
-  <tr> 
-    <td>Feedpoint Impedance</td>
-    <td>80 - j 90 </td>
-    <td>141 - j 125</td>
-    <td>141 - j 125</td>
-    <td>80 - j 90 </td>
-  </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>Voltage</td>
+        <td>80 - j 90</td>
+        <td>141 - j 125</td>
+        <td>141 - j 125</td>
+        <td>80 - j 90</td>
+    </tr>
+    <tr>
+        <td>True Power (Watts)</td>
+        <td>80</td>
+        <td>141</td>
+        <td>141</td>
+        <td>80</td>
+    </tr>
+    <tr>
+        <td>Reactive Power (Vars)</td>
+        <td>-90</td>
+        <td>-125</td>
+        <td>-125</td>
+        <td>-90</td>
+    </tr>
+    <tr>
+        <td>Apparent Power (VA)</td>
+        <td>120</td>
+        <td>188</td>
+        <td>188</td>
+        <td>120</td>
+    </tr>
+    <tr>
+        <td>Feedpoint Impedance</td>
+        <td>80 - j 90</td>
+        <td>141 - j 125</td>
+        <td>141 - j 125</td>
+        <td>80 - j 90</td>
+    </tr>
 </table>
-<p>Again, we have an uneven power distribution: 1:1.76:1.76:1. The moral of the 
-  story is that because of mutual impedances, the power is rarely distributed 
-  evenly among the elements, even if the current is. Remember, we want to control 
-  the current distribution, because that is what controls the pattern.</p>
+<p>Again, we have an uneven power distribution: 1:1.76:1.76:1. The moral of the
+    story is that because of mutual impedances, the power is rarely distributed
+    evenly among the elements, even if the current is. Remember, we want to control
+    the current distribution, because that is what controls the pattern.</p>
 <hr>
 <p>mutualz.htm - Revised 25 Nov 2000, Jim Lux <br>
-  <a href="phased1.htm">back to Phased Arrays </a> | <a href="index.htm">radio 
-  home</a> | <a href="../index.htm">Jim Lux home</a> <br>
-  email comments <a href="mailto:jimlux@earthlink.net?subject=Mutual%20Z">jimlux@earthlink.net</a> 
+    <a href="phased1.htm">back to Phased Arrays </a> | <a href="index.htm">radio
+        home</a> | <a href="../index.htm">Jim Lux home</a> <br>
+    email comments <a href="mailto:jimlux@earthlink.net?subject=Mutual%20Z">jimlux@earthlink.net</a>
 </p>
 </body>
 </html>

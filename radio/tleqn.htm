@@ -1,54 +1,54 @@
 <html>
 <head>
-<title>Transmission Line Equations</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>Transmission Line Equations</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 </head>
 
 <body bgcolor="#FFFFFF">
 <h2>Transmission Line Equations</h2>
 <h4>Impedance transformations</h4>
-<p>If a load of complex impedance Zload is connected to the end of a transmission 
-  line of characteristic impedance Z0 (which may be complex), the impedance at 
-  the other end of the line is Zin, calculated by the following equation:</p>
+<p>If a load of complex impedance Zload is connected to the end of a transmission
+    line of characteristic impedance Z0 (which may be complex), the impedance at
+    the other end of the line is Zin, calculated by the following equation:</p>
 <pre>
 Zin = Z0 * (Zload*cosh(gamma) + Z0*sinh(gamma))/ (Zload*sinh(gamma)+Z0*cosh(gamma))</pre>
 <p>gamma is the complex propagation constant. gamma = alpha + j beta where:</p>
-<blockquote> 
-  <p> alpha is attenuation in nepers (1 neper = 8.688 dB <a href="neper.htm">(more 
-    on nepers)</a>)<br>
-    beta is length in radians</p>
+<blockquote>
+    <p> alpha is attenuation in nepers (1 neper = 8.688 dB <a href="neper.htm">(more
+        on nepers)</a>)<br>
+        beta is length in radians</p>
 </blockquote>
-<p>Some cases of interest are where alpha=0 (i.e. a lossless line) in which case 
-  the hyperbolic functions turn into their trig equivalents, and where beta is 
-  pi/2 or pi.</p>
-<p>If beta = pi/2 (a half wavelength line), then cosh(gamma) = -1 and sinh(gamma) 
-  = 0, so you get:</p>
+<p>Some cases of interest are where alpha=0 (i.e. a lossless line) in which case
+    the hyperbolic functions turn into their trig equivalents, and where beta is
+    pi/2 or pi.</p>
+<p>If beta = pi/2 (a half wavelength line), then cosh(gamma) = -1 and sinh(gamma)
+    = 0, so you get:</p>
 <pre>Zin = Zload</pre>
-<p>If beta = pi/4 ( a quarter wavelength line), then cosh(gamma) = 0 and sinh(gamma) 
-  = 1, so you get:</p>
+<p>If beta = pi/4 ( a quarter wavelength line), then cosh(gamma) = 0 and sinh(gamma)
+    = 1, so you get:</p>
 <pre>Zin = Z0 * Z0/Zload</pre>
 <p>or, written another way:</p>
 <pre>Zin * Zload = Z0*Z0</pre>
-<p>This is the basis of the popular 1/4 wave impedance transformers... To transform 
-  Zin to Zload, you need only construct a quarter wave line with impedance = sqrt(Zin*Zload)</p>
+<p>This is the basis of the popular 1/4 wave impedance transformers... To transform
+    Zin to Zload, you need only construct a quarter wave line with impedance = sqrt(Zin*Zload)</p>
 <h4>Admittance Form</h4>
 <pre>Yin = Y0 * (Yload*cosh(gamma)+Y0*sinh(gamma))/(Y0*cosh(gamma)+Yload*sinh(gamma))</pre>
 <p>&nbsp;</p>
 <h4>Voltages and Currents</h4>
-<p>Some algebraic manipulations can be used to create other forms of the transmission 
-  line equation for voltages and currents, rather than impedances.</p>
-<blockquote> 
-  <pre>Ein = Eload *cosh(gamma)+ Iload * Z0 * sinh(gamma)</pre>
-  <pre>Iin = Iload * cosh(gamma) + Eload * Y0 * sinh(gamma)</pre>
+<p>Some algebraic manipulations can be used to create other forms of the transmission
+    line equation for voltages and currents, rather than impedances.</p>
+<blockquote>
+    <pre>Ein = Eload *cosh(gamma)+ Iload * Z0 * sinh(gamma)</pre>
+    <pre>Iin = Iload * cosh(gamma) + Eload * Y0 * sinh(gamma)</pre>
 </blockquote>
 <p>or, in ABCD matrix form:</p>
-<blockquote> 
-  <pre>E1 = A*E2 + B*I2</pre>
-  <pre>I1 = C*E2 + D*I2</pre>
+<blockquote>
+    <pre>E1 = A*E2 + B*I2</pre>
+    <pre>I1 = C*E2 + D*I2</pre>
 </blockquote>
 <p>where </p>
 <blockquote>
-  <pre>A = cosh(gamma)<br>B = Z0 * sinh(gamma)<br>C = Y0 * sinh(gamma)<br>D = cosh(gamma)</pre>
+    <pre>A = cosh(gamma)<br>B = Z0 * sinh(gamma)<br>C = Y0 * sinh(gamma)<br>D = cosh(gamma)</pre>
 </blockquote>
 <p>Y0 is, of course, = 1 / Z0</p>
 <h4>Impedance of transmission line</h4>
@@ -61,27 +61,27 @@ Zin = Z0 * (Zload*cosh(gamma) + Z0*sinh(gamma))/ (Zload*sinh(gamma)+Z0*cosh(gamm
 <p>for complex arguments, the following may be useful:</p>
 <pre>sinh(a + j b) = .5 * (exp(a)-exp(-a))*cos(b) + j * .5 *(exp(a)+exp(-a))*sin(b)</pre>
 <pre>cosh(a + j b) = .5 * (exp(a)+exp(-a))*cos(b) + j * .5 * (exp(a)-exp(-a))*sin(b)</pre>
-<p>note that if a = zero in the above equations then exp(a) and exp(-a)=1 and 
-  the functions turn into the conventional trig functions:</p>
+<p>note that if a = zero in the above equations then exp(a) and exp(-a)=1 and
+    the functions turn into the conventional trig functions:</p>
 <p>sinh( j b) = sin(b)</p>
 <p>cosh( j b) = cos(b)</p>
 <hr>
 <h3>NEC TL and NT cards</h3>
-<p>On line NEC reference: <a href="http://members.home.net/nec2/part_3/cards/nt.html" target="_blank">Network 
-  (NT)</a> and <a href="http://members.home.net/nec2/part_3/cards/tl.html" target="_blank">Transmission 
-  Line (TL)</a>, both from an online html version of the NEC Part III manual at: 
-  <a href="http://members.home.net/nec2/part_3/toc.html" target="_blank">http://members.home.net/nec2/part_3/toc.html</a></p>
-<p>The TL card is primarily for lossless lines (although, I suppose that if you 
-  had a real shunt admittance on either end, it would be lossy). Of more interest 
-  is the NT (arbitrary two port network) card. This card specifies the admittance 
-  matrix for an arbitrary two port. You only need 3 complex numbers, because the 
-  matrix is symmetric. Here's a quick summary of the format of the card:</p>
+<p>On line NEC reference: <a href="http://members.home.net/nec2/part_3/cards/nt.html" target="_blank">Network
+    (NT)</a> and <a href="http://members.home.net/nec2/part_3/cards/tl.html" target="_blank">Transmission
+    Line (TL)</a>, both from an online html version of the NEC Part III manual at:
+    <a href="http://members.home.net/nec2/part_3/toc.html" target="_blank">http://members.home.net/nec2/part_3/toc.html</a></p>
+<p>The TL card is primarily for lossless lines (although, I suppose that if you
+    had a real shunt admittance on either end, it would be lossy). Of more interest
+    is the NT (arbitrary two port network) card. This card specifies the admittance
+    matrix for an arbitrary two port. You only need 3 complex numbers, because the
+    matrix is symmetric. Here's a quick summary of the format of the card:</p>
 <p><tt>NT, &lt;tag1&gt;,&lt;seg1&gt;,&lt;tag2&gt;,&lt;seg2&gt;, &lt;Y11R&gt;,&lt;Y11I&gt;,&lt;Y12R&gt;,&lt;Y12I&gt;,&lt;Y22R&gt;,&lt;Y22I&gt;</tt></p>
-<p>So all we need to do is convert the &quot;admittance&quot; form of the transmission 
-  line equation (above) into a matrix, and, hopefully, come up with some simple 
-  equations to allow cranking out NT cards from useful things about the transmission 
-  line: length, velocity factor, loss, characteristic impedance. The admittance 
-  matrix tells you the currents, given the voltages:</p>
+<p>So all we need to do is convert the &quot;admittance&quot; form of the transmission
+    line equation (above) into a matrix, and, hopefully, come up with some simple
+    equations to allow cranking out NT cards from useful things about the transmission
+    line: length, velocity factor, loss, characteristic impedance. The admittance
+    matrix tells you the currents, given the voltages:</p>
 <p>I = Y E</p>
 <p>&nbsp;</p>
 <hr>
@@ -91,13 +91,13 @@ Zin = Z0 * (Zload*cosh(gamma) + Z0*sinh(gamma))/ (Zload*sinh(gamma)+Z0*cosh(gamm
 <p>VB module for doing transmission line equations (incomplete) (<a href="./download/transmissionline.bas">transmissionline.bas</a>)</p>
 <h4>Some references on transmission line properties</h4>
 <p>Attenuation at any frequency = (K1 x SqRt(Fmhz) + K2 x Fmhz) </p>
-<p>Attenuation of Coaxial Transmission Lines in the VHF/UHF/Microwave Amateur 
-  and ISM bands <a href="http://hydra.carleton.ca/articles/atten-table.html">http://hydra.carleton.ca/articles/atten-table.html</a></p>
+<p>Attenuation of Coaxial Transmission Lines in the VHF/UHF/Microwave Amateur
+    and ISM bands <a href="http://hydra.carleton.ca/articles/atten-table.html">http://hydra.carleton.ca/articles/atten-table.html</a></p>
 <hr>
 <p>radio/tleqn.htm - Revised 2 November 2001, Jim Lux <br>
-  <a href="phased1.htm"> </a> <a href="index.htm">radio home</a> | <a href="../index.htm">Jim 
-  Lux home</a> <br>
-  email comments <a href="mailto:jimlux@earthlink.net?subject=Transmission%20Lines">jimlux@earthlink.net</a> 
+    <a href="phased1.htm"> </a> <a href="index.htm">radio home</a> | <a href="../index.htm">Jim
+        Lux home</a> <br>
+    email comments <a href="mailto:jimlux@earthlink.net?subject=Transmission%20Lines">jimlux@earthlink.net</a>
 </p>
 </body>
 </html>

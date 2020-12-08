@@ -1,148 +1,148 @@
 <html>
 <head>
-<title>Wind Force on Balls</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>Wind Force on Balls</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 </head>
 
 <body bgcolor="#FFFFFF">
 <h2>Wind Force on Balls </h2>
-<p>When contemplating spherical robots that might operate outdoors, the force 
-  of the wind blowing on the ball is of interest. A detailed calculation would 
-  be quite complex, because of the interaction of the ground surface. However, 
-  for estimation purposes, we can probably bound the force.</p>
+<p>When contemplating spherical robots that might operate outdoors, the force
+    of the wind blowing on the ball is of interest. A detailed calculation would
+    be quite complex, because of the interaction of the ground surface. However,
+    for estimation purposes, we can probably bound the force.</p>
 <p><img src="images/windball1.gif" width="338" height="150"></p>
 <h3>First order approach</h3>
-<p>A simple approach is to consider the force as the aerodynamic drag on a sphere 
-  acting at the center of the sphere. The drag of a sphere is actually somewhat 
-  complex for low speed flow because of boundary layer issues (why golf balls 
-  have dimples, for instance). Some web references are : http://aerodyn.org/Drag/speed-drag.html#sphere 
-  or http://www.princeton.edu/~asmits/Bicycle_web/blunt.html. We can assume as 
-  a sort of worst case that Cd=1.0 (typical for a sphere at lowish Reynolds numbers 
-  (ca. 100)).</p>
+<p>A simple approach is to consider the force as the aerodynamic drag on a sphere
+    acting at the center of the sphere. The drag of a sphere is actually somewhat
+    complex for low speed flow because of boundary layer issues (why golf balls
+    have dimples, for instance). Some web references are : http://aerodyn.org/Drag/speed-drag.html#sphere
+    or http://www.princeton.edu/~asmits/Bicycle_web/blunt.html. We can assume as
+    a sort of worst case that Cd=1.0 (typical for a sphere at lowish Reynolds numbers
+    (ca. 100)).</p>
 <p>Drag = rho * Cd * v^2 * Area </p>
 <p>where</p>
 <p>rho = density of air <br>
-  v = velocity<br>
-  Area = flat plate projected area = pi*r^2 for a sphere</p>
-<p>In practice, the equation is rendered as K*v^2*r^2, where the constant K absorbs: 
-  air density, unit conversion factors, and pi</p>
-<p>For v in m/sec, r in meters, and drag in Newtons, K = 1.184 kg/m^3 * 3.14159 
-  = 3.71964</p>
-<p>For v in mi/hr, r in feet, and drag in pounds, K = K(SI units) * .447 m/sec/(mi/hr) 
-  * 1/3.28^2 (m^2/ft^2) * 1/4.54 pounds/newton = 3.40E-2 (or approximately 1/29.4)</p>
-<p>Some typical numbers for a 1 meter diameter sphere are given in the following 
-  table. Consider that the thing we are really concerned about is the moment which 
-  is trying to turn the sphere, so one should really divide these numbers by 2, 
-  to get the moment in Nmeter. The table shows the mass that would have to be 
-  at the upwind point of the sphere to resist this moment. Clearly, one can't 
-  put all the mass there, so one would need more mass, with the CG somewhat inside 
-  the shell.</p>
+    v = velocity<br>
+    Area = flat plate projected area = pi*r^2 for a sphere</p>
+<p>In practice, the equation is rendered as K*v^2*r^2, where the constant K absorbs:
+    air density, unit conversion factors, and pi</p>
+<p>For v in m/sec, r in meters, and drag in Newtons, K = 1.184 kg/m^3 * 3.14159
+    = 3.71964</p>
+<p>For v in mi/hr, r in feet, and drag in pounds, K = K(SI units) * .447 m/sec/(mi/hr)
+    * 1/3.28^2 (m^2/ft^2) * 1/4.54 pounds/newton = 3.40E-2 (or approximately 1/29.4)</p>
+<p>Some typical numbers for a 1 meter diameter sphere are given in the following
+    table. Consider that the thing we are really concerned about is the moment which
+    is trying to turn the sphere, so one should really divide these numbers by 2,
+    to get the moment in Nmeter. The table shows the mass that would have to be
+    at the upwind point of the sphere to resist this moment. Clearly, one can't
+    put all the mass there, so one would need more mass, with the CG somewhat inside
+    the shell.</p>
 <table width="100%" border="0">
-  <tr>
-    <td>
-      <table width="30%" border="1">
-        <tr> 
-          <td>V (m/sec)</td>
-          <td>F (Newton)</td>
-          <td>Mass (kg)</td>
-        </tr>
-        <tr> 
-          <td>1</td>
-          <td>0.93</td>
-          <td>0.047</td>
-        </tr>
-        <tr> 
-          <td>2</td>
-          <td>3.7</td>
-          <td>0.190</td>
-        </tr>
-        <tr> 
-          <td>5</td>
-          <td>23</td>
-          <td>1.2</td>
-        </tr>
-        <tr> 
-          <td>10</td>
-          <td>93</td>
-          <td>4.7</td>
-        </tr>
-        <tr> 
-          <td>15</td>
-          <td>210</td>
-          <td>11</td>
-        </tr>
-        <tr> 
-          <td>20</td>
-          <td>370</td>
-          <td>19</td>
-        </tr>
-      </table>
-    </td>
-    <td><img src="images/windball2.gif" width="268" height="150"></td>
-  </tr>
+    <tr>
+        <td>
+            <table width="30%" border="1">
+                <tr>
+                    <td>V (m/sec)</td>
+                    <td>F (Newton)</td>
+                    <td>Mass (kg)</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>0.93</td>
+                    <td>0.047</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>3.7</td>
+                    <td>0.190</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>23</td>
+                    <td>1.2</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>93</td>
+                    <td>4.7</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>210</td>
+                    <td>11</td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>370</td>
+                    <td>19</td>
+                </tr>
+            </table>
+        </td>
+        <td><img src="images/windball2.gif" width="268" height="150"></td>
+    </tr>
 </table>
 <h3>Second order approach</h3>
-<p>A very handy reference by Blevins (<i>Applied Fluid Dynamics Handbook, </i>Krieger 
-  Publishing Company, Malabar, Florida, 1992<i> </i>) gives some approximations 
-  for Cd and Cl of a cylinder near a wall (p318) at Re= 20,000. No mention is 
-  made if the incident flow is laminar or turbulent. Blevins is citing Roshko, 
-  A., <i>et al.</i>, &quot;Flow Forces on a Cylinder Near a Wall or Near Another 
-  Cylinder,&quot; Second National Conference on Wind Engineering Research, Colorado 
-  State University, Ft. Collins, Colorado, June, 1975.</p>
+<p>A very handy reference by Blevins (<i>Applied Fluid Dynamics Handbook, </i>Krieger
+    Publishing Company, Malabar, Florida, 1992<i> </i>) gives some approximations
+    for Cd and Cl of a cylinder near a wall (p318) at Re= 20,000. No mention is
+    made if the incident flow is laminar or turbulent. Blevins is citing Roshko,
+    A., <i>et al.</i>, &quot;Flow Forces on a Cylinder Near a Wall or Near Another
+    Cylinder,&quot; Second National Conference on Wind Engineering Research, Colorado
+    State University, Ft. Collins, Colorado, June, 1975.</p>
 <table width="40%" border="1">
-  <tr>
-    <td>spacing/diameter</td>
-    <td>Cd</td>
-    <td>Cl</td>
-  </tr>
-  <tr>
-    <td>0</td>
-    <td>0.8</td>
-    <td>0.6</td>
-  </tr>
-  <tr>
-    <td>0.25</td>
-    <td>1.1</td>
-    <td>0.25</td>
-  </tr>
-  <tr>
-    <td>0.5</td>
-    <td>1.2</td>
-    <td>0.15</td>
-  </tr>
-  <tr>
-    <td>1.0</td>
-    <td>1.3</td>
-    <td>0.05</td>
-  </tr>
-  <tr>
-    <td>1.5</td>
-    <td>1.2</td>
-    <td>0.02</td>
-  </tr>
-  <tr>
-    <td>2.0</td>
-    <td>1.2</td>
-    <td>0</td>
-  </tr>
-  <tr>
-    <td>4.0</td>
-    <td>1.2</td>
-    <td>0</td>
-  </tr>
-  <tr>
-    <td>6.0</td>
-    <td>1.2</td>
-    <td>0</td>
-  </tr>
+    <tr>
+        <td>spacing/diameter</td>
+        <td>Cd</td>
+        <td>Cl</td>
+    </tr>
+    <tr>
+        <td>0</td>
+        <td>0.8</td>
+        <td>0.6</td>
+    </tr>
+    <tr>
+        <td>0.25</td>
+        <td>1.1</td>
+        <td>0.25</td>
+    </tr>
+    <tr>
+        <td>0.5</td>
+        <td>1.2</td>
+        <td>0.15</td>
+    </tr>
+    <tr>
+        <td>1.0</td>
+        <td>1.3</td>
+        <td>0.05</td>
+    </tr>
+    <tr>
+        <td>1.5</td>
+        <td>1.2</td>
+        <td>0.02</td>
+    </tr>
+    <tr>
+        <td>2.0</td>
+        <td>1.2</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>4.0</td>
+        <td>1.2</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>6.0</td>
+        <td>1.2</td>
+        <td>0</td>
+    </tr>
 </table>
-<p>The table on page 335 in Blevins gives some numbers for a cube above a surface, 
-  and while there is a net downforce (i.e. Cl is negative), the Cd numbers appear 
-  reasonably similar. The Cd numbers appear to be of the same general magnitude 
-  as used in the first order computation.</p>
+<p>The table on page 335 in Blevins gives some numbers for a cube above a surface,
+    and while there is a net downforce (i.e. Cl is negative), the Cd numbers appear
+    reasonably similar. The Cd numbers appear to be of the same general magnitude
+    as used in the first order computation.</p>
 <hr>
-robot/windball.htm - 13 Dec 2001 - <a href="mailto:jimlux@earthlink.net?subject=Wind%20effects%20on%20a%20Ball">Jim 
-Lux</a><br>
+robot/windball.htm - 13 Dec 2001 - <a href="mailto:jimlux@earthlink.net?subject=Wind%20effects%20on%20a%20Ball">Jim
+    Lux</a><br>
 <a href="index.htm">robot main page</a> - <a href="../index.htm">Jim's home page</a>
 </body>
 </html>

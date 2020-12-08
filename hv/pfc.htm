@@ -3,119 +3,119 @@
 <html>
 
 <head>
-<title>Power Factor Correction</title>
-<meta name="GENERATOR" content="Microsoft FrontPage 1.1">
-<meta name="keywords" content="power factor, power factor correction, pfc, pf correction, pfc, reactive power">
+    <title>Power Factor Correction</title>
+    <meta name="GENERATOR" content="Microsoft FrontPage 1.1">
+    <meta name="keywords" content="power factor, power factor correction, pfc, pf correction, pfc, reactive power">
 </head>
 
 <body>
 <h2>Power Factor Correction</h2>
-<p>Many loads are highly inductive, such a lightly loaded motors and illumination 
-transformers and ballasts. You may want to correct the power factor by adding 
-parallel capacitors. You can also add series capacitors to &quot;remove&quot; the effect of 
-leakage inductance that limits the output current.</p>
+<p>Many loads are highly inductive, such a lightly loaded motors and illumination
+    transformers and ballasts. You may want to correct the power factor by adding
+    parallel capacitors. You can also add series capacitors to &quot;remove&quot; the effect of
+    leakage inductance that limits the output current.</p>
 <p><strong>Why correct the power factor?</strong></p>
-<p>The current flow through the circuit is increased by the reactive component. 
-  Normally, loads are represented by a series combination of a resistance and 
-  a purely imaginary reactance. For this explanation, it is easier to contemplate 
-  it as an equivalent parallel combination. The diagram below illustrates a partially 
-  reactive load being fed from a real system with some finite resistance in the 
-  conductors, etc.</p>
+<p>The current flow through the circuit is increased by the reactive component.
+    Normally, loads are represented by a series combination of a resistance and
+    a purely imaginary reactance. For this explanation, it is easier to contemplate
+    it as an equivalent parallel combination. The diagram below illustrates a partially
+    reactive load being fed from a real system with some finite resistance in the
+    conductors, etc.</p>
 <p><img src="images/pfc1.gif" width="303" height="128"></p>
-<p>The current through the reactive component (Ireactive) dissipates no power, 
-  and neither does it register on the watt hour meter. However, the reactive current 
-  does dissipate power when flowing through other resistive components in the 
-  system, like the wires, the switches, and the lossy part of a transformer (Rline). 
-  Switches have to interrupt the total current, not just the active component. 
-  Wires have to be big enough to carry the entire current, etc. Correcting the 
-  power factor reduces the amount of oversizing necessary.</p>
+<p>The current through the reactive component (Ireactive) dissipates no power,
+    and neither does it register on the watt hour meter. However, the reactive current
+    does dissipate power when flowing through other resistive components in the
+    system, like the wires, the switches, and the lossy part of a transformer (Rline).
+    Switches have to interrupt the total current, not just the active component.
+    Wires have to be big enough to carry the entire current, etc. Correcting the
+    power factor reduces the amount of oversizing necessary.</p>
 <h4>Correcting power factor</h4>
-<p>Given the reactive load component (Xload), you can calculate the capacitance 
-  that would be put in parallel to exactly match it using the equation:</p>
+<p>Given the reactive load component (Xload), you can calculate the capacitance
+    that would be put in parallel to exactly match it using the equation:</p>
 <p>Xc = 1/ (omega C) = 1/(2 *pi * f * C) <br>
-  for 60 Hz: Xc = 1/( 2*pi * 60* C) =1/ (377*C)</p>
+    for 60 Hz: Xc = 1/( 2*pi * 60* C) =1/ (377*C)</p>
 <p>or, rearranging: C = 1/(377*Xc)</p>
-<p>Power factor correction capacitors are often rated in kVar, instead of uF, 
-  because that is how the power company works. Say a factory has several thousand 
-  horsepower worth of motors at .85 power factor. They might have a reactive component 
-  of several hundred kVar.&#160;At a distribution voltage of 14,400 volts, this 
-  would require a capacitor with an impedance of a bit more than 1000 ohms, or 
-  about 2.5 microfarads, a reasonable sized and priced package. However, if you 
-  were crazy enough to try to compensate this at 230 volts, you would need about 
-  .01 Farads (i.e. 10,000 uF), a sizeable package.</p>
-<p>For very large systems, even capacitors get unwieldy. One approach is to use 
-large over excited synchronous motors which look like capacitors, electrically. 
-Another approach is clever systems of thyristors and inductors which simulate 
-the capactive reactance by drawing &quot;displacement current&quot;.</p>
+<p>Power factor correction capacitors are often rated in kVar, instead of uF,
+    because that is how the power company works. Say a factory has several thousand
+    horsepower worth of motors at .85 power factor. They might have a reactive component
+    of several hundred kVar.&#160;At a distribution voltage of 14,400 volts, this
+    would require a capacitor with an impedance of a bit more than 1000 ohms, or
+    about 2.5 microfarads, a reasonable sized and priced package. However, if you
+    were crazy enough to try to compensate this at 230 volts, you would need about
+    .01 Farads (i.e. 10,000 uF), a sizeable package.</p>
+<p>For very large systems, even capacitors get unwieldy. One approach is to use
+    large over excited synchronous motors which look like capacitors, electrically.
+    Another approach is clever systems of thyristors and inductors which simulate
+    the capactive reactance by drawing &quot;displacement current&quot;.</p>
 <h4>Loads that draw non-sinusoidal current</h4>
-<p>Classic reactive loads, like transformers, lighting ballasts, and AC motors still 
-have a sinusoidal current flow. The phase of the current is just shifted from that 
-of the supply voltage. However, there are some loads which draw distinctly 
-non-sinusoidal currents. The most recently notorious is the switching power 
-supply in a PC. These power supplies start with a bridge rectifier feeding a 
-capacitor, and so, particularly at part load, draw their current in little peaks, 
-when the instantaneous line voltage is above the capacitor voltage, forward 
-biasing the rectifier. Another notorious non-sinusoidal current draw is the 
-popular phase controlled light dimmer, which uses a TRIAC or SCR to reduce 
-the RMS voltage to the load by turning on partway through the half cycle. Not 
-only is the current waveform highly non-sinusoidal, but it is also out of phase 
-with the voltage supply. Hence, these loads have a non-unity power factor, and 
-draw reactive power.</p>
-<p>However, to compensate these loads, you have to come up with a means to 
-supply the reactive current at the appropriate times. A simple capacitor doesn't 
-do this. A capacitor only compensates nice sinusoidal power factor lags, like 
-those from linear (non-saturating) inductors.</p>
+<p>Classic reactive loads, like transformers, lighting ballasts, and AC motors still
+    have a sinusoidal current flow. The phase of the current is just shifted from that
+    of the supply voltage. However, there are some loads which draw distinctly
+    non-sinusoidal currents. The most recently notorious is the switching power
+    supply in a PC. These power supplies start with a bridge rectifier feeding a
+    capacitor, and so, particularly at part load, draw their current in little peaks,
+    when the instantaneous line voltage is above the capacitor voltage, forward
+    biasing the rectifier. Another notorious non-sinusoidal current draw is the
+    popular phase controlled light dimmer, which uses a TRIAC or SCR to reduce
+    the RMS voltage to the load by turning on partway through the half cycle. Not
+    only is the current waveform highly non-sinusoidal, but it is also out of phase
+    with the voltage supply. Hence, these loads have a non-unity power factor, and
+    draw reactive power.</p>
+<p>However, to compensate these loads, you have to come up with a means to
+    supply the reactive current at the appropriate times. A simple capacitor doesn't
+    do this. A capacitor only compensates nice sinusoidal power factor lags, like
+    those from linear (non-saturating) inductors.</p>
 <h4>Example of Power Factor Correction</h4>
-<p>Let's take an example. A 3/4 HP electric motor has a power factor of .85. The 
-nameplate current is 10 Amps at 115 Volts, or 1150 Volt Amps.</p>
+<p>Let's take an example. A 3/4 HP electric motor has a power factor of .85. The
+    nameplate current is 10 Amps at 115 Volts, or 1150 Volt Amps.</p>
 <ul>
-<li>Apparent power = 1150 Volt Amps</li>
-  <li>Active power (P) = .85 * 1150 = 977.5 Watts</li>
-  <li>Reactive Power (Q) = sqrt(1150^2 - 977.5^2) = 605 VAR</li>
+    <li>Apparent power = 1150 Volt Amps</li>
+    <li>Active power (P) = .85 * 1150 = 977.5 Watts</li>
+    <li>Reactive Power (Q) = sqrt(1150^2 - 977.5^2) = 605 VAR</li>
 </ul>
-<p>So, we need about 600 var of power factor correction. I'm rounding to a couple 
-  digits, because, in reality, it's unlikely that the power factor is known to 
-  more accuracy, nor will any of the PFC components be that precise. (10% accuracy 
-  would be quite good for a capacitor). Now, assume we want to put the capacitor 
-  in parallel with the motor: Calculating the required impedance from Q = E^2/X, 
-  where Q is the reactive power needed:</p>
+<p>So, we need about 600 var of power factor correction. I'm rounding to a couple
+    digits, because, in reality, it's unlikely that the power factor is known to
+    more accuracy, nor will any of the PFC components be that precise. (10% accuracy
+    would be quite good for a capacitor). Now, assume we want to put the capacitor
+    in parallel with the motor: Calculating the required impedance from Q = E^2/X,
+    where Q is the reactive power needed:</p>
 <ul>
-  <li>600 = 115^2/X =&gt; X = 115^2/600 = 22 ohms (rounding to 2digits)</li>
-  <li>C = 1 /( 2 * pi * f *X) = 1/ (377 * 22) = 120 uF (again, rounding to 2 digits) 
-  </li>
+    <li>600 = 115^2/X =&gt; X = 115^2/600 = 22 ohms (rounding to 2digits)</li>
+    <li>C = 1 /( 2 * pi * f *X) = 1/ (377 * 22) = 120 uF (again, rounding to 2 digits)
+    </li>
 </ul>
-<p>which is a fairly large capacitor in a constant duty environment (i.e. motor 
-  run, as opposed to motor start, where the capacitor is only in the circuit for 
-  a short time). You can calculate the RMS current through the capacitor either 
-  by dividing the VARs by the line voltage (600/115) or by dividing line voltage 
-  by reactance (115/22); both come out at around 5 1/4 Amps, so you'd want a capacitor 
-  rated at somewhat more current (e.g. 7-10 A). The capacitor's series resistance 
-  should be pretty low, or it will dissipate a fair amount of energy. If the dissipation 
-  factor were 1%, you'd be dissipating about 6 Watts in the capacitor. </p>
-<p>One can also put the PFC capacitor in series with the load. In this case the 
-  capacitor would carry the entire load current of 10A, but, the required value 
-  is different. For a series compensation, you'd determine the series equivalent 
-  of the load (we used a parallel model, above). For the series model, you use 
-  currents, instead of voltages:</p>
+<p>which is a fairly large capacitor in a constant duty environment (i.e. motor
+    run, as opposed to motor start, where the capacitor is only in the circuit for
+    a short time). You can calculate the RMS current through the capacitor either
+    by dividing the VARs by the line voltage (600/115) or by dividing line voltage
+    by reactance (115/22); both come out at around 5 1/4 Amps, so you'd want a capacitor
+    rated at somewhat more current (e.g. 7-10 A). The capacitor's series resistance
+    should be pretty low, or it will dissipate a fair amount of energy. If the dissipation
+    factor were 1%, you'd be dissipating about 6 Watts in the capacitor. </p>
+<p>One can also put the PFC capacitor in series with the load. In this case the
+    capacitor would carry the entire load current of 10A, but, the required value
+    is different. For a series compensation, you'd determine the series equivalent
+    of the load (we used a parallel model, above). For the series model, you use
+    currents, instead of voltages:</p>
 <p>600 VAR = I^2 * X =&gt; 600 = 10*10 * X =&gt; X = 6 ohms<br>
 </p>
 <p>And converting an impedance to a capacitance: C=1/(377*6) = 440 uF.</p>
-<p>So, not only would the capacitor be larger, but it would need to carry the 
-  entire load current. For this example, at least, parallel PFC seems to be a 
-  better approach. Only if the power factor were very poor, so the reactive impedance 
-  was quite large (and the corresponding capacitance low) would series compensation 
-  seem to be useful.</p>
-<p>If the line voltage were higher, the correction impedance would be increased 
-  as the square of the line voltage. The capacitance would be reduced as the square 
-  of the line voltage. That is, if the same motor were run off 230 Volts, the 
-  capacitor would only need to be about 30 uF. And if we were to do power factor 
-  compensation at the distribution voltage of 4160 volts (for example), you would 
-  only need about .1 uF. This is why power factor correction is usually done in 
-  the distribution network at MV or HV, and not at the end voltage.</p>
+<p>So, not only would the capacitor be larger, but it would need to carry the
+    entire load current. For this example, at least, parallel PFC seems to be a
+    better approach. Only if the power factor were very poor, so the reactive impedance
+    was quite large (and the corresponding capacitance low) would series compensation
+    seem to be useful.</p>
+<p>If the line voltage were higher, the correction impedance would be increased
+    as the square of the line voltage. The capacitance would be reduced as the square
+    of the line voltage. That is, if the same motor were run off 230 Volts, the
+    capacitor would only need to be about 30 uF. And if we were to do power factor
+    compensation at the distribution voltage of 4160 volts (for example), you would
+    only need about .1 uF. This is why power factor correction is usually done in
+    the distribution network at MV or HV, and not at the end voltage.</p>
 <hr>
-<address>Copyright 1997, Jim Lux /revised 16 Sep 2006 / pfc.htm / <a href="hvmain.htm">HV 
-Handbook</a> / <a href="../index.htm">Jim's Home Page</a> / <a href="mailto:jimlux@earthlink.net?subject=PFC">Email 
-to Jim</a></address>
+<address>Copyright 1997, Jim Lux /revised 16 Sep 2006 / pfc.htm / <a href="hvmain.htm">HV
+    Handbook</a> / <a href="../index.htm">Jim's Home Page</a> / <a href="mailto:jimlux@earthlink.net?subject=PFC">Email
+    to Jim</a></address>
 </body>
 
 </html>

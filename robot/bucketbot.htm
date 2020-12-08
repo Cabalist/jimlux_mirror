@@ -1,117 +1,117 @@
 <html>
 <head>
-<title>Bucket-Bot</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta name="keywords" content="BucketBot, Robot, R/C, radio control, remote video, ATV">
+    <title>Bucket-Bot</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta name="keywords" content="BucketBot, Robot, R/C, radio control, remote video, ATV">
 </head>
 
 <body bgcolor="#FFFFFF">
 <h2>Bucket Bot </h2>
-<p>I've started calling this robot by this name because I discovered that a white 
-  plastic 5 gallon bucket fits nicely over the traction unit. My kids call it 
-  B2D3 (thinking it is similar to R2D2 of StarWars fame).</p>
-<p><a href="drive.htm">Drive wheels and motors</a> notes (I note that <a href="http://www.npcinc.com/" target="_blank">National 
-  Power Chair</a> sells rebuilt wheelchair drives at a variety of prices from 
-  $136 to $200+, depending on the gearing and torque) (and so does C&amp;H sales, 
-  for the same price). The wheel chair motors are vastly over powered for this 
-  application. </p>
-<p><a href="traction.htm">Traction Motor Control</a> notes For now, the pair of 
-  Novak ESC's in combination with a V-Tail mixer module (about $30) works to drive 
-  the bucket around. The V-Tail mixer allows one stick on the R/C transmitter 
-  to drive the two controllers in a sensible fashion (i.e. push stick straight 
-  forward to go forward, etc.). Eventually, I can either stick the Vantec controllers 
-  in, or I can stick with the Novak units and drive them from the SSC and a serial 
-  port. </p>
-<p>Stacking a second bucket on top of it makes for a nice package, especially 
-  if the top bucket is on a bearing and can turn independently of the base. Some 
-  <a href="../radio/bucket1.htm">preliminary work</a> has been done on using the 
-  top bucket as a form to hold a suitable omnidirectional antenna (although, see 
-  below about the bucket whip). A 6&quot; lazy susan bearing mounts nicely on 
-  the base (i.e. the uppermost surface) of the lower bucket. The 4&quot; hole 
-  in the middle of the bearing gives plenty of room to feed wires, etc. up through 
-  from the base. The lid for the second bucket is bolted to the bearing, providing 
-  a handy mounting flange for the upper bucket. A &quot;quarter scale&quot; R/C 
-  servo (Cirrus CS-400BB, since discontinued) scavenged from the snake robot serves 
-  to move the upper bucket relative to the lower one, although, the 90 degree 
-  motion range isn't as much as I'd like. This is more a problem with my R/C transmitter 
-  than with the servo, which actually can swing 180 degrees.</p>
-<p>Bump detectors. Standard NO push buttons mounted around the base, and then 
-  covered by a &quot;bumper&quot; should serve nicely. The buttons can be &quot;scanned&quot; 
-  by a 74LS138 or something from the Rabbit.</p>
-<p>Power is provided by some &quot;gel-cells&quot; (probably actually starved 
-  electrolyte or sealed lead acid). Here is a description of <a href="power.htm">power 
-  supply and control issues</a>.</p>
+<p>I've started calling this robot by this name because I discovered that a white
+    plastic 5 gallon bucket fits nicely over the traction unit. My kids call it
+    B2D3 (thinking it is similar to R2D2 of StarWars fame).</p>
+<p><a href="drive.htm">Drive wheels and motors</a> notes (I note that <a href="http://www.npcinc.com/" target="_blank">National
+    Power Chair</a> sells rebuilt wheelchair drives at a variety of prices from
+    $136 to $200+, depending on the gearing and torque) (and so does C&amp;H sales,
+    for the same price). The wheel chair motors are vastly over powered for this
+    application. </p>
+<p><a href="traction.htm">Traction Motor Control</a> notes For now, the pair of
+    Novak ESC's in combination with a V-Tail mixer module (about $30) works to drive
+    the bucket around. The V-Tail mixer allows one stick on the R/C transmitter
+    to drive the two controllers in a sensible fashion (i.e. push stick straight
+    forward to go forward, etc.). Eventually, I can either stick the Vantec controllers
+    in, or I can stick with the Novak units and drive them from the SSC and a serial
+    port. </p>
+<p>Stacking a second bucket on top of it makes for a nice package, especially
+    if the top bucket is on a bearing and can turn independently of the base. Some
+    <a href="../radio/bucket1.htm">preliminary work</a> has been done on using the
+    top bucket as a form to hold a suitable omnidirectional antenna (although, see
+    below about the bucket whip). A 6&quot; lazy susan bearing mounts nicely on
+    the base (i.e. the uppermost surface) of the lower bucket. The 4&quot; hole
+    in the middle of the bearing gives plenty of room to feed wires, etc. up through
+    from the base. The lid for the second bucket is bolted to the bearing, providing
+    a handy mounting flange for the upper bucket. A &quot;quarter scale&quot; R/C
+    servo (Cirrus CS-400BB, since discontinued) scavenged from the snake robot serves
+    to move the upper bucket relative to the lower one, although, the 90 degree
+    motion range isn't as much as I'd like. This is more a problem with my R/C transmitter
+    than with the servo, which actually can swing 180 degrees.</p>
+<p>Bump detectors. Standard NO push buttons mounted around the base, and then
+    covered by a &quot;bumper&quot; should serve nicely. The buttons can be &quot;scanned&quot;
+    by a 74LS138 or something from the Rabbit.</p>
+<p>Power is provided by some &quot;gel-cells&quot; (probably actually starved
+    electrolyte or sealed lead acid). Here is a description of <a href="power.htm">power
+        supply and control issues</a>.</p>
 <h3>Video link</h3>
-<p>The bucket bot has a video link using a small camera mounted on a servo and 
-  an amateur radio transmitter in the 70 cm (420-450MHz) band. The servo provides 
-  90 degrees of elevation motion. The R/C transmitter is set up with one stick 
-  controlling Az and El for the camera and the other stick controlling the locomotion.</p>
-<p>I started with an old color camera I had which has very nice resolution and 
-  dynamic range, but it didn't have any color signal when I tested it (B/W only) 
-  and it gets pretty hot, so it's drawing a LOT of DC power. Therefore I switched 
-  to a low power monochrome camera from <a href="http://www.allcorp.com/" target="_blank">All 
-  Electronics</a> (Cat # VC-360, $49) F2.0, 3.7mm lens 1/3&quot; CCD (nominal 
-  90 degree FOV). At first glance, it looks like monochrome may not be a very 
-  good way to go, and I may want to go get a color camera. It's hard to navigate 
-  by using the camera in monochrome (too many visual cues come from color)..</p>
-<p>I've used the PC Electronics 70cm band transmitter (more at the <a href="../radio/atv.htm">ATV 
-  page</a>) feeding a <a href="../radio/bucketwhip.htm">quarter wave whip/groundplane</a> 
-  which is built on the upper bucket. The ground plane is 4 strips of 1&quot; 
-  copper foil tape (13 cm from center to edge) and the whip is a piece of bare 
-  #12 AWG wire (18 cm tall from bucket surface to tip). It seems to work ok sitting 
-  on the bench, and preliminary NEC models show that the pattern is fairly omnidirectional, 
-  with 7.2 dBi gain. There are some pretty big nulls around 13-14 and 42 degrees 
-  above the horizontal, because it is a vertical that is 1 wavelength off the 
-  ground. The match is pretty uniform at 2:1 VSWR, which is not too hot, because 
-  the characteristic impedance is around 26-27 ohms. Figuring out a way to &quot;droop&quot; 
-  the radials or using a sleeve dipole might be a better approach. (Sleeve dipole 
-  impedance will be around 70 ohms), or, implementing the <a href="../radio/bucket1.htm">bucket 
-  Lindenblad</a>, which would help kill the really big nulls from ground reflections.</p>
-<p>The receiving end of the link is a PC Electronics TVC-2G which downconverts 
-  the 426.25 to Channel 3. I have a small LCD TV velcro'ed on to the TVC-2G enclosure, 
-  or I can feed a bigger TV. Oddly, the RCA (Radio Shack) LCD TV will tune to 
-  the 426.25 on the UHF band. This is odd because since UHF TV starts around 470 
-  MHz; perhaps it's an image.</p>
-<p>For now, on the bench, I do the legally required ID by holding up a sign with 
-  my call letters on it in front of the camera. On the robot, I'll put a sign 
-  in the field of view when the camera is tilted full up or down. This is a heck 
-  of a lot easier than adding a titler or keying the video on and off or adding 
-  an audio subcarrier (although, the subcarrier might be kind of nifty... I could 
-  put a mike on the robot).</p>
+<p>The bucket bot has a video link using a small camera mounted on a servo and
+    an amateur radio transmitter in the 70 cm (420-450MHz) band. The servo provides
+    90 degrees of elevation motion. The R/C transmitter is set up with one stick
+    controlling Az and El for the camera and the other stick controlling the locomotion.</p>
+<p>I started with an old color camera I had which has very nice resolution and
+    dynamic range, but it didn't have any color signal when I tested it (B/W only)
+    and it gets pretty hot, so it's drawing a LOT of DC power. Therefore I switched
+    to a low power monochrome camera from <a href="http://www.allcorp.com/" target="_blank">All
+        Electronics</a> (Cat # VC-360, $49) F2.0, 3.7mm lens 1/3&quot; CCD (nominal
+    90 degree FOV). At first glance, it looks like monochrome may not be a very
+    good way to go, and I may want to go get a color camera. It's hard to navigate
+    by using the camera in monochrome (too many visual cues come from color)..</p>
+<p>I've used the PC Electronics 70cm band transmitter (more at the <a href="../radio/atv.htm">ATV
+    page</a>) feeding a <a href="../radio/bucketwhip.htm">quarter wave whip/groundplane</a>
+    which is built on the upper bucket. The ground plane is 4 strips of 1&quot;
+    copper foil tape (13 cm from center to edge) and the whip is a piece of bare
+    #12 AWG wire (18 cm tall from bucket surface to tip). It seems to work ok sitting
+    on the bench, and preliminary NEC models show that the pattern is fairly omnidirectional,
+    with 7.2 dBi gain. There are some pretty big nulls around 13-14 and 42 degrees
+    above the horizontal, because it is a vertical that is 1 wavelength off the
+    ground. The match is pretty uniform at 2:1 VSWR, which is not too hot, because
+    the characteristic impedance is around 26-27 ohms. Figuring out a way to &quot;droop&quot;
+    the radials or using a sleeve dipole might be a better approach. (Sleeve dipole
+    impedance will be around 70 ohms), or, implementing the <a href="../radio/bucket1.htm">bucket
+        Lindenblad</a>, which would help kill the really big nulls from ground reflections.</p>
+<p>The receiving end of the link is a PC Electronics TVC-2G which downconverts
+    the 426.25 to Channel 3. I have a small LCD TV velcro'ed on to the TVC-2G enclosure,
+    or I can feed a bigger TV. Oddly, the RCA (Radio Shack) LCD TV will tune to
+    the 426.25 on the UHF band. This is odd because since UHF TV starts around 470
+    MHz; perhaps it's an image.</p>
+<p>For now, on the bench, I do the legally required ID by holding up a sign with
+    my call letters on it in front of the camera. On the robot, I'll put a sign
+    in the field of view when the camera is tilted full up or down. This is a heck
+    of a lot easier than adding a titler or keying the video on and off or adding
+    an audio subcarrier (although, the subcarrier might be kind of nifty... I could
+    put a mike on the robot).</p>
 <h3>Photos of BucketBot</h3>
 <table width="75%" border="1">
-  <tr> 
-    <td>
-      <p>Here's the current bucketbot incarnation. The camera looks out from the 
-        hole in the upper bucket.</p>
-      <p>(<a href="images/bucketbot.jpg" target="robotphoto">26KB jpg</a>)</p>
-    </td>
-    <td><a href="images/bucketbot.jpg" target="robotphoto"><img src="images/bucketbot1x.jpg" width="95" height="193" border="2" alt="Bucket Bot Thumbnail 3K"></a></td>
-  </tr>
-  <tr> 
-    <td> 
-      <p>Top of turntable bearing mounted lid, showing 430MHz ATV transmitter, 
-        servo for elevation axis, and small CCD camera.<br>
-        (<a href="images/ATVTx1.JPG" target="robotphoto">top 106K jpg</a>) (<a href="images/TxCam.JPG" target="robotphoto">side 
-        150K jpg</a>)</p>
-    </td>
-    <td><a href="images/ATVTx1.JPG" target="robotphoto"><img src="images/ATVTx1x.JPG" width="144" height="125" border="2" alt="70cm Tx (6K)"></a><a href="images/TxCam.JPG" target="robotphoto"><img src="images/TxCamx.JPG" width="144" height="108" border="2" alt="Cam, El Servo, Tx (4.2K)"></a></td>
-  </tr>
-  <tr> 
-    <td> 
-      <p>Details of azimuth drive. Top side, showing &quot;lollipop&quot; of lid 
-        used to connect to control horn on top of quarter scale servo. Bottom 
-        side, showing bracket mounting servo to &quot;bottom&quot; of lower bucket.<br>
-        (<a href="images/AzDrive1.JPG" target="robotphoto">top 145K jpg</a>) (<a href="images/AzDrive2.JPG" target="robotphoto">bottom 
-        98K jpg</a>)</p>
-    </td>
-    <td><a href="images/AzDrive1.JPG" target="robotphoto"><img src="images/AzDrive1x.JPG" width="144" height="108" border="2" alt="Top of Az Axis 4K"></a><a href="images/AzDrive2.JPG" target="robotphoto"><img src="images/AzDrive2x.JPG" width="144" height="108" border="2" alt="Bottom of Az Axis (3K)"></a></td>
-  </tr>
+    <tr>
+        <td>
+            <p>Here's the current bucketbot incarnation. The camera looks out from the
+                hole in the upper bucket.</p>
+            <p>(<a href="images/bucketbot.jpg" target="robotphoto">26KB jpg</a>)</p>
+        </td>
+        <td><a href="images/bucketbot.jpg" target="robotphoto"><img src="images/bucketbot1x.jpg" width="95" height="193" border="2" alt="Bucket Bot Thumbnail 3K"></a></td>
+    </tr>
+    <tr>
+        <td>
+            <p>Top of turntable bearing mounted lid, showing 430MHz ATV transmitter,
+                servo for elevation axis, and small CCD camera.<br>
+                (<a href="images/ATVTx1.JPG" target="robotphoto">top 106K jpg</a>) (<a href="images/TxCam.JPG" target="robotphoto">side
+                    150K jpg</a>)</p>
+        </td>
+        <td><a href="images/ATVTx1.JPG" target="robotphoto"><img src="images/ATVTx1x.JPG" width="144" height="125" border="2" alt="70cm Tx (6K)"></a><a href="images/TxCam.JPG" target="robotphoto"><img src="images/TxCamx.JPG" width="144" height="108" border="2" alt="Cam, El Servo, Tx (4.2K)"></a></td>
+    </tr>
+    <tr>
+        <td>
+            <p>Details of azimuth drive. Top side, showing &quot;lollipop&quot; of lid
+                used to connect to control horn on top of quarter scale servo. Bottom
+                side, showing bracket mounting servo to &quot;bottom&quot; of lower bucket.<br>
+                (<a href="images/AzDrive1.JPG" target="robotphoto">top 145K jpg</a>) (<a href="images/AzDrive2.JPG" target="robotphoto">bottom
+                    98K jpg</a>)</p>
+        </td>
+        <td><a href="images/AzDrive1.JPG" target="robotphoto"><img src="images/AzDrive1x.JPG" width="144" height="108" border="2" alt="Top of Az Axis 4K"></a><a href="images/AzDrive2.JPG" target="robotphoto"><img src="images/AzDrive2x.JPG" width="144" height="108" border="2" alt="Bottom of Az Axis (3K)"></a></td>
+    </tr>
 </table>
 <p>&nbsp;</p>
 <hr>
-<p>robot/bucketbot.htm - 26 January 2002 - <a href="index.htm">back to robots</a> 
-  - back to <a href="../index.htm">Jim's home page</a> - Copyright 2001 Jim Lux 
-  (<a href="mailto:jimlux@earthlink.net?subject=BucketBot">mail</a>)</p>
+<p>robot/bucketbot.htm - 26 January 2002 - <a href="index.htm">back to robots</a>
+    - back to <a href="../index.htm">Jim's home page</a> - Copyright 2001 Jim Lux
+    (<a href="mailto:jimlux@earthlink.net?subject=BucketBot">mail</a>)</p>
 </body>
 </html>

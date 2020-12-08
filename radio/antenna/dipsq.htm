@@ -1,138 +1,140 @@
 <html>
 <head>
-<title>Dipole Squares</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>Dipole Squares</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 </head>
 
 <body bgcolor="#FFFFFF">
 <h2>Bent Dipole Square</h2>
 <table width="100%" border="0">
-  <tr>
-    <td width="97%">This is an interesting idea for an easily field erectable 
-      antenna array. It started as an array of 4 half wave dipoles in a square. 
-      The figure shows this sort of scheme, with the corners 7 meters apart, and 
-      the dipoles being 5 meters long.</td>
-    <td width="3%"><img src="images/dipolesquare.gif" width="320" height="388"></td>
-  </tr>
+    <tr>
+        <td width="97%">This is an interesting idea for an easily field erectable
+            antenna array. It started as an array of 4 half wave dipoles in a square.
+            The figure shows this sort of scheme, with the corners 7 meters apart, and
+            the dipoles being 5 meters long.
+        </td>
+        <td width="3%"><img src="images/dipolesquare.gif" width="320" height="388"></td>
+    </tr>
 </table>
 <p>&nbsp;</p>
 <table width="100%" border="0">
-  <tr>
-    <td>Then, I realized that you have these feed lines hanging down in the middle 
-      of each dipole which will certainly screw up the pattern, and also has structural 
-      problems. Why not move the feed lines to the corners, and run the feed line 
-      down the pole? The dipole gets bent, which will change it's pattern (and 
-      feed point impedance), but the structure is a LOT better.</td>
-    <td><img src="images/bentsquare.gif" width="346" height="392"></td>
-  </tr>
+    <tr>
+        <td>Then, I realized that you have these feed lines hanging down in the middle
+            of each dipole which will certainly screw up the pattern, and also has structural
+            problems. Why not move the feed lines to the corners, and run the feed line
+            down the pole? The dipole gets bent, which will change it's pattern (and
+            feed point impedance), but the structure is a LOT better.
+        </td>
+        <td><img src="images/bentsquare.gif" width="346" height="392"></td>
+    </tr>
 </table>
 <p>&nbsp;</p>
-<p>What with modern analysis tools, the weird impedances should be easy to figure 
-  out. Then, the challenge would be coming up with a way to feed the beast, and 
-  to look at the patterns. For such a simple array, which can't be rotated, you 
-  don't really want narrow beams. Rather, what you want is beamwidths around 90-120 
-  degrees, decent front to back ratio (to suppress interfering signals from the 
-  wrong direction), and some vertical directivity (to reduce ground losses). The 
-  idea is that you should be able to do the phasing with a couple of pieces of 
-  coax, cut to the right lengths, and some switches to put them into the right 
-  orientation. </p>
-<p>A NEC simulation (nec input file) was used to calculate the pattern of a single 
-  bent dipole, in free space, over ideal ground, and over real ground.. As expected, 
-  it is symmetrical around the plane of symmetry. The pattern doesn't have the 
-  sharp nulls of the ideal dipole though, with the minimum response being about 
-  9-10 dB down from the peak. The gain relative to an isotrope is about 1.93 dBi 
-  (check this).</p>
+<p>What with modern analysis tools, the weird impedances should be easy to figure
+    out. Then, the challenge would be coming up with a way to feed the beast, and
+    to look at the patterns. For such a simple array, which can't be rotated, you
+    don't really want narrow beams. Rather, what you want is beamwidths around 90-120
+    degrees, decent front to back ratio (to suppress interfering signals from the
+    wrong direction), and some vertical directivity (to reduce ground losses). The
+    idea is that you should be able to do the phasing with a couple of pieces of
+    coax, cut to the right lengths, and some switches to put them into the right
+    orientation. </p>
+<p>A NEC simulation (nec input file) was used to calculate the pattern of a single
+    bent dipole, in free space, over ideal ground, and over real ground.. As expected,
+    it is symmetrical around the plane of symmetry. The pattern doesn't have the
+    sharp nulls of the ideal dipole though, with the minimum response being about
+    9-10 dB down from the peak. The gain relative to an isotrope is about 1.93 dBi
+    (check this).</p>
 <p>Pattern of a single bent dipole (20 degrees elevation angle)</p>
 <p><img src="images/bentpattern.gif" width="333" height="282"><img src="images/pat1.jpg" width="412" height="301"></p>
 <p>&nbsp;</p>
-<p>Where the center of the surface is radially scaled to 40 dBi. Since the side 
-  nulls are only down about 8-9 dB, this doesn't look all that impressive.</p>
+<p>Where the center of the surface is radially scaled to 40 dBi. Since the side
+    nulls are only down about 8-9 dB, this doesn't look all that impressive.</p>
 <h3>Feeding the array</h3>
 <h4>Phase centers</h4>
-<p>To feed the array, we need to know where the &quot;phase center&quot; of the 
-  elements are. For a straight dipole, this is easy, it's at the center of the 
-  dipole. The bent dipole is a bit trickier, though. Most of the radiation from 
-  a dipole comes from the central portion, but the ends also make their contribution. 
-  This was answered with another NEC run, this one with all 4 dipoles, and using 
-  plane wave illumination coming from various directions.Then, we make use of 
-  the fact that the phase is proportional to the cosine of the angle between the 
-  incident wavefront and the vector from the origin to the phase center.</p>
-<p>A NEC input file (<a href="data/bent5.txt">bent5.txt</a>) was built with a 
-  single bent dipole, with plane illumination coming from a variety of directions 
-  After a bit of fiddling using Excel (<a href="data/phasecenter.xls">22kB phasecenter.xls</a>), 
-  we find that the phase center is at (2.75,2.75,4.85) (for the dipole whose &quot;corner&quot; 
-  is at (3.5,3.5,5)) Excel solver gives 2.69, 2.69, 4.62 to minimize squared error. 
+<p>To feed the array, we need to know where the &quot;phase center&quot; of the
+    elements are. For a straight dipole, this is easy, it's at the center of the
+    dipole. The bent dipole is a bit trickier, though. Most of the radiation from
+    a dipole comes from the central portion, but the ends also make their contribution.
+    This was answered with another NEC run, this one with all 4 dipoles, and using
+    plane wave illumination coming from various directions.Then, we make use of
+    the fact that the phase is proportional to the cosine of the angle between the
+    incident wavefront and the vector from the origin to the phase center.</p>
+<p>A NEC input file (<a href="data/bent5.txt">bent5.txt</a>) was built with a
+    single bent dipole, with plane illumination coming from a variety of directions
+    After a bit of fiddling using Excel (<a href="data/phasecenter.xls">22kB phasecenter.xls</a>),
+    we find that the phase center is at (2.75,2.75,4.85) (for the dipole whose &quot;corner&quot;
+    is at (3.5,3.5,5)) Excel solver gives 2.69, 2.69, 4.62 to minimize squared error.
 </p>
 <h4>Mutual Impedances</h4>
-<p>We also need to know the mutual impedances. Using NEC (<a href="data/bent1.txt" target="_blank">input 
-  file</a>) , we can measure the currents on each of the dipoles with a 1 volt 
-  input. This gives us the mutual admittances (Y) from the driven element to the 
-  others. Using the geometry of the antenna, we can construct the admittance array, 
-  then invert it to get the mutual impedances (Z). Normally, this would be a real 
-  pain, but Matlab makes it pretty painless (<a href="data/bentzm.txt" target="_blank">Matlab 
-  history</a>) if you cut and paste from the NEC output to Matlab.(<a href="../math/matinv.htm">More 
-  on complex matrix inversion </a>). The mutual impedances are in the table below. 
-  The calculations were done for all three ground conditions, mostly to get an 
-  idea of how much it changes. (Ignore the spurious accuracy in the following 
-  table. It is unlikely that you could measure the impedance to better than an 
-  ohm or so, and construction tolerances are probably bigger.)</p>
+<p>We also need to know the mutual impedances. Using NEC (<a href="data/bent1.txt" target="_blank">input
+    file</a>) , we can measure the currents on each of the dipoles with a 1 volt
+    input. This gives us the mutual admittances (Y) from the driven element to the
+    others. Using the geometry of the antenna, we can construct the admittance array,
+    then invert it to get the mutual impedances (Z). Normally, this would be a real
+    pain, but Matlab makes it pretty painless (<a href="data/bentzm.txt" target="_blank">Matlab
+        history</a>) if you cut and paste from the NEC output to Matlab.(<a href="../math/matinv.htm">More
+        on complex matrix inversion </a>). The mutual impedances are in the table below.
+    The calculations were done for all three ground conditions, mostly to get an
+    idea of how much it changes. (Ignore the spurious accuracy in the following
+    table. It is unlikely that you could measure the impedance to better than an
+    ohm or so, and construction tolerances are probably bigger.)</p>
 <table width="75%" border="1">
-  <tr> 
-    <th>&nbsp;</th>
-    <th>Z11 (self)</th>
-    <th>Z12,Z13 (adjacent)</th>
-    <th>Z14 (diagonal)</th>
-  </tr>
-  <tr> 
-    <th>Free Space</th>
-    <td>45.65 + 3.78i</td>
-    <td>-16.66 + 1.27i</td>
-    <td> 8.11 -11.63i</td>
-  </tr>
-  <tr> 
-    <th>Perfect Ground</th>
-    <td>45.19 - 7.12i </td>
-    <td>-18.68 + 3.49i </td>
-    <td>15.46 -15.46i</td>
-  </tr>
-  <tr> 
-    <th>Real Ground</th>
-    <td>45.22 - 0.79i</td>
-    <td>-18.00 + 2.05i </td>
-    <td>12.06 -13.83i</td>
-  </tr>
+    <tr>
+        <th>&nbsp;</th>
+        <th>Z11 (self)</th>
+        <th>Z12,Z13 (adjacent)</th>
+        <th>Z14 (diagonal)</th>
+    </tr>
+    <tr>
+        <th>Free Space</th>
+        <td>45.65 + 3.78i</td>
+        <td>-16.66 + 1.27i</td>
+        <td> 8.11 -11.63i</td>
+    </tr>
+    <tr>
+        <th>Perfect Ground</th>
+        <td>45.19 - 7.12i</td>
+        <td>-18.68 + 3.49i</td>
+        <td>15.46 -15.46i</td>
+    </tr>
+    <tr>
+        <th>Real Ground</th>
+        <td>45.22 - 0.79i</td>
+        <td>-18.00 + 2.05i</td>
+        <td>12.06 -13.83i</td>
+    </tr>
 </table>
 <h3>What sort of patterns</h3>
-<p>The whole point of this exercise is to somehow use multiple elements to get 
-  a more desirable pattern. The individual elements have responses that are much 
-  like a dipole (although the nulls aren't as sharp). We have two simple choices. 
-  The first is to phase the elements so that our &quot;look angle&quot; is at 
-  the 45 (or 135, 225, etc.). In this sort of scheme, a simple strategy would 
-  be to feed a dipole and the one diagonal from it, and not feed the other two. 
-  The diagonal spacing (based on previous calculations of phase center) is about 
-  7.6 meters, or a bit short of 3/4 wavelength. The other pair of antennas is 
-  8 dB down, so putting power into those elements isn't particularly useful (only 
-  1/8th of it would be sent in the desired direction). On receive, using the other 
-  antennas might be useful for placing a null, but that is a bit sophisticated. 
-  If we fed the antennas phased 270 degrees out of phase, we get a nice lobe in 
-  the forward direction, and good suppression of the back lobe. Actually, we can 
-  also feed 90 degrees out of phase, and the pattern is the same, except reversed.</p>
-<p>In reality, we probably want to optimize for a launch angle of 10-20 degrees 
-  above the horizon (since horizontal dipoles have a null AT the horizon), so 
-  the </p>
-<p>Another set of patterns is if we feed all four elements as a pair of 2 element 
-  broadside arrays. We take a hit on being 45 degrees off the main lobe (about 
-  3 dB), but we might pick up more performance because the vertical pattern would 
-  be better. For this situation, the front to back spacing is effectively 5 meters, 
-  or very close to a half wavelength. If we fed the two subarrays 180 out of phase, 
-  we don't suppress the back lobe at all. </p>
-<p>dipsq.htm - 28 June 2000 - <a href="mailto:jimlux@earthlink.net?subject=Dipole%20Square">Jim 
-  Lux</a><br>
-  23 December 2002, 2 Jan 2003- fixed broken links to images and files</p>
-<p><a href="phased/index.htm">(Phased Arrays)</a> (<a href="index.htm">Antenna 
-  index page</a>) (<a href="../index.htm">Radio Home Page</a>)<br>
-  <a href="http://www.luxfamily.com/jimlux/robot/index.htm">Robot Home Page</a> 
-  (this jumps you to luxfamily.com, by the way) (<a href="http://home.earthlink.net/%7Ejimlux/index.htm">Jim's 
-  Home Page</a>)</p>
+<p>The whole point of this exercise is to somehow use multiple elements to get
+    a more desirable pattern. The individual elements have responses that are much
+    like a dipole (although the nulls aren't as sharp). We have two simple choices.
+    The first is to phase the elements so that our &quot;look angle&quot; is at
+    the 45 (or 135, 225, etc.). In this sort of scheme, a simple strategy would
+    be to feed a dipole and the one diagonal from it, and not feed the other two.
+    The diagonal spacing (based on previous calculations of phase center) is about
+    7.6 meters, or a bit short of 3/4 wavelength. The other pair of antennas is
+    8 dB down, so putting power into those elements isn't particularly useful (only
+    1/8th of it would be sent in the desired direction). On receive, using the other
+    antennas might be useful for placing a null, but that is a bit sophisticated.
+    If we fed the antennas phased 270 degrees out of phase, we get a nice lobe in
+    the forward direction, and good suppression of the back lobe. Actually, we can
+    also feed 90 degrees out of phase, and the pattern is the same, except reversed.</p>
+<p>In reality, we probably want to optimize for a launch angle of 10-20 degrees
+    above the horizon (since horizontal dipoles have a null AT the horizon), so
+    the </p>
+<p>Another set of patterns is if we feed all four elements as a pair of 2 element
+    broadside arrays. We take a hit on being 45 degrees off the main lobe (about
+    3 dB), but we might pick up more performance because the vertical pattern would
+    be better. For this situation, the front to back spacing is effectively 5 meters,
+    or very close to a half wavelength. If we fed the two subarrays 180 out of phase,
+    we don't suppress the back lobe at all. </p>
+<p>dipsq.htm - 28 June 2000 - <a href="mailto:jimlux@earthlink.net?subject=Dipole%20Square">Jim
+    Lux</a><br>
+    23 December 2002, 2 Jan 2003- fixed broken links to images and files</p>
+<p><a href="phased/index.htm">(Phased Arrays)</a> (<a href="index.htm">Antenna
+    index page</a>) (<a href="../index.htm">Radio Home Page</a>)<br>
+    <a href="http://www.luxfamily.com/jimlux/robot/index.htm">Robot Home Page</a>
+    (this jumps you to luxfamily.com, by the way) (<a href="http://home.earthlink.net/%7Ejimlux/index.htm">Jim's
+        Home Page</a>)</p>
 </body>
 </html>

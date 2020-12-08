@@ -1,66 +1,66 @@
 <html>
 <head>
-<title>A broadside array for 10 meters - VE3GYY</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>A broadside array for 10 meters - VE3GYY</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 </head>
 
 <body bgcolor="#FFFFFF">
 <h2>A broadside array for 10 meters - VE3GYY</h2>
-<p>Peter Wotherspoon, VE3GYY, suggested an array consisting of 9 vertical wire 
-  dipoles spaced 1/4 wavelength apart, fed in phase to produce a broadside pattern. 
-  His original idea was for a feed network consisting of equal lengths of 300 
-  ohm twinlead, grouped in threes:</p>
+<p>Peter Wotherspoon, VE3GYY, suggested an array consisting of 9 vertical wire
+    dipoles spaced 1/4 wavelength apart, fed in phase to produce a broadside pattern.
+    His original idea was for a feed network consisting of equal lengths of 300
+    ohm twinlead, grouped in threes:</p>
 <p><img src="/radio/antenna/images/ve3yya.gif" height="521" width="616"></p>
-<p>Peter didn't propose any particular length of feeders, and, as is discussed 
-  elswhere, this scheme won't necessarily accomplish the goal of feeding all the 
-  elements in phase, mostly because of the mutual impedances between the elements. 
-  It seemed a good exercise to figure out what those impedances actually are. 
-  NEC can make short work of this sort of problem, or, one could use an approximation 
-  for the mutual impedance between halfwave resonant dipoles, values for which 
-  are tabulated in a variety of places.</p>
-<p> I started by building a NEC model of the dipoles. I made them all 5 meters 
-  long, and running the model at 30 MHz. In actuality, these dipoles would be 
-  a bit &quot;long&quot;, but, since I was interested in finding out the mutual 
-  effects, and more importantly, whether the earth had any signficant effect. 
-  I did this by running the model in free space, with perfect earth, and with 
-  real earth (but not the Sommerfield Norton ground model, which I really should 
-  do, because these really are near field effects...). I ran it 3 times, with 
-  the center of the array 3 meters, 4 meters, and 5 meters off the ground (since 
-  the &quot;arm&quot; of the dipole is only 2.5 m long, this corresponds to the 
-  lower end of the dipole being 0.5, 1.5, and 2.5 meters off the ground). The 
-  elements were spaced an eighth wavelength (i.e. 1.25 meters) apart. </p>
-<p>The mutual impedances were measured by exciting one of the elements, and connecting 
-  a 10K resistor across the feeds of the other 8 elements. A bit of complex math 
-  in a spreadsheet results in the mutul Z numbers.</p>
+<p>Peter didn't propose any particular length of feeders, and, as is discussed
+    elswhere, this scheme won't necessarily accomplish the goal of feeding all the
+    elements in phase, mostly because of the mutual impedances between the elements.
+    It seemed a good exercise to figure out what those impedances actually are.
+    NEC can make short work of this sort of problem, or, one could use an approximation
+    for the mutual impedance between halfwave resonant dipoles, values for which
+    are tabulated in a variety of places.</p>
+<p> I started by building a NEC model of the dipoles. I made them all 5 meters
+    long, and running the model at 30 MHz. In actuality, these dipoles would be
+    a bit &quot;long&quot;, but, since I was interested in finding out the mutual
+    effects, and more importantly, whether the earth had any signficant effect.
+    I did this by running the model in free space, with perfect earth, and with
+    real earth (but not the Sommerfield Norton ground model, which I really should
+    do, because these really are near field effects...). I ran it 3 times, with
+    the center of the array 3 meters, 4 meters, and 5 meters off the ground (since
+    the &quot;arm&quot; of the dipole is only 2.5 m long, this corresponds to the
+    lower end of the dipole being 0.5, 1.5, and 2.5 meters off the ground). The
+    elements were spaced an eighth wavelength (i.e. 1.25 meters) apart. </p>
+<p>The mutual impedances were measured by exciting one of the elements, and connecting
+    a 10K resistor across the feeds of the other 8 elements. A bit of complex math
+    in a spreadsheet results in the mutul Z numbers.</p>
 <p>The NEC input files and the Excel analyses are here:</p>
 <table width="75%" border="1">
-  <tr>
-    <td>3m</td>
-    <td><a href="data/zvdat3.txt">input</a></td>
-    <td><a href="data/zvdat3.xls">xls</a></td>
-  </tr>
-  <tr>
-    <td>4m</td>
-    <td><a href="data/zvdat4.txt">input</a></td>
-    <td><a href="data/zvdat4.xls">xls</a></td>
-  </tr>
-  <tr>
-    <td>5m</td>
-    <td><a href="data/zvdat5.txt">input</a></td>
-    <td><a href="data/zvdat5.xls">xls</a></td>
-  </tr>
+    <tr>
+        <td>3m</td>
+        <td><a href="data/zvdat3.txt">input</a></td>
+        <td><a href="data/zvdat3.xls">xls</a></td>
+    </tr>
+    <tr>
+        <td>4m</td>
+        <td><a href="data/zvdat4.txt">input</a></td>
+        <td><a href="data/zvdat4.xls">xls</a></td>
+    </tr>
+    <tr>
+        <td>5m</td>
+        <td><a href="data/zvdat5.txt">input</a></td>
+        <td><a href="data/zvdat5.xls">xls</a></td>
+    </tr>
 </table>
 <p>This was interesting...</p>
-<p>Now, I tried a feed network using 1/4 wave lines of 300 ohm twinlead, all tied 
-  to the same point. <a href="data/ve3gyya.txt">NEC Model file</a></p>
-<p>The feed impedance isn't all that strange: 83.3+j26.9, 90.2+j25.6 (perfect 
-  ground), 86.1+j26.5(real ground, approx), and a quick check on the magnitudes 
-  and phases shows them all being about the same.</p>
+<p>Now, I tried a feed network using 1/4 wave lines of 300 ohm twinlead, all tied
+    to the same point. <a href="data/ve3gyya.txt">NEC Model file</a></p>
+<p>The feed impedance isn't all that strange: 83.3+j26.9, 90.2+j25.6 (perfect
+    ground), 86.1+j26.5(real ground, approx), and a quick check on the magnitudes
+    and phases shows them all being about the same.</p>
 <p>3.3336E-03 89.947</p>
 <p>/radio/antenna/ve3gyy.htm - October 2000 - Jim Lux<br>
-  (<a href="index.htm">antenna home page</a>) (<a href="../index.htm">radio home 
-  page</a>) (<a href="http://home.earthlink.net/%7Ejimlux/index.htm">Jim's home 
-  page</a>)</p>
+    (<a href="index.htm">antenna home page</a>) (<a href="../index.htm">radio home
+        page</a>) (<a href="http://home.earthlink.net/%7Ejimlux/index.htm">Jim's home
+        page</a>)</p>
 <p>&nbsp;</p>
 </body>
 </html>

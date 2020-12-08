@@ -1,102 +1,102 @@
 <html>
 <head>
-<title>Triggered spark gaps</title>
-<meta name="GENERATOR" content="Microsoft FrontPage 1.1">
+    <title>Triggered spark gaps</title>
+    <meta name="GENERATOR" content="Microsoft FrontPage 1.1">
 </head>
 <body>
 <h2>Triggered Spark Gaps</h2>
 <p>Triggered spark gaps are very popular as fast high current
-switches. With proper design, a triggered spark gap can switch
-megawatts of power in a few microseconds, with jitters of less
-than a nanosecond. These devices make use of the very low
-impedance of an arc once the arc is established. Two electrodes
-are separated by sufficient distance that the gap doesn't
-spontaneously break down. The breakdown is initiated by a variety
-of means: UV irradiation from another spark or a laser, an
-overvoltage pulse, or reducing the gas pressure in the gap.</p>
+    switches. With proper design, a triggered spark gap can switch
+    megawatts of power in a few microseconds, with jitters of less
+    than a nanosecond. These devices make use of the very low
+    impedance of an arc once the arc is established. Two electrodes
+    are separated by sufficient distance that the gap doesn't
+    spontaneously break down. The breakdown is initiated by a variety
+    of means: UV irradiation from another spark or a laser, an
+    overvoltage pulse, or reducing the gas pressure in the gap.</p>
 <p>There is a lot of similarity to a xenon flash tube here. In a
-triggered spark gap, the idea is to switch a lot of current at
-high voltage, so the arc characteristics are optimized for that.
-In a flash tube, the idea is to generate light, so the design is
-optimized for that (i.e. use xenon (high lumens/watt), a long
-path (limit watts/volume), etc).</p>
-<p>Some triggered gaps operate in a vacuum, for instance the GPV series sold by 
-  EG&amp;G (now part of Perkin-Elmer). Others use a gas filling which breaks down, 
-  as in those sold by Maxwell Labs (and others sold by EG&amp;G, and others). 
-  Both sealed and unsealed gaps are made.</p>
+    triggered spark gap, the idea is to switch a lot of current at
+    high voltage, so the arc characteristics are optimized for that.
+    In a flash tube, the idea is to generate light, so the design is
+    optimized for that (i.e. use xenon (high lumens/watt), a long
+    path (limit watts/volume), etc).</p>
+<p>Some triggered gaps operate in a vacuum, for instance the GPV series sold by
+    EG&amp;G (now part of Perkin-Elmer). Others use a gas filling which breaks down,
+    as in those sold by Maxwell Labs (and others sold by EG&amp;G, and others).
+    Both sealed and unsealed gaps are made.</p>
 <p>Triggered spark gaps should be distinguished from other arc
-conduction devices in that they are bidirectional. Other devices
-like thyratrons and ignitrons have a preferred direction of
-current flow. </p>
+    conduction devices in that they are bidirectional. Other devices
+    like thyratrons and ignitrons have a preferred direction of
+    current flow. </p>
 <h3>Trigger mechanisms used in triggered sparkgaps</h3>
 <p>Field distortion - The voltage on an auxiliary electrode
-(typically between the main gap electrodes) causes a local
-increase in the E field strength above the breakdown field. This
-technique is often combined with the swinging cascade design.</p>
+    (typically between the main gap electrodes) causes a local
+    increase in the E field strength above the breakdown field. This
+    technique is often combined with the swinging cascade design.</p>
 <p>Swinging Cascade - </p>
 <p>Irradiation - A spark across an auxiliary spark gap near (or
-within) the main gap produces UV light which ionizes the air in
-the gap or causes the emission of photoelectrons from the main
-gap electrodes, either of which reduces the breakdown voltage
-below the impressed voltage. Laser triggered spark gaps use a
-pulsed laser instead of the auxiliary spark gap. The
-&quot;Trigatron&quot; developed by Meek, et. al., is an
-implementation of this technique.</p>
-<p>Overvoltage - The voltage across the gap is momentarily raised above the breakdown 
-  voltage. This method is used in triggering high power xenon flash lamps by the 
-  &quot;series&quot; technique. A not so obvious approach to overvoltaging a gap 
-  is by reducing the pressure of the gas in the gap. </p>
+    within) the main gap produces UV light which ionizes the air in
+    the gap or causes the emission of photoelectrons from the main
+    gap electrodes, either of which reduces the breakdown voltage
+    below the impressed voltage. Laser triggered spark gaps use a
+    pulsed laser instead of the auxiliary spark gap. The
+    &quot;Trigatron&quot; developed by Meek, et. al., is an
+    implementation of this technique.</p>
+<p>Overvoltage - The voltage across the gap is momentarily raised above the breakdown
+    voltage. This method is used in triggering high power xenon flash lamps by the
+    &quot;series&quot; technique. A not so obvious approach to overvoltaging a gap
+    is by reducing the pressure of the gas in the gap. </p>
 <p>&nbsp;</p>
 <h3>Trigger polarity</h3>
-<p>In a typical triggered gap, there are three terminals. Two are the main current 
-  carrying terminals and the third is the trigger. There are 4 basic combinations 
-  of the polarities of the voltage being switched and the trigger pulse, and they 
-  all result in somewhat different performance of the gap. If the gap is symmetrical 
-  (like a 3 sphere gap), some of the combinations may be equivalent.</p>
+<p>In a typical triggered gap, there are three terminals. Two are the main current
+    carrying terminals and the third is the trigger. There are 4 basic combinations
+    of the polarities of the voltage being switched and the trigger pulse, and they
+    all result in somewhat different performance of the gap. If the gap is symmetrical
+    (like a 3 sphere gap), some of the combinations may be equivalent.</p>
 <table width="75%" border="1">
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td> + +</td>
-    <td>+ - </td>
-    <td>- +</td>
-    <td>- - </td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td> + +</td>
+        <td>+ -</td>
+        <td>- +</td>
+        <td>- -</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
 </table>
 <h3>Example designs for triggered gaps</h3>
 <h4>&nbsp;</h4>
 <h4>Triggered Quenched Multi Gap</h4>
-<p>Fr&uuml;ngel describes a triggered version of a quenched gap. Typically these 
-  are made with a number (i.e. 20) of disks, often copper, stacked with intervening 
-  insulating spacers (often mica). The gaps are very small, and there is a large 
-  thermal mass to conduct the heat away. Hydrogen is usually the working gas.</p>
-<p align="center"><img src="images/trigmult.GIF" width="401" height="128" alt="triggered multi gap (3K)"> 
+<p>Fr&uuml;ngel describes a triggered version of a quenched gap. Typically these
+    are made with a number (i.e. 20) of disks, often copper, stacked with intervening
+    insulating spacers (often mica). The gaps are very small, and there is a large
+    thermal mass to conduct the heat away. Hydrogen is usually the working gas.</p>
+<p align="center"><img src="images/trigmult.GIF" width="401" height="128" alt="triggered multi gap (3K)">
 </p>
 <h3>Suppliers</h3>
 <ul>
-  <li><a href="supplier.htm#EG&amp;G" target="supplier">EG&amp;G</a></li>
-  <li><a href="supplier.htm#Maxwell" target="supplier">Maxwell Labs</a>&#160;</li>
-  <li><a href="supplier.htm#reb3" target="supplier">R.E.Beverly III &amp; Associates 
-    (trigatrons)</a></li>
+    <li><a href="supplier.htm#EG&amp;G" target="supplier">EG&amp;G</a></li>
+    <li><a href="supplier.htm#Maxwell" target="supplier">Maxwell Labs</a>&#160;</li>
+    <li><a href="supplier.htm#reb3" target="supplier">R.E.Beverly III &amp; Associates
+        (trigatrons)</a></li>
 </ul>
 <p>&#160;</p>
 <hr>
 <p>&#160;<font size="1">Copyright 1997, Jim Lux/ hvtrigsg.htm /</font><a
-href="hvmain.htm"><font size="1"> Back to High Voltage Main Page</font></a><font
-size="1"> / </font><a href="../index.htm"><font size="1">Back to home page</font></a><font size="1"> 
-  / </font><a
-href="mailto:jimlux@earthlink.net"><font size="1">Mail to Jim</font></a><font
-size="1"> (jimlux@earthlink.net)<br>
-  revised 11 Jan 2000, 17 March 2001</font></p>
+        href="hvmain.htm"><font size="1"> Back to High Voltage Main Page</font></a><font
+        size="1"> / </font><a href="../index.htm"><font size="1">Back to home page</font></a><font size="1">
+    / </font><a
+        href="mailto:jimlux@earthlink.net"><font size="1">Mail to Jim</font></a><font
+        size="1"> (jimlux@earthlink.net)<br>
+    revised 11 Jan 2000, 17 March 2001</font></p>
 </body>
 </html>

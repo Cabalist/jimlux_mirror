@@ -3,67 +3,67 @@
 <html>
 
 <head>
-<title>Basic Electrostatics</title>
-<meta name="GENERATOR" content="Microsoft FrontPage 1.1">
+    <title>Basic Electrostatics</title>
+    <meta name="GENERATOR" content="Microsoft FrontPage 1.1">
 </head>
 
 <body>
 <h3>Basic Electrostatics</h3>
-<p>Electrostatics deals with charges, potentials, and the like where things aren't 
-changing, i.e. they're static. Basic principles of electrostatics are used all the 
-time in high voltage work for a lot of reasons. Popular high voltage generators 
-like the Van de Graaf are based on electrostatic principles (even though a 
-current is flowing). The burning question in a lot of high voltage work is whether 
-the system will electrically breakdown as the voltage is raised. This is generally 
-a question of quasi-static potential gradients which can be answered by simple 
-electrostatics.</p>
+<p>Electrostatics deals with charges, potentials, and the like where things aren't
+    changing, i.e. they're static. Basic principles of electrostatics are used all the
+    time in high voltage work for a lot of reasons. Popular high voltage generators
+    like the Van de Graaf are based on electrostatic principles (even though a
+    current is flowing). The burning question in a lot of high voltage work is whether
+    the system will electrically breakdown as the voltage is raised. This is generally
+    a question of quasi-static potential gradients which can be answered by simple
+    electrostatics.</p>
 <p><a href="statcalc.htm">A collection of practical calculations based on the following theory.</a></p>
 <h3>Coulomb's Law</h3>
-<p>The force on a charged point exerted by a second charge is proportional to the 
-product of charges, and inversely proportional to the square of the distance 
-between the charges, and acts either directly towards each other (opposite 
-charges) or away from each other (same sign of charge).</p>
+<p>The force on a charged point exerted by a second charge is proportional to the
+    product of charges, and inversely proportional to the square of the distance
+    between the charges, and acts either directly towards each other (opposite
+    charges) or away from each other (same sign of charge).</p>
 <p>&#160;</p>
 <p><tt>F(vector) = k * q1 * q2 / r12^2 * direction(r12)</tt></p>
 <p>where</p>
 <blockquote>
-<p><tt>k = 1 / (4 * pi * epsilon) = 8.99E9 Newton 
-Meter^2/Coulomb^2</tt></p>
-<p>where <tt>epsilon</tt> is the dielectric constant of the medium ( = 
-8.85E-12 for vacuum)</p>
+    <p><tt>k = 1 / (4 * pi * epsilon) = 8.99E9 Newton
+        Meter^2/Coulomb^2</tt></p>
+    <p>where <tt>epsilon</tt> is the dielectric constant of the medium ( =
+        8.85E-12 for vacuum)</p>
 </blockquote>
 <p><tt>r12</tt> is the scalar distance from point 1 to point 2</p>
 <p><tt>direction (r12)</tt> is a unit vector from point 1 to point 2</p>
 <p>&#160;<tt>q1,q2</tt> are charges on each point</p>
 <h4>Capacitance of two parallel plates</h4>
 <blockquote>
-<p><tt>C = epsilon * Area / DistanceBetweenPlates</tt></p>
+    <p><tt>C = epsilon * Area / DistanceBetweenPlates</tt></p>
 </blockquote>
-<p>this neglects fringing effects, which for plates that are smaller than, say, 10 times 
-the spacing, are pretty significant.</p>
+<p>this neglects fringing effects, which for plates that are smaller than, say, 10 times
+    the spacing, are pretty significant.</p>
 <h4>Capacitance of two concentric cylinders (e.g. coaxial cable)</h4>
 <blockquote>
-<p><tt>C = 2 * pi * epsilon * length / ln( 
-rOuter/rInner)</tt></p>
+    <p><tt>C = 2 * pi * epsilon * length / ln(
+        rOuter/rInner)</tt></p>
 </blockquote>
 <p>this assumes <tt>length</tt> &gt;&gt; <tt>r</tt></p>
 <h4>Capacitance of two concentric spheres</h4>
 <blockquote>
-<p><tt>C = 4 * pi * epsilon * rInner * rOuter/ (rOuter 
-- rInner)</tt></p>
+    <p><tt>C = 4 * pi * epsilon * rInner * rOuter/ (rOuter
+        - rInner)</tt></p>
 </blockquote>
-<p>as <tt>rOuter</tt> goes to infinity, the fraction <tt>rOuter/(rOuter-rInner)</tt> goes to 
-one, leading to the following handy equation:</p>
+<p>as <tt>rOuter</tt> goes to infinity, the fraction <tt>rOuter/(rOuter-rInner)</tt> goes to
+    one, leading to the following handy equation:</p>
 <h4>Capacitance of isolated sphere</h4>
 <blockquote>
-<p><tt>C = 4*pi*epsilon*radius = approx 111.2 pF/meter</tt></p>
+    <p><tt>C = 4*pi*epsilon*radius = approx 111.2 pF/meter</tt></p>
 </blockquote>
-<p>this equation is derived from the equation for two concentric (nested) spheres, 
-and letting the radius of the outer sphere go to infinity.</p>
+<p>this equation is derived from the equation for two concentric (nested) spheres,
+    and letting the radius of the outer sphere go to infinity.</p>
 <p>&#160;</p>
 <hr>
-<p><font size=1>Copyright 1997, Jim Lux / 14 Sep 1997 / statics.htm / </font><a href="hvmain.htm"><font size=1>Back to HV Home</font></a><font size=1> / </font><a href="../index.htm"><font size=1>Back to home page</font></a><font size=1> / </font><a href="mailto:jimlux@earthlink.net"><font size=1>Mail 
-to Jim</font></a></p>
+<p><font size=1>Copyright 1997, Jim Lux / 14 Sep 1997 / statics.htm / </font><a href="hvmain.htm"><font size=1>Back to HV Home</font></a><font size=1> / </font><a href="../index.htm"><font size=1>Back to home page</font></a><font size=1> / </font><a href="mailto:jimlux@earthlink.net"><font size=1>Mail
+    to Jim</font></a></p>
 </body>
 
 </html>

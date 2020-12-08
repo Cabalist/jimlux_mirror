@@ -3,200 +3,202 @@
 <html>
 
 <head>
-<title>Gaseous Breakdown &amp; Paschen's Law</title>
-<meta name="GENERATOR" content="Microsoft FrontPage 1.1">
+    <title>Gaseous Breakdown &amp; Paschen's Law</title>
+    <meta name="GENERATOR" content="Microsoft FrontPage 1.1">
 </head>
 
 <body>
 <h2>&#160;Paschen's Law</h2>
-<p>In 1889, F. Pashchen published a paper ( <em>Wied. Ann.</em>, <strong>37</strong>, 
-  69) (<a href="http://www.luxfamily.com/hv/paschen.pdf" target="_blank">pdf, 
-  2.6 MB</a>)which set out what has become known as Paschen's Law. The law essentially 
-  states that the breakdown characteristics of a gap are a function (generally 
-  not linear) of the product of the gas pressure and the gap length, usually written 
-  as V= f( <em>pd</em> ), where <em>p</em> is the pressure and <em>d</em> is the 
-  gap distance. In actuality, the pressure should probably be replaced by the 
-  gas density.</p>
-<p>It's important to know that Paschen only worked at higher pressures (&gt;several 
-  Torr) and gaps of more than several mm, so the familiar &quot;Paschen curve&quot; 
-  with the minima is a later creation.</p>
-<p>For air, and gaps on the order of a millimeter, the breakdown is roughly a linear 
-function of the gap length: V = 30<em>pd</em> + 1.35 kV, where <em>d</em> is in centimeters, and <em>p</em> is 
-in atmospheres.</p>
-<p>Much research has been done since then to provide a theoretical basis for the law 
-and to develop a greater understanding of the mechanisms of breakdown. Some of 
-this will be described in the rest of this section, but it should be realized that there 
-are many, many factors which have an effect on the breakdown of a gap, such as 
-radiation, dust, surface irregularities. Excessive theoretical analysis might help 
-understanding why a gap breaks down, but won't necessarily provide a more 
-accurate value for the breakdown voltage in any given situation.</p>
-<p>Paschen's Law reflects the Townsend breakdown mechanism in gases, that is, a 
-cascading of secondary electrons emitted by collisions in the gap. The significant 
-parameter is <em>pd</em>, the product of the gap distance and the pressure. Typically, the 
-Townsend mechanism (and by extension Paschen's law) apply at <em>pd</em> products less 
-than 1000 torr cm, or gaps around a centimeter at one atmosphere. Furthermore, 
-some modifications are necessary for highly electronegative gases because they 
-recombine the secondary electrons very quickly.</p>
-<p>In general, an equation for breakdown is derived, and suitable parameters chosen 
-by fitting to empirical data.</p>
+<p>In 1889, F. Pashchen published a paper ( <em>Wied. Ann.</em>, <strong>37</strong>,
+    69) (<a href="http://www.luxfamily.com/hv/paschen.pdf" target="_blank">pdf,
+        2.6 MB</a>)which set out what has become known as Paschen's Law. The law essentially
+    states that the breakdown characteristics of a gap are a function (generally
+    not linear) of the product of the gas pressure and the gap length, usually written
+    as V= f( <em>pd</em> ), where <em>p</em> is the pressure and <em>d</em> is the
+    gap distance. In actuality, the pressure should probably be replaced by the
+    gas density.</p>
+<p>It's important to know that Paschen only worked at higher pressures (&gt;several
+    Torr) and gaps of more than several mm, so the familiar &quot;Paschen curve&quot;
+    with the minima is a later creation.</p>
+<p>For air, and gaps on the order of a millimeter, the breakdown is roughly a linear
+    function of the gap length: V = 30<em>pd</em> + 1.35 kV, where <em>d</em> is in centimeters, and <em>p</em> is
+    in atmospheres.</p>
+<p>Much research has been done since then to provide a theoretical basis for the law
+    and to develop a greater understanding of the mechanisms of breakdown. Some of
+    this will be described in the rest of this section, but it should be realized that there
+    are many, many factors which have an effect on the breakdown of a gap, such as
+    radiation, dust, surface irregularities. Excessive theoretical analysis might help
+    understanding why a gap breaks down, but won't necessarily provide a more
+    accurate value for the breakdown voltage in any given situation.</p>
+<p>Paschen's Law reflects the Townsend breakdown mechanism in gases, that is, a
+    cascading of secondary electrons emitted by collisions in the gap. The significant
+    parameter is <em>pd</em>, the product of the gap distance and the pressure. Typically, the
+    Townsend mechanism (and by extension Paschen's law) apply at <em>pd</em> products less
+    than 1000 torr cm, or gaps around a centimeter at one atmosphere. Furthermore,
+    some modifications are necessary for highly electronegative gases because they
+    recombine the secondary electrons very quickly.</p>
+<p>In general, an equation for breakdown is derived, and suitable parameters chosen
+    by fitting to empirical data.</p>
 <p>Here are three equations:</p>
 <p>Breakdown voltage:<br>
-<tt>Vbreakdown = B * p * d / (C + ln( p * d))</tt></p>
+    <tt>Vbreakdown = B * p * d / (C + ln( p * d))</tt></p>
 <p>Breakdown field strength:<br>
-<tt>Ebreakdown = p * ( B / ( C + ln ( p * d)))</tt></p>
+    <tt>Ebreakdown = p * ( B / ( C + ln ( p * d)))</tt></p>
 <p>where:<br>
-  <tt>C =ln( A / ln ( 1 + 1 / gamma))</tt></p>
+    <tt>C =ln( A / ln ( 1 + 1 / gamma))</tt></p>
 <p>where:<br>
-<tt>gamma</tt> is the (poorly known) secondary ionization coefficient.</p>
+    <tt>gamma</tt> is the (poorly known) secondary ionization coefficient.</p>
 <p>For air:<br>
-<tt>A = 15 cm</tt><sup><tt>-1</tt></sup><tt>Torr </tt><sup><tt>-1</tt></sup><br>
-<tt>B = 365 Vcm</tt><sup><tt>-1</tt></sup><tt> Torr</tt><sup><tt>-1<br>
-</tt></sup>and <tt>gamma = 10</tt><sup><tt>-2</tt></sup><br>
-so<br>
-<tt>C = 1.18</tt></p>
+    <tt>A = 15 cm</tt><sup><tt>-1</tt></sup><tt>Torr </tt><sup><tt>-1</tt></sup><br>
+    <tt>B = 365 Vcm</tt><sup><tt>-1</tt></sup><tt> Torr</tt><sup><tt>-1<br>
+    </tt></sup>and <tt>gamma = 10</tt><sup><tt>-2</tt></sup><br>
+    so<br>
+    <tt>C = 1.18</tt></p>
 <p><em>&#160;above data taken from </em><a href="hvrefs.htm#Bazelyan"><em>Bazelyan</em></a><em>, p.32</em></p>
 <p>Minimum sparking potential for various gases</p>
 <table width=46% border="1">
-  <tr> 
-    <th width=33%> 
-      <div align="center">Gas</div>
-    </th>
-    <th width=34%> 
-      <div align="center">Vs min<br>
-        (V)</div>
-    </th>
-    <th width=33%> 
-      <div align="center">pd at Vs min<br>
-        (torr cm)</div>
-    </th>
-  </tr>
-  <tr> 
-    <td width=33%>Air</td>
-    <td width=34%> 
-      <div align="right">327</div>
-    </td>
-    <td width=33%> 
-      <div align="right">0.567</div>
-    </td>
-  </tr>
-  <tr> 
-    <td width=33%>Ar</td>
-    <td width=34%> 
-      <div align="right">137</div>
-    </td>
-    <td width=33%> 
-      <div align="right">0.9</div>
-    </td>
-  </tr>
-  <tr> 
-    <td width=33%>H2</td>
-    <td width=34%> 
-      <div align="right">273</div>
-    </td>
-    <td width=33%> 
-      <div align="right">1.15</div>
-    </td>
-  </tr>
-  <tr> 
-    <td width=33%>He</td>
-    <td width=34%> 
-      <div align="right">156</div>
-    </td>
-    <td width=33%> 
-      <div align="right">4.0</div>
-    </td>
-  </tr>
-  <tr> 
-    <td width=33%>CO2</td>
-    <td width=34%> 
-      <div align="right">420</div>
-    </td>
-    <td width=33%> 
-      <div align="right">0.51</div>
-    </td>
-  </tr>
-  <tr> 
-    <td width=33%>N2</td>
-    <td width=34%> 
-      <div align="right">251</div>
-    </td>
-    <td width=33%> 
-      <div align="right">0.67</div>
-    </td>
-  </tr>
-  <tr> 
-    <td width=33%>N2O</td>
-    <td width=34%> 
-      <div align="right">418</div>
-    </td>
-    <td width=33%> 
-      <div align="right">0.5</div>
-    </td>
-  </tr>
-  <tr> 
-    <td width=33%>O2</td>
-    <td width=34%> 
-      <div align="right">450</div>
-    </td>
-    <td width=33%> 
-      <div align="right">0.7</div>
-    </td>
-  </tr>
-  <tr> 
-    <td width=33%>SO2</td>
-    <td width=34%> 
-      <div align="right">457</div>
-    </td>
-    <td width=33%> 
-      <div align="right">0.33</div>
-    </td>
-  </tr>
-  <tr> 
-    <td width=33%>H2S</td>
-    <td width=34%> 
-      <div align="right">414</div>
-    </td>
-    <td width=33%> 
-      <div align="right">0.6</div>
-    </td>
-  </tr>
+    <tr>
+        <th width=33%>
+            <div align="center">Gas</div>
+        </th>
+        <th width=34%>
+            <div align="center">Vs min<br>
+                (V)
+            </div>
+        </th>
+        <th width=33%>
+            <div align="center">pd at Vs min<br>
+                (torr cm)
+            </div>
+        </th>
+    </tr>
+    <tr>
+        <td width=33%>Air</td>
+        <td width=34%>
+            <div align="right">327</div>
+        </td>
+        <td width=33%>
+            <div align="right">0.567</div>
+        </td>
+    </tr>
+    <tr>
+        <td width=33%>Ar</td>
+        <td width=34%>
+            <div align="right">137</div>
+        </td>
+        <td width=33%>
+            <div align="right">0.9</div>
+        </td>
+    </tr>
+    <tr>
+        <td width=33%>H2</td>
+        <td width=34%>
+            <div align="right">273</div>
+        </td>
+        <td width=33%>
+            <div align="right">1.15</div>
+        </td>
+    </tr>
+    <tr>
+        <td width=33%>He</td>
+        <td width=34%>
+            <div align="right">156</div>
+        </td>
+        <td width=33%>
+            <div align="right">4.0</div>
+        </td>
+    </tr>
+    <tr>
+        <td width=33%>CO2</td>
+        <td width=34%>
+            <div align="right">420</div>
+        </td>
+        <td width=33%>
+            <div align="right">0.51</div>
+        </td>
+    </tr>
+    <tr>
+        <td width=33%>N2</td>
+        <td width=34%>
+            <div align="right">251</div>
+        </td>
+        <td width=33%>
+            <div align="right">0.67</div>
+        </td>
+    </tr>
+    <tr>
+        <td width=33%>N2O</td>
+        <td width=34%>
+            <div align="right">418</div>
+        </td>
+        <td width=33%>
+            <div align="right">0.5</div>
+        </td>
+    </tr>
+    <tr>
+        <td width=33%>O2</td>
+        <td width=34%>
+            <div align="right">450</div>
+        </td>
+        <td width=33%>
+            <div align="right">0.7</div>
+        </td>
+    </tr>
+    <tr>
+        <td width=33%>SO2</td>
+        <td width=34%>
+            <div align="right">457</div>
+        </td>
+        <td width=33%>
+            <div align="right">0.33</div>
+        </td>
+    </tr>
+    <tr>
+        <td width=33%>H2S</td>
+        <td width=34%>
+            <div align="right">414</div>
+        </td>
+        <td width=33%>
+            <div align="right">0.6</div>
+        </td>
+    </tr>
 </table>
 <p><em>data from </em><a href="hvrefs.htm#Naidu"><em>Naidu</em></a><em>, p.27</em></p>
-<p>Note that the sparking voltage is affected by the electrode material, with 
-  cathodes of Barium and Magnesium having higher voltages than Aluminum, for example.</p>
+<p>Note that the sparking voltage is affected by the electrode material, with
+    cathodes of Barium and Magnesium having higher voltages than Aluminum, for example.</p>
 <p>&nbsp;</p>
 <h4>Temperature dependence</h4>
-<p>Paschen's law ( V = f(pd)) should really be stated as V = f( Nd) where N is 
-  the density of gas molecules, which is, of course, affected by the temperature 
-  as well as the pressure of the gas ( n/V = p/RT). An empirical formula for air 
-  (considering it as an ideal gas) is:</p>
+<p>Paschen's law ( V = f(pd)) should really be stated as V = f( Nd) where N is
+    the density of gas molecules, which is, of course, affected by the temperature
+    as well as the pressure of the gas ( n/V = p/RT). An empirical formula for air
+    (considering it as an ideal gas) is:</p>
 <p><tt>x = 293 * p * d / (760 * T)<br>
-  Vbreakdown = 24.22 * x + 6.08 * SQRT(x)<br>
-  </tt></p>
+    Vbreakdown = 24.22 * x + 6.08 * SQRT(x)<br>
+</tt></p>
 <p><tt>p = pressure in Torr (mm Hg),<br>
-  d = distance in cm,<br>
-  T = Temperature in Kelvins<br>
-  Vbreakdown in kV</tt></p>
+    d = distance in cm,<br>
+    T = Temperature in Kelvins<br>
+    Vbreakdown in kV</tt></p>
 <h4>Humidity dependence</h4>
-<p>In air, increasing humidity increases the breakdown voltage. The effect is 
-  most noticeable in uniform field, and less important in nonuniform gaps (such 
-  as sphere gaps where the gap is a large fraction of the sphere diameter, or 
-  in rod or needle gaps). An emprical expression for this is:</p>
+<p>In air, increasing humidity increases the breakdown voltage. The effect is
+    most noticeable in uniform field, and less important in nonuniform gaps (such
+    as sphere gaps where the gap is a large fraction of the sphere diameter, or
+    in rod or needle gaps). An emprical expression for this is:</p>
 <p>(not here yet)</p>
 <h4>Gamma - Townsend's secondary ionization coefficient</h4>
-<p>Gamma is the net (!) number of secondary electrons produced per incident 
-positive ion, photon, excited or metastable particle. It is a function of gas pressure 
-and E/p. Electronegative gases (SF6, Freon, oxygen, CO2) reattach the electrons 
-very quickly, so they have low gammas. </p>
-<p>For nitrogen, gamma ranges between 10-3 and 10-2 for E/p of 100-700 V cm-1 
-torr-1. Insulating gases like SF6 or Freon have gammas of 10-4 or even less.</p>
+<p>Gamma is the net (!) number of secondary electrons produced per incident
+    positive ion, photon, excited or metastable particle. It is a function of gas pressure
+    and E/p. Electronegative gases (SF6, Freon, oxygen, CO2) reattach the electrons
+    very quickly, so they have low gammas. </p>
+<p>For nitrogen, gamma ranges between 10-3 and 10-2 for E/p of 100-700 V cm-1
+    torr-1. Insulating gases like SF6 or Freon have gammas of 10-4 or even less.</p>
 <p>A further reference for information would be <a href="hvrefs.htm#Cobine">Cobine</a>.</p>
 <p>&nbsp;</p>
 <hr>
-<p><font size=1>Copyright 1997, Jim Lux/ 9 Feb 2004/ paschen.htm / </font><a href="hvmain.htm"><font size=1>Back 
-  to HV Home</font></a><font size=1> / </font><a href="../index.htm"><font size=1>Back 
-  to home page</font></a><font size=1> / </font><a href="mailto:jimlux@earthlink.net?Subject=Paschen%20page"><font size=1>Mail 
-  to Jim</font></a></p>
+<p><font size=1>Copyright 1997, Jim Lux/ 9 Feb 2004/ paschen.htm / </font><a href="hvmain.htm"><font size=1>Back
+    to HV Home</font></a><font size=1> / </font><a href="../index.htm"><font size=1>Back
+    to home page</font></a><font size=1> / </font><a href="mailto:jimlux@earthlink.net?Subject=Paschen%20page"><font size=1>Mail
+    to Jim</font></a></p>
 </body>
 
 </html>

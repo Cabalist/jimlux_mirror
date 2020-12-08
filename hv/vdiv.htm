@@ -3,64 +3,64 @@
 <html>
 
 <head>
-<title>Voltage Dividers (Resistor, Capacitor, RC)</title>
-<meta name="GENERATOR" content="Microsoft FrontPage 1.1">
+    <title>Voltage Dividers (Resistor, Capacitor, RC)</title>
+    <meta name="GENERATOR" content="Microsoft FrontPage 1.1">
 </head>
 
 <body>
 <h2>Voltage Dividers</h2>
 <h4>Resistors, Capacitors, RC combinations</h4>
-<p>A general method for measuring high voltages is to use a voltage divider composed of two 
-impedances in series. The ratio of impedance is such that the voltage across one of the elements is 
-some convenient fraction (like 1/1000) of the voltage across the combination. </p>
+<p>A general method for measuring high voltages is to use a voltage divider composed of two
+    impedances in series. The ratio of impedance is such that the voltage across one of the elements is
+    some convenient fraction (like 1/1000) of the voltage across the combination. </p>
 <p>[figure here]</p>
-<p>To make the power consumption of the divider as low as possible, the impedances are quite large: 
-10's of Gigaohm (1e9 ohms) might be used for measuring megavolt level signals (resulting in a 
-current of a few tens of microamps). In an ideal world, the impedances would be pure resistors. 
-The physically large size and the high impedances of high voltage equipment means that parasitic 
-inductances and capacitances &#160;can be significant. Even at 60 Hz, a 10pF parasitic C has an 
-impedance of 260 Megohm. 10 pF is roughly the capacitance of a 10 cm radius sphere (8&quot; 
-diameter). If the resistor string is 2 meters long, it's inductance is probably several microhenries, not 
-particularly significant at power line frequencies, but a signficant concern at the higher frequencies 
-encountered in fast impulse work. Measuring voltages or potentials with any AC component is 
-greatly affected by these parasitic reactances, and much of high quality divider design goes to 
-minimizing or compensating their effect.</p>
+<p>To make the power consumption of the divider as low as possible, the impedances are quite large:
+    10's of Gigaohm (1e9 ohms) might be used for measuring megavolt level signals (resulting in a
+    current of a few tens of microamps). In an ideal world, the impedances would be pure resistors.
+    The physically large size and the high impedances of high voltage equipment means that parasitic
+    inductances and capacitances &#160;can be significant. Even at 60 Hz, a 10pF parasitic C has an
+    impedance of 260 Megohm. 10 pF is roughly the capacitance of a 10 cm radius sphere (8&quot;
+    diameter). If the resistor string is 2 meters long, it's inductance is probably several microhenries, not
+    particularly significant at power line frequencies, but a signficant concern at the higher frequencies
+    encountered in fast impulse work. Measuring voltages or potentials with any AC component is
+    greatly affected by these parasitic reactances, and much of high quality divider design goes to
+    minimizing or compensating their effect.</p>
 <p>[figure here]</p>
-<p>For making AC measurements, purely capacitive dividers are popular. A fairly small capacitor 
-forms the upper arm of the divider, and a larger, lower voltage capacitor forms the bottom. High 
-pressure gas capacitors are popular for the high voltage arm. A high pressure gas capacitor can 
-provide a reasonable capacitance with a high voltage rating in a physically small package, which is 
-important for measurements on fast transients.</p>
+<p>For making AC measurements, purely capacitive dividers are popular. A fairly small capacitor
+    forms the upper arm of the divider, and a larger, lower voltage capacitor forms the bottom. High
+    pressure gas capacitors are popular for the high voltage arm. A high pressure gas capacitor can
+    provide a reasonable capacitance with a high voltage rating in a physically small package, which is
+    important for measurements on fast transients.</p>
 <h4>Thermal effects</h4>
-<p>Small as the current is through most high value resistive dividers, it may consititute a significant 
-amount of power, which goes into heating yup the resistive elements. This heating will cause a 
-change in the value of the resistor, changing the overall ratio of the divider.</p>
-<p>Classic standards work, as reported in Craggs &amp; Meek, used maganin resistors. Manganin has an 
-extremely low temperature coefficient of resistance (1.5 ppm/deg C) (see Resistance Wire Table) 
-compared to Nichrome ( 13 ppm) or Copper ( ppm).</p>
-<p>Immersing the entire resistive divider in oil or rapidly circulating dielectric gas (e.g. SF6 or dry air) 
-also ensures that all components are at the same temperature, so that, while the absolute values 
-might change, the ratios will remain constant, for DC at least. Resistance value changes will change 
-the parasitic RC time constants, changing the frequency response.</p>
+<p>Small as the current is through most high value resistive dividers, it may consititute a significant
+    amount of power, which goes into heating yup the resistive elements. This heating will cause a
+    change in the value of the resistor, changing the overall ratio of the divider.</p>
+<p>Classic standards work, as reported in Craggs &amp; Meek, used maganin resistors. Manganin has an
+    extremely low temperature coefficient of resistance (1.5 ppm/deg C) (see Resistance Wire Table)
+    compared to Nichrome ( 13 ppm) or Copper ( ppm).</p>
+<p>Immersing the entire resistive divider in oil or rapidly circulating dielectric gas (e.g. SF6 or dry air)
+    also ensures that all components are at the same temperature, so that, while the absolute values
+    might change, the ratios will remain constant, for DC at least. Resistance value changes will change
+    the parasitic RC time constants, changing the frequency response.</p>
 <h4>Voltage Coefficient of Resistance</h4>
-<p>Some resistive materials show a change in the resistivity as a function of the impressed electric field 
-strength. This would manifest itself as a change in the resistance as the voltage changes. A long 
-string of individual resistors, each run at a relatively low voltage, should not show this effect.</p>
+<p>Some resistive materials show a change in the resistivity as a function of the impressed electric field
+    strength. This would manifest itself as a change in the resistance as the voltage changes. A long
+    string of individual resistors, each run at a relatively low voltage, should not show this effect.</p>
 <p>&nbsp;</p>
 <h4>Safety Considerations</h4>
-<p>In the classic series resistor method for measuring voltage, the high value resistor string is in series 
-with a sensistive current measuring meter (typically a d'Arsonval meter). If the resistor were to fail 
-shorted, or flash over, the high voltage would appear across the meter, possibly producing a 
-personnel safety hazard, as well as destroying the meter. A simple safety precaution is a spark gap 
-across the meter, set for a kilovolt or so, that will arc over in case of a series resistor failure.</p>
-<p>Another means is to measure current through the high value resistor by measuring the voltage 
-across a resistor with a high impedance meter. </p>
-<p>Good, reliable ground connections for the low end of the divider are essential. Consider the circuit 
-shown below:</p>
+<p>In the classic series resistor method for measuring voltage, the high value resistor string is in series
+    with a sensistive current measuring meter (typically a d'Arsonval meter). If the resistor were to fail
+    shorted, or flash over, the high voltage would appear across the meter, possibly producing a
+    personnel safety hazard, as well as destroying the meter. A simple safety precaution is a spark gap
+    across the meter, set for a kilovolt or so, that will arc over in case of a series resistor failure.</p>
+<p>Another means is to measure current through the high value resistor by measuring the voltage
+    across a resistor with a high impedance meter. </p>
+<p>Good, reliable ground connections for the low end of the divider are essential. Consider the circuit
+    shown below:</p>
 <p>[figure here]</p>
-<p>If the ground connection at A is broken, the full high voltage will appear on the measuring device, 
-limited by the inevitable internal arcing or failure. Fortunately, the power will most likely be limited 
-by the high series resistance of the divider.</p>
+<p>If the ground connection at A is broken, the full high voltage will appear on the measuring device,
+    limited by the inevitable internal arcing or failure. Fortunately, the power will most likely be limited
+    by the high series resistance of the divider.</p>
 <p>Physical construction of voltage dividers&#160;</p>
 <hr>
 <p><font size=1>Copyright 1998, Jim Lux / vdiv.htm / 8 March 1998 / </font><a href="hvmain.htm"><font size=1>Back to HV Home</font></a><font size=1> / </font><a href="../index.htm"><font size=1>Back to home page</font></a><font size=1> / </font><a href="mailto:jimlux@earthlink.net"><font size=1>Mail to Jim</font></a></p>

@@ -2,10 +2,10 @@
 <html>
 
 <head>
-<meta http-equiv="Content-Type"
-content="text/html; charset=iso-8859-1">
-<meta name="GENERATOR" content="Microsoft FrontPage 2.0">
-<title>Marx Generators</title>
+    <meta http-equiv="Content-Type"
+          content="text/html; charset=iso-8859-1">
+    <meta name="GENERATOR" content="Microsoft FrontPage 2.0">
+    <title>Marx Generators</title>
 </head>
 
 <body>
@@ -13,150 +13,150 @@ content="text/html; charset=iso-8859-1">
 <h2>Marx Generators</h2>
 
 <p>A Marx Generator is a clever way of charging a number of
-capacitors in parallel, then discharging them in series.
-Originally described by E. Marx in 1924, Marx generators are
-probably the most common way of generating high voltage impulses
-for testing when the voltage level required is higher than
-available charging supply voltages. Furthermore, above about 200
-kV, the discharge capacitor becomes very expensive and bulky. The
-<a href="fitch.htm">Fitch</a> circuit is becoming popular where
-very good control over impulse voltage is required.</p>
+    capacitors in parallel, then discharging them in series.
+    Originally described by E. Marx in 1924, Marx generators are
+    probably the most common way of generating high voltage impulses
+    for testing when the voltage level required is higher than
+    available charging supply voltages. Furthermore, above about 200
+    kV, the discharge capacitor becomes very expensive and bulky. The
+    <a href="fitch.htm">Fitch</a> circuit is becoming popular where
+    very good control over impulse voltage is required.</p>
 
 <p><img src="images/marx3b.gif" alt="Marx Generator Schematic"
-width="770" height="225"></p>
+        width="770" height="225"></p>
 
 <h3>How it works</h3>
 
 <p>The charging voltage is applied to the system. The stage
-capacitors charge through the charging resistors (Rc). When fully
-charged, either the lowest gap is allowed to breakdown from
-overvoltage or it is triggered by an external source (if the gap
-spacing is set greater than the charging voltage breakdown
-spacing). This effectively puts the bottom two capacitors in
-series, overvoltaging the next gap up, which then puts the bottom
-three capacitors in series, which overvoltages the next gap, and
-so forth. This process is referred to as &quot;erecting&quot;. A
-common specification is the erected capacitance of the bank,
-equal to the stage capacitance divided by the number of stages.</p>
+    capacitors charge through the charging resistors (Rc). When fully
+    charged, either the lowest gap is allowed to breakdown from
+    overvoltage or it is triggered by an external source (if the gap
+    spacing is set greater than the charging voltage breakdown
+    spacing). This effectively puts the bottom two capacitors in
+    series, overvoltaging the next gap up, which then puts the bottom
+    three capacitors in series, which overvoltages the next gap, and
+    so forth. This process is referred to as &quot;erecting&quot;. A
+    common specification is the erected capacitance of the bank,
+    equal to the stage capacitance divided by the number of stages.</p>
 
 <p>The charging resistors are chosen to provide a typical
-charging time constant of several seconds. A typical charging
-current would be in the 50-100 mA range. The charging resistors
-also provide a current path to keep the arc in the spark gaps
-alive, and so, should be chosen to provide a current of 5-10 amps
-through the gap. The resistors are sometimes called &quot;feed
-forward&quot; resistors for this reason. The discharge through
-the charging resistors sets an upper bound on the impulse fall
-time, although usually, the impulse fall time is set by external
-resistors in parallel with the load (or integrated into the
-generator, as described below).</p>
+    charging time constant of several seconds. A typical charging
+    current would be in the 50-100 mA range. The charging resistors
+    also provide a current path to keep the arc in the spark gaps
+    alive, and so, should be chosen to provide a current of 5-10 amps
+    through the gap. The resistors are sometimes called &quot;feed
+    forward&quot; resistors for this reason. The discharge through
+    the charging resistors sets an upper bound on the impulse fall
+    time, although usually, the impulse fall time is set by external
+    resistors in parallel with the load (or integrated into the
+    generator, as described below).</p>
 
 <p>For example, with a stage voltage of 100 kV, a desired output
-voltage of 1 MV (i.e. 10 stages), the charging resistors should
-be about 20-40 kOhms (corresponding to an arc current of 5 to 10
-Amps). If the capacitors were 1 uF, then the discharge time
-constant would be 20 milliseconds, much, much longer than the 50
-microsecond time constant of the standard test impulse. This
-example generator would have a stored energy of 5 kJ/stage or 50
-kJ for the total system. At a charging current of 50 mA, it would
-take at least 20 seconds to charge the entire stack.</p>
+    voltage of 1 MV (i.e. 10 stages), the charging resistors should
+    be about 20-40 kOhms (corresponding to an arc current of 5 to 10
+    Amps). If the capacitors were 1 uF, then the discharge time
+    constant would be 20 milliseconds, much, much longer than the 50
+    microsecond time constant of the standard test impulse. This
+    example generator would have a stored energy of 5 kJ/stage or 50
+    kJ for the total system. At a charging current of 50 mA, it would
+    take at least 20 seconds to charge the entire stack.</p>
 
 <p>If a constant voltage charging source is used, significant
-energy is dissipated in the charging resistors, equal to the
-stored energy in the capacitors.</p>
+    energy is dissipated in the charging resistors, equal to the
+    stored energy in the capacitors.</p>
 
 <h3>Design enhancements and considerations</h3>
 
 <h4>Charging with a constant current source</h4>
 
 <p>If the Marx generator is charged from a constant voltage
-source, the energy dissipated in the charging resistors will be
-equal to that stored in the Marx capacitors. If the bank is
-charged with a constant current source, this energy loss can be
-substantially reduced.</p>
+    source, the energy dissipated in the charging resistors will be
+    equal to that stored in the Marx capacitors. If the bank is
+    charged with a constant current source, this energy loss can be
+    substantially reduced.</p>
 
 <h4>Integrating the waveshaping resistors into the generator</h4>
 
 <p>In the classic capacitor discharge impulse generator, the
-shape of the pulse is controlled by external impedances (usually
-resistors) at the &quot;output&quot; of the pulse generator. As
-voltages get higher, it gets harder to build practical resistors
-with low parasitic inductance that will also withstand the full
-impulse voltage. The usual remedy for this is to include the
-wave-shaping resistors in the Marx bank itself, as illustrated in
-the following figure.</p>
+    shape of the pulse is controlled by external impedances (usually
+    resistors) at the &quot;output&quot; of the pulse generator. As
+    voltages get higher, it gets harder to build practical resistors
+    with low parasitic inductance that will also withstand the full
+    impulse voltage. The usual remedy for this is to include the
+    wave-shaping resistors in the Marx bank itself, as illustrated in
+    the following figure.</p>
 
 <p><img src="images/marx3a.gif"
-alt="Marx Generator with integrated wave-shaping resistors"
-width="751" height="202"></p>
+        alt="Marx Generator with integrated wave-shaping resistors"
+        width="751" height="202"></p>
 
 <h4>Reducing the jitter</h4>
 
 <p>If the gaps in the Marx generator don't all fire at exactly
-the same time, the leading edge of the impulse will have steps
-and glitches as the gaps fire. These delays also result in an
-overall longer rise time for the impulse. If the jitter in the
-gaps is reduced, the overall performance is improved.</p>
+    the same time, the leading edge of the impulse will have steps
+    and glitches as the gaps fire. These delays also result in an
+    overall longer rise time for the impulse. If the jitter in the
+    gaps is reduced, the overall performance is improved.</p>
 
 <p>The traditional Marx generator operating in air has all the
-gaps in a line with the electrodes operating horizontally
-opposed. This allows the UV from bottom gap to irradiate the
-upper gaps, reducing their jitter. Tests reported in Craggs and
-Meek showed that obstructing the UV led to greatly increased
-jitter in the bank output, which they attribute to the lack of UV
-irradiation on the upper gaps.</p>
+    gaps in a line with the electrodes operating horizontally
+    opposed. This allows the UV from bottom gap to irradiate the
+    upper gaps, reducing their jitter. Tests reported in Craggs and
+    Meek showed that obstructing the UV led to greatly increased
+    jitter in the bank output, which they attribute to the lack of UV
+    irradiation on the upper gaps.</p>
 
 <p>For a Marx generator which is immersed in oil, or using
-enclosed spark gaps, resistor or capacitor networks can be used
-to propagate the trigger pulse to all the gaps, rather than
-relying on the overvoltaging of the upper gaps to fire them.. A
-design from Maxwell labs uses a series of resistors to apply the
-trigger impulse to all the gaps.</p>
+    enclosed spark gaps, resistor or capacitor networks can be used
+    to propagate the trigger pulse to all the gaps, rather than
+    relying on the overvoltaging of the upper gaps to fire them.. A
+    design from Maxwell labs uses a series of resistors to apply the
+    trigger impulse to all the gaps.</p>
 
 <p>Laser irradiation or triggering of the gaps could also be
-used.</p>
+    used.</p>
 
 <p>Craggs and Meek also report the use of radioactive sources
-included within the gap electrodes to reduce the jitter.</p>
+    included within the gap electrodes to reduce the jitter.</p>
 
 <h4>Other switching devices</h4>
 
 <p>The Marx technique has been used to generate impulses of
-several kilovolts from a relatively low charging source using
-avalanche transistors as the switching device instead of a spark
-gap. In this case, the resistors need to be chosen to keep the
-transistor turned on.</p>
+    several kilovolts from a relatively low charging source using
+    avalanche transistors as the switching device instead of a spark
+    gap. In this case, the resistors need to be chosen to keep the
+    transistor turned on.</p>
 
 <h4>Alternate charging schemes</h4>
 
 <p>Particularly for lower output voltages, the capacitors can be
-charged in parallel from a common source through a series
-resistor or inductor. The charging impedance has to withstand the
-full output voltage for the top stage. For the solid state Marx
-generator running at a few kV described above, this isn't as much
-of a problem as it would be for a megavolt range lightning
-impulse simulator.</p>
+    charged in parallel from a common source through a series
+    resistor or inductor. The charging impedance has to withstand the
+    full output voltage for the top stage. For the solid state Marx
+    generator running at a few kV described above, this isn't as much
+    of a problem as it would be for a megavolt range lightning
+    impulse simulator.</p>
 
 <h4>Inductors as the charging impedances</h4>
 
 <p>The charging resistors can be replaced by inductors,
-eliminating the power loss in the resistors.</p>
+    eliminating the power loss in the resistors.</p>
 
 <h4>Increasing the repetition rate by using Hydrogen spark gaps</h4>
 
 <p>Hydrogen has a very fast recovery time, facilitating the
-production of high rep rate pulses from a Marx circuit. An
-example of this is a design by Grothaus, Moran and Hardesty,
-shown in U.S. patent <a href="http://www.patents.ibm.com/details?patent_number=5311067">#5311067</a>. This
-is a very compact pulser running in a pressure tank filled with
-hydrogen.</p>
+    production of high rep rate pulses from a Marx circuit. An
+    example of this is a design by Grothaus, Moran and Hardesty,
+    shown in U.S. patent <a href="http://www.patents.ibm.com/details?patent_number=5311067">#5311067</a>. This
+    is a very compact pulser running in a pressure tank filled with
+    hydrogen.</p>
 
 <hr>
 
 <p><font size="1">Copyright 1998, Jim Lux / marx.htm / 3 May 1998
-/ </font><a href="hvmain.htm"><font size="1">Back to HV Home</font></a><font
-size="1"> / </font><a href="../index.htm"><font size="1">Back to
-home page</font></a><font size="1"> / </font><a
-href="mailto:jimlux@earthlink.net"><font size="1">Mail to Jim</font></a></p>
+    / </font><a href="hvmain.htm"><font size="1">Back to HV Home</font></a><font
+        size="1"> / </font><a href="../index.htm"><font size="1">Back to
+    home page</font></a><font size="1"> / </font><a
+        href="mailto:jimlux@earthlink.net"><font size="1">Mail to Jim</font></a></p>
 </body>
 </html>

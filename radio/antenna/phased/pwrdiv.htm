@@ -1,14 +1,14 @@
 <HTML>
 <HEAD>
-   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
-   <META NAME="Author" CONTENT="Jim Lux">
-   <META NAME="GENERATOR" CONTENT="Mozilla/4.03 [en] (WinNT; U) [Netscape]">
-   <TITLE>Passive Beamformers - Distributing the Power</TITLE>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+    <META NAME="Author" CONTENT="Jim Lux">
+    <META NAME="GENERATOR" CONTENT="Mozilla/4.03 [en] (WinNT; U) [Netscape]">
+    <TITLE>Passive Beamformers - Distributing the Power</TITLE>
 </HEAD>
 <BODY>
 
 <H2>
-Distributing the Power</H2>
+    Distributing the Power</H2>
 One of the results you get after having determined element currents and
 applying the mutual impedance matrix is the power flowing to or from each
 element. Given that the matching and delay network is lossless, this is
@@ -20,38 +20,40 @@ resistive impedance of the antenna matching network to whatever is necessary
 to achieve proper power distribution.
 
 <P>Taking the easy case first, assume you want an even distribution of
-power. You would calculate the delay network to have an input impedance
-equal to 50*N ohms, where N is the number of elements. The figure below
-illustrates this for 4 elements.&nbsp; Each network would be adjusted so
-that it looked like a 200 ohm resistive impedance. When all the 200 ohm
-impedances were paralleled, the impedance that the transmitter sees is
-50 ohms.
+    power. You would calculate the delay network to have an input impedance
+    equal to 50*N ohms, where N is the number of elements. The figure below
+    illustrates this for 4 elements.&nbsp; Each network would be adjusted so
+    that it looked like a 200 ohm resistive impedance. When all the 200 ohm
+    impedances were paralleled, the impedance that the transmitter sees is
+    50 ohms.
 
-<P><IMG SRC="images/equaldiv.gif" ALT="4 way equal power division" NOSAVE HEIGHT=158 WIDTH=320> 
+<P><IMG SRC="images/equaldiv.gif" ALT="4 way equal power division" NOSAVE HEIGHT=158 WIDTH=320>
 <P>However, in general, the power is not divided evenly. In this case,
-you need to adjust the input impedances so that two constraints are met:
+    you need to adjust the input impedances so that two constraints are met:
 <UL>
-<LI>
-The parallel combination of them all has to be 50 ohms resistive; and</LI>
+    <LI>
+        The parallel combination of them all has to be 50 ohms resistive; and
+    </LI>
 
-<LI>
-the impedances are inversely proportional to the power to be distributed
-to that element.</LI>
+    <LI>
+        the impedances are inversely proportional to the power to be distributed
+        to that element.
+    </LI>
 </UL>
 
 
 <P>The following diagram shows how this would be done where you wished
-two elements to receive twice the power of the other two. Note that the
-parallel combination of the load resistances adds up to 50 ohms, and that
-the power dissipated in each load resistor is distributed appropriately.
+    two elements to receive twice the power of the other two. Note that the
+    parallel combination of the load resistances adds up to 50 ohms, and that
+    the power dissipated in each load resistor is distributed appropriately.
 
-<P><IMG SRC="images/unequaldiv.gif" ALT="4 way unequal power division" NOSAVE HEIGHT=142 WIDTH=320> 
+<P><IMG SRC="images/unequaldiv.gif" ALT="4 way unequal power division" NOSAVE HEIGHT=142 WIDTH=320>
 <P>The equation which determines the required load impedance for each element
-is:
-<BR>&nbsp;
-<BR>&nbsp;
+    is:
+    <BR>&nbsp;
+    <BR>&nbsp;
 <H4>
-Negative Source Impedances - Negative Element Power</H4>
+    Negative Source Impedances - Negative Element Power</H4>
 In some phased array set ups, a condition where negative power is consumed
 by an element occurs; that is, an element actually absorbs power from the
 other elements. With a lossless matching network, this power can be fed

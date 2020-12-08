@@ -1,50 +1,50 @@
 <html>
 <head>
-<title>APRS - Automatic Position Reporting System</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>APRS - Automatic Position Reporting System</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 </head>
 
 <body bgcolor="#FFFFFF">
 <h2>APRS - Automatic Position Reporting System</h2>
-<p>This is a pretty nifty system using amateur packet radio. A GPS receiver (a 
-  <a href="http://www.garmin.com/">Garmin</a> GPS III, in my case) sends a continuous 
-  stream of messages out the RS232 port with the position, heading, and speed 
-  (as well as a lot of other stuff). A device called a TNC (Terminal Node Controller) 
-  which is basically a modem with a microcontroller looks at the messages and 
-  parses the ones of interest. Once a minute (or whatever I program it to do), 
-  it transmits a message with the information parsed from the GPS messages. The 
-  transmission is 1200 baud FSK over the 2 meter amateur band (at 144.39 MHz) 
-  using a run of the mill Kenwood TH22 handheld radio. One or more receiving stations 
-  will hear the message (hopefully). The message gets retransmitted over the air 
-  to anyone who wants to receive it, and, it gets transmitted to a central internet 
-  location where a database is kept of the most recent messages. There is also 
-  a way to do this on HF frequencies, for longer range applications. On HF, the 
-  standard frequency is 10.151 MHz (in the &quot;30 Meter&quot; band).</p>
+<p>This is a pretty nifty system using amateur packet radio. A GPS receiver (a
+    <a href="http://www.garmin.com/">Garmin</a> GPS III, in my case) sends a continuous
+    stream of messages out the RS232 port with the position, heading, and speed
+    (as well as a lot of other stuff). A device called a TNC (Terminal Node Controller)
+    which is basically a modem with a microcontroller looks at the messages and
+    parses the ones of interest. Once a minute (or whatever I program it to do),
+    it transmits a message with the information parsed from the GPS messages. The
+    transmission is 1200 baud FSK over the 2 meter amateur band (at 144.39 MHz)
+    using a run of the mill Kenwood TH22 handheld radio. One or more receiving stations
+    will hear the message (hopefully). The message gets retransmitted over the air
+    to anyone who wants to receive it, and, it gets transmitted to a central internet
+    location where a database is kept of the most recent messages. There is also
+    a way to do this on HF frequencies, for longer range applications. On HF, the
+    standard frequency is 10.151 MHz (in the &quot;30 Meter&quot; band).</p>
 <p></p>
 <p>When you enter the url</p>
-<p> <a href="http://www.aprs.net:8000/w6rmk-5">http://www.aprs.net:8000/w6rmk-5</a> 
-  - original APRS web server</p>
-<p><a href="http://second.aprs.net/w6rmk-5">http://second.aprs.net/w6rmk-5</a> 
-  - the new APRS web server in Southern California</p>
-<p>the web server on port 8000 at www.aprs.net looks in its database for the most 
-  recent message from my station (w6rmk-5) and generates a dynamic HTML page with 
-  links to mapblast.com for the maps. The original port is up and down, and is 
-  in Florida, so it doesn't always work. There is now an APRS internet server 
-  up in Southern California at second.aprs.net.</p>
-<p>Another nifty thing is if someone puts up a carefully surveyed fixed GPS receiver, 
-  differential corrections can be transmitted over the APRS frequencies, so that 
-  other APRS users can correct their GPS measurements, achieving accuracies of 
-  around a meter. Those corrections would also be &quot;served&quot; over the 
-  internet.</p>
-<p>Larry at Purple Computing makes Garmin compatible connectors as &quot;sharehardware&quot;. 
-  His web site is <a href="http://www.pfranc.com/">http://www.pfranc.com/</a>. 
-  It's a much better deal than the $50 cable from Garmin.</p>
-<p>More info on APRS at the <a href="http://www.aprs.net/vm/index.htm">virtual 
-  meeting</a></p>
+<p><a href="http://www.aprs.net:8000/w6rmk-5">http://www.aprs.net:8000/w6rmk-5</a>
+    - original APRS web server</p>
+<p><a href="http://second.aprs.net/w6rmk-5">http://second.aprs.net/w6rmk-5</a>
+    - the new APRS web server in Southern California</p>
+<p>the web server on port 8000 at www.aprs.net looks in its database for the most
+    recent message from my station (w6rmk-5) and generates a dynamic HTML page with
+    links to mapblast.com for the maps. The original port is up and down, and is
+    in Florida, so it doesn't always work. There is now an APRS internet server
+    up in Southern California at second.aprs.net.</p>
+<p>Another nifty thing is if someone puts up a carefully surveyed fixed GPS receiver,
+    differential corrections can be transmitted over the APRS frequencies, so that
+    other APRS users can correct their GPS measurements, achieving accuracies of
+    around a meter. Those corrections would also be &quot;served&quot; over the
+    internet.</p>
+<p>Larry at Purple Computing makes Garmin compatible connectors as &quot;sharehardware&quot;.
+    His web site is <a href="http://www.pfranc.com/">http://www.pfranc.com/</a>.
+    It's a much better deal than the $50 cable from Garmin.</p>
+<p>More info on APRS at the <a href="http://www.aprs.net/vm/index.htm">virtual
+    meeting</a></p>
 <hr>
 <p>aprs.htm - Revised 4 Jan 2000, Jim Lux <br>
-  <a href="index.htm">radio home</a> | <a href="../index.htm">Jim Lux home</a> 
-  | email comments <a href="mailto:jimlux@earthlink.net?subject=aprs">jimlux@earthlink.net</a> 
+    <a href="index.htm">radio home</a> | <a href="../index.htm">Jim Lux home</a>
+    | email comments <a href="mailto:jimlux@earthlink.net?subject=aprs">jimlux@earthlink.net</a>
 </p>
 </body>
 </html>

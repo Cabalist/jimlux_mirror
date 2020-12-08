@@ -1,69 +1,70 @@
 <html>
 <head>
-<title>PIC PWM motor control</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>PIC PWM motor control</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 </head>
 
 <body bgcolor="#FFFFFF">
 <h2>PIC PWM motor control</h2>
-<p>This page has the (overtaken by events) design info for controlling my old 
-  H-bridges with a PIC. It may still be useful someday; perhaps on another robot, 
-  or as a drive for some other kind of servo.</p>
-<p>PIC software (<a href="servo.asm" target="_blank">servo.asm</a>) to control 
-  4 R/C servos from a SPI-like interface. Original Source is <a href="http://www.seanet.com/%7Emichaelu/picservo.html" target="_blank">Mike 
-  Underhill's page</a></p>
+<p>This page has the (overtaken by events) design info for controlling my old
+    H-bridges with a PIC. It may still be useful someday; perhaps on another robot,
+    or as a drive for some other kind of servo.</p>
+<p>PIC software (<a href="servo.asm" target="_blank">servo.asm</a>) to control
+    4 R/C servos from a SPI-like interface. Original Source is <a href="http://www.seanet.com/%7Emichaelu/picservo.html" target="_blank">Mike
+        Underhill's page</a></p>
 <p>Microchip (PIC) web site: <a href="http://www.microchip.com/" target="_blank">http://www.microchip.com/</a></p>
 <table width="100%" border="0">
-  <tr> 
-    <td>Back to plan B, for the mean time. A little web searching for suitable 
-      PIC software (I have the old PICstart Plus development kit and programmer), 
-      and choosing a processor (16C84, because that's what I have in the box), 
-      and we are off and running with the design. A block diagram of the general 
-      strategy is to the right (<a href="images/pwmblock.gif">click</a> to get 
-      full sized dwg as a GIF, or the <a href="images/picpwm.vsd">Visio drawing</a>).</td>
-    <td bordercolor="#FFFFFF"><a href="images/pwmblock.gif"><img src="images/xpwmblock.gif" width="144" height="102" border="1" alt="pwm block thumbnail"></a></td>
-  </tr>
+    <tr>
+        <td>Back to plan B, for the mean time. A little web searching for suitable
+            PIC software (I have the old PICstart Plus development kit and programmer),
+            and choosing a processor (16C84, because that's what I have in the box),
+            and we are off and running with the design. A block diagram of the general
+            strategy is to the right (<a href="images/pwmblock.gif">click</a> to get
+            full sized dwg as a GIF, or the <a href="images/picpwm.vsd">Visio drawing</a>).
+        </td>
+        <td bordercolor="#FFFFFF"><a href="images/pwmblock.gif"><img src="images/xpwmblock.gif" width="144" height="102" border="1" alt="pwm block thumbnail"></a></td>
+    </tr>
 </table>
-<p>The 16C84 has 12 bits of I/O, 4 on Port A, and 8 on Port B. I'll use Port B 
-  to drive the H bridges, and A as an interface to the Rabbit (or whatever). The 
-  basic control scheme is to reset the PIC whenever you want to change, blast 
-  the command bytes in, and then the PWM starts up. The PWM timing scheme is to 
-  define the timing in terms of a pair of numbers for each channel. The first 
-  (A or C in the diagram below) is when to turn the motor ON, the second, to turn 
-  the motor off. The software just counts from 0 to 255 (and loops back..), and 
-  when the count is equal to the number, the output pin to the H-bridge gets changed. 
-  Which pin gets changed is determined by the mode of that channel.</p>
+<p>The 16C84 has 12 bits of I/O, 4 on Port A, and 8 on Port B. I'll use Port B
+    to drive the H bridges, and A as an interface to the Rabbit (or whatever). The
+    basic control scheme is to reset the PIC whenever you want to change, blast
+    the command bytes in, and then the PWM starts up. The PWM timing scheme is to
+    define the timing in terms of a pair of numbers for each channel. The first
+    (A or C in the diagram below) is when to turn the motor ON, the second, to turn
+    the motor off. The software just counts from 0 to 255 (and loops back..), and
+    when the count is equal to the number, the output pin to the H-bridge gets changed.
+    Which pin gets changed is determined by the mode of that channel.</p>
 <p><img src="images/pwmtime.gif" width="582" height="225"></p>
 <p>There are several possible modes for a channel, established in the mode byte:</p>
 <ul>
-  <li>Coast - all transistors off (reset default state)</li>
-  <li>Brake - both upper transistors on, lower transistors off</li>
-  <li>Forward - upper left is modulated, lower right is on</li>
-  <li>Reverse - upper right is modulated, lower left is on</li>
+    <li>Coast - all transistors off (reset default state)</li>
+    <li>Brake - both upper transistors on, lower transistors off</li>
+    <li>Forward - upper left is modulated, lower right is on</li>
+    <li>Reverse - upper right is modulated, lower left is on</li>
 </ul>
-<p>The lower transistors are left on to allow circulating currents to flow when 
-  the upper switch turns off. As a side effect, if we want to rebuild the bridge 
-  with all the same kind of transistor (P or N channel), it makes the drivers 
-  easier on the high side because they don't need as high a switching rate.</p>
-<p>Finally, there is a delay count byte, which is used to slow down the switching 
-  by spinning in a loop for a corresponding count before incrementing the pwm 
-  counter.</p>
-<p>This scheme allows you to program the &quot;on&quot; time for the two sides 
-  to be non-coincident, which reduces the peak current drawn from the batteries. 
-  At some future time, it might be useful to put some dither into the loop to 
-  spread the PWM generated noise over a broader band, which will make it acoustically 
-  quieter. For now, everything will be at harmonics of the basic loop count, and 
-  I suspect that it will definitely &quot;sing&quot;.</p>
-<p>So, the total command message is 6 bytes (we don't need this many bits, but, 
-  it's easier to round up). If we punch them out from the rabbit at 100 kbit/sec, 
-  it will take 480 usec to send all the bits to the PIC. Presuming a typical loop 
-  update rate for the drive motors of around 10 Hz, the motors will effectively 
-  be &quot;off&quot; for about 0.5% of the time.</p>
+<p>The lower transistors are left on to allow circulating currents to flow when
+    the upper switch turns off. As a side effect, if we want to rebuild the bridge
+    with all the same kind of transistor (P or N channel), it makes the drivers
+    easier on the high side because they don't need as high a switching rate.</p>
+<p>Finally, there is a delay count byte, which is used to slow down the switching
+    by spinning in a loop for a corresponding count before incrementing the pwm
+    counter.</p>
+<p>This scheme allows you to program the &quot;on&quot; time for the two sides
+    to be non-coincident, which reduces the peak current drawn from the batteries.
+    At some future time, it might be useful to put some dither into the loop to
+    spread the PWM generated noise over a broader band, which will make it acoustically
+    quieter. For now, everything will be at harmonics of the basic loop count, and
+    I suspect that it will definitely &quot;sing&quot;.</p>
+<p>So, the total command message is 6 bytes (we don't need this many bits, but,
+    it's easier to round up). If we punch them out from the rabbit at 100 kbit/sec,
+    it will take 480 usec to send all the bits to the PIC. Presuming a typical loop
+    update rate for the drive motors of around 10 Hz, the motors will effectively
+    be &quot;off&quot; for about 0.5% of the time.</p>
 <hr>
-revised 27 May 2001, <a href="mailto:jimlux@earthlink.net?Subject=PIC%20PWM">Jim 
-Lux</a><br>
-robot/picpwm.htm - <a href="traction.htm">Traction page</a> - <a href="index.htm">Robot 
-home</a> - <a href="../index.htm">Jim's Home</a> 
+revised 27 May 2001, <a href="mailto:jimlux@earthlink.net?Subject=PIC%20PWM">Jim
+    Lux</a><br>
+robot/picpwm.htm - <a href="traction.htm">Traction page</a> - <a href="index.htm">Robot
+    home</a> - <a href="../index.htm">Jim's Home</a>
 <p>&nbsp;</p>
 </body>
 </html>

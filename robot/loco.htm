@@ -1,75 +1,75 @@
 <html>
 <head>
-<title>Robot Locomotion Alternatives</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>Robot Locomotion Alternatives</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 </head>
 
 <body bgcolor="#FFFFFF">
 <h2>Locomotion alternatives</h2>
-<p>Looking at generalized the generalized <a href="robotreqs.htm">requirements</a> 
-  (and my budget), I've identified 4 basic approaches, all with wheels. Although.. 
-  perhaps legs are in fact practical. Take a look at RHex, and my ideas for a 
-  <a href="bug.htm">bug</a>. </p>
+<p>Looking at generalized the generalized <a href="robotreqs.htm">requirements</a>
+    (and my budget), I've identified 4 basic approaches, all with wheels. Although..
+    perhaps legs are in fact practical. Take a look at RHex, and my ideas for a
+    <a href="bug.htm">bug</a>. </p>
 <h3>6 wheel rocker-bogie Mars Rover type</h3>
-<p>The Mars Rover has a passive suspension system using what's called a rocker 
-  bogie. There are 6 wheels, 3 on a side, connected with pivots and a differential 
-  gear (so the &quot;body&quot; is always at half the angle between the two sides). 
-  The wheels are roughly evenly spaced about twice the wheel diameter apart (at 
-  228 and 254 mm on MPF, with 130 mm wheels). The front and back wheels are steerable. 
-  It can go over an obstacle 1.5 times the wheel diameter (30 cm for the 20 cm 
-  wheels on the MER2003 rover). A lot of the JPL design is determined by the need 
-  to fit it on a spacecraft, and to be reliably deployed on landing.</p>
-<p><a href="http://fido.jpl.nasa.gov/">http://fido.jpl.nasa.gov/</a> has information on FIDO, which is sort of a prototype 
-  for MER.<br>
-  <a href="http://robotics.jpl.nasa.gov/groups/rv/">http://robotics.jpl.nasa.gov/groups/rv/</a> has pictures of various JPL rovers, 
-  most showing Don Bickler's &quot;Rocker Bogie&quot; suspension</p>
+<p>The Mars Rover has a passive suspension system using what's called a rocker
+    bogie. There are 6 wheels, 3 on a side, connected with pivots and a differential
+    gear (so the &quot;body&quot; is always at half the angle between the two sides).
+    The wheels are roughly evenly spaced about twice the wheel diameter apart (at
+    228 and 254 mm on MPF, with 130 mm wheels). The front and back wheels are steerable.
+    It can go over an obstacle 1.5 times the wheel diameter (30 cm for the 20 cm
+    wheels on the MER2003 rover). A lot of the JPL design is determined by the need
+    to fit it on a spacecraft, and to be reliably deployed on landing.</p>
+<p><a href="http://fido.jpl.nasa.gov/">http://fido.jpl.nasa.gov/</a> has information on FIDO, which is sort of a prototype
+    for MER.<br>
+    <a href="http://robotics.jpl.nasa.gov/groups/rv/">http://robotics.jpl.nasa.gov/groups/rv/</a> has pictures of various JPL rovers,
+    most showing Don Bickler's &quot;Rocker Bogie&quot; suspension</p>
 <p>&nbsp;</p>
 <h3>6 wheel SHRIMP rover</h3>
-<p>This design from Switzerland (<a href="http://www.bluebotics.com/">http://www.bluebotics.com/</a> 
-  is the commercial outlet) arranges the wheels in a rhombus, that is 1 front 
-  wheel, two pairs of middle wheels, then 1 trailing wheel. The two middle wheels 
-  on each side are connected with links, and the front wheel has a 4 link suspension 
-  with a spring. There isn't any connection between the two sides (like there 
-  is in the JPL rover). Just the front and back wheels steer. The inventors claim 
-  obstacle climbing of 2 times the wheel diameter (there are videos showing it). 
-  For a given size wheel (assuming everything scales), the SHRIMP is a bit longer 
-  than the JPL rover, and the center payload area appears smaller. The SHRIMP 
-  inventors point out that the suspension is entirely passive, and doesn't require 
-  active intervention to handle the terrain. (this is also true of the JPL rovers, 
-  and the NOMAD)</p>
-<p>A significant flaw in Shrimp (and in the JPL rovers) is that they don't deal 
-  well with stairs that have a lip or no solid riser to push the wheel against.</p>
+<p>This design from Switzerland (<a href="http://www.bluebotics.com/">http://www.bluebotics.com/</a>
+    is the commercial outlet) arranges the wheels in a rhombus, that is 1 front
+    wheel, two pairs of middle wheels, then 1 trailing wheel. The two middle wheels
+    on each side are connected with links, and the front wheel has a 4 link suspension
+    with a spring. There isn't any connection between the two sides (like there
+    is in the JPL rover). Just the front and back wheels steer. The inventors claim
+    obstacle climbing of 2 times the wheel diameter (there are videos showing it).
+    For a given size wheel (assuming everything scales), the SHRIMP is a bit longer
+    than the JPL rover, and the center payload area appears smaller. The SHRIMP
+    inventors point out that the suspension is entirely passive, and doesn't require
+    active intervention to handle the terrain. (this is also true of the JPL rovers,
+    and the NOMAD)</p>
+<p>A significant flaw in Shrimp (and in the JPL rovers) is that they don't deal
+    well with stairs that have a lip or no solid riser to push the wheel against.</p>
 <p><a href="http://dmtwww.epfl.ch/isr/asl/systems/shrimp.html">http://dmtwww.epfl.ch/isr/asl/systems/shrimp.html</a></p>
 <h3>KR-II</h3>
-<p>The Koryu-II or KR-II is a snake like robot developed by Shigeo Hirose. It 
-  consists of a series of 6 modules connected together. Each module has a single 
-  drive wheel on one side (the sides alternate, so that the thing can stand up). 
-  There is a sliding joint between sections to allow the relative heights of the 
-  sections to vary. There is also an actuator that sets the angle of the attachments 
-  (rotation around the &quot;z&quot; axis), and the wheel is always halfway between. 
-  This design was never intended for planetary exploration, but more as a firefighter/rescue 
-  worker adjunct, so it is modular, can go up and down stairs, etc. Obstacle surmounting 
-  is limited more by the vertical travel of the intersegment link than by the 
-  size of the wheel. It DOES require active control of everything. </p>
-<p><a href="http://mozu.mes.titech.ac.jp/research/snake/kr2/kr2.html">http://mozu.mes.titech.ac.jp/research/snake/kr2/kr2.html</a> 
-  A summary page about KR-II at Hirose's lab<br>
-  <a href="kr2.htm">my implementation comments</a></p>
+<p>The Koryu-II or KR-II is a snake like robot developed by Shigeo Hirose. It
+    consists of a series of 6 modules connected together. Each module has a single
+    drive wheel on one side (the sides alternate, so that the thing can stand up).
+    There is a sliding joint between sections to allow the relative heights of the
+    sections to vary. There is also an actuator that sets the angle of the attachments
+    (rotation around the &quot;z&quot; axis), and the wheel is always halfway between.
+    This design was never intended for planetary exploration, but more as a firefighter/rescue
+    worker adjunct, so it is modular, can go up and down stairs, etc. Obstacle surmounting
+    is limited more by the vertical travel of the intersegment link than by the
+    size of the wheel. It DOES require active control of everything. </p>
+<p><a href="http://mozu.mes.titech.ac.jp/research/snake/kr2/kr2.html">http://mozu.mes.titech.ac.jp/research/snake/kr2/kr2.html</a>
+    A summary page about KR-II at Hirose's lab<br>
+    <a href="kr2.htm">my implementation comments</a></p>
 <h3>4 wheel rocker bogie NOMAD</h3>
-<p>NOMAD is a big (725 kg) robot built by Carnegie Mellon Robotics Institute to 
-  investigate planetary exploration methods. It made a semiautonomous traverse 
-  in the Atacama desert and subsequently was used in Antarctica to search for 
-  meteorites. NOMAD uses 4 wheels, all of which steer. The steering angles of 
-  the wheels on each side are linked. Each side has a giant rocker bogie, which 
-  is linked through a differential to the other side (forcing the body to be halfway 
-  between the sides). It can clear an obstacle of half the wheel size, so it has 
-  big diameter wheels (76cm diam). Overall, its appearance is reminiscent of the 
-  bottom of a &quot;snorkle-lift&quot;, which also has 4 wheel steering.</p>
+<p>NOMAD is a big (725 kg) robot built by Carnegie Mellon Robotics Institute to
+    investigate planetary exploration methods. It made a semiautonomous traverse
+    in the Atacama desert and subsequently was used in Antarctica to search for
+    meteorites. NOMAD uses 4 wheels, all of which steer. The steering angles of
+    the wheels on each side are linked. Each side has a giant rocker bogie, which
+    is linked through a differential to the other side (forcing the body to be halfway
+    between the sides). It can clear an obstacle of half the wheel size, so it has
+    big diameter wheels (76cm diam). Overall, its appearance is reminiscent of the
+    bottom of a &quot;snorkle-lift&quot;, which also has 4 wheel steering.</p>
 <p><a href="http://www.frc.ri.cmu.edu/projects/meteorobot/Nomad/Nomad.html">
-http://www.frc.ri.cmu.edu/projects/meteorobot/Nomad/Nomad.html</a><br>
-<a href="http://www.cmu.edu/home/news/nomadr.html">http://www.cmu.edu/home/news/nomadr.html</a> </p>
+    http://www.frc.ri.cmu.edu/projects/meteorobot/Nomad/Nomad.html</a><br>
+    <a href="http://www.cmu.edu/home/news/nomadr.html">http://www.cmu.edu/home/news/nomadr.html</a></p>
 <hr>
-robot/loco.htm - 4 March 2002 - <a href="mailto:jimlux@earthlink.net?Subject=Robot%20Forms">Jim 
-Lux</a><br>
+robot/loco.htm - 4 March 2002 - <a href="mailto:jimlux@earthlink.net?Subject=Robot%20Forms">Jim
+    Lux</a><br>
 <a href="index.htm">robot home page</a> - <a href="../index.htm">Jim's Home page</a>
 </body>
 </html>

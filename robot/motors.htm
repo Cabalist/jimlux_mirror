@@ -1,89 +1,92 @@
 <html>
 <head>
-<title>Robot Motors</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>Robot Motors</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 </head>
 
 <body bgcolor="#FFFFFF">
 <h2>Motors</h2>
 <p>There are basically three general choices for motors:</p>
-<p>Steppers - Can be run open loop, essentially &quot;self encoding&quot; for 
-  positioning, but the power/weight ratio isn't all that great, and efficient 
-  drive circuitry, particularly for high step rates, is difficult. For small motors, 
-  there are single IC drivers available from Allegro, among others.</p>
-<p>DC Permanent Magnet - DC PM motors are by far the most common in robotics applications. 
+<p>Steppers - Can be run open loop, essentially &quot;self encoding&quot; for
+    positioning, but the power/weight ratio isn't all that great, and efficient
+    drive circuitry, particularly for high step rates, is difficult. For small motors,
+    there are single IC drivers available from Allegro, among others.</p>
+<p>DC Permanent Magnet - DC PM motors are by far the most common in robotics applications.
 </p>
-<p>AC Motors - need a three phase inverter, probably worth looking at for a BIG 
-  robot (&gt;500 kg)</p>
+<p>AC Motors - need a three phase inverter, probably worth looking at for a BIG
+    robot (&gt;500 kg)</p>
 <p>&nbsp;</p>
 <h3>About gear trains</h3>
-<p>It turns out that most small DC motors tend to have fairly high speeds: several 
-  thousand RPM is typical. On the other hand, most robotic loads require somewhat 
-  slower speeds: around 60 RPM (1 rev/second). There are DC motors that have lower 
-  shaft speeds (several hundred RPM), but they tend to be fairly large and heavy 
-  for the power output. This is because the physical size of the motor is largely 
-  determined by it's torque, and for a given power (i.e. horsepower or watts, 
-  proportional to torque * speed), lower speed motors have to have more torque. 
-  For a given current, a lower speed motor will need bigger magnets (torque is 
-  proportional to the product of current and magnetic field).</p>
-<p>The other solution is to use some form of mechanical speed reduction: a gear 
-  train, a belt/pulley arrangement, or a lead screw. All of these have some losses 
-  involved (efficiencies go from &lt;10% to 90%, with larger ratios being less 
-  efficient, usually), but the resulting &quot;motor+gear train&quot; package 
-  might be smaller, lighter, and cheaper than a motor alone, and you might be 
-  willing to take that and use the mass savings elsewhere (like for more batteries 
-  to run the less efficient motor/gear train).</p>
-<p>You can make your own gear trains: gears are fairly cheap, but be warned that 
-  designing and building quiet running, reliable gear trains is a demanding mechanical 
-  engineering task. Alignment of the gears is critical for reliability and life. 
-  Building your own low backlash gear train is even a bigger challenge.</p>
-<p>Belts and pulleys (and their cousins, sprocket/chains, cogs/toothed belts) 
-  are fairly easy to build, and tolerate mechanical misalignments well. They have 
-  backlash problems (unless you make the chain really, really tight, which causes 
-  other problems), and it is difficult to get more than a 5:1 reduction in one 
-  step. However, for sliding something along a track, for instance, a belt (or 
-  cable) and pulley is a great technique.</p>
-<p>Lead screws are a convenient way to turn rotary motion into linear motion, 
-  especially with high forces. The quick and dirty approach is to use a piece 
-  of threaded rod (&quot;all-thread&quot;) and a standard machine nut. This will 
-  have fairly high backlash and poor efficiency, but it is cheap. A better approach 
-  is to use a real ballnut and a lead screw with a suitable thread (i.e. an Acme 
-  thread). If your lead screw is thin, don't load it in compression, or it will 
-  buckle. Thrust bearings can be a bit tricky to rig up, although with the cheesy 
-  allthread approach, two nuts jammed together can make mounting that can then 
-  act on an inexpensive thrust bearing.</p>
-<p><b>Buy someone else's gear box.</b> If you can find a consumer or industrial 
-  mass produced gear box that meets your needs, use it. Typically, someone has 
-  done all the necessary life calculations, probably made a slick casting or molded 
-  part to hold the gears aligned properly, etc.</p>
+<p>It turns out that most small DC motors tend to have fairly high speeds: several
+    thousand RPM is typical. On the other hand, most robotic loads require somewhat
+    slower speeds: around 60 RPM (1 rev/second). There are DC motors that have lower
+    shaft speeds (several hundred RPM), but they tend to be fairly large and heavy
+    for the power output. This is because the physical size of the motor is largely
+    determined by it's torque, and for a given power (i.e. horsepower or watts,
+    proportional to torque * speed), lower speed motors have to have more torque.
+    For a given current, a lower speed motor will need bigger magnets (torque is
+    proportional to the product of current and magnetic field).</p>
+<p>The other solution is to use some form of mechanical speed reduction: a gear
+    train, a belt/pulley arrangement, or a lead screw. All of these have some losses
+    involved (efficiencies go from &lt;10% to 90%, with larger ratios being less
+    efficient, usually), but the resulting &quot;motor+gear train&quot; package
+    might be smaller, lighter, and cheaper than a motor alone, and you might be
+    willing to take that and use the mass savings elsewhere (like for more batteries
+    to run the less efficient motor/gear train).</p>
+<p>You can make your own gear trains: gears are fairly cheap, but be warned that
+    designing and building quiet running, reliable gear trains is a demanding mechanical
+    engineering task. Alignment of the gears is critical for reliability and life.
+    Building your own low backlash gear train is even a bigger challenge.</p>
+<p>Belts and pulleys (and their cousins, sprocket/chains, cogs/toothed belts)
+    are fairly easy to build, and tolerate mechanical misalignments well. They have
+    backlash problems (unless you make the chain really, really tight, which causes
+    other problems), and it is difficult to get more than a 5:1 reduction in one
+    step. However, for sliding something along a track, for instance, a belt (or
+    cable) and pulley is a great technique.</p>
+<p>Lead screws are a convenient way to turn rotary motion into linear motion,
+    especially with high forces. The quick and dirty approach is to use a piece
+    of threaded rod (&quot;all-thread&quot;) and a standard machine nut. This will
+    have fairly high backlash and poor efficiency, but it is cheap. A better approach
+    is to use a real ballnut and a lead screw with a suitable thread (i.e. an Acme
+    thread). If your lead screw is thin, don't load it in compression, or it will
+    buckle. Thrust bearings can be a bit tricky to rig up, although with the cheesy
+    allthread approach, two nuts jammed together can make mounting that can then
+    act on an inexpensive thrust bearing.</p>
+<p><b>Buy someone else's gear box.</b> If you can find a consumer or industrial
+    mass produced gear box that meets your needs, use it. Typically, someone has
+    done all the necessary life calculations, probably made a slick casting or molded
+    part to hold the gears aligned properly, etc.</p>
 <h3>Some kinds of motor/gear boxes available</h3>
-<p>Windshield wiper motors - Clearly these are designed for long life and a reasonably 
-  harsh environment. You don't hear about people replacing wiper motors very often, 
-  so, given the millions in service, they must be fairly reliable. Someone who 
-  operates a delivery van in a rainy area may be operating these things 8 hours 
-  a day, 5 days a week, for 5 years. 10,000 hours is a pretty long life. They 
-  aren't real efficient in an electrical sense, mostly because they use a worm 
-  gear as the first reduction, and worm gears just aren't very efficient.</p>
+<p>Windshield wiper motors - Clearly these are designed for long life and a reasonably
+    harsh environment. You don't hear about people replacing wiper motors very often,
+    so, given the millions in service, they must be fairly reliable. Someone who
+    operates a delivery van in a rainy area may be operating these things 8 hours
+    a day, 5 days a week, for 5 years. 10,000 hours is a pretty long life. They
+    aren't real efficient in an electrical sense, mostly because they use a worm
+    gear as the first reduction, and worm gears just aren't very efficient.</p>
 <ul>
-  <li><a href="http://pergatory.mit.edu/2.007/kit/actuator/fordmtr/fordmtr.html"> 
-    http://pergatory.mit.edu/2.007/kit/actuator/fordmtr/fordmtr.html</a> Ford 
-    Windshield Wiper Motor from a class project at MIT (50 Nm stall 50 rpm)</li>
-  <li><a href="http://www.streetrodcatalog.com/wiper.htm"> http://www.streetrodcatalog.com/wiper.htm</a> 
-    - Catalog page from company catering to builders of street rods, not much 
-    data, though</li>
-  <li><a href="http://www.amequipment.com/">http://www.amequipment.com/</a> - 
-    AM Equipment catalog pages all the way from 10 Nm to 120Nm ( 10 Nm Stall @16.5Amp 
-    )<br>
-    33 Nm Stall, 18 Nm @ 20 RPM (37.7W) 6A@12V (72W) Weight given as 3 lbs.</li>
+    <li><a href="http://pergatory.mit.edu/2.007/kit/actuator/fordmtr/fordmtr.html">
+        http://pergatory.mit.edu/2.007/kit/actuator/fordmtr/fordmtr.html</a> Ford
+        Windshield Wiper Motor from a class project at MIT (50 Nm stall 50 rpm)
+    </li>
+    <li><a href="http://www.streetrodcatalog.com/wiper.htm"> http://www.streetrodcatalog.com/wiper.htm</a>
+        - Catalog page from company catering to builders of street rods, not much
+        data, though
+    </li>
+    <li><a href="http://www.amequipment.com/">http://www.amequipment.com/</a> -
+        AM Equipment catalog pages all the way from 10 Nm to 120Nm ( 10 Nm Stall @16.5Amp
+        )<br>
+        33 Nm Stall, 18 Nm @ 20 RPM (37.7W) 6A@12V (72W) Weight given as 3 lbs.
+    </li>
 </ul>
-<p>Door window crank motors - lots of torque (although there may be a spring helping 
-  counterbalance the weight of the window, but I wonder about the longevity. They 
-  are only going to be operated for a few seconds at a time, so I doubt the motor/gear 
-  train is designed for continuous operation (thermal issues).</p>
+<p>Door window crank motors - lots of torque (although there may be a spring helping
+    counterbalance the weight of the window, but I wonder about the longevity. They
+    are only going to be operated for a few seconds at a time, so I doubt the motor/gear
+    train is designed for continuous operation (thermal issues).</p>
 <p>Electric Drill motors</p>
 <hr>
-robot/motors.htm - 18 December 2001 - <a href="mailto:jimlux@earthlink.net?Subject=Robot%20Motors">Jim 
-Lux</a><br>
+robot/motors.htm - 18 December 2001 - <a href="mailto:jimlux@earthlink.net?Subject=Robot%20Motors">Jim
+    Lux</a><br>
 <a href="index.htm">Robot home page</a> - <a href="../index.htm">Jim's Home page</a>
 </body>
 </html>

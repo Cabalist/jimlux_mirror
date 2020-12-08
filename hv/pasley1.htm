@@ -3,463 +3,469 @@
 <html>
 
 <head>
-<title>Pulse Power Switching Devices</title>
-<meta name="GENERATOR" content="Microsoft FrontPage 1.1">
+    <title>Pulse Power Switching Devices</title>
+    <meta name="GENERATOR" content="Microsoft FrontPage 1.1">
 </head>
 
 <body>
 <h2>Pulse Power Switching Devices - An Overview</h2>
 <h3>By John Pasley</h3>
 <p>5/8/96 (html'ized by Jim Lux, 25 Aug 1997)</p>
-<p>Copyright John Pasley 1996. This document may be freely distributed via. any means in part or in 
-whole, however the authors name must be included and correctly attributed. The References Listed 
-and The Disclaimer must also be included.</p>
-<p><b>Foreword by Carey Sublette:</b> </p>
-<p>An essential component of modern nuclear weapon technology is the ability to rapidly switch high 
-voltage/high current electrical circuits at very high speeds.</p>
-<p>The detonators that fire high explosive implosion systems (exploding wire or exploding foil 
-detonators) require voltages in the range of (roughly) 2-20 kilovolts, a complete detonating system 
-may draw currents ranging from 10 to 100 kiloamps. Pulse neutron tubes, used to precisely control 
-the initiation of fission chain reactions, require voltages of 100 to 200 kilovolts, and currents in the 
-ampere range. These currents must be turned on rapidly and precisely, timing accuracies of tens to 
-hundreds of nanoseconds are required.</p>
-<p>Switching devices that meet these stringent requirements often require specialized technologies or 
-skills to manufacture. They are also dual use - in addition to weapons applications they have many 
-civilian uses too. Examples include controlling flash lamps used in high speed photography or 
-industrial photochemistry, generating high power radar pulses, in high energy physics laboratory 
-equipment, to name but a few. Consequently commercial sale and international trade in these 
-devices is permitted, but it is also regulated. Attempts to circumvent these regulations have gained 
-considerable public attention in a number of technology smuggling cases in the 1980s and 90s 
-involving one particular type of device - the Krytron. These devices have even appeared 
-prominently in popular entertainment as the &quot;McGuffin&quot; used to drive espionage thrillers - like 
-Roman Polanski's &quot;Frantic&quot;.</p>
+<p>Copyright John Pasley 1996. This document may be freely distributed via. any means in part or in
+    whole, however the authors name must be included and correctly attributed. The References Listed
+    and The Disclaimer must also be included.</p>
+<p><b>Foreword by Carey Sublette:</b></p>
+<p>An essential component of modern nuclear weapon technology is the ability to rapidly switch high
+    voltage/high current electrical circuits at very high speeds.</p>
+<p>The detonators that fire high explosive implosion systems (exploding wire or exploding foil
+    detonators) require voltages in the range of (roughly) 2-20 kilovolts, a complete detonating system
+    may draw currents ranging from 10 to 100 kiloamps. Pulse neutron tubes, used to precisely control
+    the initiation of fission chain reactions, require voltages of 100 to 200 kilovolts, and currents in the
+    ampere range. These currents must be turned on rapidly and precisely, timing accuracies of tens to
+    hundreds of nanoseconds are required.</p>
+<p>Switching devices that meet these stringent requirements often require specialized technologies or
+    skills to manufacture. They are also dual use - in addition to weapons applications they have many
+    civilian uses too. Examples include controlling flash lamps used in high speed photography or
+    industrial photochemistry, generating high power radar pulses, in high energy physics laboratory
+    equipment, to name but a few. Consequently commercial sale and international trade in these
+    devices is permitted, but it is also regulated. Attempts to circumvent these regulations have gained
+    considerable public attention in a number of technology smuggling cases in the 1980s and 90s
+    involving one particular type of device - the Krytron. These devices have even appeared
+    prominently in popular entertainment as the &quot;McGuffin&quot; used to drive espionage thrillers - like
+    Roman Polanski's &quot;Frantic&quot;.</p>
 <p>This article summarizes the basic technologies and devices, and their principle properties.</p>
 <p>&#160;</p>
 <h3>Section 1.0: Introduction.</h3>
-<p>Before entering into a consideration of the individual devices that concern us, it would be as well to 
-explain some of the associated technology/terminology. </p>
+<p>Before entering into a consideration of the individual devices that concern us, it would be as well to
+    explain some of the associated technology/terminology. </p>
 <h4>1.1 Switching basics and terminology.</h4>
-<p>The switch is possibly the most elementary device in the field of electronics. A switch controls the 
-flow of current in a circuit in a manner such that either the current flows at a value determined by 
-the other components in series with it, or does not flow at all, as the case may be. However this 
-ideal behavior is actually never exactly what is seen in real life. A switch has it's own parameters 
-that determine how fast it can switch from open to closed, or how rapidly it can interrupt the flow 
-of current once it is has been opened. Also of course there are more elementary considerations 
-such as the current handling capacity of the switch and the peak voltage it can cope with before 
-damage or other unwanted effects occur.</p>
-<p>Mechanical switches such as are common in the home are in actuality far from ideal in their 
-behavior. The time taken to switch from off to on ( the commutation time) is typically in the 
-millisecond range. Also spurious effects such as bouncing may occur as the switch fluctuates rapidly 
-from open to closed in the process of being physically manipulated by the operator. </p>
-<p>Electromagnetic relays and reed switches experience similar problems to those seen in the humble 
-light switch. Long commutation and switch bounce are standard features of virtually all mechanical 
-switching devices. </p>
-<p>With the advent of transistors and similar devices such as thyristors one would have thought that 
-these slow switching problems would be things of the past. This is in fact largely true. But 
-semiconductors are limited in other ways, it is very hard to find semiconductors capable of 
-switching many kiloamperes especially at potentials in the kilovolt region, and those devices that 
-can manage high currents such as the larger thyristors are troubled by overly high commutation 
-times. Whilst there are now semiconductors coming onto the market capable of performing at these 
-extremes of current and voltage there are some requirements which put even these devices to 
-shame. If you want to switch 50 kilo Amperes with a sub 20 nanosecond commutation time at 
-20kV you are going to be in trouble if you are relying on semiconductor technology. However there 
-is an alternative class of devices that have been around long before the humble transistor came on 
-the scene. You might think that vacuum tubes and similar are a thing of the past. But for problems 
-of this magnitude they are the only things on the market that will do the job.</p>
+<p>The switch is possibly the most elementary device in the field of electronics. A switch controls the
+    flow of current in a circuit in a manner such that either the current flows at a value determined by
+    the other components in series with it, or does not flow at all, as the case may be. However this
+    ideal behavior is actually never exactly what is seen in real life. A switch has it's own parameters
+    that determine how fast it can switch from open to closed, or how rapidly it can interrupt the flow
+    of current once it is has been opened. Also of course there are more elementary considerations
+    such as the current handling capacity of the switch and the peak voltage it can cope with before
+    damage or other unwanted effects occur.</p>
+<p>Mechanical switches such as are common in the home are in actuality far from ideal in their
+    behavior. The time taken to switch from off to on ( the commutation time) is typically in the
+    millisecond range. Also spurious effects such as bouncing may occur as the switch fluctuates rapidly
+    from open to closed in the process of being physically manipulated by the operator. </p>
+<p>Electromagnetic relays and reed switches experience similar problems to those seen in the humble
+    light switch. Long commutation and switch bounce are standard features of virtually all mechanical
+    switching devices. </p>
+<p>With the advent of transistors and similar devices such as thyristors one would have thought that
+    these slow switching problems would be things of the past. This is in fact largely true. But
+    semiconductors are limited in other ways, it is very hard to find semiconductors capable of
+    switching many kiloamperes especially at potentials in the kilovolt region, and those devices that
+    can manage high currents such as the larger thyristors are troubled by overly high commutation
+    times. Whilst there are now semiconductors coming onto the market capable of performing at these
+    extremes of current and voltage there are some requirements which put even these devices to
+    shame. If you want to switch 50 kilo Amperes with a sub 20 nanosecond commutation time at
+    20kV you are going to be in trouble if you are relying on semiconductor technology. However there
+    is an alternative class of devices that have been around long before the humble transistor came on
+    the scene. You might think that vacuum tubes and similar are a thing of the past. But for problems
+    of this magnitude they are the only things on the market that will do the job.</p>
 <h4>1.2 Vacuum and Gas filled switching tubes, introduction and terminology.</h4>
 <dl>
-<dt>&nbsp;</dt>
+    <dt>&nbsp;</dt>
 </dl>
-<p>There are a great many different types of vacuum tube in existence, however it is possible to group 
-tubes according to some fairly basic criteria. There are two primary distinguishing features, the 
-source of free electrons within the device and the gaseous filling (or lack of it) within the tube 
-envelope. The later of these two concepts we have already introduced by implication. A vacuum 
-tube is a device with a vacuum (very low pressure gas) filling. And a gas filled device is, as the 
-name would suggest, filled with gas that might be at a pressure somewhat above or below 
-atmospheric. The type of gas used is also an important feature, particularly in switching tubes where 
-a wide variety of fillings are encountered. </p>
-<p>The source of the free conduction electrons in the device may be either thermal such as a heated 
-filament physically associated with the cathode of the device - a hot cathode, or alternatively a 
-simple consequence of a high voltage gradient across the device, resulting in autoemission from the 
-cathode. A device employing this latter method is known as a cold cathode device. In high voltage 
-switching the presence of high voltages, and hence the possibility of large voltage gradients within 
-devices means that the cold cathode system, quite a rarity in most other types of tubes, is the norm 
-rather than the exception. </p>
+<p>There are a great many different types of vacuum tube in existence, however it is possible to group
+    tubes according to some fairly basic criteria. There are two primary distinguishing features, the
+    source of free electrons within the device and the gaseous filling (or lack of it) within the tube
+    envelope. The later of these two concepts we have already introduced by implication. A vacuum
+    tube is a device with a vacuum (very low pressure gas) filling. And a gas filled device is, as the
+    name would suggest, filled with gas that might be at a pressure somewhat above or below
+    atmospheric. The type of gas used is also an important feature, particularly in switching tubes where
+    a wide variety of fillings are encountered. </p>
+<p>The source of the free conduction electrons in the device may be either thermal such as a heated
+    filament physically associated with the cathode of the device - a hot cathode, or alternatively a
+    simple consequence of a high voltage gradient across the device, resulting in autoemission from the
+    cathode. A device employing this latter method is known as a cold cathode device. In high voltage
+    switching the presence of high voltages, and hence the possibility of large voltage gradients within
+    devices means that the cold cathode system, quite a rarity in most other types of tubes, is the norm
+    rather than the exception. </p>
 <p>Other important terms encountered in gaseous state switching tubes:</p>
 <dl>
-<dt>Delay Time</dt>
-<dd>The delay time is the time taken between the application of a trigger pulse and the 
-commencement of conduction between the primary electrodes.</dd>
-<dt>Jitter</dt>
-<dd>Jitter is the variation of time delay from shot to shot given similar electrical stimulus</dd>
-<dt>Commutation time.</dt>
-<dd>The commutation time is the time taken for the conduction to reach maximum once it has 
-commenced. (i.e. From the time from the end of the delay time to the time at which the 
-maximum level of conduction occurs.)</dd>
-<dt>&nbsp;</dt>
+    <dt>Delay Time</dt>
+    <dd>The delay time is the time taken between the application of a trigger pulse and the
+        commencement of conduction between the primary electrodes.
+    </dd>
+    <dt>Jitter</dt>
+    <dd>Jitter is the variation of time delay from shot to shot given similar electrical stimulus</dd>
+    <dt>Commutation time.</dt>
+    <dd>The commutation time is the time taken for the conduction to reach maximum once it has
+        commenced. (i.e. From the time from the end of the delay time to the time at which the
+        maximum level of conduction occurs.)
+    </dd>
+    <dt>&nbsp;</dt>
 </dl>
-<p>It should be pointed out that none of the switching tubes we are about to consider look very much 
-like the things in the back of an old radio set. Many are large, some exceptionally so. Also glass has 
-largely given way to ceramic in the higher powered devices. Before you go down your local 
-electronics shop or radio shack it should also be pointed out that many of these devices besides 
-costing $100's (often $1000's) a piece, and are also largely unavailable to the general public due to 
-their application in advanced missile and nuclear weapon technologies. Of these devices the most 
-'everyday' is the ignitron which finds much application in industrial welding situations.</p>
+<p>It should be pointed out that none of the switching tubes we are about to consider look very much
+    like the things in the back of an old radio set. Many are large, some exceptionally so. Also glass has
+    largely given way to ceramic in the higher powered devices. Before you go down your local
+    electronics shop or radio shack it should also be pointed out that many of these devices besides
+    costing $100's (often $1000's) a piece, and are also largely unavailable to the general public due to
+    their application in advanced missile and nuclear weapon technologies. Of these devices the most
+    'everyday' is the ignitron which finds much application in industrial welding situations.</p>
 <p>The following devices are considered herein:</p>
 <p>2.0 Vacuum and Gaseous State Switching devices</p>
 <ul>
-<li>2.1 Introduction to Cold Cathode Trigger Tubes</li>
-<li>2.2 The Krytron.</li>
-<li>2.3 The Sprytron.</li>
-<li>2.4 The Thyratron.</li>
-<li>2.5 The Over Voltage Spark Gap.</li>
-<li>2.6 The Triggered Spark Gap.</li>
-<li>2.7 The Ignitron</li>
+    <li>2.1 Introduction to Cold Cathode Trigger Tubes</li>
+    <li>2.2 The Krytron.</li>
+    <li>2.3 The Sprytron.</li>
+    <li>2.4 The Thyratron.</li>
+    <li>2.5 The Over Voltage Spark Gap.</li>
+    <li>2.6 The Triggered Spark Gap.</li>
+    <li>2.7 The Ignitron</li>
 </ul>
-<p>In addition I will include a short section on some of the solid state devices that are finally beginning 
-to fill the shoes of the above gaseous state device (to a very marginal extent in most cases). </p>
+<p>In addition I will include a short section on some of the solid state devices that are finally beginning
+    to fill the shoes of the above gaseous state device (to a very marginal extent in most cases). </p>
 <p>Section four will detail the ways in which these devices might be employed in nuclear weapons.<br>
 </p>
 <h3>2.0 Vacuum and gaseous state switching devices</h3>
-<p>Most of the devices in this section switch by inducing an arcing process in a gaseous medium. I 
-have included in the triggered spark gap section some mention of devices that actually use a liquid 
-or solid substitute for the gaseous material that is the norm in triggered spark gaps. </p>
-<p>The process of arc formation is actually quite complex physically, and it will not be gone into in any 
-depth. Anyone who wishes to look more deeply into this aspect of device operation may contact 
-the author for some suggestions as to suitable text books for use in such study.</p>
+<p>Most of the devices in this section switch by inducing an arcing process in a gaseous medium. I
+    have included in the triggered spark gap section some mention of devices that actually use a liquid
+    or solid substitute for the gaseous material that is the norm in triggered spark gaps. </p>
+<p>The process of arc formation is actually quite complex physically, and it will not be gone into in any
+    depth. Anyone who wishes to look more deeply into this aspect of device operation may contact
+    the author for some suggestions as to suitable text books for use in such study.</p>
 <h4>2.1 An Introduction to Cold Cathode Switching Tubes.</h4>
-<p>Cold cathode trigger tubes are physically small devices designed to switch impulse currents and 
-voltages of relatively small amplitude. Usually they are intended, as their name suggests, to trigger 
-other larger devices. </p>
-<p>Typically cold cathode trigger tubes are designed to switch pulses of a few hundred volts and a few 
-hundred milliamperes. Most trigger tubes have three or four electrodes, anode, cathode (+ve and 
--ve terminals respectively), a trigger/control electrode and sometimes a priming electrode. </p>
-<p>A trigger tube performs in a very simple manner akin to that of a triggered spark gap, excepting that 
-usually the conduction is not by an arcing but glow discharge. The glow discharge is initiated when 
-all of the following factors are present:</p>
+<p>Cold cathode trigger tubes are physically small devices designed to switch impulse currents and
+    voltages of relatively small amplitude. Usually they are intended, as their name suggests, to trigger
+    other larger devices. </p>
+<p>Typically cold cathode trigger tubes are designed to switch pulses of a few hundred volts and a few
+    hundred milliamperes. Most trigger tubes have three or four electrodes, anode, cathode (+ve and
+    -ve terminals respectively), a trigger/control electrode and sometimes a priming electrode. </p>
+<p>A trigger tube performs in a very simple manner akin to that of a triggered spark gap, excepting that
+    usually the conduction is not by an arcing but glow discharge. The glow discharge is initiated when
+    all of the following factors are present:</p>
 <p>i) A sufficiently high voltage is present across the device (between anode and cathode)<br>
-ii) A trigger pulse of sufficient amplitude is present at the trigger electrode.<br>
-iii) The gas in the tube is primed.</p>
-<p>Cold cathode trigger tubes rely upon some external or internal source to ionize the gas suitably for 
-conduction to commence (This is called priming). This means that in theory some of these tubes will 
-only switch a minute or so after the application of a suitable triggering voltage to the appropriate 
-terminal of the device when some natural source of ionizing radiation ionizes the gas (forming a 
-plasma) and hence causes conduction to commence. The triggering is basically random- it is subject 
-to huge statistical variation even in apparently similar environments. Some devices incorporate a 
-suitably ionizing source to reduce the maximum possible time delay after trigger application 
-considerably. This source may be an electronic, radioactive or photon source of some form or 
-other. However even the standard commercial devices often display a large variation (up to and 
-above an order of magnitude different) between devices fired in sunlight and darkness, a standard 
-commercial tube Z900T for instance displays a 20us delay in day light and a 250us delay in 
-darkness. </p>
+    ii) A trigger pulse of sufficient amplitude is present at the trigger electrode.<br>
+    iii) The gas in the tube is primed.</p>
+<p>Cold cathode trigger tubes rely upon some external or internal source to ionize the gas suitably for
+    conduction to commence (This is called priming). This means that in theory some of these tubes will
+    only switch a minute or so after the application of a suitable triggering voltage to the appropriate
+    terminal of the device when some natural source of ionizing radiation ionizes the gas (forming a
+    plasma) and hence causes conduction to commence. The triggering is basically random- it is subject
+    to huge statistical variation even in apparently similar environments. Some devices incorporate a
+    suitably ionizing source to reduce the maximum possible time delay after trigger application
+    considerably. This source may be an electronic, radioactive or photon source of some form or
+    other. However even the standard commercial devices often display a large variation (up to and
+    above an order of magnitude different) between devices fired in sunlight and darkness, a standard
+    commercial tube Z900T for instance displays a 20us delay in day light and a 250us delay in
+    darkness. </p>
 <h4>2.2 The Krytron:</h4>
-<p>Krytrons are completely different to the familiar Klystrons often encountered. Krytrons are a highly 
-specialized variety of cold cathode trigger tube. They were one of the first products developed by 
-the US based company EG&amp;G. The Krytron has 4 electrodes, and is filled with a gas at low 
-pressure. A Krytron is distinguished among cold cathode trigger tubes for a variety of reasons. </p>
-<p>The Krytron is designed to switch moderately high impulse currents (up to around 3kA) and 
-voltages (Up to around 5kV) in an arc discharge mode, compare this with the usual glow discharge 
-of the standard trigger tube. Also, and perhaps more importantly, the Krytron is able to turn on this 
-arc discharge very rapidly, the reason being that it relies on an already present plasma to support 
-the conduction, rather than waiting for the plasma to be formed as a result of priming etc. This 
-plasma is created and sustained by a keep-alive current between the keep-alive electrode and the<br>
-cathode of the device. When the trigger is applied under the conditions of a high anode to cathode 
-voltage, this plasma forms an easy path for the main conduction between anode and cathode. </p>
-<p>The fact that a conduction path is already established prior to triggering makes a huge difference in 
-the commutation time of these devices compared to standard cold cathode trigger tubes. 
-Commutation times below 1 nanosecond are achievable with Krytrons and the time lag between 
-application of trigger and the commencement of switching may be less than 30 ns with an optimized 
-driver circuit. (Note this delay is largely due to the fact that the ionized path will need to spread 
-from the keep alive terminal to the anode of the device). </p>
-<p>Compare this delay time to that seen in the standard trigger tube which is dependent upon many 
-environmental factors and typically 3 or 4 orders of magnitude greater. Note that the variation in 
-time delay exhibited by the krytron is almost totally independent of environment, however the time 
-delay may be reduced up to a point with increasing trigger voltage. Likewise the commutation time 
-is generally decreased if the rise time of the trigger pulse is also decreased. Given identical trigger 
-pulses however a krytron will have a very similar time delay from one shot to the next. This 
-variation is known as jitter and may be less than 5ns in optimal circumstances.</p>
-<p>This short commutation time and inherent environmental insensitivity of the krytron is achieved by 
-including a radioactive priming source, the weak beta emitter Nickel-63. The source maintains 
-weak the gas filling the tube in a weak state of ionization, which aides the formation of the initial 
-glow discharge between the keep alive and the cathode. Ni-63 has a half-life of 92 years and 
-produces beta particles with an energy of only 65.9 KeV and no gamma radiation at all. The 
-quantity in each device is less than 5 microcuries and presents no significant hazard. Usually the 
-source is pulse welded to a piece of Nickel wire that is in turn welded to one of the electrode 
-supports. </p>
-<p>Priming sources (which is also occasionally a radioactive source) are also be employed in standard 
-trigger tubes to reduce their environmental sensitivity.</p>
-<p>Krytrons typically come in a small glass envelope somewhat similar to a neon indicator bulb with 
-more leads. </p>
-<p>Krytrons require a high voltage pulse (500V to 2kV) to be applied to the trigger electrode to fire 
-successfully. This pulse is almost always generated by a pulse transformer fired by a capacitor 
-discharge in the primary (rather like a simple strobe tube firing circuit). </p>
-<p>The krytron often has only a short life expectancy if used regularly (often as few as a couple of 
-hundred shots) However when used within the appropriate parameters and well within the 
-expected life time they are extremely reliable, requiring no warm up and being immune to many 
-environmental factors to a large extent (e.g. vibration, temperature, acceleration).</p>
-<p>These properties, combined with the small size make the krytron ideal for use in the detonating 
-circuitry of certain types of missiles and smart bombs. The krytron may be used directly to fire a 
-high precision exploding wire, or alternatively as part of the triggering circuitry for a triggered spark 
-gap or similar ultra high current triggering device as used in exploding foil slapper type detonators 
-and larger EBW circuits.</p>
-<p>Krytrons are used in firing circuits for certain lasers and flash tubes and also in some pulse welding 
-applications, often as triggering devices for other larger devices such as Thyratrons and spark gaps. </p>
+<p>Krytrons are completely different to the familiar Klystrons often encountered. Krytrons are a highly
+    specialized variety of cold cathode trigger tube. They were one of the first products developed by
+    the US based company EG&amp;G. The Krytron has 4 electrodes, and is filled with a gas at low
+    pressure. A Krytron is distinguished among cold cathode trigger tubes for a variety of reasons. </p>
+<p>The Krytron is designed to switch moderately high impulse currents (up to around 3kA) and
+    voltages (Up to around 5kV) in an arc discharge mode, compare this with the usual glow discharge
+    of the standard trigger tube. Also, and perhaps more importantly, the Krytron is able to turn on this
+    arc discharge very rapidly, the reason being that it relies on an already present plasma to support
+    the conduction, rather than waiting for the plasma to be formed as a result of priming etc. This
+    plasma is created and sustained by a keep-alive current between the keep-alive electrode and the<br>
+    cathode of the device. When the trigger is applied under the conditions of a high anode to cathode
+    voltage, this plasma forms an easy path for the main conduction between anode and cathode. </p>
+<p>The fact that a conduction path is already established prior to triggering makes a huge difference in
+    the commutation time of these devices compared to standard cold cathode trigger tubes.
+    Commutation times below 1 nanosecond are achievable with Krytrons and the time lag between
+    application of trigger and the commencement of switching may be less than 30 ns with an optimized
+    driver circuit. (Note this delay is largely due to the fact that the ionized path will need to spread
+    from the keep alive terminal to the anode of the device). </p>
+<p>Compare this delay time to that seen in the standard trigger tube which is dependent upon many
+    environmental factors and typically 3 or 4 orders of magnitude greater. Note that the variation in
+    time delay exhibited by the krytron is almost totally independent of environment, however the time
+    delay may be reduced up to a point with increasing trigger voltage. Likewise the commutation time
+    is generally decreased if the rise time of the trigger pulse is also decreased. Given identical trigger
+    pulses however a krytron will have a very similar time delay from one shot to the next. This
+    variation is known as jitter and may be less than 5ns in optimal circumstances.</p>
+<p>This short commutation time and inherent environmental insensitivity of the krytron is achieved by
+    including a radioactive priming source, the weak beta emitter Nickel-63. The source maintains
+    weak the gas filling the tube in a weak state of ionization, which aides the formation of the initial
+    glow discharge between the keep alive and the cathode. Ni-63 has a half-life of 92 years and
+    produces beta particles with an energy of only 65.9 KeV and no gamma radiation at all. The
+    quantity in each device is less than 5 microcuries and presents no significant hazard. Usually the
+    source is pulse welded to a piece of Nickel wire that is in turn welded to one of the electrode
+    supports. </p>
+<p>Priming sources (which is also occasionally a radioactive source) are also be employed in standard
+    trigger tubes to reduce their environmental sensitivity.</p>
+<p>Krytrons typically come in a small glass envelope somewhat similar to a neon indicator bulb with
+    more leads. </p>
+<p>Krytrons require a high voltage pulse (500V to 2kV) to be applied to the trigger electrode to fire
+    successfully. This pulse is almost always generated by a pulse transformer fired by a capacitor
+    discharge in the primary (rather like a simple strobe tube firing circuit). </p>
+<p>The krytron often has only a short life expectancy if used regularly (often as few as a couple of
+    hundred shots) However when used within the appropriate parameters and well within the
+    expected life time they are extremely reliable, requiring no warm up and being immune to many
+    environmental factors to a large extent (e.g. vibration, temperature, acceleration).</p>
+<p>These properties, combined with the small size make the krytron ideal for use in the detonating
+    circuitry of certain types of missiles and smart bombs. The krytron may be used directly to fire a
+    high precision exploding wire, or alternatively as part of the triggering circuitry for a triggered spark
+    gap or similar ultra high current triggering device as used in exploding foil slapper type detonators
+    and larger EBW circuits.</p>
+<p>Krytrons are used in firing circuits for certain lasers and flash tubes and also in some pulse welding
+    applications, often as triggering devices for other larger devices such as Thyratrons and spark gaps. </p>
 <p>The export/sale of krytrons is controlled under Dual Use Guidelines. </p>
 <h4>2.3 The Sprytron.</h4>
-<p>The Sprytron, otherwise known as the Vacuum Krytron, is a device of very similar performance to 
-the Krytron. Though it generally exhibits a somewhat lower time delay after triggering. The 
-Sprytron is designed for use in environments were high levels of radiation are present. The sprytron 
-is a hard vacuum 'filled' device unlike the krytron which, as noted above contains a low pressure 
-gas. </p>
-<p>The Sprytron has only three leads, (no keep alive), but is otherwise very similar in outward 
-construction to the Krytron. The reason for the use of a vacuum filling is almost certainly that there 
-is no medium present for radiation from the external environment to ionize (such ionization could 
-promote spurious triggering effects.) </p>
-<p>The Sprytron requires a more powerful trigger pulse than the Krytron, as the device works by 
-forming an arc directly between the trigger and the cathode, which causes the tube to breakdown 
-(go into conduction) by disrupting the field between the anode and cathode.</p>
-<p>Although it is usually stated that Krytrons were the devices sought in smuggling involving Israel, Iraq 
-and Pakistan, it may well be that Sprytrons were involved with at least some of these cases, rather 
-than the gas filled krytron, due to the very similar size and performance coupled with very high 
-radiation resistance. </p>
-<p>The reason that radiation sensitivity is important in nuclear warheads is not actually that the radiation 
-levels inside a bomb are liable to be especially high. It is rather that a nearby nuclear explosion may 
-in the case of a non radiation hard device, cause an undesirable condition in the warhead. This 
-defect may prevent the weapon from being able to explode either at the correct target or at all. 
-Also it is conceivable that such a scenario could result in the detonation of the second device. 
-(nuclear dominos if you like). It is not considered particularly helpful to have nuclear weapons 
-explode at the wrong moment. Even a few tenths of a second can be vital if the target is such that it 
-requires a very precisely timed detonation. (e.g. if an attempt is being made to damage a hardened 
-installation such as a missile silo or command center)</p>
-<p>A Sprytron is triggered in a similar fashion to Krytron, but as mentioned requires a higher energy 
-trigger pulse and therefore a more powerful trigger transformer etc. EG&amp;G makes trigger 
-transformers optimized for use with their various tubes, and also make devices named 
-Krytron-Pacs which incorporate a gas filled krytron and trigger transformer in a single housing.</p>
-<p>One final point. It is interesting to note that in application circuits (references 1 and 4) the sprytron 
-is always shown directly switching a load (an Exploding bridge Wire.) and a Krytron is always 
-shown triggering a secondary device such as a triggered spark gap. This may just be coincidence, 
-but as there is no apparent reason why a sprytron couldn't be used in either role, it also occurs to 
-me that possibly such a design might be significant in the design of nuclear warheads, certainly this 
-would appear to be a useful combination (see section 4).</p>
+<p>The Sprytron, otherwise known as the Vacuum Krytron, is a device of very similar performance to
+    the Krytron. Though it generally exhibits a somewhat lower time delay after triggering. The
+    Sprytron is designed for use in environments were high levels of radiation are present. The sprytron
+    is a hard vacuum 'filled' device unlike the krytron which, as noted above contains a low pressure
+    gas. </p>
+<p>The Sprytron has only three leads, (no keep alive), but is otherwise very similar in outward
+    construction to the Krytron. The reason for the use of a vacuum filling is almost certainly that there
+    is no medium present for radiation from the external environment to ionize (such ionization could
+    promote spurious triggering effects.) </p>
+<p>The Sprytron requires a more powerful trigger pulse than the Krytron, as the device works by
+    forming an arc directly between the trigger and the cathode, which causes the tube to breakdown
+    (go into conduction) by disrupting the field between the anode and cathode.</p>
+<p>Although it is usually stated that Krytrons were the devices sought in smuggling involving Israel, Iraq
+    and Pakistan, it may well be that Sprytrons were involved with at least some of these cases, rather
+    than the gas filled krytron, due to the very similar size and performance coupled with very high
+    radiation resistance. </p>
+<p>The reason that radiation sensitivity is important in nuclear warheads is not actually that the radiation
+    levels inside a bomb are liable to be especially high. It is rather that a nearby nuclear explosion may
+    in the case of a non radiation hard device, cause an undesirable condition in the warhead. This
+    defect may prevent the weapon from being able to explode either at the correct target or at all.
+    Also it is conceivable that such a scenario could result in the detonation of the second device.
+    (nuclear dominos if you like). It is not considered particularly helpful to have nuclear weapons
+    explode at the wrong moment. Even a few tenths of a second can be vital if the target is such that it
+    requires a very precisely timed detonation. (e.g. if an attempt is being made to damage a hardened
+    installation such as a missile silo or command center)</p>
+<p>A Sprytron is triggered in a similar fashion to Krytron, but as mentioned requires a higher energy
+    trigger pulse and therefore a more powerful trigger transformer etc. EG&amp;G makes trigger
+    transformers optimized for use with their various tubes, and also make devices named
+    Krytron-Pacs which incorporate a gas filled krytron and trigger transformer in a single housing.</p>
+<p>One final point. It is interesting to note that in application circuits (references 1 and 4) the sprytron
+    is always shown directly switching a load (an Exploding bridge Wire.) and a Krytron is always
+    shown triggering a secondary device such as a triggered spark gap. This may just be coincidence,
+    but as there is no apparent reason why a sprytron couldn't be used in either role, it also occurs to
+    me that possibly such a design might be significant in the design of nuclear warheads, certainly this
+    would appear to be a useful combination (see section 4).</p>
 <h4>2.4 Thyratrons: </h4>
-<p>Thyratrons come in several varieties. All work similarly to the semiconductor Thyristor, one 
-difference being that in many designs (Hydrogen Thyratrons are a common exception) the gate 
-must be biased highly negative in the off state and then biased positive to achieve switching. Like 
-Thyristors, Thyratrons operate like a latching switch, ie. once you have turned them on you can 
-only turn off by cutting the supply to the main circuit. Mercury filled Thyratrons are the slowest, 
-least useful type and are much more restricted environmentally than other types due chiefly to 
-problems with the mercury condensing . They are rarely used as they have few advantages of the 
-thyristor. Hydrogen Thyratrons are *much* faster switching than Thyristors. Some can achieve 
-commutation in under 20ns. Inert gas fillings tend to offer superior performance compared to 
-mercury filled devices, without matching the speed of the Hydrogen filled devices. Note that 
-Hydrogen Filled Devices employ a hot cathode.</p>
-<p>The actual Physical construction/ operation of the thyratron is quite complicated compared to the 
-other devices we have looked at and no attempt will be made to explain it's operation. The reader 
-is advised to consult a wide range of books as devices employing different fillings, or electrode 
-heating methods operate differently. It is not considered to be especially important to consider all 
-these variations here as this is merely an overview of these devices and is not intended to be the 
-final word on the subject. However, in order to differentiate the thyratron form other similar devices 
-and to define it in at least some physical manner here follows Frungel's (Ref.4) definition of the 
-device: </p>
+<p>Thyratrons come in several varieties. All work similarly to the semiconductor Thyristor, one
+    difference being that in many designs (Hydrogen Thyratrons are a common exception) the gate
+    must be biased highly negative in the off state and then biased positive to achieve switching. Like
+    Thyristors, Thyratrons operate like a latching switch, ie. once you have turned them on you can
+    only turn off by cutting the supply to the main circuit. Mercury filled Thyratrons are the slowest,
+    least useful type and are much more restricted environmentally than other types due chiefly to
+    problems with the mercury condensing . They are rarely used as they have few advantages of the
+    thyristor. Hydrogen Thyratrons are *much* faster switching than Thyristors. Some can achieve
+    commutation in under 20ns. Inert gas fillings tend to offer superior performance compared to
+    mercury filled devices, without matching the speed of the Hydrogen filled devices. Note that
+    Hydrogen Filled Devices employ a hot cathode.</p>
+<p>The actual Physical construction/ operation of the thyratron is quite complicated compared to the
+    other devices we have looked at and no attempt will be made to explain it's operation. The reader
+    is advised to consult a wide range of books as devices employing different fillings, or electrode
+    heating methods operate differently. It is not considered to be especially important to consider all
+    these variations here as this is merely an overview of these devices and is not intended to be the
+    final word on the subject. However, in order to differentiate the thyratron form other similar devices
+    and to define it in at least some physical manner here follows Frungel's (Ref.4) definition of the
+    device: </p>
 <p>'By the term 'thyratron' there is meant a discharge chamber in which are<br>
-arranged a cathode, one or several grids, and an anode, and which is filled<br>
-with an inert gas or metal vapor.'</p>
-<p>Some Thyratrons can handle up to 50kV(double gap types) switch thousands of Amperes and 
-handle very high power outputs( e.g. CX 1154 can handle peak powers of 40MW). Typical 
-applications are Radar pulse modulators, Particle accelerators, Lasers and high voltage medical 
-equipment. Another variety of thyratron is filled with Deuterium. These Deuterium filled devices are 
-similar to their Hydrogen filled counterparts but the sparking potential for Deuterium is higher thus 
-allowing even higher voltages to be handled. E.g. E3213 can switch 70kV (double gap type). 
-Specialist Thyratrons with ceramic and metal bodies are encountered. These are designed to be 
-used in extreme environmental conditions. There is a wide variety of grid configurations seen in 
-Thyratrons, it would be impractical to consider them all here. Manufacturers of Thyratrons Include 
-EG&amp;G, GEC, English Electric Valve Co.Ltd, M-O Valve co.Ltd. Big Thyratrons often require you 
-to get a big box full of driver/control circuitry. Prices vary from a couple of dollars to thousands. 
-Hot and cold cathode type devices are encountered. </p>
-<p>Note these ratings are the exception rather than the rule in Thyratron devices, devices designed for 
-sub kilovolt voltages and only capable of handling a few tens of amps pulsed are common enough.</p>
-<p>Thyratrons typically come in either small multi pin base type packages such as are common in other 
-vacuum tubes or in the case of the higher current devices large tubular packages with hefty end 
-connectors. </p>
+    arranged a cathode, one or several grids, and an anode, and which is filled<br>
+    with an inert gas or metal vapor.'</p>
+<p>Some Thyratrons can handle up to 50kV(double gap types) switch thousands of Amperes and
+    handle very high power outputs( e.g. CX 1154 can handle peak powers of 40MW). Typical
+    applications are Radar pulse modulators, Particle accelerators, Lasers and high voltage medical
+    equipment. Another variety of thyratron is filled with Deuterium. These Deuterium filled devices are
+    similar to their Hydrogen filled counterparts but the sparking potential for Deuterium is higher thus
+    allowing even higher voltages to be handled. E.g. E3213 can switch 70kV (double gap type).
+    Specialist Thyratrons with ceramic and metal bodies are encountered. These are designed to be
+    used in extreme environmental conditions. There is a wide variety of grid configurations seen in
+    Thyratrons, it would be impractical to consider them all here. Manufacturers of Thyratrons Include
+    EG&amp;G, GEC, English Electric Valve Co.Ltd, M-O Valve co.Ltd. Big Thyratrons often require you
+    to get a big box full of driver/control circuitry. Prices vary from a couple of dollars to thousands.
+    Hot and cold cathode type devices are encountered. </p>
+<p>Note these ratings are the exception rather than the rule in Thyratron devices, devices designed for
+    sub kilovolt voltages and only capable of handling a few tens of amps pulsed are common enough.</p>
+<p>Thyratrons typically come in either small multi pin base type packages such as are common in other
+    vacuum tubes or in the case of the higher current devices large tubular packages with hefty end
+    connectors. </p>
 <h4>2.5 The Over Voltage Spark Gap</h4>
-<p>The Over voltage spark gap is essentially just two electrodes with a gap between. When the 
-voltage between the two electrodes exceeds the breakdown voltage of the gas, the device arcs 
-over and a current is very rapidly established. The voltage at which arcing occurs in these devices is 
-given by the Dynamic Breakdown Voltage, which is the voltage at which the device will breakdown 
-for a fast rising impulse voltage. Note that this voltage may be as much as 1.5 times greater than the 
-static breakdown voltage (breakdown voltage for a slowly rising voltage.) how much greater than 
-the static breakdown voltage the actual breakdown voltage is will be depends almost entirely on 
-how rapidly the voltage rise, a shorter rise time means a higher breakdown voltage. Commutation 
-times for these devices are exceptionally low (sometimes less than 1nanosecond).</p>
-<p>Overvoltage gaps are primarily used for protection. But in combination with the other devices 
-mentioned here they are commonly used to sharpen the output pulses (decrease the rise times) of 
-very high current pulses form triggered switching devices e.g. Thyratrons.</p>
-<p>The size of these devices is almost entirely dependent upon how much current/voltage they are 
-intended to switch, There is really no limit as to the size of these devices they can be as small as 
-krytrons, however they can also be very big, and devices intended to switch MA will be just that.</p>
+<p>The Over voltage spark gap is essentially just two electrodes with a gap between. When the
+    voltage between the two electrodes exceeds the breakdown voltage of the gas, the device arcs
+    over and a current is very rapidly established. The voltage at which arcing occurs in these devices is
+    given by the Dynamic Breakdown Voltage, which is the voltage at which the device will breakdown
+    for a fast rising impulse voltage. Note that this voltage may be as much as 1.5 times greater than the
+    static breakdown voltage (breakdown voltage for a slowly rising voltage.) how much greater than
+    the static breakdown voltage the actual breakdown voltage is will be depends almost entirely on
+    how rapidly the voltage rise, a shorter rise time means a higher breakdown voltage. Commutation
+    times for these devices are exceptionally low (sometimes less than 1nanosecond).</p>
+<p>Overvoltage gaps are primarily used for protection. But in combination with the other devices
+    mentioned here they are commonly used to sharpen the output pulses (decrease the rise times) of
+    very high current pulses form triggered switching devices e.g. Thyratrons.</p>
+<p>The size of these devices is almost entirely dependent upon how much current/voltage they are
+    intended to switch, There is really no limit as to the size of these devices they can be as small as
+    krytrons, however they can also be very big, and devices intended to switch MA will be just that.</p>
 <h4>2.6 Triggered spark gaps</h4>
-<p>The triggered spark gap is a simple device, a high voltage trigger pulse applied to a trigger 
-electrode initiates an arc between anode and cathode. This trigger pulse may be utilized within the 
-device in a variety of ways to initiate the main discharge. Different spark gaps are so designed to 
-employ one particular method to create the main anode to cathode discharge. The different 
-methods areas follows-</p>
+<p>The triggered spark gap is a simple device, a high voltage trigger pulse applied to a trigger
+    electrode initiates an arc between anode and cathode. This trigger pulse may be utilized within the
+    device in a variety of ways to initiate the main discharge. Different spark gaps are so designed to
+    employ one particular method to create the main anode to cathode discharge. The different
+    methods areas follows-</p>
 <p>Triggered spark gap electrode configurations: <br>
-i) Field distortion: three electrodes; employs the point discharge (actually sharp edge) effect in the 
-creation a conducting path<br>
-ii) Irradiated: three electrodes; spark source creates an illuminating plasma that excites electrons 
-between the anode and cathode.<br>
-iii) Swinging cascade: three electrodes; trigger electrode nearer to one of the main electrodes than 
-the other. <br>
-iv) Mid plane: three electrodes; basic triggered spark gap with trigger electrode centrally 
-positioned.<br>
-v) Trigatron: trigger to one electrode current forms plasma that spreads to encompass a path 
-between anode and cathode.</p>
+    i) Field distortion: three electrodes; employs the point discharge (actually sharp edge) effect in the
+    creation a conducting path<br>
+    ii) Irradiated: three electrodes; spark source creates an illuminating plasma that excites electrons
+    between the anode and cathode.<br>
+    iii) Swinging cascade: three electrodes; trigger electrode nearer to one of the main electrodes than
+    the other. <br>
+    iv) Mid plane: three electrodes; basic triggered spark gap with trigger electrode centrally
+    positioned.<br>
+    v) Trigatron: trigger to one electrode current forms plasma that spreads to encompass a path
+    between anode and cathode.</p>
 <p>The triggered Spark gap may be filled with a wide variety of materials, the most common are-<br>
-1) Air <br>
-2) SF6<br>
-3) Argon<br>
-4) Oxygen</p>
-<p>Often a mixture of the above materials is employed. However a few spark gaps actually employ 
-liquid or even solid media fillings. Solid filled devices are often designed for single shot use (they are 
-only used once- then they are destroyed) Some solid filled devices are designed to switch powers 
-of 10TW (10 000 000 000 000 Watts) such as are encountered in extremely powerful capacitor 
-bank discharges. Except (obviously) in the case of solid filled devices, the media is usually pumped 
-through the spark gap. Some smaller gaps do not use this system though.</p>
-<p>Usually Gas filled spark gasp operate in the 20-100kV / 20 to 100kA range though much higher 
-power devices are available. I have one spec for a Maxwell gas filled device that can handle 3 MA 
-- that's 3 Million Amperes! But then it is the size of a small car!! More commonly gas filled devices 
-have dimensions of a few inches. Packages are often shaped like large ice pucks though biconical, 
-tubular and box like structures are also seen. </p>
-<p>Sparkgaps are often designed for use in a certain external environment(eg. they might be immersed 
-in oil). A system for transmitting the media to the appropriate part of the device may sometimes be 
-included. Common environments used are:<br>
-a)Air<br>
-b)SF6 <br>
-c)Oil</p>
+    1) Air <br>
+    2) SF6<br>
+    3) Argon<br>
+    4) Oxygen</p>
+<p>Often a mixture of the above materials is employed. However a few spark gaps actually employ
+    liquid or even solid media fillings. Solid filled devices are often designed for single shot use (they are
+    only used once- then they are destroyed) Some solid filled devices are designed to switch powers
+    of 10TW (10 000 000 000 000 Watts) such as are encountered in extremely powerful capacitor
+    bank discharges. Except (obviously) in the case of solid filled devices, the media is usually pumped
+    through the spark gap. Some smaller gaps do not use this system though.</p>
+<p>Usually Gas filled spark gasp operate in the 20-100kV / 20 to 100kA range though much higher
+    power devices are available. I have one spec for a Maxwell gas filled device that can handle 3 MA
+    - that's 3 Million Amperes! But then it is the size of a small car!! More commonly gas filled devices
+    have dimensions of a few inches. Packages are often shaped like large ice pucks though biconical,
+    tubular and box like structures are also seen. </p>
+<p>Sparkgaps are often designed for use in a certain external environment(eg. they might be immersed
+    in oil). A system for transmitting the media to the appropriate part of the device may sometimes be
+    included. Common environments used are:<br>
+    a)Air<br>
+    b)SF6 <br>
+    c)Oil</p>
 <p>Typical spark gap device no.'s are: TG7, TG113, TG 114 etc. etc. </p>
-<p>Spark gaps are damaged by repeated heavy discharge. This is an inevitable consequence of such 
-high discharge currents. Electrode pitting being the<br>
-most common form of damage. Between 1 and 10 thousand shots per device is usually about what 
-is permissible before damage begins to severely degrade<br>
-performance.</p>
-<p>EG&amp;G make miniature triggered spark gaps specially designed for defense applications. these 
-devices are physically much smaller than normal spark<br>
-gaps (few cm typical dimensions) and designed for use with exploding foil slapper type detonators. </p>
-<p>Laser switching of spark gaps. The fastest way to switch a triggered spark gap is with an intense 
-pulse of Laser light which creates a plasma between<br>
-the electrodes with extreme rapidity. There have been quite a few designs employing this method, 
-chiefly in the plasma research area. </p>
-<p>Triggered spark gaps tend to have long delay times than Thyratrons (their chief competitor, at least 
-at lower energies) However once conduction has started it reaches a peak value exceptionally 
-rapidly (couple of nanoseconds commutation.)</p>
+<p>Spark gaps are damaged by repeated heavy discharge. This is an inevitable consequence of such
+    high discharge currents. Electrode pitting being the<br>
+    most common form of damage. Between 1 and 10 thousand shots per device is usually about what
+    is permissible before damage begins to severely degrade<br>
+    performance.</p>
+<p>EG&amp;G make miniature triggered spark gaps specially designed for defense applications. these
+    devices are physically much smaller than normal spark<br>
+    gaps (few cm typical dimensions) and designed for use with exploding foil slapper type detonators. </p>
+<p>Laser switching of spark gaps. The fastest way to switch a triggered spark gap is with an intense
+    pulse of Laser light which creates a plasma between<br>
+    the electrodes with extreme rapidity. There have been quite a few designs employing this method,
+    chiefly in the plasma research area. </p>
+<p>Triggered spark gaps tend to have long delay times than Thyratrons (their chief competitor, at least
+    at lower energies) However once conduction has started it reaches a peak value exceptionally
+    rapidly (couple of nanoseconds commutation.)</p>
 <h4>2.7 Ignitrons</h4>
-<p>The ignitron is mercury vapor rectifier in which an arc is switched between a (usually graphite) 
-anode and a mercury pool cathode. The discharge is initiated by an ignitor electrode which dips 
-into the mercury pool cathode.On application of a suitable impulse current/voltage to this ignitor an 
-electron emitting source is formed at the point at which the ignitor contacts the pool. This initiates 
-the arcing between the anode and cathode. </p>
-<p>It is important that the ignitor should be triggered correctly. The ignitor requires a certain energy for 
-successful ignition and also an 'ignitor characteristic' application of this energy in terms of current 
-and voltage with respect to time. Misfiring or ignitor damage will otherwise occur. It is also vital that 
-no significant negative voltage should appear at the ignitor with respect to the cathode else ignitor 
-destruction will be the inevitable result.</p>
+<p>The ignitron is mercury vapor rectifier in which an arc is switched between a (usually graphite)
+    anode and a mercury pool cathode. The discharge is initiated by an ignitor electrode which dips
+    into the mercury pool cathode.On application of a suitable impulse current/voltage to this ignitor an
+    electron emitting source is formed at the point at which the ignitor contacts the pool. This initiates
+    the arcing between the anode and cathode. </p>
+<p>It is important that the ignitor should be triggered correctly. The ignitor requires a certain energy for
+    successful ignition and also an 'ignitor characteristic' application of this energy in terms of current
+    and voltage with respect to time. Misfiring or ignitor damage will otherwise occur. It is also vital that
+    no significant negative voltage should appear at the ignitor with respect to the cathode else ignitor
+    destruction will be the inevitable result.</p>
 <p>There are two main ways by which the trigger can be biased: </p>
-<p>Anode excitation: common in resistance welding applications here the anode bias is connected to 
-the ignitor by means of a switch (thyristor, thyratron etc.) and a resistor/fuse network. The ignitor 
-current drops rapidly on ignition as the anode-cathode voltage drops very low during conduction. </p>
-<p>Separate excitation: as the name suggests, here the ignitor circuit is largely independent of the main 
-circuit. </p>
+<p>Anode excitation: common in resistance welding applications here the anode bias is connected to
+    the ignitor by means of a switch (thyristor, thyratron etc.) and a resistor/fuse network. The ignitor
+    current drops rapidly on ignition as the anode-cathode voltage drops very low during conduction. </p>
+<p>Separate excitation: as the name suggests, here the ignitor circuit is largely independent of the main
+    circuit. </p>
 <p>Ignitrons are often used in parallel for AC power control applications. </p>
-<p>Ignitrons must often be cooled when used continuously (ie. Not single shot as in capacitor 
-discharge) Water cooling is commonly employed. It is vital that Ignitrons must be used in the 
-correct temperature range to hot or to cold can be very bad news for these devices- (cold leads to 
-mercury vapor condensing on the anode.) </p>
-<p>Ignitrons are very limited with regards their physical orientation. This reason being simple that they 
-rely upon a pool of liquid at one end of the device that must be correctly positioned for the ignitor 
-to function correctly. Positioning the device so that it leans over at an angle of more than 2 or 3 
-degrees from the vertical is fatal. </p>
-<p>Most ignitrons operate at most currents between 5 Amps and 100kA and may be suitable for 
-voltages from a couple of hundred to 20 000 Volts. </p>
-<p>Thyratrons and Krytrons are sometimes used in ignitron triggering circuits along with the familiar 
-thyristor. </p>
-<p>Ignitrons are suited to applications where power control of high voltages or currents is required. 
-Welding is probably the most common application.<br>
+<p>Ignitrons must often be cooled when used continuously (ie. Not single shot as in capacitor
+    discharge) Water cooling is commonly employed. It is vital that Ignitrons must be used in the
+    correct temperature range to hot or to cold can be very bad news for these devices- (cold leads to
+    mercury vapor condensing on the anode.) </p>
+<p>Ignitrons are very limited with regards their physical orientation. This reason being simple that they
+    rely upon a pool of liquid at one end of the device that must be correctly positioned for the ignitor
+    to function correctly. Positioning the device so that it leans over at an angle of more than 2 or 3
+    degrees from the vertical is fatal. </p>
+<p>Most ignitrons operate at most currents between 5 Amps and 100kA and may be suitable for
+    voltages from a couple of hundred to 20 000 Volts. </p>
+<p>Thyratrons and Krytrons are sometimes used in ignitron triggering circuits along with the familiar
+    thyristor. </p>
+<p>Ignitrons are suited to applications where power control of high voltages or currents is required.
+    Welding is probably the most common application.<br>
 </p>
 <h3>3.0 Solid State Devices.</h3>
 <p>(Note this section may well be considerably expanded following further research by the author.)</p>
-<p>There are now a few commercially available transistors on the Market which can switch many tens 
-of kV. There are also a few transistors about that can handle pulsed currents above 5kA. These 
-devices may match for example Krytrons and Sprytrons in terms of electrical performance, but not 
-in terms of size and (in the case of the Sprytron) radiation hardness.</p>
-<p>Thyristors are widely available in designs that can handle upwards of 10kA pulsed at several kV. 
-They are however very slow switching devices and are not capable of achieving even low 
-microsecond switching speeds. </p>
-<p>A new class of devices is at present showing great promise in the R&amp;D sector. These devices are 
-optically (usually LASER) switched devices employing GaAs or Diamond film technologies. The 
-reader is advised to consult the appropriate reference below for more information relating to these 
-devices.</p>
+<p>There are now a few commercially available transistors on the Market which can switch many tens
+    of kV. There are also a few transistors about that can handle pulsed currents above 5kA. These
+    devices may match for example Krytrons and Sprytrons in terms of electrical performance, but not
+    in terms of size and (in the case of the Sprytron) radiation hardness.</p>
+<p>Thyristors are widely available in designs that can handle upwards of 10kA pulsed at several kV.
+    They are however very slow switching devices and are not capable of achieving even low
+    microsecond switching speeds. </p>
+<p>A new class of devices is at present showing great promise in the R&amp;D sector. These devices are
+    optically (usually LASER) switched devices employing GaAs or Diamond film technologies. The
+    reader is advised to consult the appropriate reference below for more information relating to these
+    devices.</p>
 <h3>4.0 Pulse Power Switching Applied to Nuclear Weapons Design</h3>
-<p>(This section is as yet unavailable) Check the high energy weapons archive for a more current 
-version</p>
+<p>(This section is as yet unavailable) Check the high energy weapons archive for a more current
+    version</p>
 <h3>Final note to the reader:</h3>
-<p>Some of the devices I have mentioned are subject to strict control due to their military applications. 
-Non of the above information is however in any way restricted or controlled. For clarity switching 
-devices that are restricted by dual use guidelines are as follows: (courtesy Oak Ridge National 
-Laboratory) </p>
-<p>(a) Cold-cathode tubes (including gas krytron tubes and vacuum sprytron tubes), whether gas filled 
-or not, operating similarly to a spark gap, containing three or more electrodes, and having all of the 
-following characteristics: </p>
+<p>Some of the devices I have mentioned are subject to strict control due to their military applications.
+    Non of the above information is however in any way restricted or controlled. For clarity switching
+    devices that are restricted by dual use guidelines are as follows: (courtesy Oak Ridge National
+    Laboratory) </p>
+<p>(a) Cold-cathode tubes (including gas krytron tubes and vacuum sprytron tubes), whether gas filled
+    or not, operating similarly to a spark gap, containing three or more electrodes, and having all of the
+    following characteristics: </p>
 <ol>
-<li>Anode peak voltage rating of 2500 V or more, </li>
-<li>Anode peak current rating of 100 A or more, </li>
-<li>Anode delay time of 10 microsecond or less, </li>
+    <li>Anode peak voltage rating of 2500 V or more,</li>
+    <li>Anode peak current rating of 100 A or more,</li>
+    <li>Anode delay time of 10 microsecond or less,</li>
 </ol>
 <p> and </p>
-<p>(b) Triggered spark-gaps having an anode delay time of 15 microsecond or less rated for a peak 
-current of 500 A or more; </p>
+<p>(b) Triggered spark-gaps having an anode delay time of 15 microsecond or less rated for a peak
+    current of 500 A or more; </p>
 <p>(c) Modules or assemblies with a fast switching function having all of the following characteristics: </p>
 <ol>
-<li>Anode peak voltage rating greater than 2000 V; </li>
-<li>anode peak current rating of 500 A or more; and </li>
-<li>turn-on time of 1 microsecond or less.</li>
+    <li>Anode peak voltage rating greater than 2000 V;</li>
+    <li>anode peak current rating of 500 A or more; and</li>
+    <li>turn-on time of 1 microsecond or less.</li>
 </ol>
 <h3>Acknowledgments:</h3>
 <p>I would like to thank the following for their help in the compilation of this article:</p>
-<p>Carey Sublette for providing a great deal of assistance and encouragement. Roy Schmaus for 
-providing the original www site for the vacuum/gas device info. JPG electronics for providing 
-components used in the testing of certain ideas. </p>
+<p>Carey Sublette for providing a great deal of assistance and encouragement. Roy Schmaus for
+    providing the original www site for the vacuum/gas device info. JPG electronics for providing
+    components used in the testing of certain ideas. </p>
 <h3>References: (in alphabetical order by title)</h3>
 <ol>
-<li>EG&amp;G Catalogues/ Material. (RE: Components) </li>
-<li>Exploding Wires Vol. 4, Proc. of 4th Conf. on the Exploding Wire Phenomena. Ed. Chace 
-and Moore -Plenum Press (RE: EBW's)</li>
-<li>High Power Optically Activated Solid State Switches, ed. Rosen And Zutavern- Artech 
-House (RE: Solid state devices)</li>
-<li>High Speed Pulse Technology by Frank Frungel -Academic Press. (RE: EBW's, FCG's, 
-components)</li>
-<li>High Velocity Impact Phenomena by Ray Kinslow-Academic Press. (RE: Foil Slappers) </li>
-<li>IEEE publications (please contact author for more details).</li>
-<li>Maxwell Catalogues. (RE: spark gaps)</li>
-<li>Mullard Valves and Tubes Book 2 Part 3 (RE: components)</li>
-<li>Nuclear Weapons Frequently Asked Questions; Section 7 Nuclear Weapons Nations and 
-Arsenals by Carey Sublette. (RE: smuggling info. relating to krytrons)</li>
-<li>The Times (RE: smuggling info. relating to krytrons)</li>
+    <li>EG&amp;G Catalogues/ Material. (RE: Components)</li>
+    <li>Exploding Wires Vol. 4, Proc. of 4th Conf. on the Exploding Wire Phenomena. Ed. Chace
+        and Moore -Plenum Press (RE: EBW's)
+    </li>
+    <li>High Power Optically Activated Solid State Switches, ed. Rosen And Zutavern- Artech
+        House (RE: Solid state devices)
+    </li>
+    <li>High Speed Pulse Technology by Frank Frungel -Academic Press. (RE: EBW's, FCG's,
+        components)
+    </li>
+    <li>High Velocity Impact Phenomena by Ray Kinslow-Academic Press. (RE: Foil Slappers)</li>
+    <li>IEEE publications (please contact author for more details).</li>
+    <li>Maxwell Catalogues. (RE: spark gaps)</li>
+    <li>Mullard Valves and Tubes Book 2 Part 3 (RE: components)</li>
+    <li>Nuclear Weapons Frequently Asked Questions; Section 7 Nuclear Weapons Nations and
+        Arsenals by Carey Sublette. (RE: smuggling info. relating to krytrons)
+    </li>
+    <li>The Times (RE: smuggling info. relating to krytrons)</li>
 </ol>
 <hr>
-<p>FURTHER INFORMATION PERTAINING TO THE SUBJECT MATTER WILL BE MUCH 
-WELCOMED BY THE AUTHOR. </p>
-<p>Information regarding the author: I am not an expert in any of the above technologies and I will 
-welcome any corrections. However please could anyone providing information also provide 
-references to either the material they present or as to themselves so that their contribution may be 
-given due weight. </p>
-<p>Anyone who would like to contact me (the author) for whatever reason should mail: 
-kc76@cityscape.co.uk (NO LONGER VALID)</p>
+<p>FURTHER INFORMATION PERTAINING TO THE SUBJECT MATTER WILL BE MUCH
+    WELCOMED BY THE AUTHOR. </p>
+<p>Information regarding the author: I am not an expert in any of the above technologies and I will
+    welcome any corrections. However please could anyone providing information also provide
+    references to either the material they present or as to themselves so that their contribution may be
+    given due weight. </p>
+<p>Anyone who would like to contact me (the author) for whatever reason should mail:
+    kc76@cityscape.co.uk (NO LONGER VALID)</p>
 <h3>Disclaimer: </h3>
-<p>I the author assume no responsibility for anyone who injures/kills themselves trying to implement 
-any of the above technologies. High voltages are generally exceptionally dangerous, and none of the 
-above is intended or should be used to provide instruction in the correct procedures for building or 
-constructing high voltage circuitry of any description. High voltage is used here to describe any 
-voltage which may cause death i.e. anything above 50V.</p>
+<p>I the author assume no responsibility for anyone who injures/kills themselves trying to implement
+    any of the above technologies. High voltages are generally exceptionally dangerous, and none of the
+    above is intended or should be used to provide instruction in the correct procedures for building or
+    constructing high voltage circuitry of any description. High voltage is used here to describe any
+    voltage which may cause death i.e. anything above 50V.</p>
 <p>&nbsp;</p>
 </body>
 
