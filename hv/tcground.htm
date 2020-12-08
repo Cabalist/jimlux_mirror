@@ -1,0 +1,175 @@
+<html>
+<head>
+<title>Tesla Coil Grounding</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="keywords" content="Tesla Coil
+RF
+Ground
+Safety">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>Tesla Coil Grounding</h2>
+<p>The grounding (or not) of a Tesla Coil is a topic that receives perennial interest 
+  on the Tesla Coil Mailing List (<a href="http://www.pupman.com/" target="_blank">http://www.pupman.com/</a>). 
+  I suspect that it's largely because there are lots of different opinions, and 
+  lots of widely differing practical experience. Radio Frequency (RF) signals 
+  play a big role, and any time you start getting up in to the RF area, mechanical 
+  details can start to have large effects, because of parasitic inductance and 
+  capacitance. In this page, I work through some typical situations, do the analysis, 
+  and hopefully, provide information to let you figure out for yourself what an 
+  effective strategy will be. As with all things RF and HV related, there is a 
+  large amount of &quot;art&quot; in what you do, so use this information as a 
+  guide, not as an absolute dictum. &quot;your mileage may vary&quot;</p>
+<p>There are two basic kinds of grounds of concern in Tesla Coiling. One is the 
+  safety ground, which reduces the chance of inadvertent shocks, or burning down 
+  the building. The other, which is more important from a &quot;performance&quot; 
+  standpoint is the RF ground, or, more properly, the RF return. The secondary 
+  of a tesla coil is an LC resonant circuit, where the C is the capacitance of 
+  the topload against &quot;ground&quot;, or, more generally, the surroundings. 
+  In elementary physics, equations for the capacitance of an object (typically 
+  a sphere) in free space are derived, but in the TC world, they don't have much 
+  relevance, since there is always something near by (if only the primary of the 
+  coil) which will dominate the capacitance, and the corresponding RF path.</p>
+<h3>Parasitic Capacitance</h3>
+<p>In most electronic circuits, parasitic capacitance is an evil thing, mostly 
+  because it is unpredictable and tough to model. However, one parasitic capacitance 
+  is what we depend on to make a TC work: the capacitance of the top load to the 
+  other end of the secondary inductor. </p>
+<p>In some TC designs, the bottom end of the secondary is connected to the primary 
+  in some way. This makes the entire primary winding act as the &quot;other plate&quot; 
+  for the topload. The real problem is that now your secondary is connected directly 
+  to the HV in the primary, and if some low impedance path (like an ionized gas 
+  path) should occur from top load to you or something important, you wind up 
+  connected directly to the HV. Bad news all around.</p>
+<p>One possible solution is to connect with a capacitor to the primary. The capacitor 
+  needs to hold off the full primary voltage (and then some), and needs to be 
+  low impedance at the working frequency (i.e. 100 kHz), but high impedance at 
+  power line frequency (i.e. 60 or 50 Hz). How low? A few tens of ohms should 
+  be ok. At 100 kHz, 1.6 uF is 1 ohm, so if you allow 100 ohms in that circuit, 
+  you'd need .016 uF (16 nF). That's comparable, though, to the size of the primary 
+  tank capacitor, and will be just as expensive, etc.</p>
+<p>There is also a parasitic capacitor from the topload (and secondary coil) to 
+  the primary. The other parts of this circuit are through the tank cap, the spark 
+  gap, and the power transformer. If significant power flows here, you might wind 
+  up with transformer failures. The usual Pi circuit RFI filter would provide 
+  a nice low impedance path for the RF instead of going through the transformer 
+  secondary. </p>
+<h3>Why you want the counterpoise (and the secondary) connected to the safety 
+  ground</h3>
+Safety, of course. More seriously, if you don't connect the counterpoise to something 
+close to &quot;operator ground&quot;, then it can float up to whatever it wants 
+to. Consider the equivalent circuit illustrated here, where the counterpoise is 
+isolated from &quot;real ground&quot;. There are three capacitors to consider: 
+1) The top load to counterpoise capacitance: This is the one that makes the TC 
+actually work; 2) The top load to surroundings and 3) The counterpoise to surroundings. 
+<h3>Why you don't want RF going through the safety ground</h3>
+<p>Running a signficant RF current through the safety ground is sort of a bad 
+  idea. While the inductance is low, and the wavelength is long, there can be 
+  significant induced voltages which can wreak havoc on equipment (like your VCR) 
+  that happens to be on the circuit. Most consumer equipment is designed to deal 
+  with RF voltages in the microvolts or millivolts range, and even 10 volts is 
+  a big problem. In a really bad case, the ground wires might serve as a conductor 
+  to something with a sharp edge, from which sparks will emerge, potentially causing 
+  fires, shocks, and all around problems.</p>
+<p>The other objection is philosophical: Nothing should be designed to put current 
+  into the safety ground. It's supposed to just sit there until a fault occurs. 
+  If nothing intentionally puts current on the safety ground, then it can truly 
+  serve as a &quot;reference&quot;, and any current that does appear indicates 
+  a fault.</p>
+<h3>Safety Grounds - How to avoid killing yourself or burning down the house</h3>
+<p>When electricians talk about grounds, the &quot;safety ground&quot; is what 
+  they are talking about. Also called the &quot;green wire&quot; ground, it is 
+  what is connected to the &quot;third pin&quot; on a standard 110VAC receptacle.</p>
+<h3>RF Grounds - The myth of needing a low inductance, really short &quot;ground 
+  strap&quot;</h3>
+<p>There are numerous recommendations that your ground connection should be a 
+  short, low inductance, wide strap (not braided), etc. I'm not sure that this 
+  is warranted. Low resistance, certainly, but low inductance? Short? In part, 
+  these concerns come from the fact that Tesla Coils are &quot;radio frequency&quot;, 
+  albeit at a pretty low frequency, and the fact that the ARRL &quot;Radio Amateur's 
+  Handbook&quot; is a standard and useful reference. The ARRL handbook goes into 
+  great detail on grounding, low inductance, wide straps, etc., all of which are 
+  important to the radio amateur (typically running at 7 or 14 MHz), but not necessarily 
+  for a Tesla coil running at 100 kHz.</p>
+<p>In this section, we'll cover Inductance (i.e. the reactance of a long wire 
+  at RF can be quite high), Skin Effect (AC resistance is greater than DC resistance), 
+  and Transmission Line/Standing Wave effects (resonant ground wires).</p>
+<h4>Inductance</h4>
+<p> Let's look at some typical numbers. A single wire has an inductance of around 
+  1 microhenry per meter (rough approximation: it's lower for larger diameters, 
+  and adjacent current carrying wires can change it significantly). Say we have 
+  that big 10 kVA distribution transformer (pole pig) powered coil, running at 
+  50 kHz. We've got a 10 meter long run to the &quot;ground point&quot;(about 
+  which, more later). What's the inductance, and more important, the impedance 
+  at 50 kHz of that wire. </p>
+<p>L = 10 meters * 1 microhenry/meter = 1E-5 Henry (10 microhenries)</p>
+<p>omega = 2 * pi * f = 6.28 * 50E3 = 3.14E5</p>
+<p>X = omega L = 3.14 ohms</p>
+<p>A big 3 ohms: At an RF current of 10 Amps (which is pretty significant, 10kVA 
+  at 500 kV is only 0.2 Amp RMS), the voltage is going to be a few tens of volts. 
+  By the way, that 3 ohms is reactive, and so is NOT a loss factor.</p>
+<p> One also has to be careful about using RMS numbers in these calculations, 
+  because the typical disruptive (spark gap) coil is basically pulsed with a fairly 
+  low duty cycle. If the loaded Q is 10 (optimistic), at 50 kHz, most of the pulse 
+  is over within 200 microseconds (10 cycles). There is a long delay (8-10 milliseconds) 
+  before the next pulse (at 100-120 breaks per second), so the duty cycle is probably 
+  less than 5%. That 10 kVA average power corresponds to 200 kVA peak power. However, 
+  since I assumed 10 Amps (50 times the average...), the conclusions are still 
+  relevant. </p>
+<p>So, inductance is NOT a factor, at least for big coils. If your coil is running 
+  at 500 kHz, it gets a bit worse (30 ohms), but a higher frequency coil is likely 
+  to be operating at lower power and be physically smaller, so the currents will 
+  be lower.</p>
+<h4>Skin Effect</h4>
+<p>What about skin effect and resistive losses? Here it gets a bit trickier. It's 
+  well known that RF currents flow only on the surface of a conductor (they get 
+  &quot;squeezed out of the middle by the magnetic fields). Again, let's work 
+  some numbers. Assume a #10 AWG wire (5 sq mm: roughly 2.5 mm diameter (0.1&quot;)) 
+  and the same 50 kHz and 10 meter run.</p>
+<p>From the handy tables in the Electronic Engineer's Handbook (3rd edition, page 
+  17-13), at 0.1 MHz (the lowest frequency in the table): The largest permissible 
+  wire diameter for a resistance error of 1% (i.e. Rac/Rdc = 1.01), is 14 mils 
+  (0.014 inch, 0.36 mm) in diameter. For a 10% error, the largest size is 25 mils 
+  (0.63 mm). This IS significant. 14 mils is pretty small. But, let's continue, 
+  because the DC resistance of a AWG10 wire is pretty small, so even a 100% increase 
+  in resistance probably isn't a big factor.</p>
+<p>For that AWG 10 wire, using Circular 74 (page 300), for 50 kHz, we calculate</p>
+<p>x = 2.395 * 2.5 (equation 209) = approx 6</p>
+<p>And then look up the Rac/Rdc ratio on page 309 which comes out to 2.394. This 
+  means that that #10 wire will have 2.4 times the resistance as we would think 
+  from the copper wire tables. But, is this significant? AWG 10 wire is roughly 
+  1 ohm per 1000 ft, and we've got about 33 feet (10 meters), so the DC resistance 
+  is 0.033 ohms. Factor in the skin effect, and the AC resistance at 50 kHz is 
+  about 0.08 ohms. I suspect that the connectors will have more resistance than 
+  this.</p>
+<p>It looks like we don't need to worry about using copper strap or litz wire.</p>
+<p>Another reference (http://www.signalintegrity.com/news/skineffect.htm) provides 
+  a handy equation:</p>
+<p>Rac per unit length = (2.61E-7*sqrt(f))/(pi * D) </p>
+<p>D is diameter in same units as length. This equation breaks down at DC (obviously, 
+  because Rac isn't zero at DC, is it...)</p>
+<h4>Standing Waves/Transmission Line effects</h4>
+<p>Tesla coils do use RF after all, and &quot;RF in the Shack&quot; because of 
+  a long ground wire is a traditional problem in amateur radio: I used to have 
+  problems with that tingle in your lips when hitting the PTT on 40 meters. However, 
+  a quick calculation shows this probably isn't an issue for Tesla coiling. These 
+  effects come about when the ground wire is some odd multiple of a quarter wavelength 
+  at the frequency of interest. On 40 meters, a quarter wavelength is 10 meters 
+  (of course!), and a ground wire 30 feet long isn't all that out of the question, 
+  particularly if you are on the second floor.</p>
+<p>However, at 100-500 kHz, common frequencies for small to medium sized coils, 
+  the wavelength is 600-3000 meters, so a quarter wavelength is 150-750 meters. 
+  Somehow, I suspect that you're unlikely to have a ground wire on your TC that 
+  is that long, and the higher odd multiples are even less likely.</p>
+<hr>
+<p><font size="1">Copyright 2001, Jim Lux / tcground.htm / 9 Oct 2001 / </font><a href="hvmain.htm"><font size="1">Back 
+  to HV Home</font></a><font
+size="1"> / </font><a href="../index.htm"><font size="1">Back to home page</font></a><font size="1"> 
+  / </font><a
+href="mailto:jimlux@earthlink.net?Subject=TC%20grounding"><font size="1">Mail 
+  to Jim</font></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

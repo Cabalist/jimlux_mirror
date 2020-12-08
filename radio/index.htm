@@ -1,0 +1,157 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="keywords" CONTENT="Amateur Radio, W6RMK, KE6NFY, Phased Array, Antenna">
+   <META NAME="description" CONTENT="Jim Lux's radio home page">
+   
+<TITLE>Jim Lux's (old) Radio Sub-Website</TITLE>
+<SCRIPT  language="javascript"><!--    begin script
+function getCookieVal (offset) {
+	var endstr = document.cookie.indexOf (";", offset);
+	if (endstr == -1)
+		endstr = document.cookie.length;
+	return unescape(document.cookie.substring(offset, endstr));
+}
+function GetCookie (name) {
+	var arg = name + "=";
+	var alen = arg.length;
+	var clen = document.cookie.length;
+	var i=0;
+	while (i< clen) {
+		var j=i+ alen;
+		if (document.cookie.substring(i, j) == arg)
+			return getCookieVal(j);
+		i = document.cookie.indexOf(" ",i) + 1;
+		if (i == 0) break;
+		}
+	return null;
+}
+function SetCookie (name,value,expires,path,domain,secure) {
+	document.cookie = name + "=" + escape(value) +
+		((expires) ? "; expires="+expires.toGMTString() : "") +
+		((path) ? "; path =" + path : "") +
+		((domain) ? "; domain=" + domain : "") +
+		((secure) ? "; secure" : "");
+}
+function DeleteCookie (name, path, domain) {
+	if (GetCookie(name)) {
+		document.cookie = name + "=" +
+		((path) ? "; path=" + path : "") +
+		((domain) ? "; domain=" + domain : "") +
+		"; expires=Thu, 01-Jan-70 00:00:01 GMT";
+	}
+}
+var exp = new Date();
+exp.setTime(exp.getTime() + (30 * 24 * 60 * 60 * 1000));
+function amt() {
+	var count = GetCookie('radiocount')
+	if (count == null) {
+		SetCookie('radiocount','1')
+		return 1
+	}
+	else {
+		var newcount = parseInt(count) + 1;
+		DeleteCookie('radiocount')
+		SetCookie('radiocount',newcount,exp)
+		return count
+	}
+}
+// -- End Hiding Here --></SCRIPT>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#800080">
+
+<CENTER>
+  <H3> Jim Lux's (old) Radio Web site</H3>
+</CENTER>
+
+<h3>Stuff about radio</h3>
+<p>Professional and Amateur (Yes, I am a ham: W6RMK (Extra Class); but I also 
+  do radio stuff for a living, albeit at somewhat higher frequencies, typically)</p>
+<p>BUT.. you should go to the new location, where I actually update things:</p>
+<p>Jim's radio home page: <a href="http://home.earthlink.net/%7Ew6rmk/index.htm">http://home.earthlink.net/~w6rmk/index.htm</a></p>
+<p>Jim's home page: <a href="http://home.earthlink.net/%7Ejimlux/index.htm">http://home.earthlink.net/~jimlux/index.htm</a></p>
+<p>This is a sub-web of my <a href="../index.htm">main website</a>, which has 
+  lots of other information; some useful, some not. Perhaps you are looking for 
+  information on high voltage? You might want to take a look at my <a href="../hv/hvmain.htm">High 
+  Voltage Handbook</a></p>
+<p>15 Jan 2006</p>
+<p>
+  <SCRIPT language="javascript"><!-- Hide
+document.write("You've been here <b>" + amt() +"</b> times.")
+// -- end hiding here --></SCRIPT>
+</p>
+<P>&nbsp;</P>
+
+<P>Antennas</p>
+<P>Radios</p>
+<P>Operating/Installations</p>
+<hr>
+<h3>Antennas</h3>
+<P><a href="http://home.earthlink.net/~w6rmk/antenna/phased/phased1.htm">HF Phased Arrays</a> - Why spend money 
+  on a rotator and that big multi element beam? Build a phased array instead, 
+  swing the beam in seconds, hide it from the neighbors. Also, some real potential 
+  for a portable antenna made from a bunch of dipoles and poles. I've done some 
+  preliminary work on an <a href="http://home.earthlink.net/~w6rmk/antenna/dipsq.htm">array of bent dipoles</a>.</p>
+<P>Radio related software - Antenna <a href="http://home.earthlink.net/~w6rmk/math/mutualz.htm">mutual impedance</a> 
+  calculations, for instance (and more <a href="http://home.earthlink.net/~w6rmk/math/index.htm">radio math</a>)</p>
+<P>For some of those modeling things, you might be interested in data on the <a href="http://home.earthlink.net/~w6rmk/soildiel.htm">dielectric 
+  properties of soil</a>. Also some <a href="http://home.earthlink.net/~w6rmk/antenna/necsites.htm">links to NEC 
+  related sites</a> and using <a href="http://home.earthlink.net/~w6rmk/antenna/necstuff.htm">NEC to calculate 
+  Z and Y matrices</a>.</p>
+<p>The &quot;<a href="http://home.earthlink.net/~w6rmk/antenna/bucket1.htm">Bucket Lindenblad</a>&quot;, an omnidirectional 
+  (in the horizontal plane) Circular Polarized antenna for the 70 cm ATV band. 
+  The form is a 5 gallon poly bucket, and the elements are copper foil tape (although 
+  I don't know why wire and some other kind of tape wouldn't work.)</p>
+<p>I built a <a href="http://home.earthlink.net/~w6rmk/antenna/beam70cm.htm">70cm beam</a> for ATV based on designs 
+  from Cheap V/UHF antenna designs from the Clear Lake Amateur Radio Club.</p>
+<p><a href="http://home.earthlink.net/~w6rmk/antenna/helix900.htm">900 MHz band helical</a> antennas. I built these 
+  to work with <a href="http://home.earthlink.net/~w6rmk/linx.htm">Linx Technologies modules</a>, but presumably, 
+  they'd work with almost any 900 MHz device. Helicals being pretty broadband, 
+  these antennas might also work with cellular frequencies, although, I can't 
+  imagine why you'd want CP cellphone antennas.</p>
+<p></p>
+<hr>
+<h3>Radios</h3>
+<p><a href="http://home.earthlink.net/~w6rmk/atv.htm">Amateur Television (ATV)</a> - I've fooled a bit with it 
+  on 70cm band.</p>
+<p><a href="http://home.earthlink.net/~w6rmk/field.htm">Portable and Field Ops</a> -
+ and see the <a href="http://home.earthlink.net/~w6rmk/mobile.htm">mobile 
+  rig</a> and <a href="http://home.earthlink.net/~w6rmk/antenna/screwdriver.htm">screwdriver antenna</a> pages</p>
+<p>Some <a href="http://home.earthlink.net/~w6rmk/mobilempg.htm">comments</a> on mobile antennas, air drag, etc.</p>
+<p>My new <a href="http://home.earthlink.net/~w6rmk/pcr1000.htm">PCR1000</a> receiver</p>
+<hr>
+<h3>Operating/Installations</h3>
+<P><a href="http://home.earthlink.net/~w6rmk/otard.htm">Over The Air Reception Devices (OTARD)</a> - Stuff pertaining 
+  to the FCC rulings that preempt any city, county, or CC&amp;R's regulating antennas 
+  designed to receive broadcast TV. Essentially nobody can make laws or rules 
+  prohibiting or requiring prior approval for a Yagi, or for a dish up to a meter 
+  in diameter.</p>
+
+<P><a href="http://www.aprs.net:8000/w6rmk-5" target="_blank">Where is my car?</a> 
+  (except that the hardware died, and I haven't put it back up) An explanation 
+  of <a href="http://home.earthlink.net/~w6rmk/aprs.htm">how it's done</a> using APRS. The APRS tracker uses a 
+  GPS, and here is an idea for using GPS to calibrate the frequency of a <a href="http://home.earthlink.net/~w6rmk/hflink.htm">HF 
+  datalink</a>. I've also started putting a <a href="http://home.earthlink.net/~w6rmk/mobile.htm">mobile station</a> 
+  in my car.</p>
+<P>Some stuff on <a href="http://home.earthlink.net/~w6rmk/prop/index.htm">propagation</a>. <a href="http://home.earthlink.net/~w6rmk/pathloss.htm">Path 
+  Loss equations</a></p>
+<P>Some interesting info on radio astronomy - <a href="http://radiojove.gsfc.nasa.gov/">Radio 
+  Jove</a> (decametric waves from Jupiter/Io) - <a href="http://home.earthlink.net/~w6rmk/meteorradar.htm">meteor 
+  radar</a> is also interesting (at least, I get interested every time there's 
+  a meteor shower, but haven't done anything for it yet. Maybe for 2002 Leonids?)</p>
+<P>An <a href="http://home.earthlink.net/~w6rmk/radar10g.htm">X-band CW radar</a> based on a motion detector Gunnplexer 
+  type device.</p>
+<P>GPS disciplined Frequency Standard HP <a href="http://home.earthlink.net/~w6rmk/Z3801.htm">Z3801</a> - how many 
+  things do you have at home that are accurate to 1 part per billion?</p>
+<P>And, of course, a way to email me at: <A HREF="mailto:w6rmk@earthlink.net?Subject=Jim Lux's Radio Home page">jimlux@earthlink.net</A>. 
+  You can also reach me at (805)241-3711, or fax me at (805)241-3701, but email 
+  is the best way. </p>
+
+
+<P>
+<HR>
+
+<P>Copyright 1999-2002, Jim Lux / radio/index.htm / revised 22 Jan 2003<br>
+  <a href="http://home.earthlink.net/%7Ejimlux/index.htm">Jim's home page</a>
+</BODY>
+</HTML>

@@ -1,0 +1,142 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Jim Lux">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.03 [en] (WinNT; U) [Netscape]">
+   <TITLE>Computer Controlled Phased Array</TITLE>
+</HEAD>
+<BODY>
+<h2>Computer Controlled Phased Array</h2>
+
+<P>Think of an antenna with adjustable beamwidth, deep nulls that can be
+placed on interfering signals, and that can be redirected to any azimuth
+and elevation in milliseconds. And, as a benefit, you don't need to have
+a huge rotating thing up in the air, where the homeowner's association
+gets mad. The answer is a phased array.
+
+<P>What is that big 5 element beam but a phased array with the element
+currents determined by the mutual impedances between the driven and parasitic
+elements? Rather than move the elements around to move the beam, why not
+move the currents, and leave the elements where they are.&nbsp; Theoretically,
+it is the physical size of the antenna that determines the directivity/gain,
+not the precise arrangement of the elements. Imagine then, putting active
+elements over the entire roof of the house, covering a distance of 30x60
+feet. Efficiency (ground losses) aside, you should be able to get patterns
+from this array comparable to those from a beam of comparable dimensions
+(which is pretty darn big).
+
+<P><IMG SRC="images/array0.gif" ALT="Phased Array Block Diagram" NOSAVE HEIGHT=216 WIDTH=230>
+
+<P>The problem in any phased array is getting the phase and magnitude of
+the currents in each of the elements to be properly set to produce the
+desired pattern. When the elements have large mutual impedances, this can
+prove to be quite tricky. The easy way out is to provide separate driver
+amplifiers (for transmit, buffers for receive) for each element, and rely
+on the isolation provided by the amplifiers between the active elements
+and the phasing network.&nbsp; There are some potential problems with elements
+that have negative feed impedances, but in general, this is the optimimum
+solution.
+
+<P><IMG SRC="images/array2.gif" NOSAVE HEIGHT=228 WIDTH=270>
+
+<P>This is the ultimate scheme, and one which I am working on for the future:
+small solid state drivers at each element for transmit, H field current
+probes for receive, and DSP to do all the phasing and beamforming. I've
+done some preliminary design work on this approach, which is described
+in more detail in <A HREF="active1.htm">Active Beamformers</A>.
+
+<P>However, for now, the project is to to use an existing transciever and
+use some sort of passive network to do the beamforming. There have been
+a variety of amateur radio attempts to build passive beamformers, most
+recently relying on the "current forcing" properties of quarter wave transmission
+lines. A more complex, but ultimately flexible approach is the one used
+in the broadcast industry, using a multitude of networks. This is the approach
+I am taking with <A HREF="passive1.htm">Passive Beamformers</A>.
+
+<P><IMG SRC="images/array1.gif" NOSAVE HEIGHT=235 WIDTH=329>
+<BR>&nbsp;
+<H4>
+Requirements</H4>
+All good designs start with some sort of requirements. At least by getting
+some requirements in mind, you won't beat your head against the wall trying
+to make something work that you don't really need.
+
+<P><B>Gain</B> - how much gain do you really need. Lets consider both receive
+and transmit: On receive for HF work, in the vast majority of cases, you
+are limited by atmospheric noise, not receiver noise, so a preamp can make
+up for any losses in the antenna. On transmit, you can always run more
+power.
+
+<P><B>Directivity</B> - This is what you really need. Particularly on receive,
+directivity is what lets you knock down the QRM by pointing the antenna
+where the interfering signals arent. By the way, the ability to place nulls
+independently of the main lobe is a big advantage of a phased array. This
+is why the emphasis on front/back ratios on beams On transmit, you don't
+need as much directivity. If you squirt your power in too many directions,
+you just need to run more power to get enough power in the right direction.
+Much of the performance of a long boom beam is due to the vertical directivity,
+as much as the horizontal directivity. You aren't squirting power up into
+the sky or down into the ground. The increased vertical directivity also
+reduces the effect of non-ideal ground.
+
+<P><B>Efficiency</B> - This is sort of related to gain. On transmit, a
+physically small radiator is going to be inefficient. On receive, it just
+doesn't intercept as much power. Both of these are fixable in the HF area:
+more power in the case of transmit, preamps in the case of receive.
+<H4>
+Phased Array "rules of thumb"</H4>
+Here are some rules of thumb for phased array design which are handy to
+make sure that you don't expect too much or too little.
+
+<P>1) Half the power goes into the main lobe, half the power goes into
+all the sidelobes together. If your main lobe is, say, 30 degrees wide
+(in both planes),&nbsp; the gain of the antenna will not be 16.6 dBi (directivity
+of 45) , but more like 13.6 dBi.&nbsp; Of course, the power density in
+the "non main lobe" area will be much lower (1/45th or -16 dB), but it
+is non-zero.&nbsp; In this example, the gain, outside the main beam, would
+average around -3 dBi (which is true of most real antennas).
+
+<P>2) The basic gain of the antenna will be proportional to the number
+of elements, providing the elements aren't too close together. That is,
+if you have two elements, your gain will be 3dB, with 3 elements 5 dB,
+and so forth. Theoretically, you can get a gain of 6*N dB, since you are
+coherently combining the signals, however, such superdirective arrays tend
+to have high losses and ugly patterns.
+
+<P>3) Each element has a "capture area" of about (wavelength/2)^2.&nbsp;
+Place the elements closer together, and the gain won't be as high as it
+would with them farther apart. As a practical matter, though, you put them
+closer because gain isn't everything (in fact, it is almost immaterial),
+and closer spacings give you better control over the pattern.
+
+<P>So, what sort of performance should we shoot for.
+
+<P>Typical high performance long boom beams have gains of around 12-13
+dBi.&nbsp; Their front to back ratio is typically around 20-25 dB, which
+essentially determines the required null depth for your phased array. Their
+directivity will be around 45-50, which implies that there are 50 or so
+orientations that are useful (25 actually, considering it you have to cover
+a hemisphere, but double it because it lets you space the positions closer
+than the -3 dB points).
+<H4>
+More Background Analysis and Information</H4>
+<p>Calculations of <A HREF="mutualz.htm">mutual element impedances</A> are essential 
+  for phased arrays <BR>
+  Calculating the <A HREF="pattern.htm">patterns</A> <BR>
+  Passive Network analysis </p>
+<h4>Links to web resources</h4>
+<p>Papers by Grant Bingeman, P.E., KM5KG:</p>
+<ul>
+  <li>Phased Array Adjustment for Ham Radio <a href="http://www.qsl.net/km5kg/array.htm">http://www.qsl.net/km5kg/array.htm</a></li>
+  <li>Negative Resistance Antenna Elements <a href="http://www.qsl.net/km5kg/negative.htm">http://www.qsl.net/km5kg/negative.htm</a></li>
+</ul>
+<P>
+<HR WIDTH="100%">
+<BR>
+phased1.htm - Revised 12 October 2000, Jim Lux <BR>
+<A HREF="index.htm">radio home</A>
+<BR><A HREF="../index.htm">Jim Lux home</A>
+<BR>email comments <A HREF="mailto:jimlux@earthlink.net?subject=Computer Controlled Phased Arrays">jimlux@earthlink.net</A>
+<BR><A HREF="mailto:jimlux@earthlink.net?subject=Computer Controlled Phased Arrays"></A>
+</BODY>
+</HTML>

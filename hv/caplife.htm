@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 2.0">
+<title>Expected Life of Pulse Discharge Capacitors</title>
+</head>
+
+<body>
+
+<h2>Expected Life of Pulse Discharge Capacitors</h2>
+
+<p>Pulse discharge operation, particularly with underdamped
+(ringing) discharges, places large internal stresses on
+components. Empirical expressions have been developed to predict
+the life of a pulse discharge capacitor under conditions other
+than the nominal design. For instance, in an article by K.
+Salisbury, S. Lloyd, and Y.G. Chen at Maxwell Laboratories,
+&quot;A transportable 50 KA Dual Mode Lightning Simulator&quot;,
+the following equation is given.</p>
+
+<p>Lx = Lref * (Qref/Qx)^1.6 * (Vref/Vx)^7.5</p>
+
+<p>where<br>
+x subscript refers to the application<br>
+ref subscript refers to the reference data<br>
+L is the expected life (in shots),<br>
+Q is the discharge waveform Q<br>
+V is the capacitor charge voltage.</p>
+
+<p>Note that capacitor voltage is the most important life
+determinant, with a 7.5 exponent. A little reduction in voltage
+leads to a huge increase in life.</p>
+
+<p>Voltage reversal also has a significant impact. When the
+voltage reverses, the mechanical stresses on the capacitor are
+quite high. </p>
+
+<h3>Application Example</h3>
+
+<p>For instance, a Maxwell type 31162, is rated at 100,000 shots
+at 75 kV with 20% VR. (20% VR is Q = 1.4)</p>
+
+<p>Now, we want to know the life in a Tesla coil at 90% reversal
+(a Q of 15) and a peak voltage of 42 kV. Applying the above
+formula:</p>
+
+<p>Lx = 1E5 * ( 1.4/15)^1.6 * (75/42)^7.5 = 1E5 * .0225 * 77.37 =
+1.74E5 shots.</p>
+
+<p>reducing the voltage to 30 kV would increase the life by
+(42/30)^7.5 or 12.5 times.</p>
+
+<p>If this were in a Tesla coil at 120 bps, at 42 kV, it would
+survive (90% probability) about 24 minutes of run time. Reducing
+the voltage to 30 kV would increase the life to 300 minutes, or 5
+hours. Reducing the peak voltage to 20 kV is even more effective,
+increasing the life to 100 hours. Killing the Q down to 10 would
+increase the life by (15/10)^1.6 some 90 percent.</p>
+
+<p>Capacitors rated for high repetition rates are necessarily
+overdesigned. Comparing two units from Maxwell Labs:</p>
+
+<ul>
+    <li>1.0 uF 40 kV 1pps 1E5 shots 2.3x5.9x27.8 inches</li>
+    <li>0.1 uF 40 kV 1000 pps 1E8 shots 2.3x5.9x14.8 inches </li>
+</ul>
+
+<p>If the high reprate capacitor (with a 1000 times the life)
+were scaled to the capacity of the low rep rate unit, it would be
+about 5 times the size of the low rep rate unit. A life factor of
+1000 can be achieved by increasing the rated voltage by about 2.5
+times. This would require about 6.25 times the total capacitance
+arranged in a series parallel configuration, which correlates
+well with the physical size increase factor of 5.</p>
+
+<h3>Q and Voltage Reversal</h3>
+
+<p><em>(these need to be verified, particularly at low Q's)</em></p>
+
+<p>Q or voltage reversal (VR) may be computed from each other by:</p>
+
+<p>Q = sqrt( 1 + 1 /( 2 /pi*ln(VR))^2)</p>
+
+<p>VR = exp( - pi/2 * sqrt(1/(q^2-1)))</p>
+
+<p>where VR is the voltage reversal expressed as a fraction (i.e.
+0&lt;VR&lt;1)</p>
+
+<hr>
+
+<p><font size="1">Copyright 1998, Jim Lux / caplife.htm / 9 May
+1998 / </font><a href="hvmain.htm"><font size="1">Back to HV Home</font></a><font
+size="1"> / </font><a href="../index.htm"><font size="1">Back to
+home page</font></a><font size="1"> / </font><a
+href="mailto:jimlux@earthlink.net"><font size="1">Mail to Jim</font></a></p>
+</body>
+</html>

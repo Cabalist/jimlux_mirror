@@ -1,0 +1,66 @@
+CM Square bent dipole array
+CM sides are 7 meters long
+CM used for calculating mutual Z
+CM elements loaded as copper (roughly AWG 10)
+CM three sets of runs for free space, perfect ground, and real ground (approximation)
+CE dipole side is 2.5 meters long
+GW, 100,  1,3.39,3.61,0,3.61,3.39,0,0.00127
+GW, 101, 10,1.,3.61,0,3.39,3.61,0,0.00127
+GW, 102, 10,3.61,3.39,0,3.61,1.,0,0.00127
+GM,0,0,0,0,0,0,0,5.
+GX,100,110
+GE
+LD,5,0,0,0,6E7
+EK
+GN,-1
+FR,0,1,0,0,29.0,0
+EX,0,100,1,1,0
+PT,0,100,1,1
+XQ
+FR,0,1,0,0,29.0,0
+EX,0,100,1,1,0
+PT,0,200,1,1
+XQ
+FR,0,1,0,0,29.0,0
+EX,0,100,1,1,0
+PT,0,300,1,1
+XQ
+FR,0,1,0,0,29.0,0
+EX,0,100,1,1,0
+PT,0,400,1,1
+XQ
+GN,1
+FR,0,1,0,0,29.0,0
+EX,0,100,1,1,0
+PT,0,100,1,1
+XQ
+FR,0,1,0,0,29.0,0
+EX,0,100,1,1,0
+PT,0,200,1,1
+XQ
+FR,0,1,0,0,29.0,0
+EX,0,100,1,1,0
+PT,0,300,1,1
+XQ
+FR,0,1,0,0,29.0,0
+EX,0,100,1,1,0
+PT,0,400,1,1
+XQ
+GN,0,0,0,0,6,1E-3
+FR,0,1,0,0,29.0,0
+EX,0,100,1,1,0
+PT,0,100,1,1
+XQ
+FR,0,1,0,0,29.0,0
+EX,0,100,1,1,0
+PT,0,200,1,1
+XQ
+FR,0,1,0,0,29.0,0
+EX,0,100,1,1,0
+PT,0,300,1,1
+XQ
+FR,0,1,0,0,29.0,0
+EX,0,100,1,1,0
+PT,0,400,1,1
+XQ
+EN

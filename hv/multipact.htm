@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>Multipaction</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="keywords" content="multipactor, multipaction, RF, vacuum, secondary electron emission">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>Multipaction</h2>
+<p>Multipaction is an effect that occurs with RF fields, usually in a vacuum or 
+  low pressure condition. Essentially it results from an ion moving back and forth 
+  (in response to an RF field) and knocking other electrons off the sides when 
+  it hits. If the transit time of the electron is nicely synchronized with the 
+  RF field, then just as it hits, the field is right to pull the new electrons 
+  towards the other side, and a cascading avalanche can result (if the electron 
+  emission coefficient (greek lower case delta) is &gt;1). The table below gives 
+  values for clean, outgassed surfaces. Bear in mind that without special cleaning, 
+  surfaces can have a delta as high as 4.</p>
+<table width="45%" border="1">
+  <tr> 
+    <th colspan="4"> 
+      <div align="center">Secondary Electron Coefficient</div>
+    </th>
+  </tr>
+  <tr> 
+    <th> 
+      <div align="center">Metal</div>
+    </th>
+    <th> 
+      <div align="center"><i>d</i> (electrons per incident electron)</div>
+    </th>
+    <th> 
+      <div align="center">Electron Energy at deltamax<br>
+        (eV)</div>
+    </th>
+    <th> 
+      <div align="center">Electron Energy for delta=1<br>
+        (eV)</div>
+    </th>
+  </tr>
+  <tr> 
+    <td>Al</td>
+    <td>1.9</td>
+    <td>220</td>
+    <td>35</td>
+  </tr>
+  <tr> 
+    <td>Au</td>
+    <td>1.1</td>
+    <td>330</td>
+    <td>160</td>
+  </tr>
+  <tr> 
+    <td>Cu</td>
+    <td>1.3</td>
+    <td>240</td>
+    <td>100</td>
+  </tr>
+  <tr> 
+    <td>Fe</td>
+    <td>1.3</td>
+    <td>350</td>
+    <td>120</td>
+  </tr>
+  <tr> 
+    <td>Mo</td>
+    <td>1.3</td>
+    <td>360</td>
+    <td>120</td>
+  </tr>
+  <tr> 
+    <td>Ni</td>
+    <td>1.3</td>
+    <td>460</td>
+    <td>160</td>
+  </tr>
+  <tr> 
+    <td>W</td>
+    <td>1.45</td>
+    <td>700</td>
+    <td>200</td>
+  </tr>
+</table>
+<p>As the number of electrons bouncing back and forth grows, the current can increase 
+  to the point where a hot spot forms on the cavity wall, increasing outgassing, 
+  melting the wall, evaporating material, and all manner of &quot;bad things.&quot;</p>
+<p>A bunch of math will result in a handy equation, often referred to as the multipactoring 
+  threshold:</p>
+<p>Vo = (2*pi*d/lambda)^2 * (me*c^2)/(pi*e)</p>
+<p>where:<br>
+  Vo is the voltage between the sides of the cavity<br>
+  me= mass of electron<br>
+  lambda = wavelength<br>
+  d = spacing between walls<br>
+  c = speed of light (3E8 m/sec)<br>
+  e = charge on an electron</p>
+<p>The secondary electron emission actually goes down as the electron energy rises 
+  over the peak, so breakdown can sometimes be avoided by rapidly raising the 
+  RF power (as in a pulsed radar system, for instance).</p>
+<p>If the pressure is high, then the electron will likely hit another gas molecule 
+  or atom before hitting the other side, so multipaction is less likely. Therefore, 
+  the mean free path would need to be on the order of the spacing for multipaction 
+  to occur.</p>
+<p>Interestingly, aluminum seems to have a really high secondary emission coefficient, 
+  a good reason for plating it with something else in a waveguide intended for 
+  use in vacuum.</p>
+<p>&nbsp;</p>
+<hr>
+hv/multipactor.htm - 1 March 2002 - <a href="mailto:jimlux@earthlink.net?Subject=Multipactor">Jim 
+Lux</a><br>
+<a href="hvmain.htm">HV main page</a> - <a href="../index.htm">Jim's home page</a> 
+<p>&nbsp;</p>
+</body>
+</html>

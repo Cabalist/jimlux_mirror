@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+
+<head>
+<title>Multi-Stage High Voltage Generators</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 1.1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h3>Multi-Stage High Voltage Generators</h3>
+<p>Multistage HV generators create high voltage by connecting a number of lower 
+  voltage sources in series to produce the required voltage. At some voltage level, 
+  it becomes impractical to generate the required voltage in one circuit, usually 
+  due to component construction and insulation problems, so a multistage approach 
+  is the only way to get the voltages required. There are also some applications, 
+  linear particle accelerators and photomultiplier dynode bias supplies being 
+  two notable ones, where you actually want a series of stepped voltages. The 
+  fact that the power supply creates them without needing some sort of external 
+  voltage divider (which will potentially dissipate some power) is an advantage. 
+  The best known form of a multistage HV generator is the <a href="cw1.htm">Cockroft-Walton 
+  voltage multiplier</a>, which will be discussed in a later section.</p>
+<p>Modern HV power supplies now make use of pulse width modulated (PWM) switching 
+  techniques, and, of course, there are specialized techniques for <a href="pwm.htm">HV 
+  PWM supplies</a>. PWM switchers are very popular because they run at higher 
+  frequencies, reducing the size of filter components required for a given ripple, 
+  which has the added benefit of reducing the stored energy in the supply.</p>
+<p>In general, multistage generators are built as a stack of basically identical 
+stages. Power is fed in at the bottom (low voltage) end of the stack and 
+transmitted up the stack by some means either mechanical or electrical to 
+power a series of independent power supplies. Economies of scale can be 
+realized because all the stages are identical (or nearly so). Further economies 
+result from the generally lower cost of lower voltage components, even in 
+multiple quantities.</p>
+<p>&lt;figure here&gt;</p>
+<p>Start with a crude, but effective, system that uses mechanical means to transmit 
+the power up the stack. A single large motor turns an insulating shaft which runs 
+up the stack. At each stage, a generator is connected to the shaft and takes 
+mechanical power from the shaft. The generator powers an appropriate supply 
+which is connected in series with the supplies in the stages above and below. 
+This system would potentially be heavy and the mechanical problems of 
+transmitting significant power up an insulating shaft would need to be 
+addressed. Also, electrical stability might be a problem, although with a 
+sufficiently sophisticated central control and fiber optics it could probably be 
+made to work quite well.</p>
+<p>&lt;figure here&gt;</p>
+<p>The technique of transmitting power by mechanical means has been used to 
+generate isolated electrical power at high common mode voltages. For instance, 
+the ion supply in the collector of a Van deGraaf accelerator is often powered 
+from a generator driven by the charging belt. This technique has also been used 
+to provide filament power to rectifier tubes in a more conventional Cockroft 
+Walton or Greinacher stack.</p>
+<p>The next system to be considered transmits the power between the stages by 
+means of transformers with a high isolation voltage. This system, described by 
+Greinacher in 189x (?), requires that the transformers be large enough to carry 
+the power for all the stages above. So, either you give up having identical 
+stages, or the transformers have a lot of excess capacity in the upper stages. It 
+is a simple generalization to do the same thing using a third winding on the 
+power supply transformer of the stage, essentially sharing the iron core. This 
+system has the advantage that the output voltage of the entire stack can be 
+easily adjusted by changing the input voltage to the first stage. company name 
+here manufactures high voltage power supplies based on this principle.</p>
+<p>&lt;figure here&gt;</p>
+<p>Later design improvements use air core transformers operating at RF which has 
+the multiple advantages of eliminating the weight of the iron and making the 
+required filter capacitors much smaller, although rectifiers and other parasitic 
+losses become larger at higher frequencies.</p>
+<p>&lt;figure here&gt;</p>
+<p>The Dynamitron takes this approach to the ultimate, using the accelerator tube 
+itself as one plate of the filter capacitor.</p>
+<p>&lt;figure here&gt;</p>
+<p>The Cockroft Walton configuration uses a chain of capacitors to transmit the 
+power up the stack. </p>
+<p>&lt;figure here&gt;</p>
+<p>Analysis of the Cockroft-Walton configuration</p>
+<p>optimum number of stages</p>
+<p>ripple</p>
+<p>&#160;Battery powered staged supplies</p>
+<p>A very simple technique for generating high voltages is to cascade a number 
+  of battery powered supplies of lower voltage. If limited run times or power 
+  is needed, this can be a very simple approach.</p>
+<hr>
+<p><font size=1>Copyright 1997, Jim Lux / staged.htm/ 17 March 2001 / </font><a href="hvmain.htm"><font size=1>Back 
+  to HV Home</font></a><font size=1> / </font><a href="../index.htm"><font size=1>Back 
+  to home page</font></a><font size=1> / </font><a href="mailto:jimlux@earthlink.net?subject=MultiStage%20HV%20supplies"><font size=1>Mail 
+  to Jim</font></a></p>
+</body>
+
+</html>

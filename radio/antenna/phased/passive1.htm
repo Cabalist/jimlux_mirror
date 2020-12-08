@@ -1,0 +1,73 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Jim Lux">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.03 [en] (WinNT; U) [Netscape]">
+   <TITLE>Phased Array - Passive Beamformer</TITLE>
+</HEAD>
+<BODY>
+
+<H2>Phased Array using a Passive Element Beamformer</H2>
+
+This is not easy as has been amply discussed in sources like the ARRL Antenna
+Book. The schemes described there rely on fairly simple arrangements of
+antennas, and further, rely on the quarter wave transmission line current
+forcing properties. The Antenna Book does mention the broadcast approach
+in passing, that is, using separate LC networks on each element, then separate
+phase shift networks , and finally suitable power dividers, and then goes
+on to say that it is too complex, and that setting the array up for various
+directions is too difficult. Here is the basic idea:
+<BR>
+<IMG SRC="images/array1x.gif" NOSAVE HEIGHT=235 WIDTH=329> 
+<P>Why is the broadcast approach so difficult?
+<UL>
+<LI>
+There are multiple networks needed to determine the pattern and they all
+interact, so there isn't a simple way to have a big rotary switch, or a
+few relays to control the array direction.</LI>
+
+<LI>
+The interactions are quite complex, and not amenable to hand calculation.</LI>
+</UL>
+So, the Antenna Book, and other ham literature, has concentrated on solutions
+using limited flexibility: limited numbers of elements, restricted numbers
+of phases to drive the elements. Arrangements like the 4 square with 90
+degree phase shifts are popular because with a half dozen relays and one
+LC network you can make it work, and it gives you a reasonably good null
+in the back.
+
+<P>A couple of developments in the past few years has changed the situation.
+<UL>
+<LI>
+The first development is the availability of cheap computer controlled
+LC tuning networks, as described in QST, and as available from <A HREF="http://www.ldgelectronics.com/">LDG
+Electronics</A>.</LI>
+
+<LI>
+The second is that computers capable of doing the necessary impedance and
+matching calculations are cheap and readily available.</LI>
+</UL>
+All of a sudden, you can have a single knob to steer the array, with the
+computer taking all the work out of setting up all those L's and C's.
+
+<p>The key components are
+<ul>
+  <li>calculating mutual impedances</li>
+  <li><a href="../../math/zmeasure.htm">measuring self and mutual impedances</a></li>
+  <li><a href="networks.htm">Synthesizing the networks</a></li>
+  <li><a href="pwrdiv.htm">dividing the power</a></li>
+  <li><a href="implement.htm">implementation details using the LDG Electronics 
+    tuners</a></li>
+</ul>
+
+<P>
+<HR WIDTH="100%">
+<BR>
+passive1.htm - Revised 16 June 1999, Jim Lux <BR>
+<A HREF="phased1.htm">back to Phased Arrays</A> <BR>
+<A HREF="../../index.htm">radio home</A> <BR>
+<A HREF="../../../index.htm">Jim Lux home</A> <BR>
+email comments <A HREF="mailto:jimlux@earthlink.net?subject=Passive Beamformer">jimlux@earthlink.net</A>
+<BR>&nbsp;
+</BODY>
+</HTML>

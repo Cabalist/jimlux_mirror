@@ -1,0 +1,523 @@
+<html>
+<head>
+<title>Ground Rods</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>Grounds</h2>
+<p>The following discussions are really applicable to line frequencies. For higher 
+  frequencies, dielectric loss must be considered, as well as skin effect. For 
+  lower frequencies (i.e. DC) consideration should be given to electrolytic effects 
+  such as polarization.</p>
+<p>The dominant effect for a ground is the current distribution within the earth. 
+  The ground rod or wire itself typically has negligible resistance, as does the 
+  interface between the rod and soil. As such, the soil conductivity has a very 
+  large influence on the ground resistance.</p>
+<p>Resistivity of different soils and resistance of a single rod. The rod, in 
+  the table below, is a standard rod 5/8 inch in diameter and 10 feet long (16 
+  mm diam by 3m long) Data taken from IEEE Std 142-1991.</p>
+<table width="75%" border="1">
+  <tr> 
+    <th width="42%">Soil Description</th>
+    <th width="13%">Group Symbol</th>
+    <th width="21%">Avg Resistivity<br>
+      (kohm cm)</th>
+    <th width="24%"> 
+      <p>Resistance of rod<br>
+        (ohm) </p>
+    </th>
+  </tr>
+  <tr> 
+    <td width="42%">Well graded gravel, gravel-sand mixtures, little or no fines</td>
+    <td width="13%">GW</td>
+    <td width="21%">60-100</td>
+    <td width="24%">180-300</td>
+  </tr>
+  <tr> 
+    <td width="42%">Poorly graded gravels, gravel -sand mixtures, little or no 
+      fines</td>
+    <td width="13%">GP</td>
+    <td width="21%">100-250</td>
+    <td width="24%">300-750</td>
+  </tr>
+  <tr> 
+    <td width="42%">Clayey gravel, poorly graded gravel, sand-clay mixtures</td>
+    <td width="13%">GC</td>
+    <td width="21%">20-40</td>
+    <td width="24%">60-120</td>
+  </tr>
+  <tr> 
+    <td width="42%"> 
+      <p>Silty sands, porly graded sand-silts mixtures</p>
+    </td>
+    <td width="13%">SM</td>
+    <td width="21%">10-50</td>
+    <td width="24%">30-150</td>
+  </tr>
+  <tr> 
+    <td width="42%">Clayey sands, poorly graded sand-clay mixtures</td>
+    <td width="13%">SC</td>
+    <td width="21%">5-20</td>
+    <td width="24%">15-60</td>
+  </tr>
+  <tr> 
+    <td width="42%">Silty or clyey fine sands with slight plasticity</td>
+    <td width="13%">ML</td>
+    <td width="21%">3-8</td>
+    <td width="24%">9-24</td>
+  </tr>
+  <tr> 
+    <td width="42%">Fine sandy or silty soils, elastic silts</td>
+    <td width="13%">MH</td>
+    <td width="21%">8-30</td>
+    <td width="24%">24-90</td>
+  </tr>
+  <tr> 
+    <td width="42%">Gravelly clays, sandy clays, silty clays, lean clays</td>
+    <td width="13%">CL</td>
+    <td width="21%">2.5-6</td>
+    <td width="24%">17-18</td>
+  </tr>
+  <tr> 
+    <td width="42%">Inorganic clays of high plasticity</td>
+    <td width="13%">CH</td>
+    <td width="21%">1-5.5</td>
+    <td width="24%">3-16</td>
+  </tr>
+</table>
+<p>Note that for the last two, clays, the resistivity is highly dependent on soil 
+  moisture.</p>
+<h3>Effect of Moisture Content on Soil Resistivity</h3>
+<p>The following table gives resistivity (kohm cm) for three types of soil, for 
+  moisture contents from 2% to 24% by weight. Data taken from IEEE Std 142-1991.</p>
+<table width="56%" border="1">
+  <tr> 
+    <th width="28%">Moisture content (% by weight)</th>
+    <th width="26%"> 
+      <div align="right">Top Soil</div>
+    </th>
+    <th width="23%"> 
+      <div align="right">Sandy Loam</div>
+    </th>
+    <th width="23%"> 
+      <div align="right">Red Clay</div>
+    </th>
+  </tr>
+  <tr> 
+    <td width="28%">2</td>
+    <td width="26%"> 
+      <div align="right"></div>
+    </td>
+    <td width="23%"> 
+      <div align="right">185</div>
+    </td>
+    <td width="23%"> 
+      <div align="right"></div>
+    </td>
+  </tr>
+  <tr> 
+    <td width="28%">4</td>
+    <td width="26%"> 
+      <div align="right"></div>
+    </td>
+    <td width="23%"> 
+      <div align="right">60</div>
+    </td>
+    <td width="23%"> 
+      <div align="right"></div>
+    </td>
+  </tr>
+  <tr> 
+    <td width="28%">6</td>
+    <td width="26%"> 
+      <div align="right">135</div>
+    </td>
+    <td width="23%"> 
+      <div align="right">38</div>
+    </td>
+    <td width="23%"> 
+      <div align="right"></div>
+    </td>
+  </tr>
+  <tr> 
+    <td width="28%">8</td>
+    <td width="26%"> 
+      <div align="right">90</div>
+    </td>
+    <td width="23%"> 
+      <div align="right">28</div>
+    </td>
+    <td width="23%"> 
+      <div align="right"></div>
+    </td>
+  </tr>
+  <tr> 
+    <td width="28%">10</td>
+    <td width="26%"> 
+      <div align="right">60</div>
+    </td>
+    <td width="23%"> 
+      <div align="right">22</div>
+    </td>
+    <td width="23%"> 
+      <div align="right"></div>
+    </td>
+  </tr>
+  <tr> 
+    <td width="28%">12</td>
+    <td width="26%"> 
+      <div align="right">35</div>
+    </td>
+    <td width="23%"> 
+      <div align="right">17</div>
+    </td>
+    <td width="23%"> 
+      <div align="right">180</div>
+    </td>
+  </tr>
+  <tr> 
+    <td width="28%">14</td>
+    <td width="26%"> 
+      <div align="right">25</div>
+    </td>
+    <td width="23%"> 
+      <div align="right">14</div>
+    </td>
+    <td width="23%"> 
+      <div align="right">55</div>
+    </td>
+  </tr>
+  <tr> 
+    <td width="28%">16</td>
+    <td width="26%"> 
+      <div align="right">20</div>
+    </td>
+    <td width="23%"> 
+      <div align="right">12</div>
+    </td>
+    <td width="23%"> 
+      <div align="right">20</div>
+    </td>
+  </tr>
+  <tr> 
+    <td width="28%">18</td>
+    <td width="26%"> 
+      <div align="right">15</div>
+    </td>
+    <td width="23%"> 
+      <div align="right">10</div>
+    </td>
+    <td width="23%"> 
+      <div align="right">14</div>
+    </td>
+  </tr>
+  <tr> 
+    <td width="28%">20</td>
+    <td width="26%"> 
+      <div align="right">12</div>
+    </td>
+    <td width="23%"> 
+      <div align="right">9</div>
+    </td>
+    <td width="23%"> 
+      <div align="right">10</div>
+    </td>
+  </tr>
+  <tr> 
+    <td width="28%">22</td>
+    <td width="26%"> 
+      <div align="right">10</div>
+    </td>
+    <td width="23%"> 
+      <div align="right">8</div>
+    </td>
+    <td width="23%"> 
+      <div align="right">9</div>
+    </td>
+  </tr>
+  <tr> 
+    <td width="28%">24</td>
+    <td width="26%"> 
+      <div align="right">10</div>
+    </td>
+    <td width="23%"> 
+      <div align="right">7</div>
+    </td>
+    <td width="23%"> 
+      <div align="right">8</div>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h3>Effect of Temperature on Soil Resitivity</h3>
+<p>The following table gives variation in soil resistivity with temperature. The 
+  significant transition is at the freezing point, and above that the resitivity 
+  drops fairly linearly with temperature. I'm not sure about the double entry 
+  for 0 degrees.. perhaps it represents the variability at the transition temperature? 
+  Data taken from IEEE Std 142-1991.</p>
+<table width="75%" border="1">
+  <tr> 
+    <th> 
+      <div align="center">Temperature (deg C)</div>
+    </th>
+    <th> 
+      <div align="center">Resistivity (kohm cm)</div>
+    </th>
+  </tr>
+  <tr> 
+    <td> 
+      <div align="center">-5</div>
+    </td>
+    <td> 
+      <div align="center">70</div>
+    </td>
+  </tr>
+  <tr> 
+    <td> 
+      <div align="center">0</div>
+    </td>
+    <td> 
+      <div align="center">30</div>
+    </td>
+  </tr>
+  <tr> 
+    <td> 
+      <div align="center">0 (?)</div>
+    </td>
+    <td> 
+      <div align="center">10</div>
+    </td>
+  </tr>
+  <tr> 
+    <td> 
+      <div align="center">10</div>
+    </td>
+    <td> 
+      <div align="center">8</div>
+    </td>
+  </tr>
+  <tr> 
+    <td> 
+      <div align="center">20</div>
+    </td>
+    <td> 
+      <div align="center">7</div>
+    </td>
+  </tr>
+  <tr> 
+    <td> 
+      <div align="center">30</div>
+    </td>
+    <td> 
+      <div align="center">6</div>
+    </td>
+  </tr>
+  <tr> 
+    <td> 
+      <div align="center">40</div>
+    </td>
+    <td> 
+      <div align="center">5</div>
+    </td>
+  </tr>
+  <tr> 
+    <td> 
+      <div align="center">50</div>
+    </td>
+    <td> 
+      <div align="center">4</div>
+    </td>
+  </tr>
+</table>
+<h3>Calculation of Resistance to Earth</h3>
+<p>An expression, accurate to 15%, for a single 10ft (3m) rod 5/8&quot; (16mm) 
+  in diameter is:</p>
+<p><tt>Rground(rod) = rho/335 ohms</tt></p>
+<p>where rho is in ohm-cm (note the tables above are in kohm/cm). </p>
+<p>Multiple rods</p>
+<p>Multiple ground rods are often used particularly where high currents may be 
+  involved. The ground resistance is not simply the resistance of one rod, divided 
+  by the number of rods, unless the rods are very far apart. However, even though 
+  the ground resistance of the combination may not be all that much better than 
+  a single rod, the current is shared among the rods, reducing the current per 
+  rod. A guideline from IEEE Std 152-1991 to avoid &quot;smoking rods&quot; is:</p>
+<p><tt>Max Current(amps) = 34.8E3 * d * L / sqrt(rho * t)</tt></p>
+<p>where:<br>
+  d is the rod diameter in meters<br>
+  L is the rod length in meters<br>
+  rho is the soil resistivity in ohm meters<br>
+  t is the duration of the current in seconds (and is valid for short times only)</p>
+<p>The text of IEEE Std 142-1991 claims that for 1 ft 5/8&quot; rod (32 cm x 16 
+  mm) this expression yields 116A in 2500 ohmcm soil and 58A for 10,000 ohm-cm 
+  soil, however I don't get these numbers.</p>
+<p>&nbsp;</p>
+<p>Here's a table of some formulae to calculate ground resistance for combinations 
+  of rods. This table is taken from IEEE Std 142-1991, but it's cited there as 
+  coming from: Dwight, H.B.,&quot;Calculation of resistance to ground&quot;, <i>AIEE 
+  Transactions</i>, vol 55, Dec 1936, pp 1319-1328.</p>
+<table width="75%" border="1">
+  <tr>
+    <td>Picture</td>
+    <td>Description</td>
+    <td>expression for R</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Hemisphere, radius a</td>
+    <td><tt>=rho/(2*pi*a)</tt></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>One rod, Length L, radius a</td>
+    <td><tt>=rho/(2*pi*L)*(ln(4*L/a)-1)</tt></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Two ground rods spacing s, s&gt;L</td>
+    <td><tt>=rho/(4*pi*L)*(ln(4*L/a)-1) + rho/(4*pi*s)*<br>
+      (1<br>
+      - 1/3 * (L/s)^2<br>
+      + 1/5 * (L/s)^4)<br>
+      -...)</tt></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Two rods, spacing s, s&lt;L</td>
+    <td><tt>=rho/(2*pi*L)*<br>
+      (ln(4*L/a)<br>
+      - ln(4*L/s)<br>
+      - 2 <br>
+      + 1/2 * s/L<br>
+      - 1/16 * (s/L)^2<br>
+      + 1/512 * (s/L)^4<br>
+      -...)</tt></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>Buried horizontal wire, length 2L, depth s/2</td>
+    <td><tt>=rho/(4*pi*L)*<br>
+      (ln(4*L/a)<br>
+      +ln(4*L/s)<br>
+      - 2 <br>
+      + 1/2 * s/L<br>
+      - 1/16 * (s/L)^2<br>
+      + 1/512 * (s/L)^4<br>
+      -...) </tt></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>right angle turn of wire, Arm length L, depth s/2<br>
+      (essentially 2 arms at right angles)</td>
+    <td><tt>=rho/(4*pi*L)*<br>
+      (ln(2*L/a)<br>
+      +ln(2*L/s)<br>
+      - 0.2373<br>
+      + 0.2146 * s/L<br>
+      + 0.1035 * (s/L)^2<br>
+      - 0.0424 * (s/L)^4<br>
+      ...)<br>
+      <i>* I'm not sure of this one, the sign pattern is very different from the 
+      others!</i> </tt></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>3 point star</td>
+    <td><tt>=rho/(6*pi*L)*<br>
+      (ln(2*L/a)<br>
+      +ln(2*L/s)<br>
+      + 1.071<br>
+      - 0.209 * s/L<br>
+      + 0.238 * s^2/L^2<br>
+      - 0.054* s^4/L^4<br>
+      - ...)</tt></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>4 point star (cross)</td>
+    <td><tt>=rho/(8*pi*L)*<br>
+      (ln(2*L/a)<br>
+      +ln(2*L/s)<br>
+      + 2.912<br>
+      - 1.071 * s/L<br>
+      + 0.645 * s^2/L^2<br>
+      - 0.145 * s^4/L^4<br>
+      - ...)</tt></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>6 point star</td>
+    <td><tt>=rho/(12*pi*L)*<br>
+      (ln(2*L/a)<br>
+      +ln(2*L/s)<br>
+      + 6.851<br>
+      - 3.128 * s/L<br>
+      + 1.758 * s^2/L^2<br>
+      - 0.490 * s^4/L^4<br>
+      - ...)</tt></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>8 point star</td>
+    <td><tt>=rho/(16*pi*L)*<br>
+      (ln(2*L/a)<br>
+      +ln(2*L/s)<br>
+      + 10.98<br>
+      - 5.51 * s/L<br>
+      + 3.26 * s^2/L^2<br>
+      - 1.17 * s^4/L^4<br>
+      - ...)</tt></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>ring of wire, diameter of ring D, diameter of wire d, depth s/2</td>
+    <td><tt>=rho/(2*pi^2*D)*<br>
+      (ln(8*D/s)+ln(4*D/s))</tt> </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+      <p>buried horizontal strip length 2L, section a x b, depth s/2, b&lt;a/8</p>
+      </td>
+    <td>
+      <p><tt>=rho/(4*pi*L)*<br>
+        ( ln(4*L/a)<br>
+        + (a^2 - pi*a*b)/(2*(a+b)^2)<br>
+        + ln(4*L/s)<br>
+        - 1<br>
+        + s/(2*L)<br>
+        - s^2/(16*L^2)<br>
+        + s^4/(512*L^4)<br>
+        - ...<br>
+        )</tt></p>
+      </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>buried horizontal round plate, radius a, depth s/2</td>
+    <td>
+      <p><tt>= rho/(8*a) + <br>
+        rho/(4*pi*s) *<br>
+        ( 1 <br>
+        - 7/12 * (a/s)^2<br>
+        + 33/40 * (a/s)^4 <br>
+        - ...)</tt></p>
+      </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>buried vertical round plate, radius a, depth s/2</td>
+    <td><tt>= rho/(8*a) + <br>
+      rho/(4*pi*s) *<br>
+      ( 1 <br>
+      - 7/24 * (a/s)^2<br>
+      + 99/320 * (a/s)^4 <br>
+      - ...)</tt></td>
+  </tr>
+</table>
+<p>hv/grounds.htm - 18 March 2003 - <a href="mailto:jimlux@earthlink.net?Subject=HV%20Grounds%20page">Jim 
+  Lux</a><br>
+  (<a href="hvmain.htm">hv home page</a>) (<a href="http://home.earthlink.net/%7Ejimlux/index.htm">Jim's 
+  Home page</a>)</p>
+</body>
+</html>

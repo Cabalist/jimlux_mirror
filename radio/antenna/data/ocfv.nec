@@ -1,0 +1,25 @@
+CM Off center fed inverted V
+CM 
+CM built on a 10m square...
+CM All segments loaded as copper wire
+CM iseg is the segment of the leg to feed at
+CM =1 end fed, =50, basically center fed
+CM intended to be run with 4nec2 in "evaluate" mode
+CM 
+CE 
+SY hspace=7.5
+SY leg=3.4, apexz=leg/2
+SY iseg=1
+GW,     101,50, leg,leg,0,   .1,.1,apexz, .0005
+GW,     102,50, -leg,-leg,0,  -.1,-.1,apexz,.0005
+GW	301	1	.1	.1	apexz	-.1	-.1	apexz	.0005
+GM	0	0	0	0	0	0	0	10
+GE
+EK
+GN	2	0	0	0	6	.001
+LD	5	0	0	0	5.8E7
+EX	0	101	iseg	00	1	0
+FR	0	1	0	0	14.3	0.1
+XQ
+EN
+

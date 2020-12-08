@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+
+<head>
+<title>High Voltage Fuses</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 1.1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>High Voltage Fuses</h2>
+<p>A fuse is a circuit element designed to melt when the current exceeds some 
+limit, thereby opening the circuit. In high voltage and high power applications, 
+some additional design considerations come into play. For instance, if the length 
+of the fuse wire or strip is short enough, an arc will form between the ends 
+maintaining the circuit as long as there is current to supply it. In systems with 
+high peak current capability (i.e. with capacitors and low impedance circuitry), 
+the fuse can be melted and vaporized so fast that an explosion occurs. This 
+phenomenon is actually used in Exploding Bridge Wire detonators to create a 
+shockwave that detonates high explosive.</p>
+<p>The basic design equation for fuses is the Preece equation (W.H. Preece, 
+<em>Royal Soc. Proc.</em>, London, <strong>36</strong>, p464, 1884) for wires in free air:</p>
+<p>i = A * D^1.5</p>
+<p>where A is a constant depending on the metal and D is the diameter of the wire 
+  (in mm or inches, according to the table below).&#160;</p>
+<table width=46%>
+  <tr>
+    <td width=15%><strong>Fuse Wire</strong></td>
+    <td align=right valign=bottom width=16%><strong>A <br>
+(d in 
+inches)</strong></td>
+    <td align=right valign=bottom width=17%><strong>A<br>
+(d in mm)</strong></td>
+    <td align=right valign=bottom width=24%><strong>Melting temp<br>
+(deg C)</strong></td>
+    <td align=right valign=bottom width=28%><strong>Boiling temp<br>
+(deg C)</strong></td></tr>
+<tr>
+    <td width=15%>Copper</td>
+    <td align=right valign=bottom width=16%>10244</td>
+    <td align=right valign=bottom width=17%>80.0</td>
+    <td align=right valign=bottom width=24%>1083</td>
+    <td align=right valign=bottom width=28%>2300</td>
+  </tr>
+<tr>
+    <td width=15%>Aluminum</td>
+    <td align=right valign=bottom width=16%>7585</td>
+    <td align=right valign=bottom width=17%>59.3</td>
+    <td align=right valign=bottom width=24%>660</td>
+    <td align=right valign=bottom width=28%>1800</td>
+  </tr>
+<tr>
+    <td width=15%>German Silver</td>
+    <td align=right valign=bottom width=16%>5230</td>
+    <td align=right valign=bottom width=17%>40.9</td>
+    <td align=right valign=bottom width=24%></td>
+    <td align=right valign=bottom width=28%></td>
+  </tr>
+<tr>
+    <td width=15%>Platinum</td>
+    <td align=right valign=bottom width=16%>5172</td>
+    <td align=right valign=bottom width=17%>40.4</td>
+    <td align=right valign=bottom width=24%>1774</td>
+    <td align=right valign=bottom width=28%>4300</td>
+  </tr>
+<tr>
+    <td width=15%>Silver*</td>
+    <td align=right valign=bottom width=16%>3200</td>
+    <td align=right valign=bottom width=17%>49.8</td>
+    <td align=right valign=bottom width=24%>960</td>
+    <td align=right valign=bottom width=28%>1950</td>
+  </tr>
+<tr>
+    <td width=15%>Iron</td>
+    <td align=right valign=bottom width=16%>3148</td>
+    <td align=right valign=bottom width=17%>24.6</td>
+    <td align=right valign=bottom width=24%>1535</td>
+    <td align=right valign=bottom width=28%>3000</td>
+  </tr>
+<tr>
+    <td width=15%>Tin</td>
+    <td align=right valign=bottom width=16%>1642</td>
+    <td align=right valign=bottom width=17%>12.8</td>
+    <td align=right valign=bottom width=24%>232</td>
+    <td align=right valign=bottom width=28%>2260</td>
+  </tr>
+<tr>
+    <td width=15%>Lead</td>
+    <td align=right valign=bottom width=16%>1379</td>
+    <td align=right valign=bottom width=17%>11.8</td>
+    <td align=right valign=bottom width=24%>327</td>
+    <td align=right valign=bottom width=28%>1620</td>
+  </tr>
+<tr>
+    <td width=15%>Tungsten*</td>
+    <td align=right valign=bottom width=16%>105</td>
+    <td align=right valign=bottom width=17%>1.5</td>
+    <td align=right valign=bottom width=24%>3370</td>
+    <td align=right valign=bottom width=28%>5900</td>
+  </tr>
+</table>
+<p>*Exponent in the equation should be adjusted to 1.287 for silver and 1.32 for 
+tungsten.</p>
+<p>Table taken from <i>Standard Handbook for Electrical Engineers</i>, 6th ed., 
+  Sec 15, p153.</p>
+<p>&#160;</p>
+<p>Some fuses put the wire inside an insulating tube so that the tube walls can 
+contain the gases created by the vaporized wire. The tube walls also cool the 
+gases extinguishing the arc. In exploding wire type fuses, the tube walls reflect a 
+shock wave back to the center of the arc channel increasing the pressure to 
+raise the breakdown voltage. Expulsion protector tube type fuses use the 
+expanding gases to actually blow the arc out the end of the tube. One author 
+comments: <tt>&quot;Care should be taken in locating the vents of the 
+expulsion gaps, for flaming gas is blown for a considerable 
+distance upon operation.... [Flames may range] from 5 ft 
+for a 1,000 amp crest current to 12 ft for a 10 kA crest 
+current.&quot; (Cobine, p411)</tt></p>
+<p>Fuses may be filled with a refractory material: silica (sand), alumina, or zirconia. 
+The arc energy is used up in fusing the filler. Silica can absorb about 2 kJ/g.</p>
+<p>In many circuits, the creation of an arc is actually necessary, since it provides a 
+gradually increasing voltage drop as it cools to &quot;gradually&quot; interrupt the circuit. 
+The energy dissipated in the arc also absorbs the inductive energy stored in the 
+circuit. A sudden total interruption may cause very high terminal voltages due to 
+series L. A similar problem crops up in the design of circuit breakers or other 
+interrupters.</p>
+<hr>
+<p>Here is another design equation due to I.M. Onderdonk:</p>
+<p>Ifuse = Area * SQRT( LOG((Tmelt-Tambient)/(234-Tambient)+1)/ (Time * 
+33))</p>
+<p>where</p>
+<p>Tmelt = melting temp of wire in deg C<br>
+  Tambient = ambient temp in deg C<br>
+  Time = melting time in seconds<br>
+  Ifuse = fusing current in amps<br>
+  Area = wire area in circular mils</p>
+<p>*Circular mils is a strange unit of area used in the US, particularly in connection 
+  with electrical codes. It is the diameter of the wire in thousandths of an inch 
+  (mils) squared. That is, it is the area of a circle 0.001&quot; in diameter. 
+  ( 1 cmil = 0.507E-3 sq mm)</p>
+<p>* This equation probably isn't as valid for non-circular cross sections, or 
+  where there isn't free flow of air around the wire.</p>
+<hr>
+<p>Practical example&gt; 16 gauge copper wire: Tmelt = 1083, Area = 2581 circ 
+mil, Time = 5 sec,diam = .0524 inches</p>
+<p>Using Preece equation:</p>
+<blockquote>
+<p>= 10244*.0524^1.5 = 123 Amps</p>
+</blockquote>
+<p>Using Onderdonk equation:</p>
+<blockquote>
+<p>Ifuse = 2581 * SQRT( LOG((1083-25)/(234-25)+1)/(5*33))</p>
+<blockquote>
+<p>= 2581 * sqrt(log(1058/209+1)/165)<br>
+= 2581 * sqrt(.0047)<br>
+= 178 Amps</p>
+</blockquote>
+</blockquote>
+<hr>
+<p><font size=1>Copyright 1997, Jim Lux / 17 October 2001 / fuses.htm / </font><a href="hvmain.htm"><font size=1>high 
+  voltage main page</font></a><font size=1> / </font><a href="../index.htm"><font size=1>Back 
+  to home page</font></a><font size=1> / </font><a href="mailto:jimlux@earthlink.net?Subject=fuses%20web%20page"><font size=1>Mail 
+  to Jim</font></a></p>
+</body>
+
+</html>

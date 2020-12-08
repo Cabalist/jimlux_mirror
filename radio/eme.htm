@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>EME and Phased Arrays</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="keywords" content="Amateur Radio, EME, Phased Array">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>EME and Phased Arrays</h2>
+<p>Here, we are speaking of electronically scanned phased arrays, not the huge 
+  arrays of Yagi-Uda antennas that are interconnected by (fixed) phasing cables 
+  and feed networks.</p>
+<p>Much work still needed....</p>
+<p>First off, some requirements gathering. Just what's it going to take to do 
+  reasonable EME.</p>
+<p>Dave Blaschke, W5UN, has a handy primer on 2m EME(<a href="http://web.wt.net/%7Ew5un/primer.htm" target="_blank">http://web.wt.net/~w5un/primer.htm</a>), 
+  from which I've taken a lot of numbers for crunching and link budget analysis. 
+  He tends to give gains in dB relative to a dipole, to which I have added 2dB, 
+  to approximate to dB relative to an isotrope (dBi), since that's what I work 
+  with.</p>
+<p>Dave gives an absolute minimum gain for the antenna of 15 dBi, and to make 
+  routine QSOs, you need 22-23 dBi. Presumably, this is with W5UN on the other 
+  end, and he has a pretty darn good antenna, and a lot of Tx Power.</p>
+<p>He also recommends linear polarization over CP, most likely because you can't 
+  afford the 3 dB hit for cross polarization.</p>
+<p>Front End NF should be better than 2 dB. Lots of folks are running NF of &lt;0.5 
+  dB, because preamps for that kind of NF are readily available. W5UN is also 
+  sort of down on bipolar amps because of IM problems (i.e. receiver dynamic range 
+  problems) </p>
+<p>Power.. W5UN talks about 150 Watts being a bare minimum, but that probably 
+  also includes a dB of loss in the coax, which for a phased array, it might not 
+  be an issue. 500 W is nice, and 1500W is, of course, the hot ticket. (A note... 
+  100W out of a solidstate amplifier is easy these days, so an array of 16 T/R 
+  modules would put you in the big leagues, Tx power wise).</p>
+<p>&nbsp;</p>
+<p>I note another reference gives G/T for a whole raft of antennas all the way 
+  from -5 to +1: G/T =( Ga+2.15)-10 log (Ta).. assuming 200K sky temp and 1000K 
+  earth temp (wow, that high?)</p>
+<p>A question: 25 dBi directivity corresponds to a gain of 316, which is an aperture 
+  of (G=4pi/lambda^2*A) about 100 square meters... (i.e. 30 feet on a side. Using 
+  a basic rule of thumb that putting radiators closer than 1/2 wavelength apart 
+  doesn't buy you much in gain (although it does buy you better sidelobes and 
+  performance)...</p>
+<p>Don't forget, also, that your radiators are unlikely to be isotropes (dipoles 
+  of some form are likely), so the element directivity might be around 2 dB or 
+  even 4 dB (dipole against a ground screen), which just adds to the overall antenna 
+  gain.</p>
+<p>&nbsp;</p>
+<p>Moon reflectivity 7% (from N1BUG)<a href="http://www.nibug.net/prop/eme.html" target="_blank">http://www.n1bug.net/prop/eme.html</a></p>
+<p>Free space path loss given from same site as 243 dB at 50 MHz to 289 dB at 
+  10368 MHz</p>
+<p>Minimum detectable signal is probably something like -160 dBm. kTB for 3 kHz 
+  BW (dream of SSB EME, of course) is -139 dBm. That -160 dBm corresponds to about 
+  10Hz BW given real low noise figure on the receiver and low loss/back lobe pickup 
+  in the antenna (4dB all together)</p>
+<hr>
+radio/eme.htm - 3 April 2002 - Jim Lux<br>
+(<a href="index.htm">radio home</a>) - (<a href="../index.htm">Jim's home page</a>)
+<p>&nbsp;</p>
+<p>&nbsp; </p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

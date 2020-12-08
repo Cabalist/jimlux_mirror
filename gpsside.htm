@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+
+<head>
+<title>How GPS works</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 1.1">
+</head>
+
+<body>
+<h3 align=center>Originally published in<br>
+<em>South American Explorer<br>
+</em><a href="http://www.samexplo.org/no36.htm">March 1994</a></h3>
+<hr>
+<h3>How GPS works </h3>
+<p>Over the past few years, at a cost of about $20 billion, the United States Department of Defense 
+has launched a series of satellites into orbit about 10,900 miles above the earth. Eventually there 
+will be 24 total satellites in orbit. These satellites broadcast signals which, in effect, tell your GPS 
+receiver the location of the satellite, and what time it is. These signals are very accurate (the position 
+is accurate to centimeters, and the time is accurate to millionths of a second per year). A GPS 
+receiver uses these signals, and by a series of calculations, can determine where the receiver is, in 
+theory to fractions of an inch. This all sounds pretty easy, but there are a lot of tricky parts to the 
+problem. These satellites are moving pretty fast (more than 10,000 miles per hour), so during the 
+second, or so, that it takes the receiver to compute your position, the satellite has moved about 3 
+miles. </p>
+<p>A GPS receiver triangulates using the signals from at least 3 satellites, simultaneously, to determine 
+your latitude and longitude (called a 2D fix). With four or more satellites, you can determine your 
+altitude as well (called a 3D fix). Normally, there are more satellites visible, so the receiver can use 
+their signals to improve the accuracy of your position. If you are in a location where you can't see 
+very much of the sky, you won't be able to see enough satellites. A very narrow canyon (like 
+standing at street level among skyscrapers) might cause this sort of problem, and your receiver will 
+tell you about it if it occurs. </p>
+<h3>Accuracy </h3>
+<h4>How accurate is the position given by your GPS receiver? </h4>
+<p>In general, virtually every receiver has a basic accuracy of about 10 meters, which in practice is 
+&quot;diluted&quot; by geometry and other errors to about 2 or 3 times that. Vertical acccuracy is usually 
+about twice as bad as horizontal accuracy. If you figure that your GPS position is within a hundred 
+feet, you won't go wrong most of the time. The inaccuracies take the form of random variations in 
+the calculated position varying from measurement to measurement and cause the displayed position 
+to vary slightly, even when you are standing still. </p>
+<h4>Bad Geometry </h4>
+<p>No, it's not the math class where Michael Jackson teaches you how to use straightedge and 
+compass. Your GPS receiver calculates where you are by triangulating (there's the geometry) the 
+signals it gets from the satellites. If the satellites are distributed around the sky evenly, you can 
+calculate an accurate position. However, if all the satellites are in a clump, you can't calculate as 
+closely. Also, if the signals are weak (say from going through trees, etc.), you might not be able to 
+calculate an accurate position. </p>
+<p>All of these factors are combined in a single number called the Dilution of Precision or DOP, which 
+can be displayed on your receiver. The DOP is a multiplier which tells you how much worse your 
+accuracy is than the best possible. A DOP of 2 is really good, a DOP of 20 is really bad. The 
+receivers have some way of telling you how accurate the position display is, usually telling you that 
+you have a 95% chance of being within some distance (like 100 feet) from the displayed position. </p>
+<h4>Selective Availability </h4>
+<p>If you look at the spec sheet for any of the GPS receivers, you will see some sort of disclaimer 
+which says something like: </p>
+<p><i>The Global Positioning System is operated by the Department of Defense. All GPS systems 
+are subject to accuracy degradation to 100m 2DRMS under the DoD imposed Selective 
+Availability program. </i></p>
+<p>When the GPS system was first designed some 20 years ago, they set things up so that there were 
+two basic accuracies available. The first was called the Standard Positioning Service (SPS, also 
+called C/A ), with an accuracy of about 300 meters, and was available to everyone. The other was 
+called the Precise Positioning Service (PPS, also called P or Y code) with 30 meter accuracy, and 
+was encrypted, and only available for military users (and other special people). GPS was originally 
+designed to help target ICBM's, and it wasn't considered a good strategic idea to allow just anyone 
+to have the 30 meter accuracies available. As it turns out, the accuracy you can get from the SPS 
+signal with modern technology is substantially better than the original designers expected, with a few 
+meters not out of the question. Clever equipment designers have figured out ways to use the precise 
+signal, without needing to decode it, to get relative positions that are accurate to millimeters. </p>
+<p>GPS has made big inroads in the surveying business, since it works between spots which can't be 
+seen from each other, unlike conventional optical techniques (like transits and lasers). With suitable 
+GPS equipment, costing less than $20,000, you can measure the distance between two points 100 
+km apart to an accuracy of about a centimeter in a few seconds. What a boon for surveying in 
+rolling hills or forest! </p>
+<p>This put the Department of Defense in a bit of a quandary. They had already determined as a policy 
+that it wasn't a good idea for high accuracy to be available to just everyone. So they came up with 
+the idea of injecting artificial errors into the standard signals to reduce the accuracy back to around 
+200 meters. This is known as &quot;Selective Availability&quot;. Selective Availability is currently turned on 
+intermittently, but the increasingly wide spread use of GPS has prompted a lot of discussion about a 
+policy that, in effect, was formulated 20 years ago. However, the manufacturers have to cover 
+themselves, hence the disclaimer. </p>
+<hr>
+<p><font size=1>Copyright 1997, Jim Lux / gpsside.htm / </font><a href="gpsart.htm"><font size=1>Back to the article</font></a><font size=1> / </font><a href="index.htm"><font size=1>Back to home page</font></a><font size=1> / </font><a href="mailto:jimlux@earthlink.net"><font size=1>Mail to Jim</font></a></p>
+</body>
+
+</html>

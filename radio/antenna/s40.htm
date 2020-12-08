@@ -1,0 +1,238 @@
+<html>
+<head>
+<title>Shorty 40 analysis</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>Shorty 40 analysis</h2>
+<p>A Shorty 40 is a shortened 40 meter dipole which uses a matching transformer/loading 
+  coil consisting of a 30 turn coil of AWG 12 wire on a 2.5&quot; diameter form 
+  6&quot; long. The elements are typically 18'6&quot; long (on either side of 
+  the center) for a total length of about 11.3 meters.</p>
+<p><img src="images/s40.gif" width="289" height="108"></p>
+<p>Using the program ACMI from Paul Nicholson (http://www.abelian.demon.co.uk/acmi/) 
+  , we can calculate self and mutual impedances for the coils. Of course, that 
+  program does NOT calculate the stray capacitances, which are significant. The 
+  coils were modeled as 3 windings:</p>
+<p><img src="images/s40t.gif" width="240" height="70"></p>
+<table width="75%" border="1">
+  <tr> 
+    <td>&nbsp;</td>
+    <td>tapped at 2 turns</td>
+    <td>tapped at 3 turns</td>
+  </tr>
+  <tr> 
+    <td>feed L (uH)</td>
+    <td> 
+      <div align="right">0.46</div>
+    </td>
+    <td> 
+      <div align="right">0.90</div>
+    </td>
+  </tr>
+  <tr> 
+    <td>feed R</td>
+    <td> 
+      <div align="right">0</div>
+    </td>
+    <td> 
+      <div align="right">0</div>
+    </td>
+  </tr>
+  <tr> 
+    <td>sec 1 L (uH)</td>
+    <td> 
+      <div align="right">7.95</div>
+    </td>
+    <td> 
+      <div align="right">7.13</div>
+    </td>
+  </tr>
+  <tr> 
+    <td>sec 1 R</td>
+    <td> 
+      <div align="right">0.01</div>
+    </td>
+    <td> 
+      <div align="right">0.01</div>
+    </td>
+  </tr>
+  <tr> 
+    <td>sec 2 L (uH)</td>
+    <td> 
+      <div align="right">9.61</div>
+    </td>
+    <td> 
+      <div align="right">9.61</div>
+    </td>
+  </tr>
+  <tr> 
+    <td>sec 2 R</td>
+    <td> 
+      <div align="right">0.02</div>
+    </td>
+    <td> 
+      <div align="right">0.02</div>
+    </td>
+  </tr>
+  <tr> 
+    <td>M Feed:sec1 (uH)</td>
+    <td> 
+      <div align="right">0.57</div>
+    </td>
+    <td> 
+      <div align="right">0.75</div>
+    </td>
+  </tr>
+  <tr> 
+    <td>k</td>
+    <td> 
+      <div align="right">.2981</div>
+    </td>
+    <td> 
+      <div align="right">.2970</div>
+    </td>
+  </tr>
+  <tr> 
+    <td>M feed: sec 2 (uH)</td>
+    <td> 
+      <div align="right">0.59</div>
+    </td>
+    <td> 
+      <div align="right">0.79</div>
+    </td>
+  </tr>
+  <tr> 
+    <td>k</td>
+    <td> 
+      <div align="right">.2788</div>
+    </td>
+    <td> 
+      <div align="right">.2685</div>
+    </td>
+  </tr>
+  <tr> 
+    <td>M sec 1: sec 2 (uH)</td>
+    <td> 
+      <div align="right">1.10</div>
+    </td>
+    <td> 
+      <div align="right">0.90</div>
+    </td>
+  </tr>
+  <tr> 
+    <td>k</td>
+    <td> 
+      <div align="right">.1255</div>
+    </td>
+    <td> 
+      <div align="right">.1082</div>
+    </td>
+  </tr>
+</table>
+<p>&nbsp; </p>
+<p> Input file for ACMI</p>
+<pre>
+; Shorty 40 matching coil
+; 6 tpi, 30 turns on 5" long 2.5" diam form
+; 
+; A closely coupled helical impedance matching transformer
+
+feed {
+
+   radius .03175
+
+   height1  0.0
+   height2  3/6*0.0254
+
+   conductor  12 awg  ; wire radius
+   turns 3
+}
+
+sec1 {
+
+   radius 0.03175		; 2.5 inch diam
+
+   height1 3/6*0.0254
+   height2 0.0635
+
+   conductor 12 awg
+   turns 12
+}
+
+sec2 {
+
+   radius 0.03175		; 2.5 inch diam
+
+   height1 -0.0635 
+   height2 0.0
+
+   conductor 12 awg
+   turns 15
+}
+
+</pre>
+<p>ACMI output</p>
+<p> 
+<pre>
+2 turns
+      FD.L|   FD.R|     SC1.L|  SC1.R|     SC2.L|  SC2.R|   FD-SC1.M|   FD-SC1.K
+|   FD-SC2.M|   FD-SC2.K|  SC1-SC2.M|  SC1-SC2.K
+   0.46 uH|   0.00|   7.95 uH|   0.01|   9.61 uH|   0.02|    0.57 uH|     0.2981
+|    0.59 uH|     0.2788|    1.10 uH|     0.1255
+3 turns
+      FD.L|   FD.R|     SC1.L|  SC1.R|     SC2.L|  SC2.R|   FD-SC1.M|   FD-SC1.K
+|   FD-SC2.M|   FD-SC2.K|  SC1-SC2.M|  SC1-SC2.K
+   0.90 uH|   0.00|   7.13 uH|   0.01|   9.61 uH|   0.02|    0.75 uH|     0.2970
+|    0.79 uH|     0.2685|    0.90 uH|     0.1082
+
+</pre>
+<p></p>
+<p>Here's a NEC analysis of the antenna itself, with the feed point impedances..<BR>
+CE <BR>
+GW 1 41 0 -5.716 0 0 5.716 0 .001<BR>
+
+GE 0<BR>
+EX 0 1 21 0 1 0<BR>
+
+FR 0 1 0 0 7.2 1<BR>
+
+
+<pre>
+F	R	X
+6.90	15.08	-837.11
+6.95	15.33	-826.76
+7.00	15.58	-816.51
+7.05	15.83	-806.37
+7.10	16.09	-796.33
+7.15	16.35	-786.40
+7.20	16.61	-776.57
+7.25	16.87	-766.83
+7.30	17.14	-757.19
+7.35	17.41	-747.65
+7.40	17.68	-738.19
+7.45	17.96	-728.83
+7.50	18.24	-719.55
+
+
+</pre>
+<p>&nbsp;</p>
+<h3>Some other links:</h3>
+<p>An inductively loaded 80m Yagi: http://www.qsl.net/ve6wz/intro.htm</p>
+<p>radio/antenna/s40.htm - 30 Jan 2003 - <a href="mailto:jimlux@earthlink.net?Subject=Shorty%20Forty%20Analysis">Jim 
+  Lux</a><br>
+  (<a href="index.htm">antenna home page</a>) (<a href="../index.htm">radio home 
+  page</a>) (<a href="http://home.earthlink.net/%7Ejimlux/index.htm">Jim's home 
+  page</a>)</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

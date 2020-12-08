@@ -1,0 +1,175 @@
+<html>
+<head>
+<title>Z and Y matrices from NEC</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>Z and Y matrices from NEC</h2>
+<p>Quote from a NEC-LIST post by Jerry Burke:</p>
+<p>  <strong>Subject: </strong>Z-matrix<br>
+  <em>BURKE@icdc.llnl.gov</em><br>
+  <strong>Date: </strong>Mon Aug 07 1995 - 18:31:01 METDST </p>
+<p>
+<hr>
+<p> <em>&gt; what data card do I have to add to the nec2 input file </em><br>
+  <em>&gt;to get the complete Z-matrix (or something else which gets the </em><br>
+  <em>&gt;strength of mutual coupling between two antennas or the ports </em><br>
+  <em>&gt;of a two-port antenna)? </em><br>
+<p>You probably do not need the Z matrix. It relates the amplitudes of the spline 
+  basis functions to the fields at the segment centers with the structure not 
+  there (open-circuit impedance matrix, so every segment is an open port). The 
+  matrix Y=Inverse[Z] relates the fields at points on 
+  the structure with all of the structure present to the basis function 
+  amplitudes. However, NEC uses L/U decomposition to get the solution, so 
+  you would have to compute the inverse and then apply a transformation as 
+  done in subroutine TBF to convert basis function amplitudes to currents 
+  at segment centers. 
+<p>This is done for you in the currents printed in the output. Just excite 
+  the antenna ports one at a time, and the currents on the segments 
+  representing the other ports will give the mutual admittances. Remember 
+  that regular segments are short-circuited ports unless you excite them 
+  with a voltage source. However, a segment with a network or transmission
+  line connection (NT or TL command) is open circuited unless you
+  explicitly short it. One way to short circuit a network-segment port
+  is to put a very small voltage source on it (like 1.e-10, but anything
+  less than 1.e-20 will be turned into one volt by NEC). Then the current
+  in this small voltage source (but not the segment current) will be the
+  short-circuit current in the port. We forgot about shorting network
+  ports in NEC-2, so the maximum coupling calculation (CP command) is not
+  correct when networks or transmission lines are involved.
+<p>
+<p>Jerry Burke <br>
+  LLNL <br>
+<hr>
+<p>&nbsp; 
+<p> 
+  <strong>Subject: </strong>Re: Z-matrix, S-matrix<br>
+  <strong>From: </strong>Paul Elliot (<em>pelliot@apti.com </em>)<br>
+  <strong>Date: </strong>Mon Aug 07 1995 - 21:29:32 METDST 
+<p>
+<p> <em>&gt; what data card do I have to add to the nec2 input file </em><br>
+  <em>&gt;to get the complete Z-matrix (or something else which gets the </em><br>
+  <em>&gt;strength of mutual coupling between two antennas or the ports </em><br>
+  <em>&gt;of a two-port antenna)? </em><br>
+<p>
+<p>You might try computing the S-parameter coupling, because it is the easiest 
+  to measure at RF and microwaves and therefore the most widely used at those 
+  frequencies. <br>
+<p>The S-parameters are easily calculated after running NEC by using the NEC currents 
+  on the source segments. A resistor must be included at each port in the NEC 
+  model to provide the impedance of a match terminated transmission line connected 
+  to the port. The transmission line feature of NEC is not required. The following 
+  applies to any multiport, including the two-port case. 
+<p><br>
+<p>The NEC model is run with one antenna or port excited by a voltage source Vg 
+  in series with an impedance Rg. The other antennas or ports are not excited, 
+  but they are also terminated in Rg. Rg is most commonly 50 ohms but could be 
+  any finite impedance (I have always used equal, real Rg on all ports, although 
+  in principle it should be possible to do something similar with unequal Rg on 
+  each port or a complex generator impedance). 
+<p><br>
+<p>With the excited antenna or port designated as port #i, the voltages directly 
+  across the ports or antenna inputs are: <br>
+<p>Vi = Vg - Ii * Rg (for driven port i) <br>
+<p>Vn = -In * Rg (for all undriven ports, i.e. n not equal to i) <br>
+<p>Vi (i.e. the voltage across the driven port) is not equal to the NEC <br>
+  excitation voltage Vg due to the voltage drop across Rg. The currents on the 
+  <br>
+  undriven ports are the result of coupling. The next step is that all <br>
+  voltages and currents, including those for port i, are now normalized using 
+  <br>
+  the square root of Rg: <br>
+<p>For all n including n = i: <br>
+<p>Vn' = Vn / sqrt(Rg) <br>
+<p>In' = In * sqrt(Rg) <br>
+<p>The forward and scattered waves (a and b respectively) at each port (a 50 <br>
+  ohm transmission line if Rg = 50) are then given by: <br>
+<p>an = (Vn' + In') / 2 <br>
+<p>bn = (Vn' - In') / 2 <br>
+<p>for all n where n is the port number. <br>
+<p>and the resulting mutual S-parameter coupling Sn,i between port i and port 
+  n is: <br>
+<p>Sn,i = bn / ai <br>
+<p>Additional information on obtaining S-parameters from V and I is given in <br>
+  some books including Microwave Engineering by R.E.Collin, McGraw-Hill, 1966, 
+  <br>
+  p.171. A paper we presented at the 1994 ACES Conference in Monterey (pg. <br>
+  504) also includes some illustrations and a comparison of measured <br>
+  S-parameters with those calculated using NEC. 
+<p><br>
+<p>If NEC were perfectly accurate then the computed Sn,i would be exactly the 
+  <br>
+  same as the S12 parameter measured by a perfectly accurate network analyzer. 
+  <br>
+  Rg needs to be the same as the impedance of the network analyzer and the <br>
+  coax used. If a balun is used in the measurement setup then if it is working 
+  <br>
+  ideally it would not affect the S-parameters, but Rg does need to be <br>
+  adjusted to include any impedance transformation provided by the balun. <br>
+  Alternatively, when the complete S-matrix is computed between all antenna <br>
+  ports, then the S-matrix can be transformed to incorporate the s-matrix of <br>
+  attached baluns and matching units, which I found to be challenging for a <br>
+  multiport, involving inverses and considerable matrix manipulations. It's <br>
+  easier to use Touchstone or some other RF circuit simulator that can provide 
+  <br>
+  a multiport device defined by it's S-matrix, and then add the other feed <br>
+  components to the S-matrix of the antenna ports. <br>
+<p>Sincerely, <br>
+  Paul G. Elliot <br>
+  APTI Div./ E-Systems / Raytheon <br>
+<p>&nbsp;
+<hr>
+<p><strong>Subject: </strong>Re: Car simulation<br>
+  <strong>From: </strong>Brian Austin (<em>ee104@liverpool.ac.uk</em>)<br>
+  <strong>Date: </strong>Tue Aug 06 1996 - 16:33:32 METDST 
+<p> On Tue, 30 Jul 1996 08:57:00 -0700 (PDT) Rossi Giuseppe wrote: <br>
+<p>
+<p>
+<p><em>&gt; </em><br>
+  <em>&gt; </em><br>
+  <em>&gt; </em><br>
+  <em>&gt; I'm interested in simulation of antennas mounted on the car body </em><br>
+  <em>&gt; in the frequency range 100 Mhz 2 Ghz. </em><br>
+  <em>&gt; Does anyone have any experience or suggestion or reference in this 
+  field </em><br>
+  <em>&gt; ? </em><br>
+<p>
+<p><em>&gt; </em><br>
+  There is quite a body of published material on antennas mounted on <br>
+  a car body. For the special modelling requirements when using a wire- <br>
+  grid with NEC you could refer to the following: <br>
+<p>&nbsp;1. Austin, B.A. and Najm, R.K. (1991), &quot;Wire grid modelling of vehicles 
+  with flush-mounted window antennas&quot;, Proc. IEE 7th Intl.Conf. on Antennas 
+  and Propagation, No.333, 2, pp.950-953. <br>
+
+<p>2. Cox, J.W.R., (1991), &quot;Comparison of predicted aircraft wire antenna 
+  terminal impedance (using NEC) with measurement in the HF band&quot;, ibid, 
+  pp.717-720. <br>
+
+<p>3. Lee, K.S.H. et al, (1976), &quot;Limitations of wire grid modelling of a 
+  closed surface&quot;, IEEE Trans. EMC, EMC-18, pp.123-129. <br>
+
+<p>4. Ludwig, A.C., (1987), &quot;Wire grid modeling of surfaces&quot;, IEEE Trans.on 
+  Antennas and Propagation, AP35,9, pp.1045-1048. <br>
+
+<p>5. Nishikawa,L.A., (1984), &quot;Effect of automobile body and earth on radiation 
+  patterns of antennas for FM radio&quot;, Trans. IECE of Japan, E-67, 10, PP.555-562. 
+  <br>
+
+<p>6. Paknys, R.J., (1991), &quot;The near-field of a wire-grid model&quot;, IEEE 
+  Trans. Antennas and Propagation, 39,pp.994-999. <br>
+
+<p>Brian Austin <br>
+<p>******************************************************** <br>
+  Dr B.A.Austin <br>
+  Department of Electrical Engineering and Electronics <br>
+  University of Liverpool <br>
+  Brownlow Hill <br>
+  Liverpool L69 3BX <br>
+  U.K. <br>
+<p>Tel.: +44151794 4520 <br>
+  Fax: +441517944540 <br>
+  email: ee104@liv.ac.uk <br>
+</body>
+</html>

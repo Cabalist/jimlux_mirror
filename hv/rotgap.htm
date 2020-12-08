@@ -1,0 +1,354 @@
+<html>
+<head>
+<title>Rotary Spark Gaps</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 1.1">
+</head>
+<body>
+<h3>Rotary Spark Gaps</h3>
+<p>Many high voltage systems have a need for a repetitive
+switching action at fairly slow rates, i.e. less than 1000 per
+second. Examples of such systems would be radars (applying power
+to the magnetron) or tesla coils (impulse exciting the tuned
+circuit primary). The rotary spark gap is a mechanical means of
+repetitively shortening and lengthening a spark gap for switching
+purposes.</p>
+<h4>Why use a rotary gap?</h4>
+<p>Sparks are a fairly low loss conductor, particular when short
+and when carrying high current. Rotary spark gaps are typically
+constructed so that the gap distance at closest approach is
+overvoltaged by a factor of 3 to 10. Spark gaps also have the
+advantage that their &quot;turn on&quot; time is very short,
+substantially less than a microsecond. Rotary spark gaps are
+relatively inexpensive and require very little support system
+electronics, unlike hydrogen thyratrons (which require heater and
+reservoir power, as well as triggering electronics). Rotary spark
+gaps do have some jitter in their timing, not only from
+mechanical sources, but also due to the probabilistic nature of
+the spark initiation.</p>
+<p>The rotary spark gap is best suited to a capacitor discharge
+or resonant charging type system, because spark gaps are really a
+&quot;make&quot; switch, and not very good at
+&quot;breaking&quot; a connection with significant current,
+because of the arc being drawn. If the load is such that the
+current oscillates, and the speed of the switch is chosen so that
+the current goes through a minimum as the gap separates.</p>
+<p>Rotary spark gaps are usually operated in air, although sealed
+rotary gaps have been built for aircraft radar applications,
+where the change in air pressure would result in large
+fluctuations in the breakdown voltage of the gaps.</p>
+<h4>Mechanical configurations</h4>
+<p>There are a number of mechanical configurations possible for a
+rotary spark gap. The schematic diagram symbol often used for a
+rotary gap implies one of the configurations, shown in the
+following figure. As it happens, this is a poor design for most
+applications, because as the electrodes inevitably erode, the gap
+configuration changes, changing the timing characteristics of the
+gap. Axial endplay in the motor or support bearings also changes
+the gaps. A gap of this type has been used at very high powers,
+at 10 megawatts and 1000 Amps, for example, where the gap was set
+somewhat greater than 0.05 inches. In that application, the
+electrodes were estimated to need replacement every 1000 hours.</p>
+<p><img src="images/rgap4.gif" alt="radial pin rotary gap"
+align="bottom" width="268" height="166"></p>
+<p>A better approach, in general, is to have the electrodes move
+past each other, being parallel and overlapping some distance.
+There are several approaches to doing this. One, illustrated
+below, is to have a conductive rim for the rotor and connect to
+it from a &quot;sparking sector&quot; which is an electrode
+spaced a small distance from the rim. Brushes could also be used,
+but erode very rapidly in this sort of application. The sparking
+sector works well, and with a sufficiently large size spaced very
+close, the losses are negligible. A rotary gap of this type was
+used extensively for pulse powers of 500 to 3000 kW. The gap
+between the sparking sector and the rotor rim was set in the
+range 0.010 to 0.050 inches. The capacitance between the sparking
+sector and the rim is fairly large, compared to that between the
+pin electrodes, so most of the voltage appears across the pin
+gap.</p>
+<p align="left"><img src="images/rgap1.gif"
+alt="parallel pin gap with sparking sector" align="bottom"
+width="265" height="205"></p>
+<p>Another approach is to have pairs of fixed electrodes, either
+arranged so that the moving electrodes pass by the fixed ones, as
+in the above scheme, or so the electrode ends approach. This
+latter approach has the same disadvantages as the scheme where
+the moving electrodes are radial. An advantage of the parallel
+pin gap is that the motor/bearing axial play doesn't affect the
+gap distance.</p>
+<p>&#160;</p>
+<table width="100%">
+    <tr>
+        <td width="50%">
+        <p align="center"><img src="images/rgap3.gif"
+        align="bottom" width="236" height="200"></p>
+        </td>
+        <td width="50%">
+        <p align="center"><img src="images/rgap2.gif"
+        alt="parallel pin rotary gap" align="bottom" width="254"
+        height="192"></p>
+        </td>
+    </tr>
+</table>
+<p>This latter approach is also convenient for systems where
+multiple circuits must be switched simultaneously, as in a Marx
+generator configuration. In such an application, the mechanical
+tolerances are substantially tighter, as the pins must be aligned
+with more than one set of fixed electrodes.</p>
+<p>Rotary gaps have also been built using a perforated insulating
+disk which spins between two fixed electrodes. It is easy to
+control the interelectrode gap in this sort of system, but
+erosion of the insulating disk is a real problem. Also, for lower
+voltages, the disk must be quite thin so that the gap being
+interrupted is short enough to reliably break down.</p>
+<p>&#160;</p>
+<h4>Electrode wear</h4>
+<p>There is some experimental data for rotary spark gaps as used
+in radar sets from Bell Labs and the MIT Radiation Laboratory.
+The cathode wear for a gap operating in air at pulse currents of
+40 to 170 Amps has been measured at 2-6 mg/amp hour, with the
+median value being 3-4 mg/amp hour. In a Nitrogen atmosphere,
+with no oxygen, the wear rate was 10-20 times greater. The anode
+wear was 1/5 that of the cathode.</p>
+<h3>Analysis of timing and jitter</h3>
+<p>Figure xxx shows the two electrodes as they approach and
+recede. This figure and the following equation assume that the
+moving electrode is moving along a straight line. The distance
+between the electrodes is:</p>
+<p>Distance = SQRT( DistancefromClosestApproach^2 +
+(DiamElectrode+MinSpacing)^2) - DiamElectrode</p>
+<p>s = omega * r * (t0-t)</p>
+<p>(assuming Sin(Theta) = Theta )</p>
+<p>The E field strength between the electrodes is then:</p>
+<p>E = V / Distance</p>
+<p>The time jitter of the gap can be held to less than 10
+microseconds with proper gap design.</p>
+<h4>The impact of thoriated electrodes</h4>
+<p>If some degree of ionization in a spark gap before breakdown
+can be assured, then you don't have to depend on electrons
+emitted from the electrode surface to start the breakdown. The
+tungsten rod electrodes used in industrial arc welding are
+typically alloyed with a small amount of Thorium which is
+radioactive. The TBD particles emitted by Thorium will make the
+ionization of the gap before discharge more consistent. This will
+tend to reduce the jitter.</p>
+<h4>Mechanical stresses in the rotor</h4>
+<p>The mechanical design of a rotary spark gap should address the
+sizable stored energy and damage potential in a system with a
+rotor of significant mass spinning at relatively high speeds.
+Particular attention should be paid to the method by which the
+electrodes are attached to the rotor. The &quot;centrifugal&quot;
+force on these pins is:</p>
+<p>Force = mass * omega^2 * radius</p>
+<p>For a 10 cm radius (8 inch diameter) disk, spinning at 3600
+rpm (omega = 377 radians/sec), the acceleration is 1450 G. A
+tungsten pin 2.5 mm (0.1 inches) in diameter and 5 cm (1 inches)
+long weighs about 5 grams. The force on the pin is about 70
+Newtons (15.6 lbs). If the disk is made of 1.6 mm (.0625 inch)
+thick G-10 glass/epoxy, the load on the board is about 2500 psi,
+well within the allowable design stress for G-10 (around
+15,000-20,000 psi). However, if the pins were to be made 1 inch
+in diameter, they would now weigh about 500 grams, and exert a
+force of 1600 pounds. The bearing surface is increased to .0625
+square inches, making the load some 25,000 psi. </p>
+<p>The gap should be surrounded by a &quot;scatter shield&quot;
+of some material that can contain the parts of the rotor should
+it come apart during operation. Polycarbonate (Lexan) makes a
+suitable shield, as would aluminum, steel, or fiberglass. Opaque
+materials also have the advantage of supressing the significant
+UV light emitted by the sparks, although, in some applications,
+the visual appearance of the gap may be desired (e.g. display
+Tesla coils).</p>
+<h4>Some rotary gap design data</h4>
+<p>The following table is taken from <a
+href="hvrefs.htm#Fr&uuml;ngel">Fr&uuml;ngel</a>, who in turn took
+it from <a href="hvrefs.htm#Lebacqz">Lebacqz</a>.</p>
+<table width="100%">
+    <tr>
+        <td align="center" width="25%"><u>Electrical
+        Characteristic</u></td>
+        <td align="center" width="50%"><u>Resonant Charging</u></td>
+        <td align="center" width="10%"><u>DC Charging</u></td>
+    </tr>
+    <tr>
+        <td>
+        <table cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td width="25%">Voltage Range (kV)</td>
+            </tr>
+            <tr>
+                <td width="25%">Peak current (A)</td>
+            </tr>
+            <tr>
+                <td width="25%">Normal operating voltage (kV)</td>
+            </tr>
+            <tr>
+                <td width="25%">Normal operating current (A)</td>
+            </tr>
+            <tr>
+                <td width="25%">Normal average current (mA)</td>
+            </tr>
+            <tr>
+                <td width="25%">Pulse recurrence frequence (pps)</td>
+            </tr>
+            <tr>
+                <td width="25%">Pulse duration (&#181;Sec)</td>
+            </tr>
+            <tr>
+                <td width="25%">Pulse power (kW)</td>
+            </tr>
+            <tr>
+                <td width="25%"># of fixed pins</td>
+            </tr>
+            <tr>
+                <td width="25%"># of rotary pins</td>
+            </tr>
+            <tr>
+                <td width="25%">Diam of pins (inch)</td>
+            </tr>
+            <tr>
+                <td width="25%">Motor speed (rpm)</td>
+            </tr>
+        </table>
+        </td>
+        <td>
+        <table cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td align="right" width="10%">7-16</td>
+                <td align="right" width="10%">5-&gt;9</td>
+                <td align="right" width="10%">12-22</td>
+                <td align="right" width="10%">12-22</td>
+                <td align="right" width="10%">5-&gt;9</td>
+            </tr>
+            <tr>
+                <td align="right" width="10%">160</td>
+                <td align="right" width="10%">&gt;90</td>
+                <td align="right" width="10%">220</td>
+                <td align="right" width="10%">220</td>
+                <td align="right" width="10%">&gt;90</td>
+            </tr>
+            <tr>
+                <td align="right" width="10%">12</td>
+                <td align="right" width="10%">8</td>
+                <td align="right" width="10%">~18</td>
+                <td align="right" width="10%">~18</td>
+                <td align="right" width="10%">8</td>
+            </tr>
+            <tr>
+                <td align="right" width="10%">120</td>
+                <td align="right" width="10%">80</td>
+                <td align="right" width="10%">180</td>
+                <td align="right" width="10%">180</td>
+                <td align="right" width="10%">80</td>
+            </tr>
+            <tr>
+                <td align="right" width="10%">45</td>
+                <td align="right" width="10%">100</td>
+                <td align="right" width="10%">130</td>
+                <td align="right" width="10%">130</td>
+                <td align="right" width="10%">70</td>
+            </tr>
+            <tr>
+                <td align="right" width="10%">410</td>
+                <td align="right" width="10%">825</td>
+                <td align="right" width="10%">800</td>
+                <td align="right" width="10%">800</td>
+                <td align="right" width="10%">750,375</td>
+            </tr>
+            <tr>
+                <td align="right" width="10%">0.9</td>
+                <td align="right" width="10%">1.5</td>
+                <td align="right" width="10%">0.9</td>
+                <td align="right" width="10%">0.9</td>
+                <td align="right" width="10%">1.125,2.25</td>
+            </tr>
+            <tr>
+                <td align="right" width="10%">600</td>
+                <td align="right" width="10%">360</td>
+                <td align="right" width="10%">1500</td>
+                <td align="right" width="10%">1500</td>
+                <td align="right" width="10%">300</td>
+            </tr>
+            <tr>
+                <td align="right" width="10%">1</td>
+                <td align="right" width="10%">1</td>
+                <td align="right" width="10%">2</td>
+                <td align="right" width="10%">2</td>
+                <td align="right" width="10%">2,1</td>
+            </tr>
+            <tr>
+                <td align="right" width="10%">7</td>
+                <td align="right" width="10%">14</td>
+                <td align="right" width="10%">10</td>
+                <td align="right" width="10%">14</td>
+                <td align="right" width="10%">4</td>
+            </tr>
+            <tr>
+                <td align="right" width="10%">0.100</td>
+                <td align="right" width="10%">0.188</td>
+                <td align="right" width="10%">0.125</td>
+                <td align="right" width="10%">0.150</td>
+                <td align="right" width="10%">0.125</td>
+            </tr>
+            <tr>
+                <td align="right" width="10%">3500</td>
+                <td align="right" width="10%">3535</td>
+                <td align="right" width="10%">4800</td>
+                <td align="right" width="10%">3400</td>
+                <td align="right" width="10%">5600</td>
+            </tr>
+        </table>
+        </td>
+        <td>
+        <table cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td align="right" width="10%">8-13</td>
+            </tr>
+            <tr>
+                <td align="right" width="10%">130</td>
+            </tr>
+            <tr>
+                <td align="right" width="10%">13</td>
+            </tr>
+            <tr>
+                <td align="right" width="10%">130</td>
+            </tr>
+            <tr>
+                <td align="right" width="10%">70</td>
+            </tr>
+            <tr>
+                <td align="right" width="10%">580</td>
+            </tr>
+            <tr>
+                <td align="right" width="10%">0.9</td>
+            </tr>
+            <tr>
+                <td align="right" width="10%">700</td>
+            </tr>
+            <tr>
+                <td align="right" width="10%">1</td>
+            </tr>
+            <tr>
+                <td align="right" width="10%">10</td>
+            </tr>
+            <tr>
+                <td align="right" width="10%">0.120</td>
+            </tr>
+            <tr>
+                <td align="right" width="10%">3450</td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+</table>
+<p><u>References</u></p>
+<p><a href="hvrefs.htm#Fr&uuml;ngel">Fr&uuml;ngel</a>, pp 140-149</p>
+<p>Glasoe &amp; <a href="hvrefs.htm#Lebacqz">Lebacqz</a>, <em>Pulse
+Generators</em>, pp 276-282, pp286-292</p>
+<hr>
+<p><font size="1">Copyright 1997, Jim Lux / 18 Oct 1997 /
+rotgap.htm / </font><a href="hvmain.htm"><font size="1">Back to
+HV Home</font></a><font size="1"> / </font><a href="../index.htm"><font
+size="1">Back to home page</font></a><font size="1"> / </font><a
+href="mailto:jimlux@earthlink.net"><font size="1">Mail to Jim</font></a></p>
+</body>
+</html>

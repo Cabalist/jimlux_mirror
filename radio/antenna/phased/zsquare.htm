@@ -1,0 +1,111 @@
+<html>
+<head>
+<title>Mutual Z in a Square Array</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>Mutual Z in a square array</h2>
+<p>The &quot;four-square&quot; array of vertical antennas has been around a long 
+  while in various forms. The idea is to put 4 vertical antennas in a square with 
+  sides that are 1/4 wavelength, 3/8 wavelength, etc.. The array is symmetrical, 
+  and a fairly simple feed scheme (feed 2 in phase, and 2 lagging by 90 or 135 
+  degrees) and some relays can be used to form a beam that can be rotated to 4 
+  (or 8) positions. Given that the beamwidth is on the order of 90 degrees, this 
+  works fairly well. The moderately large aperture also means that not too much 
+  power is being radiated at high angles.</p>
+<p>This page gives some mutual impedances calculated for an array in free space 
+  using NEC2.</p>
+<h3>Historical notes</h3>
+<p>It seems to be quite popular for 160m, where the reasonable aperture with small 
+  radiators, and the ability to point away from noise is probably the selling 
+  point. The ARRL handbook had a 40 meter version using a Wilkinson power divider 
+  for a number of years. Unfortunately, that design didn't allow for the mutual 
+  Z of the elements, and didn't perform particularly well, a topic discussed at 
+  some length in the ARRL Antenna Book. Subsequently, the Antenna Compendium has 
+  had a number of versions, including some with center loaded sleeve dipoles, 
+  various schemes using sloping dipoles off a tower, and so forth.</p>
+<p>I've often thought about building a small monopole array for use at 2m and 
+  70cm by putting 4 antennas on the roof of the car, and using a suitable rotary 
+  switch to move the beam. The extra 5-6 dB or so from the array gain would help 
+  hit those distant repeaters. On the other hand, a 40 Watt amplifier might work 
+  just as well, and is omnidirectional.</p>
+<h3>Modelling results</h3>
+<p>Some NEC studies were done to determine the mutual Z for a square array. Two 
+  cases were run with the square sides 1/4 wavelength and 3/8 wavelength. (At 
+  1/2 wavelength, you don't form a unidirectional beam). In both cases, the length 
+  of the dipoles were adjusted to make the driven element &quot;resonant&quot;, 
+  or at least, with a reactive impedance less than an ohm.</p>
+<p>The 4 elements are numbered as follows:</p>
+<table width="25%" border="1">
+  <tr>
+    <td>
+      <div align="center">2</div>
+    </td>
+    <td>
+      <div align="center">4</div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div align="center">1</div>
+    </td>
+    <td>
+      <div align="center">3</div>
+    </td>
+  </tr>
+</table>
+<p>There is a lot of symmetry: Z12=Z13, Z14 = Z23, etc..</p>
+<p>The model was run at 29.98 MHz with copper wires 0.00127 in diameter (approximately 
+  #10 AWG). The wavelength of 10.0 meters made spacing the elements easy, which 
+  is why it was chosen. Element 1 was driven, and the other elements were loaded 
+  with a 10K resistor. The voltages and currents from the NEC output were then 
+  used to calculate the mutual Z.</p>
+<p>In the 1/4 wave case, the elements wound up being 4.83 meters long. In the 
+  3/8 wavelength spacing case, the elements were slightly shorter: 4.82 meters. 
+  The one cm difference manifested itself as a change in the reactive impedance 
+  of about 1 ohm. While the impedances in the following table are reported to 
+  0.01 ohm, I suspect that the real accuracy is somwhat poorer.</p>
+<table width="75%" border="1">
+  <tr>
+    <td>
+      <p>Spacing<br>
+        (wavelength) </p>
+      </td>
+    <td>Z11</td>
+    <td>Z12</td>
+    <td>Z13</td>
+    <td>Z14</td>
+  </tr>
+  <tr>
+    <td>1/4</td>
+    <td>69.77-j0.87</td>
+    <td>-36.16+j29.76</td>
+    <td>-36.16+j29.76</td>
+    <td>-11.35+j37.99</td>
+  </tr>
+  <tr>
+    <td>3/8</td>
+    <td>67.64+j0.82</td>
+    <td>-9.98+j35.16</td>
+    <td>-9.98+j35.16</td>
+    <td>17.41+j22.45</td>
+  </tr>
+</table>
+<p>Note that the &quot;resonant&quot; impedance is slightly different from the 
+  nominal 72 ohms you would expect for an ideal thin dipole. This is no doubt 
+  due to several factors: the finite size of the wires, the resistive loading, 
+  and the effect of the &quot;parasitic&quot; elements, even though they are effectively 
+  open circuited.</p>
+<p>For 1/4 monopoles above a ground plane, divide these numbers by two.</p>
+<p>The impedances will vary somewhat when operating above a real ground.</p>
+<hr>
+<p>zsquare.htm - 25 Nov 2000 - Jim Lux<br>
+  <a href="index.htm">Phased Arrays</a> <br>
+  <a href="../../index.htm">radio home</a> <br>
+  <a href="../../../index.htm">Jim Lux home</a> <br>
+  email comments <a href="mailto:jimlux@earthlink.net?subject=4%20Square%20Mutual%20Z">jimlux@earthlink.net</a> 
+</p>
+<p>&nbsp;</p>
+</body>
+</html>

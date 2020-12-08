@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>Multi-Channel Meteor Radar</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>Multi-channel Meteor Radar</h2>
+<p>I got the idea from a few meteor radar sites when I got a message from SpaceWatch 
+  about the Perseid shower in early August ( and ). Basically, these are pretty 
+  simple; an antenna pointed straight up with an SSB receiver tuned to an over 
+  the horizon TV station.Here's a couple of links: </p>
+<ul>
+  <li>NASA Marshall Spaceflight Center's meteor monitor: <a href="http://www.spaceweather.com/glossary/nasameteorradar.html">http://www.spaceweather.com/glossary/nasameteorradar.html</a></li>
+  <li>Stan Nelson's meteor radar <a href="http://www.roswellastronomyclub.com/meteors.htm">http://www.roswellastronomyclub.com/meteors.htm</a> 
+  </li>
+</ul>
+<p> I wanted a multi channel radar, though, so I could do some crude direction 
+  finding, or, at least, listen to the meteors in stereo. Without actually building 
+  multiple phase matched receivers (or modifying receivers to feed them from a 
+  common LO), I figured out one way to do it. The first idea was that the recording 
+  didn't have to be phase matched, as long as I could recover the phase later. 
+  I could inject a tone in the receivers' passbands from an external oscillator, 
+  track that tone and back the phase shift out. The oscillator didn't need to 
+  be all that hot stuff, just reasonably stable, and radiating a very low power, 
+  somewhere near the antennas. Here's a diagram illustrating it:</p>
+<p><img src="images/meteor1.gif" width="517" height="498"></p>
+<p>The next problem was that SSB receivers for 60 MHz aren't cheap. Some of the 
+  medium priced shortwave radios will work in SSB in the low VHF band, but not 
+  many. The Icom PCR1000 computerized receiver will do it, but will set you back 
+  $300+, and I wanted multiple channels, and wasn't willing to pay thousands of 
+  dollars to do it.</p>
+<p>Sitting around contemplating a design for a CW FM radar in Xband, I hit on 
+  the idea that the difference between an AM and a SSB radio is that the SSB radio 
+  generally has narrower bandwidth (only one sideband) and that it reinjects the 
+  carrier (a BFO, in old CW receiver parlance). The narrow bandwidth wasn't something 
+  I particularly wanted, the 5kHz or so for the AM radio is just fine, and I could 
+  inject my own BFO, which would be much like the pilot tone in the previous scheme. 
+  All I'd be using the AM radio for is as a IF strip and detector (yes, there 
+  are some issues with images, and the like). And, of course, the previous problem 
+  with tuning the VHF band is still there.</p>
+<p>So, the new scheme is this. Feed the antenna to a mixer, where I feed a common 
+  LO to mix it down to a convenient frequency for the next stage (I haven't decided 
+  yet... 1MHz is in the middle of the AM band, but a shortwave receiver might 
+  be a better way). Inject a BFO at almost the same frequency, and feed it to 
+  the receiver. Actually, since there aren't any filters in the front end, you 
+  can inject the pilot in the same way. I've also added a LNA of some sort (probably 
+  one of those TV booster amps would do) to overcome the loss through the mixer. 
+  Here's a diagram of this scheme:</p>
+<p><img src="images/meteor2.gif" width="709" height="488"></p>
+<p>Now, all I have to do is find a suitable IF strip.. that is, a cheap SW receiver 
+  with suitable bandwidth (wider the better, in this case). I wonder how stable 
+  the tuning is for the &quot;slide rule&quot; tuned units? I assume they use 
+  an LC circuit, but once you set it up, it's probably pretty stable, although, 
+  the intention is to set something like this up and leave it for extended periods 
+  of time (like overnight), so if it drifts too much, you'll lose the carrier 
+  from the TV station that you're using as your bistatic transmitter.. The direct 
+  entry PLL varieties are also widely available.. this weekend (24 August 2002) 
+  Radio Shack was blowing some of them them out for $30 a piece, but you're beholden 
+  to the XO in them, which is probably only good to 100 ppm, on a good day. </p>
+<p>The LO can probably be one of those TTL clock oscillators, with a rudimentary 
+  filter on the output. OTOH, I'm going to be driving a saturated mixer, so a 
+  square wave probably isn't all that bad. They're readily available at 40 and 
+  50 MHz. A capacitor will couple it to the mixer. The mixer can be any of a variety 
+  of cheap mixers; Mini-Circuits to the rescue. The reference oscillator's a bit 
+  more of a challenge. Maybe one of those channel 3/4 video modulators? Pick the 
+  LO frequency so that a harmonic is in band? Here's a case where spurs are your 
+  friend. </p>
+<p>It also occurs to me that this same technique would work to build an interferometric 
+  radio telescope.</p>
+<h3>Frequency Selection</h3>
+<p>Low VHF TV</p>
+<p>CH VIDEO carrier frequency in MHz<br>
+  2 55.250<br>
+  3 61.250<br>
+  4 67.250<br>
+  5 77.250<br>
+  6 83.250 </p>
+<h3>Some more links</h3>
+<p>http://www.k5kj.net/meteor.htm - Sam's Meteor Radio Echo Page</p>
+<p>http://www.imo.net/radio/transmitter.html - A page from the International Meteor 
+  Organization </p>
+<p>http://page.to/meteor/ - Meteor and Colorgramme</p>
+<p>http://www.saunalahti.fi/~oh5iy/msobs/msobs.htm - an excellent site with good 
+  trade studies on various system implementation</p>
+<p>&nbsp;</p>
+<p>radio/meteorradar.htm - 26 Aug 2002 - Jim Lux<br>
+  (<a href="index.htm">radio home page</a>) (<a href="http://home.earthlink.net/%7Ejimlux">Jim's 
+  home page</a>)</p>
+<p>&nbsp;</p>
+</body>
+</html>

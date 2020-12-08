@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>Gunnplexers and I/Q Demodulation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>Gunnplexers and I/Q Demodulation</h2>
+<p>My <a href="radar10g.htm">10 GHz radar</a>, based on a Gunnplexer type system, 
+  has a pair of detector diodes spaced some distance apart in the waveguide. This 
+  provides a way to separate positive and negative doppler returns by using the 
+  two detected signals as I and Q inputs to a FFT. Here's a schematic view of 
+  the top of the waveguide:</p>
+<p><img src="images/radariq1.gif" width="563" height="339"></p>
+<p>&nbsp;</p>
+<p>The two detector diodes are separated by 1/8 of a wavelength, which is electrically 
+  equivalent (because the two signals are so close in frequency) to the conventional 
+  I/Q demodulator as shown in the following two diagrams. </p>
+<p><img src="images/radariq2.gif" width="438" height="219"> <img src="images/radariq3.gif" width="438" height="219"></p>
+<p>&nbsp;</p>
+<p>So, how does having I and Q help you distinguish between motion towards and 
+  away from the Gunnplexer? When you have both I and Q, you can distinguish positive 
+  and negative doppler frequencies, because the relative phases of the doppler 
+  signals are different.</p>
+<p>Consider a target moving towards the Gunnplexer, with a velocity such that 
+  the return is shifted by a radian frequency of &quot;doppler&quot;. The two 
+  signals are:</p>
+<blockquote>
+  <p><tt>Vout = cos(omega * t)<br>
+    Vin = cos((omega+doppler)*t)</tt></p>
+</blockquote>
+<p>The inphase mixer forms the product:</p>
+<blockquote>
+  <p><tt>Imixer = cos(omega*t) * cos( (omega+doppler)*t)<br>
+    </tt><tt>= 1/2*cos( omega*t 
+    + (omega+doppler)*t) + 1/2*cos( omega*t - (omega+doppler)*t))</tt></p>
+  </blockquote>
+<p>The quadrature mixer forms the product:</p>
+<blockquote> 
+  <p><tt>Qmixer = sin(omega*t) * cos( (omega+doppler)*t) <br>
+    = 1/2*sin( omega*t + (omega+doppler)*t) + 1/2*sin( omega*t - (omega+doppler)*t))</tt></p>
+</blockquote>
+<p>ignoring the sum term (which is at 20 GHz, and doesn't make it very far) we 
+  get:</p>
+<blockquote>
+  <p><tt>Imixer = 1/2*cos( (omega- omega+doppler)*t) = 1/2*cos(doppler*t)<br>
+    Qmixer = 1/2 * sin( (omega- omega+doppler)*t) = 1/2*sin(doppler*t)</tt></p>
+</blockquote>
+<p>These are just a pair of sinusoids with the Qmixer signal 90 degrees lagging 
+  the Imixer signal (if doppler&gt;0). If doppler is negative, Q will lead I. 
+  Sketch out the sinusoids and all will become clear.</p>
+<p><img src="images/fpos.gif" width="610" height="410"> </p>
+<p>And, for negative frequency, where the sin(-t) signal leads the cos(-t)</p>
+<p><img src="images/fneg.gif" width="610" height="410"></p>
+<p>If you're building a burglar alarm, you can probably just clip or threshold 
+  the two signals and then use some simple logic gates to generate &quot;going 
+  towards&quot; pulses or &quot;going away&quot; pulses, much the same as a quadrature 
+  encoder. (Quad encoders actually work by just this principle).</p>
+<p>If you're digitizing both signals, and feeding them into an FFT as real and 
+  imaginary components (which is what I do), then the peak will show up as negative 
+  or positive frequencies, as appropriate. Sometimes, you may have to fool with 
+  your FFT program, since many of them assume that the second half of the transform 
+  is just a mirror image of the input (which it is, if the input is real only), 
+  and don't display it.</p>
+<p>radio/radar10g3.htm - 1 May 2003 - <a href="mailto:jimlux@earthlink.net?Subject=10GHz%20radar%20page">Jim 
+  Lux</a><br>
+  (<a href="index.htm">radio main page</a>) ( <a href="../index.htm">Jim's home 
+  page</a>)</p>
+</body>
+</html>

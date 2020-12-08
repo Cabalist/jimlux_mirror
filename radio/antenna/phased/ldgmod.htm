@@ -1,0 +1,110 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Jim Lux">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.03 [en] (WinNT; U) [Netscape]">
+   <TITLE>Modifications to the LDG antenna tuner</TITLE>
+</HEAD>
+<BODY>
+
+<H2>
+Modifications to LDG antenna tuner</H2>
+
+
+<P>&nbsp;
+<h4>Status indicators</h4>
+<p> Debugging is a nightmare if you don't have any feedback, so I use the existing 
+  LED interface for 4 leds (J3 header, pins 5,6,7 and 8) which will be visible 
+  from the panel. Plus, if I'm clever and have too much time on my hands, I could 
+  write some software (to fill the remaining bytes in the EEPROM) that displays 
+  nifty idle patterns. At the least, I'll program a &quot;talking&quot; and a 
+  &quot;listening&quot; light to debug the communications (so I can tell if the 
+  correct unit is getting the commands). 
+<h4>Unit addressing</h4>
+<p>I use the Cap Up/Dn and Inductor Up/Dn (Port D, bits 2-5) as a unit code. Each 
+  board will have the appropriate lines tied high or low to create a 4 bit unit 
+  number, which will be used by the software to select which board should respond 
+  to the command. Conveniently, these lines come to a header (J3, pins 1-4), and, 
+  have pull-ups on them, so all you have to do is ground the ones that you want 
+  to be &quot;zero&quot;. Ground is available on pins 9,13, and 14 of the same 
+  header. 
+<p>Revision: 3 August 2002 - I've changed my basic control philosophy, and want 
+  to be able to use these in a distributed (at the feed) fashion, so I'll use 
+  a star, rather than bus, control, so we don't need unit numbers. Instead, I'll 
+  install pushbuttons (or a connector for pushbuttons).
+<P>&nbsp;
+<h3>QRP Antenna Tuner Modifications:</h3>
+<P>1) Serial communications - I'm going to use the special bootloader mode. The 
+  HC11, on power up, configures Port D, bits 0 and 1 as a serial communications 
+  interface. It sends a BREAK out the TxD (bit 1), which is configured as a open-drain. 
+  It looks to see if RxD drops at the same time. If it does (i.e. they are tied 
+  together with a pull-up, as is done on the stock LDG board), then it jumps to 
+  the previously programmed EEPROM. However, if the HC11 receives a $FF character 
+  at either the E clock /16/16 or Eclock/13/16 (4800 bps with a 4 MHz crystal), 
+  it goes into the special bootloader mode, where it expects another 256 bytes 
+  to follow, containing new software. 
+<P>The TxD lines, which are left in open drain mode, form a bus. The software 
+  will recognize the appropriate unit's address, and it will send the data out 
+  the line. (Obviously, a start bit has to be LOW for this to work). Since the 
+  output drivers in the other units are turned off, they don't interfere. 
+<P>Revised 3 Aug 2002: Bus technique is history. Star mode eliminates the need 
+  for addressing. Still need to break the lines, because I need to talk to them, 
+  but now, if I want to revert to &quot;factory mode&quot; it's just a jumper.
+<P>2) Wake up from STOP - Since we want to use the &quot;STOP&quot; mode to reduce 
+  RFI (the processor clock is stopped in this mode), we need a way to wake the 
+  processor up. In the original LDG tuner, this was done using the &quot;Tune&quot; 
+  switch (TUNESW, J3-pin 10) which is tied to the XIRQ and IRQ lines of the 'HC11. 
+  We will drive this line with an open collector driver from the RTS line of the 
+  RS232 interface. 
+<P>Revised 3 Aug 2002: Still nice to have the line separate from the tune switch
+<P>3) Reset - Just in case everything goes awry, it is nice to be able to reset 
+  the system without having to power cycle. This requires adding a line to the 
+  processor to pull down RESET*. 
+<P>&nbsp;
+<h3>Hardware changes </h3>
+<P>Here are the specific hardware changes I made to the QRP antenna tuner board, 
+  as received from LDG Electronics. I cut the traces using a Dremel tool, but 
+  an X-Acto knife will also work.
+<P>1) Unsolder and replace the existing 4.5 MHz crystal with a 4.0 MHz one. I 
+  ordered mine from Mouser. They're about $0.30 each.
+<P>2) Cut the trace from the pull up to PD0 and PD1. The easiest place to get 
+  at this is on the top of the board, next to the SIP resistor array. 
+<P>3) Cut the trace between PD0 and PD1. The trace runs from pin 20 under the 
+  socket on the top side to a via in the corner. Then, the trace runs from the 
+  via to pin 21 on the bottom side where it is accessible. Cut the trace between 
+  the via and the pad for pin 21.
+<P>4) Solder a wire to pin 21, TxD. (Grey wire)
+<P>5) Solder a wire to pin 20, RxD. (Brown wire)
+<P>6) Solder a wire to the via with the XIRQ* signal. The XIRQ line is used to 
+  wake up the 'HC11 from &quot;STOP&quot; mode, and is also connected to the &quot;tune&quot; 
+  switch line on the J3 header, pin 10. (Green wire)
+<p>
+<P>7) Solder a wire to a via with the RESET* signal. This will be driven by an 
+  open collector driver from DTR on the RS232 interface, so that you can drop 
+  and raise DTR to reset the processors. (Orange wire)
+<P>8) Power connections at J4. (+12V: Red wire, Ground: Black Wire)
+<h3>Future modifications</h3>
+<h4>Increasing capacitance range (on the bottom end).</h4>
+<P> Preliminary calculations indicate that I need a bit more resolution on the 
+  capacitance on the antenna inputs, primarily for operating at higher frequencies 
+  (like 10m band), where you need pretty small C's. Since the capacitor will always 
+  be hooked on the antenna side (Any C necessary on the junction will come from 
+  the other tuner), we don't need to use the Hi/Lo Z relay. Instead, this relay 
+  is used to switch a series cap in or out of the arm of the L. The trace from 
+  the &quot;transmitter&quot; end (actually the antenna end in this application) 
+  to the NC relay contact is cut. A TBD pF capacitor is added between the two 
+  fixed contacts of the relay. 
+<h4>&nbsp; </h4>
+<HR WIDTH="100%">
+<p><BR>
+  ldgmod.htm - revised 16 September 1999, Jim Lux <br>
+  revised 4 August 2002<br>
+  <a href="implement.htm">back to implementation details</a><br>
+  <A HREF="phased1.htm">back to Phased Arrays</A> <BR>
+  <A HREF="index.htm">radio home</A> <BR>
+  <A HREF="../index.htm">Jim Lux home</A> <BR>
+  email comments <A HREF="mailto:jimlux@earthlink.net?subject=LDG mods">jimlux@earthlink.net</A> 
+  <BR>
+  &nbsp; </p>
+</BODY>
+</HTML>

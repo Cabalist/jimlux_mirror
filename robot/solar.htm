@@ -1,0 +1,164 @@
+<html>
+<head>
+<title>Robot Solar Power</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="keywords" content="robot, solar power, solar cell, solar panel, rover">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>Robot Solar Power</h2>
+<p>Doing some research at Arizona Wind and Sun... (http://www.windsun.com/) on 
+  6 Jan 2002</p>
+<p>Looks like generally, $5/watt for the usual panels. The flex panels from Solarex 
+  are as low as $4.39/watt, but the Unisolar ones are $12/watt. Output is around 
+  120 W/square meter for the fixed panels, 47W/square meter for the flex panels 
+  (a heck of a lot less efficient!)</p>
+<p>The real problem seems to be that the bigger panels (75W plus), are all 1.2 
+  meters long or bigger. No problem when bolting it to your roof, a big problem 
+  on a 1 meter long rover.... </p>
+<p>I wonder if you can redesign the panels a bit.....</p>
+<table width="75%" border="1">
+  <tr bordercolor="#E3E3E3"> 
+    <th>Make/Model</th>
+    <th>Price</th>
+    <th>dimensions</th>
+    <th>Mass<br>
+      (kg) </th>
+    <th>Output<br>
+      (W) </th>
+    <th>Rated I</th>
+    <th>Rated V</th>
+    <th>Voc</th>
+    <th>Isc</th>
+  </tr>
+  <tr> 
+    <td>Siemens SP75(single crystal solar electric panel with 36 cells)</td>
+    <td>409</td>
+    <td> 
+      <p>1200x527x56mm<br>
+        (thickness includes junction box)</p>
+    </td>
+    <td>7.6</td>
+    <td>75</td>
+    <td>4.41</td>
+    <td>17</td>
+    <td>21.7</td>
+    <td>4.8</td>
+  </tr>
+  <tr> 
+    <td>Siemens SP100 (discontinued!)</td>
+    <td>478</td>
+    <td>1498x594x56</td>
+    <td>10.9</td>
+    <td>100</td>
+    <td>5.9</td>
+    <td>17.0</td>
+    <td>21.6</td>
+    <td>6.5</td>
+  </tr>
+  <tr> 
+    <td>UnisolarUSF32 Flexible</td>
+    <td>298</td>
+    <td>1430x424</td>
+    <td>2.14</td>
+    <td>32</td>
+    <td>1.94</td>
+    <td>16.5</td>
+    <td>27.1</td>
+    <td>2.4</td>
+  </tr>
+  <tr> 
+    <td>Unisolar USF11</td>
+    <td>149, 2/280</td>
+    <td>554x424</td>
+    <td>0.91</td>
+    <td>11</td>
+    <td>0.62</td>
+    <td>16.5</td>
+    <td>27.1</td>
+    <td>0.78</td>
+  </tr>
+  <tr> 
+    <td>Solarex Millenia 43W</td>
+    <td>189</td>
+    <td>?</td>
+    <td>?</td>
+    <td>43</td>
+    <td>?</td>
+    <td>?</td>
+    <td>?</td>
+    <td>?</td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td>Kyocera KC80</td>
+    <td>389</td>
+    <td>976x652x52</td>
+    <td>9.6</td>
+    <td>80</td>
+    <td>4.73</td>
+    <td>16.9</td>
+    <td>21.5</td>
+    <td>4.96</td>
+  </tr>
+  <tr> 
+    <td>Kyocera KC120</td>
+    <td>598</td>
+    <td>1425x652x52</td>
+    <td>11.9</td>
+    <td>120</td>
+    <td>7.1</td>
+    <td>16.9</td>
+    <td>21.5</td>
+    <td>7.45</td>
+  </tr>
+  <tr> 
+    <td>BP/Solarex SX-120</td>
+    <td>598</td>
+    <td>1456x731x50</td>
+    <td>12.8</td>
+    <td>120</td>
+    <td>3.56</td>
+    <td>33.7</td>
+    <td>42.1</td>
+    <td>3.87</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>Individual Cells</p>
+<p>Astropower (http://www.astropower.com/) has a eval kit for $185 that has 20 
+  AP105 cells (5&quot; single crystal, 2.1 W) which is: 40W, or about $4.60/watt 
+  (pretty high, considering you can get a whole panel already assembled for about 
+  the same..)</p>
+<p>The Solar Cell Company (http://www.solarcell.net/) sells 4&quot; cells, 0.9W 
+  for $1.95, or 36/$64.75 (which is about $2/Watt). Kind of a cheesy web site, 
+  but heck, they're in the business of selling solar cells, not web design. (114W/square 
+  meter of cell area) </p>
+<p>http://www.solarbotics.net/library/pieces/parts_elect_semic_solar.html has 
+  some interesting analysis and a handy calculator showing that All Electronics 
+  cells SPL-22, which are 10 for $5 are not such a bad deal. 20mm square, .45Voc 
+  100mA Isc (the catalog shows V@I (simultaneous), but hah, we know better). ANyway, 
+  they're up in the big 0.12 mW/mm2 clump (120W/m2..), and give 90mW/$. Interestingly, 
+  this is $10/W... The SolarCell company selling the $2/0.9W cells is a much better 
+  deal on a W/$ basis, </p>
+<p>Reflectors</p>
+<p>There's a fair amount of literature on the web about using a concentrator with 
+  a cell. Even a flat plate mirror can increase the output (never as much as the 
+  whole area), especially when you have a fixed orientation panel. And, mirrors 
+  are a heck of a lot cheaper than cells.</p>
+<hr>
+robot/solar.htm - 6 Jan 2002 - <a href="mailto:jimlux@earthlink.net?Subject=Robot%20Solar%20Power">Jim 
+Lux</a><br>
+<a href="index.htm">robot main page</a> - <a href="../index.htm">Jim home page</a>
+</body>
+</html>

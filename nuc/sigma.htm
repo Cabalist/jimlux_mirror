@@ -1,0 +1,211 @@
+<html>
+<head>
+<title>Nuclear Cross Section Data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>Nuclear Cross Section Data</h2>
+<p>The &quot;Cross Section&quot; is used to measure or report the probability 
+  of a reaction occurring. (<a href="crosssectionanalogy.htm">simple analogy</a> 
+  to describe cross section due to Peierls ) In general, the probability of a 
+  reaction is highly dependent on the energy of the projectile (as well as what 
+  the projectile is). More on calculations using these cross sections can be found 
+  on the <a href="fusormath.htm">fusor math page</a>. Note that the data is generally 
+  given for a &quot;monoenergetic&quot; distribution of the projectile, while 
+  in real life, the projectiles have a distribution of energies. Some references 
+  give data for Maxwellian distributions with a specified peak, and others give 
+  cross sections for thermalized projectiles (in the case of neutrons) with an 
+  average velocity of 2200 m/sec (Maxwellian at &quot;room temperature&quot;).</p>
+<h3>Experimental Tabular Data</h3>
+<p>Much research has been done over the years to experimentally determine the 
+  reaction cross sections for various reactions of interest. Since this data is 
+  useful for weapons design, a lot of it was (or still is) classified, particularly 
+  in some energy ranges. The links below for tabular data are for data extracted 
+  using the web based interface to ENDF, which can be found at:<a href="http://www.nndc.bnl.gov/%7Ekinsey/endf/"> 
+  </a> <a href="http://www.nndc.bnl.gov/exfor/endf00.htm" target="_blank">http://www.nndc.bnl.gov/exfor/endf00.htm</a> 
+  The text forms are tab delimited, the spreadsheet files have the same data, 
+  with the addition of a VLOOKUP formula that finds the matching crosssection 
+  for a given energy.</p>
+<p> D(d,n) Deuterium Target, deuteron projectile. <a href="ddn.txt">(table text 
+  13K)</a> <a href="ddn.xls">(excel 4.0 sheet 45K)</a> <a href="ddn.gif"> (plot 
+  GIF 5K)</a></p>
+<p>T(d,n) Tritium Target, deuteron projectile <a href="tdn.txt">(table text 2K)</a> 
+  <a href="tdn.xls">(excel 4.0 sheet 10K)</a> <a href="tdn.gif">(plot GIF ground 
+  state 5K)</a> <a href="tdn1.gif">(plot GIF 1st level 5K)</a></p>
+<h3>Analytical approximation</h3>
+<p>For many uses (planning and modelling), an analytical expression that represents 
+  the general shape of the curve is more useful. In this case, the 1998 NRL Plasma 
+  Formulary, pp 44 and 45, has a empirical approximation for these curves given 
+  as:</p>
+<p>sigma (in barns)= (A5 + A2/((A4-A3*E)^2+1))/(E*(exp(A1/sqrt(E))-1)</p>
+<p>E is the particle energy in keV and where the An are the &quot;Duane coefficients&quot; 
+  are given as:</p>
+<table width="75%" border="1">
+  <tr> 
+    <td>&nbsp;</td>
+    <td>D(d,p)</td>
+    <td>D(d,n)</td>
+    <td>T(d,n)</td>
+    <td>3He(d,p)</td>
+    <td>T(t,2n)</td>
+    <td>3He(T,pn),etc.</td>
+  </tr>
+  <tr> 
+    <td>A1</td>
+    <td> 
+      <div align="right">46.097</div>
+    </td>
+    <td> 
+      <div align="right">47.88</div>
+    </td>
+    <td> 
+      <div align="right">45.95</div>
+    </td>
+    <td> 
+      <div align="right">89.27</div>
+    </td>
+    <td> 
+      <div align="right">38.39</div>
+    </td>
+    <td> 
+      <div align="right">123.1</div>
+    </td>
+  </tr>
+  <tr> 
+    <td>A2</td>
+    <td> 
+      <div align="right">372</div>
+    </td>
+    <td> 
+      <div align="right">482</div>
+    </td>
+    <td> 
+      <div align="right">50200</div>
+    </td>
+    <td> 
+      <div align="right">25900</div>
+    </td>
+    <td> 
+      <div align="right">448</div>
+    </td>
+    <td> 
+      <div align="right">11250</div>
+    </td>
+  </tr>
+  <tr> 
+    <td>A3</td>
+    <td> 
+      <div align="right">4.36E-4</div>
+    </td>
+    <td> 
+      <div align="right">3.08E-4</div>
+    </td>
+    <td> 
+      <div align="right">1.368E-2</div>
+    </td>
+    <td> 
+      <div align="right">3.98E-3</div>
+    </td>
+    <td> 
+      <div align="right">1.02E-3</div>
+    </td>
+    <td> 
+      <div align="right">0</div>
+    </td>
+  </tr>
+  <tr> 
+    <td>A4</td>
+    <td> 
+      <div align="right">1.220</div>
+    </td>
+    <td> 
+      <div align="right">1.177</div>
+    </td>
+    <td> 
+      <div align="right">1.076</div>
+    </td>
+    <td> 
+      <div align="right">1.297</div>
+    </td>
+    <td> 
+      <div align="right">2.09</div>
+    </td>
+    <td> 
+      <div align="right">0</div>
+    </td>
+  </tr>
+  <tr> 
+    <td>A5</td>
+    <td> 
+      <div align="right">0</div>
+    </td>
+    <td> 
+      <div align="right">0</div>
+    </td>
+    <td> 
+      <div align="right">409</div>
+    </td>
+    <td> 
+      <div align="right">647</div>
+    </td>
+    <td> 
+      <div align="right">0</div>
+    </td>
+    <td> 
+      <div align="right">0</div>
+    </td>
+  </tr>
+</table>
+<p>However, when comparing the fit of this approximation against the data from 
+  ENDF, I found that the fit of the second reaction (D(d,n)) could be made much 
+  better at higher energies by using the coefficients in the following table (using 
+  Excel's solver to minimize the squared difference from ENDF data). I haven't 
+  researched the origin of the coefficients in the formulary, there may be some 
+  numerical problem (i.e. a high sensitivity to some small insigificant change 
+  in a parameter) or just a different data set used to derive the numbers.</p>
+<table width="32%" border="1">
+  <tr>
+    <td width="18%">D(d,n)</td>
+    <td width="43%">Revised</td>
+    <td width="39%">Original</td>
+  </tr>
+  <tr>
+    <td width="18%">A1</td>
+    <td width="43%">56.962</td>
+    <td width="39%">47.88</td>
+  </tr>
+  <tr>
+    <td width="18%">A2</td>
+    <td width="43%">482.28</td>
+    <td width="39%">482</td>
+  </tr>
+  <tr>
+    <td width="18%">A3</td>
+    <td width="43%">5.54E-6</td>
+    <td width="39%">3.08E-4</td>
+  </tr>
+  <tr>
+    <td width="18%">A4</td>
+    <td width="43%">0.0894</td>
+    <td width="39%">1.177</td>
+  </tr>
+  <tr>
+    <td width="18%">A5</td>
+    <td width="43%">0.2486</td>
+    <td width="39%">0</td>
+  </tr>
+</table>
+<p>The original references cited in the formulary are:</p>
+<p>G.H. Miley, H. Towner and N. Ivich, <i>Fusion Cross Section and Reactivities</i>, 
+  Rept. COO-2218-17, University of Illinois, Urbana, IL, 1974</p>
+<p>B.H. Duane, <i>Fusion Cross Section Theory</i>, Rept. BNWL-1685, Brookhaven 
+  National Laboratory, 1972</p>
+<hr>
+<p>nuc/sigma.htm - revised 6 January 2000, <a href="mailto:jimlux@earthlink.net?subject=nuclear%20cross%20section%20data%20page">Jim 
+  Lux</a><br>
+  revised 6 May 2005, put new link in for ENDF site<br>
+  <a href="index.htm">Nuclear Home Page</a> | <a href="http://home.earthlink.net/%7Ejimlux">Jim's 
+  Home Page</a></p>
+</body>
+</html>

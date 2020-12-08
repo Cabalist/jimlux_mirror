@@ -1,0 +1,79 @@
+<html>
+<head>
+<title>Bucket Lindenblad</title>
+<meta name="keywords" content="Lindenblad, Circular Polarized, Antenna, RHCP, ATV, omnidirectional">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>Bucket Lindenblad</h2>
+<p>As discussed elsewhere, an omnidirectional CP antenna is nice for a robot to 
+  use. A popular configuration is the Lindenblad, which is basically a circular 
+  array of tilted dipoles. Since I already needed a plastic bucket, the thought 
+  of building the antenna by putting copper foil tape on the surface of the bucket 
+  is appealing. I wanted to work with my existing ATV transmitter, which can work 
+  at 434 or 426 MHz, conveniently centered around 430 MHz (the middle of the 70 
+  cm amateur band). A bit of fooling with NEC2 resulted in the following model 
+  file:</p>
+<p><tt>CM bucket lindenblad test <br>
+  CM 4 elements on a circular form, tilted 30 degrees <br>
+  CM form is 13 cm radius (10 inch diam) <br>
+  CM Free space <br>
+  CM Pattern calculated at 430 MHz <br>
+  CE Evaluated at 410 through 450 MHz<br>
+  GH, 100, 41,.47, .148, .13,0,.13,0,0.005<br>
+  GM, 100,3, 0,0,90,0,0,0,<br>
+  GE<br>
+  EK<br>
+  PT,-1<br>
+  FR,0,41,0,0,410,1<br>
+  EX,0,100,21,1,1,0<br>
+  EX,0,200,21,1,1,0<br>
+  EX,0,300,21,1,1,0<br>
+  EX,0,400,21,1,1,0<br>
+  XQ<br>
+  FR,0,1,0,0,430<br>
+  RP,0,31,61,1000,0,0,3,3<br>
+  EN </tt></p>
+<p>The angle of the elements is 30 degrees relative to the horizontal, and the 
+  height of the &quot;winding&quot; is 14.8 cm. An immense amount of cut and try 
+  got the length adjusted so that the reactive component disappeared at 430 MHz, 
+  leaving a resistive component of 91 Ohms. The VSWR (assuming a 91 Ohm feed for 
+  each element) is below 1.1:1 from 420 to 439 MHz, so the antenna is fairly broadband. 
+  The pattern shows 1.4 dBi of gain at the horizon, dropping to 0 dBi at about 
+  40 degrees away. The radiation is RHCP, with the axial ratio being 0.80 at the 
+  horizon and 0.86 at 40 degrees elevation, favoring the horizontal polarization 
+  for both.</p>
+<p>Over a ground plane, however, the pattern looks a lot worse. The whole idea 
+  of a CP antenna is to reduce the horrible multipath you get with a linear polarized 
+  antenna. At least with this antenna, when one polarization has a null, the other 
+  polarization has a peak, so a 45 degree angled antenna might work fairly well. 
+  With a lossy earth (the real case), the nulls won't be as deep.</p>
+<p><a href="images/bucket1.gif" target="_blank">Pattern GIF(10K)</a> <a href="images/bucket1.png" target="_blank">Pattern 
+  PNG</a>(10K)</p>
+<h3>Feeding it</h3>
+<p>The question will be: how to feed this antenna from a nominal 50 ohm source? 
+  A quarter wave transformer using 75 ohm coax would transform the 91 ohms to 
+  62 ohms. However, we have to feed all 4 elements. Using a pair of pieces of 
+  75 ohm coax in parallel improvises 150 ohm transmission line. This transforms 
+  the 91 to 247 ohms, which, if we feed 4 in parallel will be about 62 ohms, a 
+  match of 1.22:1, which is probably ok. Usual foamed dielectric cable TV coax 
+  has a velocity factor of 75%, so a 1/4 is going to be around 70/4 cm or 17.5 
+  cm (6.9 inches).</p>
+<p> Another approach would be to make the dipole elements folded, which effectively 
+  transforms their impedance by a factor of 4, for a feed point impedance of 360 
+  ohms. Quarter wave lines of 300 ohm twinlead would transform this to 247 ohms, 
+  which paralleled gives you the same 62 ohm feed impedance.</p>
+<p>Or, how about this, connect a half wavelength long TL between each feed. The 
+  TL can be any impedance. If you connect the 4 elements all in parallel, the 
+  impedance will be 1/4 of the feed point impedance: 23 ohms, give or take. One 
+  can do the folding trick to get the impedance up to 91. </p>
+<hr>
+radio/bucket1.htm - 5 November 2001 - Jim Lux<br>
+<a href="phased1.htm"> </a> <a href="index.htm">radio home</a> | <a href="../index.htm">Jim 
+Lux home</a> <br>
+email comments <a href="mailto:jimlux@earthlink.net?subject=Transmission%20Lines">jimlux@earthlink.net</a> 
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

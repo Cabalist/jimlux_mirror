@@ -1,0 +1,127 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<TITLE>Pi and T networks</TITLE>
+<meta name="keywords" content="Pi network, Tee network, Wye-Delta transformation, Pi-Tee transformation, Star-Delta transformation">
+</HEAD>
+<BODY>
+
+<H2>
+Pi and T networks</H2>
+This page has a variety of useful network synthesis equations to do the
+following things:
+<UL>
+<LI>
+<A HREF="#pit">Transforming from Pi to T and vice versa</A></LI>
+
+<LI>
+<A HREF="#synth">Synthesis of pi and T networks to transform resistances
+and create phase shifts</A></LI>
+</UL>
+
+<H4>
+<A NAME="pit"></A>Transforming from Pi to T and vice versa</H4>
+Any pi network can be transformed to an equivalent T network. This is also
+known as the Wye-Delta transformation, which is the terminology used in
+power distribution and electrical engineering. The pi is equivalent to
+the Delta and the T is equivalent to the Wye (or Star) form.
+<BR>&nbsp;
+<TABLE COLS=2 WIDTH="54%" >
+<TR>
+    <TD ALIGN=CENTER VALIGN=CENTER><IMG SRC="/radio/math/images/pinet.gif" ALT="pi network" NOSAVE HEIGHT=113 WIDTH=230></TD>
+
+    <TD ALIGN=CENTER VALIGN=CENTER><IMG SRC="/radio/math/images/tnet.gif" ALT="T network" NOSAVE HEIGHT=116 WIDTH=230></TD>
+</TR>
+
+<TR>
+<TD ALIGN=CENTER VALIGN=CENTER>Pi Network</TD>
+
+<TD ALIGN=CENTER VALIGN=CENTER>T Network</TD>
+</TR>
+</TABLE>
+
+
+<P>The impedances of the pi network (Za, Zb, and Zc) can be found from
+the impedances of the T network with the following equations:
+
+<P>Za =&nbsp; (&nbsp; (Z1*Z2)+(Z1*Z3)+(Z2*Z3) ) / Z2
+<BR>Zb&nbsp; = (&nbsp; (Z1*Z2)+(Z1*Z3)+(Z2*Z3) ) / Z1
+<BR>Zc =&nbsp; (&nbsp; (Z1*Z2)+(Z1*Z3)+(Z2*Z3) ) / Z3
+
+<P>Note the common numerator in all these expressions which can prove useful
+in reducing the amount of computation necessary.
+
+<P>The impedances of the T network (Z1, Z2, Z3) can be found from the impedances
+of the equivalent pi network with the following equations:
+
+<P>Z1 =&nbsp; (Za * Zc) / (Za + Zb + Zc) <BR>
+  Z2 =&nbsp; (Zb * Zc) / (Za + Zb + Zc) <BR>
+  Z3 =&nbsp; (Za * Zb) / (Za + Zb + Zc)
+
+<P>Note the common denominator in these expressions.
+
+<P>In the case where all the impedances are reactive (i.e. they are all
+in the form jX), it is handy to note that the -1 factors from squaring
+j*j on the top cancels the -1 from bringing the j in the denominator up
+top.
+<BR>&nbsp;
+<H4>
+<A NAME="synth"></A>Synthesis of pi and T networks to transform resistances
+and create phase shifts</H4>
+Assuming that the desired port impedances are purely resistive (i.e. real),
+you can design a T or pi network with purely reactive components both to
+produce a desired phase shift (beta) and transform the impedances with
+the following equations. Note that beta can be any value, except for zero
+or pi.
+
+<P>Z1 = -j * (R1 *cos(beta) - sqrt( R1 * R2))/ sin (beta)
+<BR>Z2 = -j * (R2 *cos(beta) - sqrt(R1 * R2))/sin(beta)
+<BR>Z3 = -j * sqrt(R1*R2) / sin(beta)
+
+<P>Za = j *R1*R2 * sin(beta) / (R2 * cos(beta) - sqrt(R1 * R2))
+<BR>Zb = j * R1*R2 * sin(beta) / (R1 * cos(beta) - sqrt(R1 * R2))
+<BR>Zc = j * sqrt( R1 * R2) * sin (beta)
+
+<P>Beta is the phase lag passing through the network from either port 1
+to port 2 or vice versa. Note that if beta is 0 or pi, these expressions
+break down, except if R1=R2. If you need to transform resistive impedances
+and you don't want any phase shift, you have to use a transformer.
+
+<P>In many practical applications, the load or generator impedances may
+be reactive (i.e. Z (port 1) and Z (port 2) are some general R+jX). This
+can be accomodated by absorbing the external reactive impedance into the
+network, reducing or increasing the series or shunt impedance as requred.
+For instance, if a T network is required to connect between two impedances:
+50+j0 and 100-j20 with 45 degrees of phase shift:
+
+<P>First, calculate the Z's assuming resistive impedances: R1=50, R2= 100
+
+<P>Z1 = -j * (50 * .707 - sqrt(50*100))/.707 = +j 50 ohms
+<BR>Z2 = -j * (100 * .707 - sqrt(50*100))/.707 = 0 ohms
+<BR>Z3 = -j * sqrt( 50 * 100) / .707 = -j 100 ohms
+
+<P>(the example is somewhat contrived, and it winds up creating an L network
+for the resistive case).
+
+<P>Now, a reactive component is added to Z2 to exactly cancel the external
+reactive component. This changes Z2 from 0 ohms to +j20 ohms. The final
+network is then:
+
+<P>Z1 = +j50, Z2= +j20, Z3 = -j100 ohms
+
+<P>If you are working with a pi network, you would want to transform the
+external impedances into their corresponding shunt forms first, so that
+the reactive component is a shunt value, which would be absorbed (or combined)
+with the corresponding shunt component of the pi network.
+
+<P>
+<HR WIDTH="100%">
+<BR>
+radio/math/wyedelta.htm - revised 31 Dec 2002, Jim Lux <BR>
+(<a href="index.htm">radio math home</a>) (<a href="../index.htm">radio home</a>) 
+( <A HREF="http://home.earthlink.net/%7Ejimlux//index.htm">Jim Lux home</A> )<BR>
+email comments <A HREF="mailto:jimlux@earthlink.net?subject=Wye Delta - Pi L networks">jimlux@earthlink.net</A>
+<BR>&nbsp;
+<BR>&nbsp;
+</BODY>
+</HTML>

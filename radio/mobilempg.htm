@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>Mobile Antennas, Air Drag, and Fuel Economy</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="keywords" content="mobile, HF radio, air drag, air resistance, fuel economy">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>Mobile Antennas, Air Resistance, and Fuel Economy</h2>
+<p>I've now had a screwdriver antenna mounted on my roof for a week, and I noticed 
+  that I got less miles on a tankfull of gas than I normally do. It's real noticeable, 
+  because normally, a tank lasts 4 days of commuting (both ways), so I need to 
+  fill at one end of the trip (roughly 410 miles). This time, the tank empty warning 
+  came up halfway home, with about 375 miles on the tank instead of the usual 
+  400 plus. Hmmm.. is it the air conditioner (it's been somewhat hot recently) 
+  or the increased air drag, or, is my right foot a bit heavier this week? More 
+  testing is required.</p>
+<p>In any event, this brings up an interesting &quot;systems tradeoff&quot;. The 
+  screwdriver antenna is fairly large (!), but it has good efficiency. However, 
+  one could use a physically smaller antenna and make up for the poorer radiation 
+  efficiency and losses in the matching network with a power amplifier and/or 
+  receive pre-amp. Amps are expensive though.</p>
+<p>First, assume that I am getting about 5-10% worse gas mileage (23 instead of 
+  25 mi/gal). Over the 25,000 miles I drive in a year, it will take about 80-90 
+  gallons more, which, at $2/gallon, is about $160-$180/yr. Over 3 years, that's 
+  about $500, which is a start towards that 12V powered linear.</p>
+<ul>
+  <li><a href="http://users.knoware.nl/users/veldman/frans/english/hflinear.htm" target="_blank"> 
+    http://users.knoware.nl/users/veldman/frans/english/hflinear.htm</a> - A 24VDC 
+    700W linear based on 12(!) tubes in parallel</li>
+  <li><a href="http://www.thp.co.jp/thp%20hp%20Eng/amateur_eng/hf_eng.htm" target="_blank"> 
+    http://www.thp.co.jp/thp%20hp%20Eng/amateur_eng/hf_eng.htm</a> - A series 
+    of linears, 50W, 200W and 700W. Probably not available in US.</li>
+  <li><a href="http://www.ameritron.com/ameritron/products.php?prodid=ALS-500M" target="_blank"> 
+    http://www.ameritron.com/ameritron/products.php?prodid=ALS-500M</a> - Ameritron 
+    (MFJ) 500W mobile runs on 12V ($800 list + you'll need the 10 meter kit)($700 
+    from <a href="http://www.hamradio.com/" target="_blank">HRO</a>)</li>
+</ul>
+<h3>Some other alternatives</h3>
+<p>Since most of my driving is on the freeway, where aerodynamic drag dominates, 
+  I could reduce the HP requirement by driving slightly slower. HP goes as the 
+  cube of velocity, but it's not quite that simple, because at a lower speed, 
+  one needs to drive more time to get to the destination. Fuel consumption (in 
+  a pounds/hr sense) is probably linear with power output, and the overall fuel 
+  to get there is proportional to the square of the speed. So:</p>
+<p>fueltotal = fuelrate * ttrip<br>
+  tnew = told * vold/vnew<br>
+  fuelratenew = fuelrateold * (vnew/vold)^3<br>
+  fuelnew = fuelold * vold/vnew * (vnew/vold)^3 = fuelold * (vnew/vold)^2<br>
+</p>
+<p>All this works out to the new speed should be about 96% of the old speed. Hmm.. 
+  slow down a few mi/hr, and I can make up the difference. Of course, traffic 
+  might have been light, and I actually drove faster, on average, than usual. 
+  One might also want to take into account the difference in temperature, since 
+  the drag is proportional to density.. a 10C change in average temperature is 
+  about 3% drag change.</p>
+<p>--------</p>
+<h3>What is the drag of that antenna, anyway?</h3>
+<p>Let's assume it is a circular rod, 10 feet long and 3&quot; in diameter (the 
+  whip, even though smaller, has a very high drag cross section). The cross sectional 
+  area is around 2.5 square feet, and a cylinder has a Cd of somewhere between 
+  .5 and 1.0, so let's take 1 for now. Let's assume 80 mi/hr (117 ft/sec) for 
+  now, as well.</p>
+<p>Drag (pounds) = Vmph^2 * Area(ft^2) * Cd/391 = 80*80*2.5/391 = about 41 pounds(!)<br>
+  HP = V(ftsec) * drag/ 550 = 117 * 41/550 = 8.7 HP</p>
+<p>Typical gasoline engines have a brake fuel specific of 1/2 lb fuel/horsepower 
+  hour, so that 8.7 corresponds to 4.4 pounds/hr extra fuel to push the antenna 
+  through the air at 80 mi/hr. If you normally get 25 mi/gal at 80 mi/hr, you're 
+  normally burning about 19.2 pounds/hr. That 4.4 pounds is an increase of 25%, 
+  or a mileage hit of 20% (i.e. 25 mi/gal down to 20 mi/gal).</p>
+<p>Clearly, I'm not getting that big a hit: I don't drive 80 mi/hr (average), 
+  the Cd probably isn't 1, and the cross sectional area probably isn't 2.5 sq 
+  ft. However, it IS in the right ball park!</p>
+<p>radio/mobilempg.htm - 2 September 2002 - <a href="mailto:jimlux@earthlink.net?Subject=Antenna%20MPG%20effect">Jim 
+  Lux</a> - W6RMK<br>
+  (<a href="hfmobile.htm">mobile rig</a>) (<a href="index.htm">Radio home</a>) 
+  (<a href="http://home.earthlink.net/%7Ejimlux">Jim's home page</a>)</p>
+<p>&nbsp;</p>
+</body>
+</html>

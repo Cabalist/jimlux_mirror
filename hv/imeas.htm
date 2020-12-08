@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>Current Measurement</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>Current Measurement</h2>
+<p>Small currents in HV circuitry can be measured by the usual means, resistors 
+  across which the voltage is measured or transformers. The challenge is usually 
+  in finding a way to isolate the measurement circuit so that it can &quot;float&quot; 
+  at the high voltage, although, with modern fiber optic techniques this is less 
+  of a problem. Often, just mounting a conventional meter in an insulating clear 
+  box is sufficient. An optical telescope can be used to read the meter from a 
+  distance.</p>
+<p>For large, pulsed, currents however, the challenge is substantially greater. 
+  The methods essentially fall into two general categories: 1) measuring the voltage 
+  drop across a resistor; and 2) measuring the magnetic field that inevitably 
+  accompanies a current. The latter is typically done either by using a sensing 
+  coil, or more recently, by using a hall effect sensor. Another approach is to 
+  use the Faraday rotation effect to sense the field optically.</p>
+<h3>Resistive Voltage Drop Approaches</h3>
+<p> Measuring the voltage drop across a resistor (and using Ohm's Law) is often 
+  referred to as a &quot;current shunt&quot;, deriving from the common usage where 
+  a low resistance is connected in parallel with a higher resistance meter, with 
+  the values chosen so that the current flowing through the meter is some convenient 
+  fraction (i.e. 1/100th) of the total current.</p>
+<p>There are a number of problems with shunts in high current pulsed applications, 
+  although, the simplicity of the approach is appealing.</p>
+<p>The resistance is typically very small (0.001 ohms would produce 1 volt/kA): 
+  you want the voltage drop to be conveniently measurable; and, you don't want 
+  to dissipate a lot of energy in the resistor (.001 ohms dissipates 1 kW at 1 
+  kA... that Isquared term adds up..). Measuring and calibrating such tiny resistances 
+  is difficult.</p>
+<p>The resistance varies as a function of temperature and mechanical mounting 
+  stress. Some of the temperature effects can be handled by calibration: measuring 
+  the resistance at various temperatures. However, this assumes that the entire 
+  resistor is at thermal equilibrium, which is rarely the case. As the pulse goes 
+  through the resistor, it will heat up (that kW..), and different parts will 
+  heat at different rates. Over time the heat diffuses through the structure, 
+  some radiates away, some is convectively transferred, making knowing exactly 
+  what the temperature of any part (and, hence its resistance) is very difficult. 
+  Mechanical mounting stress causes errors by changing the dimensions and contact 
+  resistances in the resistor.</p>
+<p>Magnetic effects cause problems. One of the most troublesome is the propagation 
+  of the field into the conductor: skin effect. This can be mitigated to a certain 
+  amount by making the resistive element a loop or coaxial, and, in any event, 
+  can theoretically be calibrated out with precision measurements at low power. 
+  Another, less obvious, source of problems is deformation of the resistor by 
+  the high fields, which can stretch and bend the conductors. The series inductance 
+  of the resistor may also perturb the behavior of the system. <a href="loopshunt.htm">More 
+  design information for loop shunts</a>.</p>
+<p>The foregoing may make it seem that anything would be better than a resistor. 
+  However, for a vast number of applications, the simplicity of resistive techniques 
+  makes them attractive. If all you need is 5% accuracy, then obsessive attention 
+  to temperature coefficients, and so forth, will be moot.</p>
+<hr>
+<p><font size="1">imeas.htm / 26 Sep 2000 / </font><a href="hvmain.htm"><font size="1">Back 
+  to HV Home</font></a><font
+size="1"> / </font><a href="../index.htm"><font size="1">Back to home page</font></a><font size="1"> 
+  / </font><a
+href="mailto:jimlux@earthlink.net?Subject=Current%20Measurement"><font size="1">Mail 
+  to Jim</font></a></p>
+</body>
+</html>

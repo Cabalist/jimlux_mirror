@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Speedy Wall Crasher</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>The speedy wall crasher</h2>
+<p>This robot was a plywood box about 2 feet square and a foot high with a pair 
+  of fairly high torque DC motors (servo motors from a tape drive, it turns out) 
+  that were directly coupled to a pair of 8-10&quot; wheels, and some casters 
+  at the other end of the box. A car battery (originally) or some gel-cells (eventually) 
+  provided the traction power.</p>
+<p>My friend, Doug Harber, and I spent a while figuring out how to connect the 
+  wheels to the shafts of the motors, before hitting on the interesting approach 
+  of screwing circular saw blades to the tape reel hubs, then gluing (using silicone) 
+  to the wheels. A terrible design for longevity, as it happens, because it puts 
+  big radial loads on the motor bearing.</p>
+<p> Driving the motors at 12V made the thing scoot pretty quick (I think the nominal 
+  speed was probably something like 20 ft/second). An early attempt at a controller 
+  ended in disaster when it shorted ON, the box ran into the stucco wall (punching 
+  a hole), the car battery fell off the top, etc.</p>
+<p> Later, I designed a transistor PWM controller using darlington power transistors 
+  (TIP120's?) driven by a wirewrapped Z80 and 8254 timer board. This controller 
+  literally exploded when I did a &quot;plug reversal&quot; (i.e. run full speed 
+  one way, then shift to full speed the other way) with the wheels off the ground. 
+  Since I was working on it in my office at work during lunch time, the loud bang 
+  (from the darlington transistor catastrophically failing) and (small) cloud 
+  of smoke did attract some attention. I then decided that a) one should have 
+  better matching of desired speed and motor characteristics and b) building motor 
+  controls is non-trivial.</p>
+<p> Oddly, I have no idea where the motors from that robot went.</p>
+<p>A big lesson learned is that you need to consider the gearing and speeds.</p>
+<hr>
+robot/box1.htm - 6 November 2001 - <a href="mailto:jimlux@earthlink.net?Subject=Speedy%20Wall%20Crasher">Jim 
+Lux</a><br>
+<a href="index.htm">Robot home</a> - <a href="../index.htm">Jim's Home</a> 
+</body>
+</html>

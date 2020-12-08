@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>Loop Shunts - design information</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>Loop Shunts - design information</h2>
+<p>One of the most common schemes for making a resistive shunt is the loop shunt. 
+  The idea is that by folding the resistive element so that the opposite currents 
+  are next to each other, their magnetic fields cancel, reducing the inductance. 
+  However, the forces on the shunt can be significant. The following is a drawing 
+  of such a shunt, with current I flowing from left to right.</p>
+<p><img src="images/loopshunt.gif"></p>
+<h4>What's the resistance of this shunt, and how much power will be dissipated?</h4>
+<p>If we assume that d is 1 cm (about 1/2 inch), and L is 10 cm (4&quot;), and 
+  we're using standard 1x1/8&quot; bar stock, the resistance will be:</p>
+<p>R = 1.71E-6 ohm cm * 21 cm/0.8 cm^2 = 0.045 mOhm.</p>
+<p>At a current of 10 kA, the heat dissipated will be about 4.5 kW. A 10 microsecond 
+  pulse at that current will put about 0.045 Joules into the shunt, which is negligible.</p>
+<h4>What's the force F tending to pull the shunt apart?</h4>
+<p>Using Ampere's law, the force between two parallel conductors is: F = I*L/d, 
+  where F is in Newtons, I is in Amps, and Land d are in Meters (that is, 1 amp 
+  creates a force of 1 N between two wires 1 meter long). Plugging in some reasonable 
+  numbers, and assuming that the current carrying member is infinitely thin:</p>
+<p>I = 10 kA, d = 0.01 m, L = 0.1 cm</p>
+<p>F = 10000 * 0.1/0.01 = 100 kN, which is a substantial force (about 22,000 pounds).</p>
+<p>If the shunt were made from copper bar that is 1&quot;x1/8&quot; (a typical 
+  size), let's figure out the shear load at point &quot;P&quot;, assuming that 
+  the bar is perfectly rigid and doesn't flex to absorb some of the force. The 
+  cross sectional area will be 1/8 square inch, or about 0.8 sq cm, so the load 
+  is 100 kN/8E-5 = 1.24E9 N/sq meter (Pascal). The yield strength of hard copper 
+  is about 231 MPa (with ultimate strength of 351 MPa), although it varies somewhat 
+  with cold working, etc. (from <a href="http://www.matweb.com/" target="_blank">http://www.matweb.com/</a> 
+  ) In any case, the force on the joint is more sufficient to break the copper, 
+  or, at the very least, to permanently deform the members.</p>
+<hr>
+<p><font size="1">loopshunt.htm / 26 Sep 2000 / </font><a href="hvmain.htm"><font size="1">Back 
+  to HV Home</font></a><font
+size="1"> / </font><a href="../index.htm"><font size="1">Back to home page</font></a><font size="1"> 
+  / </font><a
+href="mailto:jimlux@earthlink.net?Subject=Loop%20Shunts"><font size="1">Mail to 
+  Jim</font></a></p>
+</body>
+</html>

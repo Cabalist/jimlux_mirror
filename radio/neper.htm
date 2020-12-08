@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>Nepers, bels, and dB</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="keywords" content="Neper, dB, bel, definition, conversion">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>Nepers, bels, and dB</h2>
+<p>A lot of the time, it's more useful to work with ratios, rather than absolute 
+  numbers. For instance, an amplifier has a gain of 100; that is the output is 
+  100 times as big as the input. Or, for propagation through some (lossy) medium, 
+  the signal strength decreases by some ratio for passage through a certain distance. 
+  Double the distance, and the ratio is squared. When ratios come in, using a 
+  log scale is a natural choice, because multiplying and dividing by ratios is 
+  like adding and subtracting their logs.</p>
+<p>The big question is then, which base for the logs. The by far and away most 
+  popular base is 10, which leads to a unit called the Bel. (Yes, named for Alexander 
+  Graham Bell, inventor of the telephone.). And, because folks like to work with 
+  integers, and jumps of a factor of 10 are pretty big, a more popular variant 
+  called the decibel (dB). Watch out for the form depending on whether you are 
+  working with powers (usual), or with voltages or currents and an assumed constant 
+  impedance (where power varies as the square of either).</p>
+<p><tt>dB = 10 * log10 (power ratio)<br>
+  </tt><tt>power ratio = 10^(dB/10)<br>
+  db = 20 * log10(voltage ratio) -or- dB = 20 * log10(current ratio)<br>
+  voltage or current ratio = 10^(dB/20)</tt></p>
+<p>The other likely candidate for the base of the log is e (=2.71828...), which 
+  has nice properties in equations, etc., and just seems to fall out of all sorts 
+  of natural phenomena (unlike 10, which is popular because we have 10 fingers). 
+  Using e as your base leads to a less common unit called the neper (Np). Neper 
+  is a form of <a href="http://es.rice.edu/ES/humsoc/Galileo/Catalog/Files/napier.html" target="_blank">Napier</a>, 
+  the guy who popularized the use of logs for computation (viz. Napier's Bones). 
+  Nepers are used with voltage (or magnitude) ratios, so watch out when converting 
+  back and forth between Nepers and dB.</p>
+<p><tt>Np = ln (voltage ratio)<br>
+  </tt><tt>voltage ratio = exp(Np)</tt></p>
+<p>You can convert back and forth pretty easily using standard log and exponent 
+  identities: log[base y](x) = log(x)/log(y).</p>
+<p><tt>dB = 20 * log10( exp(Np)) = 20 * ln(exp(Np)/ln(10) = 20/ln(10) * Np = 8.688... 
+  * Np</tt><br>
+  <tt>Np = ln(10^(dB/20)) = ln(10)*exp(ln(dB/20)) = ln(10) * dB/20 = ln(10)/20 
+  * dB = 0.115129.. * dB</tt></p>
+<p>Here are some really long values for the constants (handy for cutting and pasting):</p>
+<p><tt>Np = dB * 0.115129255</tt></p>
+<p><tt>dB = Np * 8.685889638</tt></p>
+<h4>References:</h4>
+<p><a href="http://www.its.bldrdoc.gov/fs-1037/dir-024/_3502.htm">http://www.its.bldrdoc.gov/fs-1037/dir-024/_3502.htm</a> definition of Neper</p>
+<p><a href="http://www.its.bldrdoc.gov/fs-1037/dir-010/_1468.htm">http://www.its.bldrdoc.gov/fs-1037/dir-010/_1468.htm</a> definition of dB</p>
+<p><a href="http://www.its.bldrdoc.gov/fs-1037/dir-004/_0577.htm">http://www.its.bldrdoc.gov/fs-1037/dir-004/_0577.htm</a> definition of bel</p>
+<hr>
+<p>radio/neper.htm - Revised 5 November 2001, Jim Lux <br>
+   <a href="index.htm">radio home</a> | <a href="../index.htm">Jim 
+  Lux home</a> <br>
+  email comments <a href="mailto:jimlux@earthlink.net?subject=Nepers">jimlux@earthlink.net</a> 
+</p>
+<p>&nbsp;</p>
+</body>
+</html>

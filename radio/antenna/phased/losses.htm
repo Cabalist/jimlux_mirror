@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>Losses, ground and otherwise</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>Losses (ground and otherwise) </h2>
+<p>One of the reasons for considering a phased array, whether it be all driven 
+  or partially parasitic elements, is that it can reduce the ground losses. In 
+  a simplistic analysis, which would work for patterns, you can just independently 
+  sum up the far field responses for each element, scaled as appropriate by the 
+  element current. After all, there's no nonlinearities, so it's linear and superposition 
+  works.</p>
+<p>However, when you start to consider loss effects, it's not quite so simple. 
+  A single dipole might have substantial ground loss, yet an array, with the same 
+  total power spread among them, have less. Why is this? Why isn't the loss the 
+  same as the individual element losses?</p>
+<p>Consider a small chunk of the (lossy) ground under the antenna. The amount 
+  of energy dissipated (lost) in this chunk is proportional to (the square of) 
+  the current through (I^2*R) or voltage across the chunk. If the fields from 
+  multiple elements combine to reduce that total current or voltage, then the 
+  dissipation is less. It gets to be a lot less real fast, because dissipation 
+  goes as the square of the induced current: cutting the field in half cuts the 
+  dissipation by a factor of 4.</p>
+<p>In practical terms, if I started with an isotropic radiator, and now I have 
+  an antenna with 10 dB of gain in the horizontal plane, I've reduced the amount 
+  of power I'm beaming at the ground. It's not quite that simple, because most 
+  likely you're in the near field, and highly directive antennas tend to have 
+  very high fields within the near field. Recall that in the near field, by definition, 
+  energy is being stored in the fields around the antenna, flowing between antenna 
+  and field on every cycle. One can even think of it in terms of a resonant cavity 
+  with a &quot;Q&quot;, in that in each cycle, energy at the feedpoint is dumped 
+  into the cavity, and some amount is radiated away, and some larger amount is 
+  just &quot;circulating&quot; back and forth.</p>
+<p>&nbsp;</p>
+<p>radio/antenna/phased/losses.htm - 2 Feb 2003 - <a href="mailto:jimlux@earthlink.net?Subject=Antenna%20Losses">Jim 
+  Lux</a><br>
+  (<a href="index.htm">phased array home</a>) (<a href="../index.htm">antennas</a>) 
+  (<a href="../../math/index.htm">radio math</a>) (<a href="../../index.htm">radio, 
+  in general</a>) (<a href="http://home.earthlink.net/%7Ejimlux/index.htm">Jim's 
+  home page</a>)</p>
+</body>
+</html>

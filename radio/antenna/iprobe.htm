@@ -1,0 +1,115 @@
+<html>
+<head>
+<title>Antenna Element Current Probes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>Antenna Element Current Probes</h2>
+<p>Measuring the actual element currents (in a magnitude and phase sense) in an 
+  antenna might prove useful, in which case you need some way to measure it. The 
+  typical technique, illustrated in the ARRL Antenna Book, the ON4UN book and 
+  back issues of Ham Radio magazine, is a homebuilt current transformer using 
+  a toroidal core. The drawing below shows schematically what this is. The switch 
+  (actually relay contacts, probably) allows you to remove the load resistor (and 
+  its corresponding burden on the through line).</p>
+<p><img src="images/iprobe1.gif" width="663" height="451"></p>
+<h3>That &quot;termination&quot; resistor</h3>
+<p>You gotta have it! And not just because the measurement is feeding into a terminated 
+  transmission line. Otherwise, you've basically built a current transformer with 
+  no load to turn the current into a voltage or to measure the current. Normally, 
+  this wouldn't be a big deal, but, if the core material saturates, then the rapid 
+  flux changes as the core goes into and out of saturation can lead to very high 
+  voltage spikes on the measurement winding. In the power electronics business, 
+  they wire up switches and relays such that the current transformer measurement 
+  winding is shorted when not in use, or jumper it when servicing.</p>
+<p>The drawing above shows a 51 ohm resistor, which happens to be a standard value 
+  close to that of 50 ohm coaxial cable (which itself might be closer to 52 ohms. 
+  There's nothing sacred about that value. If you want to use 75 ohm coax (i.e. 
+  cable TV coax) then the resistor should be a 75 ohm resistor to match the line. 
+  It will dissipate more power and increase loss though.. current is constant 
+  (fixed by the turns ratio).</p>
+<p>The resistor does provide, of course, a resistive load, which will dissipate 
+  some of the power. For a 10 turn winding on the toroid, the current in the resistor 
+  will be 1/10th that flowing in the line. Assuming that you terminate in the 
+  same resistance as the transmission line you're measuring (although, there's 
+  no particularly good reason for this: the termination should match the line 
+  carrying the signal you're sensing), then the power dissipated in the burden 
+  resistor will be 20 dB less than that flowing in the line. This doesn't seem 
+  like much, but consider: if you put a kilowatt down the line, then the burden 
+  resistor is going to be dissipating 10 Watts!</p>
+<p>If you are putting the transformer in just for tuneup, and feeding the system 
+  with a few watts, then there's no big deal. But, if you leave it connected all 
+  the time, then this is something that you should deal with. You could increase 
+  the number of turns to, say, 20 turns, which would then make it 26 dB down (1/400th 
+  the power). You could short the resistor when working at high power (not tuning). 
+  There would be some loss in the resistance of the secondary, but, it would be 
+  quite small. The current is still the same as with the resistor, but, if the 
+  loss resistance were, say, 1 ohm, instead of the 50 ohm termination, the power 
+  dissipation is 1/50th.</p>
+<p>Yet another approach would be to put some diodes across the resistor, limiting 
+  the voltage across the resistor, and hence it's power dissipation. A diode forward 
+  voltage drop of .7 Volts at 50 ohms is about 10 milliwatts. This might introduce 
+  some distortion though. I haven't done the analysis yet, but somehow, diodes, 
+  transformers, and RF sounds like a recipe for intermod. The saving grace is 
+  that it is isolated by the 20 dB ratio of the transformer.</p>
+<h3>The toroidal core</h3>
+<p>Probably, almost any toroid will work here. -67 type materials are suggested 
+  in some references. The concerns are saturation flux and loss. You don't want 
+  a material designed for EMI shielding: they tend to have high loss at HF frequencies 
+  (since that's their function). You don't need a particularly high permeability 
+  (mu), although, the higher the mu, the more the flux will be contained within 
+  the core, reducing the leakage inductance (i.e. that flux which doesn't go through 
+  both windings) which will tend to make the response of the device &quot;flatter&quot; 
+  over frequency. On the other hand, you will calibrate all the transformers against 
+  each other at different frequencies, so that should reduce the need to have 
+  real flat response.</p>
+<h3>Testing and calibration</h3>
+<p>First off, the transformers should be tested in situ. A significant error source 
+  is leakage flux and stray capacitance, both of which are environmentally sensitive. 
+  The simplest way to test them is to run the same current (at the same time) 
+  through all probes: that is, run a single wire through all the cores, and look 
+  at the outputs.</p>
+<h3>Kinds of coax and connectors</h3>
+<p>The measurement line isn't carrying any real power, so power handling capability 
+  isn't needed. And, loss isn't a big issue, unless it gets so large that you 
+  can't make measurements at the far end because the signal is too low. One does 
+  want the characteristics to be fairly stable and repeatable. 75 ohm foam insulation 
+  cable tv coax might be a good choice here. It's cheap, it handles UV, and it's 
+  pretty low loss. One can also use &quot;F&quot; connectors (nothing sacred about 
+  BNCs, and certainly not &quot;UHF&quot; connectors), which are inexpensive, 
+  can be made weatherproof, and so forth. From a cabling standpoint, too, there 
+  are &quot;multi strand&quot; versions of 75 ohm coax made: double coax (like 
+  giant zip cord) is used in prewiring houses and triple coax is used for separate 
+  RGB video. There are probably other multicoax cables available, although finding 
+  them cheap may not be so easy.</p>
+<h4>Twisted pair?</h4>
+<p>What about using cat 5 type cabling? It's inexpensive, and provides 4 circuits 
+  in a cable. It's roughly 100 ohms impedance, well controlled, because it's intended 
+  for use at 100 Mbps and up. There are inexpensive, high quality connectors available. 
+  The crosstalk between pairs is well characterized (since this is important for 
+  networks). Something to think about.</p>
+<h3>Why you might not want to bother</h3>
+<p>From an academic standpoint, or if you are just curious, then measuring the 
+  element currents and properly setting them is useful. This is particularly true 
+  if the adjustment process is manual and/or tedious. If you were building a set 
+  of fixed networks, for instance, that would be adjusted once, and then never 
+  touched again, and you had real faith in the modeling process, then measuring 
+  the currents is a good way to go. </p>
+<p>However, the other approach to adjusting an array is just to adjust the &quot;knobs&quot; 
+  until the signal you want is loud and the signals you don't want aren't. If 
+  &quot;turning the knobs&quot; is a rapid process, as it would be with a computer 
+  controlled phasing network, then the computed currents might be a better way.</p>
+<p> Until someone actually makes some real quantitative measurements (on a variety 
+  of arrays, etc.), it's going to be hard to figure out which approach is optimum.</p>
+<h3>References</h3>
+<p>Greg Ordy has a good description at 
+<a href="http://www.seed-solutions.com/gregordy/Amateur%20Radio/Experimentation/RFProbe.htm">
+http://www.seed-solutions.com/gregordy/Amateur%20Radio/Experimentation/RFProbe.htm
+</a></p>
+<p>radio/antenna/iprobe.htm - 20 Jan 2003 - Jim Lux<br>
+  (<a href="phased/index.htm">phased arrays</a>) (<a href="index.htm">antennas</a>) 
+  (<a href="../index.htm">radio</a>) (<a href="http://home.earthlink.net/%7Ejimlux/index.htm">Jim's 
+  home page</a>)</p>
+</body>
+</html>

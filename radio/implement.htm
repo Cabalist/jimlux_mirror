@@ -1,0 +1,167 @@
+<html>
+<head>
+<title>Implementation details for the passive phased array controller</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>Implementation details for the passive phased array controller</h2>
+<p>The nifty little computerized antenna tuner from LDG has all the smarts in 
+  it to automatically configure an L network to minimize the SWR. For this application, 
+  though, we essentially want to convert it to a smart peripheral for a controlling 
+  PC. Fortunately, the LDG design is clean and the 68HC11 has the right kind of 
+  interfaces for our application. I've used the QRP version, because it is smaller, 
+  and the 100W from my transmitter will be divided down so that no one tuner has 
+  to take the full power. The details of the modifications would be different 
+  for the AT-11, but the logic will work the same.</p>
+<p>The modifications are described in more detail <a href="ldgmod.htm">here</a>.</p>
+<p>One of the things we can do is always load the software into the tuner from 
+  the master computer, each time the system is powered up. </p>
+<p>Here are the basic changes to be made: 
+<h4>New Sensors</h4>
+<p>Added sensors for current, voltage, and phase information. Fortunately, the 
+  68HC11 has 8 A/D inputs, only two of which were used for the LDG tuner.&nbsp; 
+  We'll actually put the SWR bridge on the output side of the network (on the 
+  feed to the antenna). 
+<h4>New software requirements for the microcontroller </h4>
+<p>The master computer needs to send L and C configuration data to the microcontroller 
+  and read back the values from the A/D. For convenience, we'd like to talk to 
+  a bunch of LDG boards with one serial or parallel computer port. There are several 
+  ways to do this: 
+<ol>
+  <li> Use the standard Asynchronous (SCI) interface and chain the data in from 
+    one to the data out to the next</li>
+  <li> Use the standard Async interface (SCI) and bus the units together, making 
+    the TxD open collector (really open drain)</li>
+  <li>Uuse the SPI interface.</li>
+</ol>
+<p> In any case, it is convenient if we can set the address of each board, without 
+  having to burn a separate eeprom. Fortunately, we don't need the push button 
+  switch interface for the board anymore (it isn't an automatic tuner),so we can 
+  use the cap and inductor up/down bits to set up a 4 bit unit number with jumpers.</p>
+<p>Commands to the LDG: <br>
+  &nbsp;&nbsp;&nbsp; Set L&amp;C <br>
+  &nbsp;&nbsp;&nbsp; Read AD # 
+<p>Data back from LDG <br>
+  &nbsp;&nbsp;&nbsp; AD value <br>
+  &nbsp; 
+<h4> Strategies for software</h4>
+<p>Alternative 1 - Use the special boot loader mode and load the software each 
+  time.&nbsp; This doesn't require reprogramming the chip, however, it may require 
+  some special interface logic, and may not lend itself to the daisy chain communications 
+  architecture, because it requires responding to a byte from the processor at 
+  the right time, and it is uncertain whether you could rely on all the processors 
+  to be synchronized sufficiently so that you could just hook them in parallel. 
+  It also requires communication to the chip at a weird rate (8789 bps) which 
+  the run of the mill PC may have trouble doing, particularly under Windows, where 
+  you can't just go program the UART registers. However, replacing the existing 
+  4.5 MHz crystal with a 4 MHz crystal will work at 4800 bps. 
+<p>Alternative 2 - Write new software and burn it into the EEPROM on the chip. 
+  In the long run, this is probably the cleanest approach. 
+<p>Alternative 3 - Get the version of the chip programmed with Motorola's debugger. 
+  Then, use debugger commands to load the necessary program (or, for that matter, 
+  to set the i/o port values). The latter strategy may not work very well in a 
+  multi unit environment&nbsp; because the debugger doesn't have any inherent 
+  concept of a unit number, so you would need some sort of mux at the PC (if running 
+  RS232) or you'd have to burn a lot of bits on the printer port. 
+<h4>Strategies for the PC/LDG interface</h4>
+<p>Alternative 1 - Serial RS-232 - most computers have serial ports but, there 
+  may not be a free one. Also, it requires some level shifting to get from RS232 
+  levels to the TTL levels the 'HC11 wants. The interface is fairly standardized 
+  and can easily be used from high level languages without getting into gory driver 
+  problems when running Win NT. This is the approach I have taken, with some of 
+  the modem control lines being used to reset the processors on the HC11s. 
+<p>Alternative 2 - Printer port - Already TTL levels, but talking to the printer 
+  port directly from a windows program is difficult particularly if you are running 
+  Win NT. 
+<p>Alternative 3 - Ethernet - In the long run, this would be the ideal approach: 
+  Put an embedded single board computer into the tuner box that does a lot of 
+  the computational work, and talk to it via the network (it could look, to the 
+  outside world, like an IP address, or a web server, or whatever). Dedicating 
+  a single board computer to the job of talking to all the hardware is attractive, 
+  however it makes software development much more complex because you don't have 
+  all the supporting infrastructure and you have to deal with a much more complex 
+  communications protocol. This approach would probably be more suitable for a 
+  Mark II version. It does lend itself to a "standalone" box, though, with a knob 
+  (or knobs) that sets the pointing direction....(Talk to me about my ideas for 
+  Ethernet interfaced receivers and transmitters in a discrete active phased array). 
+<h4>RS-232 Interface </h4>
+<p>A <a href="http://www.maxim-ic.com/">Maxim</a> <a href="http://209.1.238.250/arpdf/1369.pdf">MAX207 
+  or MAX208</a> is used to do the conversion between the PC RS-232 interface and 
+  the TTL levels inside the system. The signals used are: 
+<p>&nbsp; 
+<table width="75%" border="1">
+  <tr> 
+    <td>TxD (from PC)</td>
+    <td>DB-9 pin 3?</td>
+    <td>RxD on tuners</td>
+  </tr>
+  <tr> 
+    <td>RxD</td>
+    <td>pin 2?</td>
+    <td>TxD on tuners </td>
+  </tr>
+  <tr> 
+    <td>DTR</td>
+    <td>&nbsp;</td>
+    <td>Reset on tuners</td>
+  </tr>
+  <tr> 
+    <td>RTS</td>
+    <td>&nbsp;</td>
+    <td>Attention on tuners</td>
+  </tr>
+  <tr> 
+    <td>Ground</td>
+    <td>pin 5</td>
+    <td>ground</td>
+  </tr>
+</table>
+<p><a href="rs232if.htm">More</a> on the RS232 Interface, including a schematic. 
+<h3></h3>
+<h4>Packaging</h4>
+<p>Each LDG board is in its own 5x7x2 chassis for RF isolation. The power input 
+  and two data lines are brought out through filtered feed throughs. Suitable 
+  coax connectors are used to bring the RF in and out. 
+<table width="49%" border="1">
+  <tr> 
+    <td width="12%" height="69">&nbsp;</td>
+    <td width="12%" height="69">&nbsp;</td>
+    <td width="13%" height="69">&nbsp;</td>
+    <td width="12%" height="69">&nbsp;</td>
+    <td width="12%" height="69">&nbsp;</td>
+    <td width="12%" height="69">&nbsp;</td>
+    <td width="12%" height="69">&nbsp;</td>
+    <td width="15%" height="69">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td colspan="3">&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+    <td colspan="3">&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp; 
+<h4>For 8 of the units (the ones connected directly to the antenna):</h4>
+<p>On one 5x7 end of the chassis, a BNC connector is used for the coax to the 
+  antenna. The 4 LEDs driven by the LDG board are also on this end. The odds that 
+  the impedance at this point is actually 50 ohms is quite low, but the BNC is 
+  easy to install and inexpensive. On the other end is a pair of BNC's (TNC?) 
+  one for the input to the tuner, the other for a phase reference signal. There 
+  are also feedthroughs (or a connector) for 
+<ul>
+  <li> TxD</li>
+  <li> RxD</li>
+  <li> +12V </li>
+  <li>Attention (goes to &quot;tune&quot;, XIRQ)</li>
+  <li>Reset (goes to reset) </li>
+  <li>Ground</li>
+</ul>
+<hr>
+<p>implement.htm - revised 16 September 1999, Jim Lux <br>
+  <a href="phased1.htm">back to Phased Arrays</a> <br>
+  <a href="index.htm">radio home</a> <br>
+  <a href="../index.htm">Jim Lux home</a> <br>
+  email comments <a href="mailto:jimlux@earthlink.net?subject=implementation%20details">jimlux@earthlink.net</a> 
+</p>
+</body>
+</html>

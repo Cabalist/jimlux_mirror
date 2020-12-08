@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+
+<head>
+<title>Using multiple transformers to get more high voltage power</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 1.1">
+</head>
+
+<body>
+<h2>Using multiple transformers to get more high voltage 
+power.</h2>
+<h3>Neon sign transformers</h3>
+<p>Like a lot of experimenters, I started with a neon sign transformer as a high voltage source. 
+Common neon sign transformers cost about $80 and put out about 15kV (no load) and around 30 
+mA shorted, although you can get lower voltages and currents easily. You can also get bigger 
+transformers, however, they are special order, and are more expensive. Furthermore, they have 
+more current output, but the voltages stay in the same 15 kV range. In the neon sign business, there 
+just isn't much call for higher voltages. Also, the standard wire that signs are wired with is rated to 
+15 kV, providing a nice 2:1 safety margin, since the center of the transformer secondary is 
+grounded (so it really puts out only 7.5 kV relative to ground).</p>
+<p>&lt;figure here&gt;</p>
+<p>A neon sign transformer limits the current by its construction with a high leakage inductance, which 
+essentially puts an inductor in series with the transformer. The impedance of the series inductor 
+serves to limit the current, while not dissipating much power (as a resistor would). This is desirable 
+when running a discharge tube, because the tube has a negative V/I characteristic, and if driven 
+from a stiff voltage source, it would draw more and more current until either the tube or the 
+transformer melted down. The same technique for current limiting is used in arc welders, although at 
+a somewhat lower voltage and a lot more current.</p>
+<p>However, we all want more voltage or current. Let's look at voltage first. You could just increase 
+the primary voltage, which will raise the secondary voltage in proportion. There are two basic limits 
+to this approach. The first is that the insulation on the transformer isn't necessarily good to much 
+over the nominal voltage. They have already gone to the expedient of grounding the centertap to 
+reduce the voltage requirement. You might get to 20-25 kV before you started having problems. 
+The second problem is core saturation. They don't design transformers with a lot of extra iron, 
+because it is expensive and heavy. As you increase the voltage, you need more area in the core to 
+keep the flux density below the saturation level for the iron. If the core saturates, you draw more 
+power, but it essentially all goes into heat. You can see this if you hook a 0-240V autotransformer 
+up to just about any 110V transformer, and gradually increase the voltage while monitoring the 
+output voltage at no load. Around 150-160V, the output voltage stops rising proportionately, and if 
+you look at the waveform on a scope, it becomes quite distorted.</p>
+<p>Now let's look at current. What limits the current is that series inductance. In theory, you can put in 
+a capacitor of equivalent impedance (although opposite in sign, of course), which will allow more 
+current to flow. The problem with this has to do with cost and availability. Say your neon 
+transformer is rated at something like 400 VA, i.e. it draws a short circuit current of around 4 
+Amps. The equivalent series reactance providing the current limiting is about 25 ohms, or about 60 
+mH. A capacitor to just cancel this would also be 25 Ohms, or about 100 uF. The real problem, 
+though, is that the transformer is designed to run at a particular power, and if you increase the 
+current, you increase the heating from the I2R losses and core losses. Draw twice the current, and 
+you have 4 times the heating, which will probably melt the insulation.</p>
+<p>Well, what about hooking up multiple transformers in series or parallel? You can hook up multiple 
+transformers in parallel to increase the current, although at some point, it is cheaper to just get a 
+bigger transformer. If you are buying new, this is certainly true: a transformer of twice the rating 
+costs less than twice as much, and is more efficient to boot. However, if you are buying surplus 
+(typically 10%-20% of new price), you have to work with what you have got. When hooking up 
+parallel systems, make sure that parallel outputs are properly phased. There are also some potential 
+problems if the transformers are not exactly identical, particularly with respect to series impedance 
+(they will probably all have the same turns ratio). There are some tricks using an additional smaller 
+transformer to balance multiple paralleled transformers.</p>
+<p>&lt;figure here&gt;<a href="parallel">Theory behind this scheme</a> </p>
+<p>What about hooking up transformers in series to get more voltage. The problem here goes back to 
+insulation and grounding. A neon transformer has the secondary centertap grounded to the case, so 
+the insulation from the secondary winding high voltage end needs only withstand the 7.5 kV. If you 
+remove this ground, you might arc to the case (not so bad, as long as the case is isolated) or much, 
+much worse, arc to the primary side (actually more likely). Then, you are feeding kilovolts back 
+into your power line, a bad situation in any case. </p>
+<p>If you have a cheap source for isolation transformers that can take many kV, you could run one 
+transformer grounded, then run the other through the isolation transfomer, and successfully series 
+them. Isolation transformers like this turn up in surplus sometimes, they are used to power 110V 
+lights and such that float at high voltage (like tower lights on transmitting antennas) or to run small 
+motors or relays which are sitting at high voltage line potential. Unfortunately, they are typically 
+around 500-1000 VA, and so are not suitable for high power systems (unless you have a lot of 
+bucks, or the transformers are very cheap).<br>
+</p>
+<p>&lt;figure here&gt;</p>
+<p>There is a solution, however. Assume a transformer with 3 windings: the 110V primary, the HV 
+secondary, and another 110V tertiary. Also assume that the insulation of the transformer is such 
+that the two 110V windings can take the full secondary voltage. If this is the case, then you can 
+feed a second transformer from the first, essentially using the first transformer as a isolation 
+transformer. The primary of the second is fed from the tertiary of the first. You can, of course, 
+extend this ad infinitum, feeding a third transformer from the tertiary winding of the second, etc. </p>
+<p>The limitation is that the primary of the first transformer must carry the entire power of the chain of 
+transformers, so those primary and tertiary windings have to be pretty good sized. For instance, if 
+you had a chain of 10 transformers, each putting out 10 kV at 100 mA (i.e. 1 kVA), the primary of 
+the first one in the chain has to handle 100 Amps: 10 Amps for the power to the HV secondary, 
+and 90 Amps to the tertiary winding. The second stage handles 90 Amps: 10 to the HV secondary 
+of this stage, and 80 to the next, and so on.</p>
+<p>It so happens that C&amp;H Sales sells the aforementioned illumination transformer which conveniently 
+has a tertiary winding. The basic specs of the transformer are: 110V primary at 8 Amps, 4500 V 
+secondary @ 450 mA, and a tertiary winding at 600 V. This is a transformer designed to run a 
+discharge tube, so it was designed with leakage inductance to limit the current: you can short the 
+output and the transformer doesn't overheat or overload. The 600 V winding is designed to 
+connect to a 10 uF cap, which provides a measure of power factor correction so that the power 
+line doesn't see the highly inductive nature of the transformer. The designers did this because 10 uF, 
+600V caps are readily available and cheap, as opposed to the 3600uF 110V cap that would have 
+been necessary if you just tried to do the PF correction with a parallel cap. </p>
+<p>So, we can hook up a second one of these transformers by running the 600 Volts out of the first 
+one into the 600 Volts of the second one. We leave the 110V primary of the second transformer 
+unconnected and connect the 4500V secondaries in series. The second transformer core is 
+connected to the low side of its secondary so that it runs at some known voltage, as opposed to 
+whatever capacitive coupling would get it to. And, of course, it has to be mounted on insulating 
+standoffs of some sort. Now we have a 9000 Volt 225 mA transformer. The leakage inductance of 
+the first transformer of the chain limits the current into it, which effectively is divided between the 
+two.</p>
+<p><img src="images/xfrmr11.gif" align=bottom width=534 height=708></p>
+<p>We can hook up another pair of these transformers, phased exactly opposite, with the primaries in 
+parallel, to get a 18 kV center-tap grounded transformer at 225 mA, or, an 18kV, 225 mA neon 
+transformer. It draws about 16 Amps with the output shorted.</p>
+<p>This unit, although a bit heavy, produces very nice fat sparks in jacob's ladder type systems. The 
+diameter of an arc is determined by the square root of the current (i.e. the current density of an arc 
+is roughly constant), so the 10 fold improvement in current gives you an arc some 3-4 times larger 
+than the typical 30mA neon transformer. All this for about $200 in transformers, and some 
+insulating standoffs and chassis work. I should mention that the chassis work is pretty important, 
+since you are going to wind up with about 200 pounds of transformers. I built mine on a sheet of 
+aluminum that was bolted to a hand truck with wheels. You could also build it inside a milk crate or 
+something like that. </p>
+</body>
+
+</html>

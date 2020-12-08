@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>Transmission Lines</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>Transmission Line Impedances</h2>
+See also the page on the &quot;<a href="tleqn.htm">transmission line equation</a>&quot;, 
+which describes the behavior a transmission line in a system, once you know the 
+characteristic impedance, etc. There is also some information on <a href="wg.htm">waveguides</a>. 
+<h3>Coaxial</h3>
+<h3>Parallel Conductors</h3>
+<h3>Microstrip</h3>
+<h4>Characteristic impedance, given dimensions</h4>
+<p><tt>Z0 = 60/ sqrt(0.475*epsilonr + 0.67) * ln(4 * h/(0.67 * (0.8 * w+t)</tt></p>
+<p>if w &lt; 2h (max error ca. 3%)</p>
+<h4>Width for given impedance</h4>
+<p><tt>w = 7.463 * h / exp(Z0*sqrt(0.475*epsilonr + 0.67)/60) - 1.25*t </tt></p>
+<p>where:</p>
+<p>w = tracewidth in cm<br>
+  h = dielectric thickness in cm<br>
+  epsilonr = relative dielectric constant</p>
+<h3>Stripline</h3>
+<h4>Impedance, given dimensions</h4>
+<p><tt>Z0 = 60/sqrt(epsilonr) * ln( 4 * b/(0.67 * pi * (0.8 *w + t)))</tt></p>
+<p>best accuracy for (b-t)&gt;2w and b&gt;4t</p>
+<h4>Line width for given impedance</h4>
+<p><tt>w = 2.375 * b / exp( Z0 * sqrt(epsilonr)/60) - 1.25 *t</tt></p>
+<p>where:</p>
+<p>b = dielectric thickness between ground planes<br>
+  others as defined above</p>
+<h3>Differential Impedance</h3>
+<p>For microstripline</p>
+<p><tt>Zdiff = 2 * Z0 * (1 - 0.48 * exp(- 0.96 * s / h))</tt></p>
+<p>For stripline</p>
+<p><tt>Zdiff = 2 * Z0 * (1 - 0.374 * exp( -2.9 * s / h))</tt></p>
+<p>where:</p>
+<p>s = spacing between striplines</p>
+<p>These functions derived from empirical data. Error could be +/- 10%. Practical 
+  ranges for Z0 and Zdiff are 20 to 150 ohms.</p>
+<h3>References:</h3>
+<h4>Stripline Equations taken from:</h4>
+<p>Mears, James A., &quot;Transmission Line RAPIDESIGNER (c) Operation and Applications 
+  Guide&quot;, National Semiconductor Application note AN-905, May 1996 ( <a href="http://www.national.com/an/AN/AN-905.pdf" target="_blank"> 
+  http://www.national.com/an/AN/AN-905.pdf</a>) This application note cites 7 
+  further references and provides some useful advice on where the formulae are 
+  applicable. </p>
+<hr>
+radio/tlz.htm - 3 June 2002 - Jim Lux <br>
+<a href="index.htm">radio home</a> | <a href="../index.htm">Jim Lux home</a> <br>
+email comments <a href="mailto:jimlux@earthlink.net?subject=Transmission%20Lines">jimlux@earthlink.net</a> 
+<p>&nbsp;</p>
+</body>
+</html>

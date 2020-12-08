@@ -1,0 +1,205 @@
+<html>
+<head>
+<title>Transformer Measurements</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 1.1">
+</head>
+<body>
+<h3>Transformer Measurements</h3>
+<p>You may want to determine the various parameters of a
+transformer without having any manufacturer's information
+available. In the early stages of experimentation, you may be
+working with equipment and components that have been
+&quot;acquired&quot; from other projects as surplus. Or, you may
+be at a surplus yard, and want to determine if that transformer
+you can pick up cheap is going to work for your needs. I own a
+lot of very heavy scrap now, having bought a number of
+transformers on spec, hoping they would work for my needs.</p>
+<p>You'll need a variable voltage AC source (like a variac), a
+voltmeter, an ammeter, and for some measurements either a watt
+meter or an oscilloscope. A couple of big power resistors in low
+resistances (100 ohms, 100 W) will also be useful.</p>
+<p>Often, the nameplate or markings on the transformer don't tell
+you everything you would like to know, particularly in the case
+of surplus.</p>
+<p>Per Unit system of ratings - commercial power distribution
+transformers have fairly complete data on their nameplates, but
+it is often stated in terms &quot;per unit&quot;. Per Unit
+measurements are essentially percentages of the rated capacity.
+For instance, a power transformer might be rated at 10 kVA, and
+have a rated loss of .03 per unit. 10 kVA multiplied by the .03
+gives a rated loss of 300 Watts. Impedances are also usually
+stated in per unit values</p>
+<p>First, you need to identify the windings. An ohmmeter can help
+you determine which wires are connected to which windings, by
+looking for continuity. Sometimes, you can determine the order of
+taps by the resistances. However, the resistance is affected by
+the size of the wire, as well as the number of turns, so you
+can't use the ohmmeter to determine voltages or currents. In
+general, the heavy wires or terminals are for the low voltage
+windings. A notable exception is some power supply transformers
+that have some medium voltage windings to provide isolated bias
+supplies at low currents.</p>
+<p>Almost all the parameters of the transformer can be determined
+by making a series of measurements with the secondary open
+circuited and then shorted. The choice of which winding is
+primary and secondary is arbitrary for measurement purposes. For
+commercial distribution transformers, these measurements are
+often made at 115 Volts, as measurement equipment is readily
+available for that voltage. In the case of a transformer with a
+HV winding and a LV winding, the 115 Volts is applied to the HV
+winding for safety reasons. In the lab, lower voltages are
+convenient: using 1.15 Volts or 11.5 Volts allows simple scaling
+of the results.</p>
+<p>Real transformer model</p>
+<p><img src="images/Transf1.gif" alt="transformer model"
+align="bottom" width="460" height="124"></p>
+<p>First, identify windings and approximate no load turns ratios.
+Apply a low voltage (say 10 volts) to what you think a high
+voltage winding might be. Measure the voltages on the other
+windings. You use the high voltage side here for safety: Say you
+had a 110V:15kV transformer with a 6.3V filament winding. If you
+applied 10 volts to the 6.3V winding, you'll get 20 kV+ out of
+the high voltage winding which might cause a few surprises. So,
+until you've identified all the windings, work with low voltages.</p>
+<p><img src="images/Transf2.gif"
+alt="Open Secondary Measurements" align="bottom" width="321"
+height="126"></p>
+<p>Hook up a voltmeter to the secondary. Apply power to the
+primary, measuring the current, voltage, and active power drawn.
+Note the power meter shown in the above diagram. If a true watt
+meter is not available, you can measure the active power
+consumption by putting a resistor in series, and making a set of
+RMS measurements. The details of this procedure are described <a
+href="varvom.htm">here</a>.</p>
+<p>The turns ratio can be calculated by:</p>
+<p>Turns ratio = Esec/Epri</p>
+<p>which, of course, should be an integer. Be aware that the
+output voltage written on the spec sheet or the transformer
+itself may be at rated load, and somewhat less than the no load
+voltage. The active power drawn is due to the core losses, and
+will typically be a few percent of the rated capacity.</p>
+<p>The magnetizing power is:</p>
+<p>&#160;</p>
+<p>Now, disconnect the primary voltage. Short the secondary
+through an ammeter. </p>
+<p>&#160;<img src="images/Transf3.gif"
+alt="Shorted Secondary Measurements" align="bottom" width="321"
+height="126"></p>
+<p>Starting with a low primary voltage, bring the primary voltage
+up until the current is a reasonable value, say half the rated
+primary current. Measure the secondary current (which should be
+the primary current divided by the turns ratio), the primary
+voltage, current, and active power.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<h4>Circular Mils</h4>
+<p>The area of conductors is often specified in Circular Mils,
+defined as the diameter in thousandths of an inch (mils) squared.
+This is different from the actual cross sectional area in square
+mils, which would be PI/4 * diam^2. That is, square mils = .7854
+* circular mils.</p>
+<p>&#160;</p>
+<h4>Estimating the power handling</h4>
+<p>1) Look at the size of the wires. No right thinking
+transformer manufacturer is going to run hundreds of amps down 20
+gauge wires, nor are they going to use 4/0 wire for a winding
+that will carry 30 mA. Very low current windings may use heavier
+wire than required to carry the current to make fabrication
+easier. However, copper costs money, as does a larger core to
+accommodate bigger windings, so particularly for mass production
+transformers, the wire is probably the smallest that will carry
+the current. Typical design guidelines are 700 circular mils/amp
+or 1000 cmil/amp. The following table relates common wire gauges
+to rated current.</p>
+<table cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td width="20%">Wire Gauge</td>
+        <td width="20%">Diameter</td>
+        <td width="20%">Area</td>
+        <td width="20%">Design Current</td>
+        <td width="20%"></td>
+    </tr>
+    <tr>
+        <td width="20%"></td>
+        <td width="20%">
+        <table cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td width="50%">mils</td>
+                <td width="50%">mm</td>
+            </tr>
+            <tr>
+                <td width="50%">10</td>
+                <td width="50%">0.254</td>
+            </tr>
+        </table>
+        </td>
+        <td width="20%">
+        <table cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td width="50%">Circular Mils</td>
+                <td width="50%">mm^2</td>
+            </tr>
+            <tr>
+                <td width="50%">100</td>
+                <td width="50%">0.0507</td>
+            </tr>
+        </table>
+        </td>
+        <td width="20%">
+        <table cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td width="50%">@ 700 cmil/A</td>
+                <td width="50%">@ 1000 cmil/A</td>
+            </tr>
+            <tr>
+                <td width="50%">0.146</td>
+                <td width="50%">0.10</td>
+            </tr>
+        </table>
+        </td>
+        <td width="20%"></td>
+    </tr>
+    <tr>
+        <td width="20%">30</td>
+        <td width="20%"></td>
+        <td width="20%"></td>
+        <td width="20%"></td>
+        <td width="20%"></td>
+    </tr>
+    <tr>
+        <td width="20%"></td>
+        <td width="20%"></td>
+        <td width="20%"></td>
+        <td width="20%"></td>
+        <td width="20%"></td>
+    </tr>
+</table>
+<p>2) Look at the core cross section:</p>
+<p>Here are some approximate transformer design equations that
+will get you into the right area:</p>
+<ul>
+    <li>Core cross section area (sq inch) = .16 * sqrt( VA)</li>
+    <li>Turns/Volt = 5 / Core cross section</li>
+</ul>
+<p>This last equation is a special case of:</p>
+<p>Voltage = 4 * F * f * a * B * N * 1E-8</p>
+<p>where</p>
+<p>F = Form factor, typically around 1.11</p>
+<p>f = frequency in Hz</p>
+<p>a = core cross sectional area in sq inch</p>
+<p>B = flux per square inch (typ 75,000)</p>
+<p>N = number of turns</p>
+<h4>Examples of measurements and calculations</h4>
+<p><a href="xfmrex1.htm">GE Type 5021G10 transformer</a> (4500
+Volts, 400 mA, illumination transformer)</p>
+<p><a href="xfmrex2.htm">Actown Neon Sign Transformer</a> (15,000
+Volts, 30 mA short circuit current)</p>
+<p>&#160;</p>
+<hr>
+<p><font size="1">Copyright 1997, Jim Lux / xfmrmeas.htm /</font><a
+href="hvmain.htm"><font size="1">Back to HV Home</font></a><font
+size="1"> / </font><a href="../index.htm"><font size="1">Back to
+home page</font></a><font size="1"> / </font><a
+href="mailto:jimlux@earthlink.net"><font size="1">Mail to Jim</font></a></p>
+</body>
+</html>

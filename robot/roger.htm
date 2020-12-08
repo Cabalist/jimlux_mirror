@@ -1,0 +1,83 @@
+<html>
+<head>
+<title>Roger</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>Roger</h2>
+<p>&nbsp;</p>
+<table width="75%" border="1">
+  <tr>
+    <td>
+      <p>This was a fairly successful, although never completed (of course), robot 
+        that used a pair of bicycle wheels driven by a friction roller.The frame 
+        was made of aluminum extrusions bolted together. An IBM PC served as the 
+        main controller, with the same old Z80 wirewrapped board to control the 
+        PWM amplifiers. Power was from 3 12V gelcell type batteries, with dc/dc 
+        converters used to generate +5V and +12V as required.</p>
+      <p align="center"><a href="images/rogerblock.gif" target="_blank"><img src="images/xrogerblock.gif" width="192" height="154" alt="System Block Diagram - 2K" border="1"></a> 
+      </p>
+      <p align="center">Block diagram (<a href="images/rogerblock.gif" target="_blank">13K 
+        GIF</a>) (<a href="images/rogerblock.vsd">50K visio</a>)</p>
+      <p>Navigation was by a combination of odometry/dead reckoning and a scanning 
+        sonar sensor. </p>
+    </td>
+    <td><img src="../images/roger.jpg" width="284" height="467"></td>
+  </tr>
+</table>
+<h3>PWM controllers</h3>
+<p>I went through a lot of design iterations on the PWM controllers for Roger. 
+  I started with using some commercial PWM chips from Unitrode and so forth. In 
+  theory, these chips allow one to sense the back emf to measure the motor speed, 
+  however, in practice, this is pretty darn tricky, because you're also switching 
+  power to the motor, which has a LOT of inductance, etc.</p>
+<p>The final design iteration was a fall back to using the Z80 and programmable 
+  timers, but this time, driving VMOSFET H-bridges.</p>
+<h3>On board computer</h3>
+<p>By this time, I had also realized that having some on-board intelligence would 
+  be useful, and since I had a spare motherboard from an IBM PC, I mounted that, 
+  along with some DC to DC converters on the chassis. A monochrome 12V monitor, 
+  scavenged from a Bondwell portable computer, served as the display. I booted 
+  off a single floppy drive (visible in the photo above on the right hand side).</p>
+<h3>Sonar </h3>
+<p>One of the Polaroid Sonar Developers Kits was used to make a scanning sonar 
+  sensor. A 200 step/rev stepper motor scavenged from a floppy disk drive was 
+  used to scan the sensor in azimuth. A simple transistor buffer drove the motor 
+  from a PC parallel port, with other bits on the port used to trigger the sonar, 
+  and to look for the return (by counting loops in a BASIC program). </p>
+<p>The original goal was to use the sonar to produce a map of the area in front 
+  of the robot, then match that to a stored map for position finding and obstacle 
+  avoidance. In practice, I learned that there are some serious shortcomings in 
+  using a broad beamed sonar sensor:</p>
+<p>Walls provide a specular reflection, and hence, disappear. The problem is particularly 
+  severe in hallways, where the navigation problem is most difficult.</p>
+<p>Sonar reflectivity is not, by any means, consistent for a given object. From 
+  different angles, or even at different times, the reflectivity of things like 
+  furniture can vary a lot. To a certain extent this is due to scintillation (the 
+  object dimensions (or components of the object) are comparable to a wavelength 
+  (at 40 kHz, a wavelength is around a cm).</p>
+<h3>Lessons Learned</h3>
+<p>Roger was originally designed when I worked in a place with a big lab area, 
+  wide doorways, etc. When I moved it home, I discovered that navigating a 20&quot; 
+  wide robot through a 24&quot; wide doorway is a real challenge. It requires 
+  great precision and slow speed. Try it yourself while walking holding a stick 
+  or a box.</p>
+<p>Homegrown PWM controllers are a pain, no matter how you look at it. This is 
+  especially true if you want to try and close a velocity or torque loop.</p>
+<p>Accurate feedback from the wheel isn't all that necessary. Sure, on a flat, 
+  level surface, with no slip, you could use it to do accurate navigation, but 
+  in the real world, factors like wheel slip and uneveness mean that you need 
+  some other way to figure out where you are and how to go where you want to go.</p>
+<p>In fact, trying to put tight feedback loops around the drive is probably not 
+  worth it, since you have relatively little <i>a priori</i> information about 
+  the terrain, state of battery charge, traction, etc. A fairly simple strategy 
+  of setting the &quot;throttle&quot; works as well as anything other.</p>
+<p>Some scheme for reasonably accurate navigation (or position finding, at least) 
+  is needed.</p>
+<hr>
+robot/roger.htm - 6 November 2001 - <a href="mailto:jimlux@earthlink.net?Subject=Roger">Jim 
+Lux</a><br>
+<a href="index.htm">Robot home</a> - <a href="../index.htm">Jim's Home</a> 
+</body>
+</html>

@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>Measurement of Mutual Z</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>Measuring Mutual and Self Impedances</h2>
+<p>The whole area of mutual and self impedances of the various elements is of 
+  some importance with phased arrays, especially with passive feed networks.</p>
+<p><img src="images/twomutual.gif" width="470" height="241"></p>
+<p>The question is how to measure the impedance with our existing hardware (i.e. 
+  the antenna tuners with their built in swr metering).</p>
+<p>&nbsp;</p>
+<p>Measuring self impedance</p>
+<p>Disconnect all other elements. Adjust the L and C until you have a match, just 
+  like a normal antenna tuner. Then, you have to remove the effect of the transmission 
+  line, which acts as an impedance transformer (unless you are lucky enough to 
+  have coax that is a multiple of a half wavelength).</p>
+<p>Measuring mutual impedance</p>
+<p>Measuring mutual impedance is a bit trickier. You do it by measuring the self 
+  impedances of the two elements in question, in isolation, then, measuring the 
+  impedance of both in parallel. A little algebraic manipulation, and you are 
+  done.</p>
+<p>&nbsp;</p>
+<h4>SWR Bridge</h4>
+<p>The schematic of the SWR bridge is shown below. Normally, a simple diode detector 
+  would cause problems because of nonlinearities, however, because we are digitizing 
+  the detected voltage, we can calibrate out the nonlinearity, and any offsets 
+  as well.</p>
+<p><img src="images/ldgSWRbridge.gif" width="513" height="347" alt="LDG SWR Bridge Schematic (5KB)"></p>
+<p>The 150 ohm resistor serves as a load for the current transformer. It looks 
+  like a series resistor of .375 ohms in the &quot;thru&quot; path.</p>
+<p>At 10 watts, a 50 ohm line will have 22 V peak and about .45 Amps. The 20:1 
+  reduction makes the current in the 150 ohm resistor about 20 mA, or 3.4 Volts.</p>
+<p>The pair of C's make a voltage divider, which is essentially adjusted to match 
+  half the voltage appearing across the 150 ohm resistor (3.4/2 or 1.7Volts). 
+  The 3.3K resistor forms a DC return for the detector diodes and also results 
+  in a slightly decreasing division ratio as the frequency decreases. At 3 MHz, 
+  the impedance of a 100 pF capacitor is 530 ohms, at 30Mhz it is 53 ohms. The 
+  small added shunt capacitive reactance (on the order of 10 pF or 530 ohms at 
+  30Mhz) can be also tuned out by the tuner.</p>
+<p>When balanced, the voltage from the C voltage divider will just cancel half 
+  the voltage from the transformer, and the Rev port will read 0 volts. At this 
+  time, the voltages will add on the Fwd port, producing 3.4 volts, which is reduced 
+  to a nominal 2.5 by the 100K pot (which provides almost no load for the DC).</p>
+<p>The series 100 ohm resistors provide a RF load for the detectors, because the 
+  0.01 uF capacitor to ground is essentially a short circuit at RF.</p>
+<h4>Bridge Tuning procedure</h4>
+<p>5-10 W from source, 50 ohm resistive load. Variable C adjusted for 0 DC volts 
+  on Rev test point, which essentially sets the balance of the bridge. </p>
+<p>Adjust Fwd variable resistor for 2.5 Volts on the output. </p>
+<p>Reverse load and source, which makes all the power reverse (none is reflected 
+  back from the load, ideally), and then:</p>
+<p>Adjust Rev variable resistor for 2.5 Volts</p>
+<p>2-3 Watts -&gt; 1.5 Volts</p>
+<hr>
+<p>zmeasure.htm - revised 15 Jun 1999</p>
+<p><a href="passive1.htm">return to Passive Beamforming</a> <br>
+  <a href="phased1.htm">back to Phased Arrays</a> <br>
+  <a href="index.htm">radio home</a> <br>
+  <a href="../index.htm">Jim Lux home</a> <br>
+  email comments <a href="mailto:jimlux@earthlink.net?subject=Z%20measurements">jimlux@earthlink.net</a> 
+</p>
+<p>&nbsp;</p>
+</body>
+</html>

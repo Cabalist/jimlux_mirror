@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>Robot Communications</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="keywords" content="robot communication link, robot, TNC, Linx Technologies">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>Robot Communications</h2>
+<p>I need to talk to the robot to operate it remotely. This raises all sorts of 
+  questions of what sort of bandwidth do you need, etc.</p>
+<h3>Nominal Requirement:</h3>
+<p>Moderately high rate &gt;9600 bps range 1 km</p>
+<p>Fall back low rate &gt;300 bps?</p>
+<h3>Alternatives:</h3>
+<p>TNC on both ends - 1200 bps or 9600 bps - 2m or 440 MHz, or FRS radios - Using 
+  the FRS radios for data is probably illegal, even though hooking them up to 
+  the TNC is trivial. The real problem is that TNCs seem to be made for a somewhat 
+  archaic market. They're big, clunky, stupid, and the modulation is designed 
+  to be compatible with wireline modems from the 1960's. Interoperability with 
+  other folks is a fine reason for using these in ham radio (like APRS, for instance), 
+  but where I control both ends of the link, they are pretty non-optimal.</p>
+<p>Linx Technologies (<a href="http://www.linxtechnologies.com/main.html" target="_blank">http://www.linxtechnologies.com/main.html</a>)- 
+  Inexpensive modules designed for the Part 15 market. Of particular interest 
+  is the HP-II series in the 900 MHz band (actually 903.37 to 921.37). I've got 
+  the evaluation boards (which work pretty well), although they have weird reverse 
+  polarity SMA connectors (needed for Part 15). Since it's legal for me, I can 
+  replace those with normal connectors, dump the attenuator pad on the transmitter, 
+  and put a much better antenna on (and, potentially, put an amplifier on the 
+  TX). The ham band is 902 to 928, so the Linx parts fall within. <a href="../radio/linx.htm">More</a> 
+  on the Linx mods and usage, as well as <a href="../radio/900helix.htm">antennas</a>.</p>
+<p>Wireless LAN (802.11b) - I've been fooling with a wireless LAN at home, and 
+  while they claim ranges of 10's of meters, that's clearly in a big open room. 
+  A realistic range at full speed is more like 5 or 6 meters, and intervening 
+  walls are apparently pretty good attenuators at 2.5 GHz. Maybe with a gain antenna 
+  (these have those funky Part15 connectors too!) and a suitable diplexer/amplifier, 
+  this might work. The cool thing would be that you could make the robot an internet 
+  accessible device. Of course, a decent serial link, and an appropriate TCP/IP 
+  stack would do the same thing. Rabbit makes an internet peripheral, which might 
+  be a better approach.</p>
+<p>Cellular telephone - take advantage of those &quot;free cellphone to cellphone 
+  calls&quot; deals and use a cell phone on each end. A very clever scheme, and 
+  it would work over long distances too. Data rate is pretty low (no more than 
+  8 kbps, really), so you're not sending video at full speed. This is an intriguing 
+  way to control a large, free ranging robot.</p>
+<h3>Legalities: </h3>
+<p>Using Amateur radio has some implications, as does using Part 15 (unmodified). 
+  <a href="fcc.htm">Some discussion is here</a>.</p>
+<p>&nbsp;</p>
+<hr>
+revised 19 November 2001, <a href="mailto:jimlux@earthlink.net?Subject=Robot%20Comm">Jim 
+Lux</a><br>
+robot/comm.htm - <a href="index.htm">Robot Home</a> - <a href="../index.htm">Jim's 
+Home</a> 
+<p>&nbsp; </p>
+</body>
+</html>

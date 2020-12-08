@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+
+<head>
+<title>Wheeler Formulas for inductance</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 1.1">
+</head>
+
+<body>
+<h2>Wheeler Formulas for Inductance</h2>
+<p>These formulas, developed by Wheeler at the (then) NBS, give approximate 
+inductances for various coil configurations. They are primarily based on empirical 
+measurements, and are accurate to a few percent.</p>
+<h4>Single layer air core solenoid</h4>
+<p><tt>L (uH) = r^2 * n^2 / (9 * r + 10 * l)</tt></p>
+<p>where </p>
+<p><tt>r = coil radius in inches<br>
+l = coil length in inches<br>
+n = number of turns</tt></p>
+<p>&nbsp;</p>
+<h4>Multi layer air core solenoid</h4>
+<p><tt>L (uH) = 0.8 * a^2 * n^2 / (6*a + 9*b + 10*c )</tt></p>
+<p>where <br>
+<tt>a = average radius of windings<br>
+b = length of the coil<br>
+c = difference between the outer and inner radii of the coil.<br>
+all dimensions in inches.</tt></p>
+<p>It states that it is accurate to 1% when the terms in the denominator are<br>
+about equal. This is also an equation by Wheeler. It applies as long as the<br>
+coil has a rectangular cross section.</p>
+<h4>Flat &quot;pancake&quot; coil</h4>
+<p><tt>L (uH) = r^2 * n^2 / (8 * r + 11 * w)</tt></p>
+<p>where</p>
+<p><tt>r = radius to center of windings in inches<br>
+w = width of windings (in inches)<br>
+n = number of turns</tt></p>
+<h3>References</h3>
+<p>The original Wheeler papers:</p>
+<ul>
+  <li>Harold A. Wheeler, "Formulas for the Skin Effect," <i>Proceedings of the 
+    I.R.E.</i>, September 1942, pp. 412-424</li>
+  <li>Harold A. Wheeler, "Simple Inductance Formulas for Radio Coils," <i>Proceedings 
+    of the I.R.E.</i>, October 1928, pp. 1398-1400. </li>
+</ul>
+<p> An enormous compendium of inductance references compiled by Dr. Marc Thompson. 
+</p>
+<ul>
+  <li><a href="http://members.aol.com/marctt/Technical/Inductance_References.htm">http://members.aol.com/marctt/Technical/Inductance_References.htm</a> </li>
+</ul>
+<p>Dr Thompson has a new paper out that covers approximation techniques: </p>
+<p>Thompson, M. , &quot;Inductance Calculation Techniques -- Part II: Approximations 
+  and Handbook Methods&quot;, <i>Power Control and Intelligent Motion</i>, December 
+  1999 http://www.pcim.com</p>
+<p>http://members.aol.com/Marcttpapers2/Induct2.pdf - 26 April 2001</p>
+<p>The above paper doesn't cover the parasitic C or R, though.</p>
+<p>&nbsp;</p>
+<p>Someone has scanned the classic Grover reference which is out of print (but 
+  not out of copyright, so I hope that they got permission).</p>
+<p><a href="http://home.san.rr.com/bushnell/self_inductance.htm">
+http://home.san.rr.com/bushnell/self_inductance.htm</a></p>
+<p><a href="http://home.san.rr.com/bushnell/inductance_table_3_grover.htm"> http://home.san.rr.com/bushnell/inductance_table_3_grover.htm</a></p>
+<p>&nbsp;</p>
+<h3>Numerically calculating inductance</h3>
+<p><a href="http://www.coe.ufrj.br/%7Eacmq/">Dr. Antonio Carlos M. de Queiroz 
+  </a>at the University of Brazil has written a set of programs to calculate inductance 
+  (particularly mutual inductance) of coils of any shape from first principles. 
+  The INCA program is particularly useful, and can be found at <a href="http://www.coe.ufrj.br/%7Eacmq/programs/" target="_blank">http://www.coe.ufrj.br/~acmq/programs/</a>. 
+  The program also computes capacitance, etc.</p>
+<hr>
+<p><font size=1>Copyright 2001, Jim Lux / wheeler.htm / 26 Jan 2004 / </font><a href="hvmain.htm"><font size=1>Back 
+  to HV Home</font></a><font size=1> / </font><a href="../index.htm"><font size=1>Back 
+  to home page</font></a><font size=1> / </font><a href="mailto:jimlux@earthlink.net"><font size=1>Mail 
+  to Jim</font></a></p>
+</body>
+
+</html>

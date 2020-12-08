@@ -1,0 +1,113 @@
+<html>
+<head>
+<title>Amateur Television (ATV)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="keywords" content="ATV, Amateur Television, P.C. Electronics, 70cm, TXA5-70, TVC-2G, sailplane">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>Amateur Television (ATV)</h2>
+<p>I'm not a real ATV fiend, but I have fooled around with it some. I have some 
+  gear from P.C. Electronics (<a href="http://www.hamtv.com/" target="_blank">http://www.hamtv.com/</a>) 
+  that I got to put into a R/C sailplane. I have a 70 cm (440 MHz band) transmitter, 
+  a 70 cm to Ch3 downconverter, and a little Ch3 to video demodulator.</p>
+<p>TXA5-70b is a 100 mW transmitter, which I've got set up to switch between 426.25 
+  and 434 MHz</p>
+<p>TVC-2G is the down converter</p>
+<h3>The Sailplane</h3>
+<p>One of my first ATV experiments was I mounted an old CCD color camera, the 
+  transmitter, and an antenna on a 2m wingspan sailplane. I've got a <a href="atvplane.htm">page</a> 
+  with some pictures of the installation and more description. While interesting, 
+  the overall experience was not all that successful. From a flying standpoint, 
+  the rig was too heavy. From an ATV standpoint, the linear polarized transmission 
+  and a vertical antenna only a meter or so off the ground had huge multipath 
+  fades.</p>
+<p>Now, I am convinced that circular polarization (CP) is the way to go (that, 
+  and a bit of antenna gain and height so the receiver antenna isn't so close 
+  to the ground). A az/el (or even just an az) controlled Yagi or Log periodic 
+  might be a good way too. For the sailplane version, this would work pretty well, 
+  since a beamwidth of 40-60 degrees would nicely cover the entire airspace where 
+  the plane would be flying. The Clear Lake Amateur Radio Club has a <a href="http://www.clarc.org/Articles/uhf.htm" target="_blank">web 
+  page</a> with cheap easy to build medium gain Yagi antennas. I've actually built 
+  an <a href="antenna/beam70cm.htm">70 cm beam antenna</a> based on their designs.</p>
+<p>However, for ground based sources (my current interest, see the <a href="http://www.luxfamily.com/jimlux/robot/index.htm">robot 
+  pages</a>) gain antennas are pretty tricky. The mobile would need to steer the 
+  antenna, and multipath is going to be a problem when you are sitting less than 
+  a wavelength or so off the ground. So, hence my interest in omnidirectional 
+  (in horizontal plane) antennas like the Lindenblad, the Superturnstile, etc. 
+  Check out the <a href="antenna/bucket1.htm">bucket Lindenblad</a>. For a more 
+  crude version, being used for testing, there is the <a href="antenna/bucketwhip.htm">bucketwhip</a>.... 
+  A 1/4 ground plane vertical. </p>
+<h3>Packaging the TVC-2G</h3>
+<p>Another learning experience with the plane was that a cardboard box with a 
+  bunch of stuff in it doesn't make for a good field installation. So, I finally 
+  decided to put the TVC-2G into a box so that it doesn't get banged up. A plastic 
+  box (metal would be nicer, and I suppose I could coat the inside of the box 
+  with copper or aluminum foil) holds 8 AAA batteries for a 12V supply, as well 
+  as the TVC-2G. The input is on a BNC, the output on a standard cable TV type 
+  &quot;F&quot; connector. I've noticed a few spurious signal problems with the 
+  TVC-2G (that is, touching it detunes it), but inside the box, it seems to work 
+  ok.</p>
+<p>I either run the output to a TV tuned to Channel 3 (using cable) or I couple 
+  it to a short whip, which then radiates to the whip of a small LCD TV stuck 
+  to the box with Velcro. </p>
+<h3>LCD TV</h3>
+<p>When testing it on the bench with the 426.25 transmitter, I noticed an odd 
+  thing. The LCD TV will tune the 426.25 signal on the &quot;UHF&quot; position, 
+  which is odd, since UHF channels start at 470 MHz, and it tunes a ways up in 
+  the band. It's probably an image in the TV receiver. A typical TV IF is 45.75 
+  MHz, so there's an image 91.5 MHz away, or, at around 516 MHz apparent frequency. 
+  This is a strong signal case (100 mW into a quarter wave ground plane about 
+  1-2 meters away from the receiver). Typical UHF receiver noise figure is 10-12 
+  dB, a lot worse than the 2 or 3 dB from the TVC-2G.</p>
+<p>With a bit of web research, I think I found that this unit (a Radio Shack/RCA 
+  160-3050) is really a Casio TV-880. Thanks to &quot;<a href="http://www.guenthoer.de/farbe2.htm" target="_blank">Frank's 
+  Taschenfernsehere: Bunt und Billig (Teil 2)</a>&quot; where he had a similar 
+  looking unit (the TV770, for PAL) and a link to a pdf service manual (at a site 
+  called www.guenthoer.de/doku/) At that site, I found the <a href="http://www.guenthoer.de/doku/service-casiotv880.pdf" target="_blank">TV-880 
+  service manua</a>l, which comparing the parts list to the Radio Shack parts 
+  list, is virtually identical (right down to package codes on ICs). [ I just 
+  found Frank's English language pages: http://www.guenthoer.de/index-e.htm. Thanks 
+  again, Frank (Frank Günthör) ]</p>
+<h3>Photos of the TVC2G and the LCD TV</h3>
+<table border="1">
+  <tr> 
+    <td> 
+      <div align="left">Front view of the LCD TV on top of the box with the TVC2G</div>
+    </td>
+    <td> 
+      <div align="left">Here are the two components separated, showing the velcro</div>
+    </td>
+    <td> 
+      <div align="left">Here's the end of the TVC2G enclosure. A thin screwdriver 
+        pokes in the hole to hit the trim pot on the converter.</div>
+    </td>
+  </tr>
+  <tr> 
+    <td> 
+      <div align="center">
+        <p><a href="images/atvdc2.jpg" target="_blank"><img src="images/atvdc2x.jpg" width="102" height="144" border="2" alt="LCDTV and downcoverter thumbnail"></a></p>
+        <p>(<a href="images/atvdc2.jpg">44 kByte jpg</a>)</p>
+      </div>
+    </td>
+    <td> 
+      <div align="center">
+        <p><a href="images/atvdc3.jpg" target="_blank"><img src="images/atvdc3x.jpg" width="192" height="144" border="2" alt="downconverter and LCDTV thumbnail"></a></p>
+        <p>(<a href="images/atvdc3.jpg">48 kByte jpg</a>)</p>
+      </div>
+    </td>
+    <td> 
+      <div align="center">
+        <p><a href="images/atvdcend.jpg" target="_blank"><img src="images/atvdcendx.jpg" width="274" height="144" border="2" alt="downconverter end view thumbnail"></a></p>
+        <p>(<a href="images/atvdcend.jpg">27 kByte jpg</a>)</p>
+      </div>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>/radio/atv.htm - 31 August 2002 - <a href="mailto:jimlux@earthlink.net?Subject=ATV">Jim 
+  Lux</a> - <a href="index.htm">radio home page</a> - <a href="http://home.earthlink.net/%7Ejimlux/index.htm">Jim's 
+  home page</a></p>
+</body>
+</html>

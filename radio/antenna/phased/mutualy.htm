@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>Mutual Admittances</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>Models for mutual admittances</h2>
+<p>Sometimes it's helpful to look at a picture of what all the mutual impedances/admittances 
+  are. The drawing below shows all the admittances. I haven't transformed it into 
+  an impedance lattice yet, but, just as an admittance pi network can be transformed 
+  to an impedance T network, one should be able to do so.</p>
+<p><img src="images/mutualy.gif" width="329" height="338"> </p>
+<p>I find that most people have a better conceptual and practical feel for impedances 
+  (since that's what you see on the antenna analyzer and Smith chart) than for 
+  admittances. It's a lot more familiar to refer to 50 ohms, rather than 20 millisiemens.</p>
+<p>Consider cases with two elements. With the Z matrix, [E] = [Z][I]. What this 
+  means is that the voltage at feedpoint 1 is a linear combination of the currents 
+  in elements 1..N. If there is no coupling then that entry in the Z matrix is 
+  zero.</p>
+<p>Consider the Y matrix: [I]=[Y][E]. This gives the current in the element given 
+  the voltages at the feed points. Again, if there is no coupling then the corresponding 
+  term of the matrix is 0.</p>
+<p>Note that in the diagram above, the mutual admittances do NOT, in general, 
+  correspond to that entry of the matrix. Consider, for example, the current flowing 
+  into #1, <i>i.e.</i> the first row of the Y matrix. It would be:<br>
+  <tt>I1 = E1*Y11 + (E1-E2)*Y12 + (E1-E3)*Y13 + (E1-E4)*Y14</tt><br>
+  or, after rearranging a bit:<br>
+  <tt>I1 = E1 * ( Y11+Y12+Y13+Y14) + E2 * (-Y12) + E3 * (-Y13) + E4 * (-Y14)</tt></p>
+<p>&nbsp;</p>
+<p>radio/antenna/phased/mutualy.htm - 6 Jan 2003 - Jim Lux<br>
+  (phased arrays) (antennas) (radio) (Jim's home page)</p>
+</body>
+</html>

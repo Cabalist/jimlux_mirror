@@ -1,0 +1,51 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>Measuring Watts and VARS with a VOM</TITLE>
+<META NAME="Template" CONTENT="C:\PROGRAM FILES\MICROSOFT OFFICE\OFFICE\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080">
+
+<P><!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"></P>
+<H3>Measuring active and reactive power with just a VOM</H3>
+<P>If you just measure the RMS voltage and RMS current and multiply them, you get the apparent power. As long as the load is purely resistive, the apparent power is equal to the active power. For a reactive load, though, where the voltage and current are out of phase, the apparent power will be greater than the active power. Measuring active power is a bit tricky and is traditionally done by a watt meter (or more commonly a watt hour meter, like that measuring the electrical energy consumption of your house). Watt meters (and watt hour meters) instantaneously multiply the voltage and current and integrate the result, so they measures true active power. </P>
+<P>Commercial power monitors actually have an a/d that samples the voltage and current waveform and do the math internally, which makes measurements for three phase power systems much easier. If you have a enough a/d channels on your data acquisition system, and are handy with software, you can do the same. These units will correctly calculate power for non-sinusoidal waveforms, as well.</P>
+<P>You can use a dual trace oscilloscope to measure the phase shift between the current and voltage and use that to calculate active power using the equation</P>
+<P>active power = cos(theta) * apparent power</P>
+<P>where theta is the phase difference between voltage and current. The term cos(theta) is the power factor, typically in the range .80-.95 for motors, fluorescent light ballasts, and the like.</P>
+<P>&nbsp;</P>
+<P>However, say all you have is a trusty multimeter, and you need to measure active power or power factor. With a suitable resistor and a variac, you can measure active power, reactive power, etc. Set up the following circuit:</P>
+<P>&nbsp;<IMG SRC="images/varvom1.gif" ALT="schematic of measurement setup" ></P>
+<P>The load is represented by a resistance (Rload) and a reactance (Xload) in series. The series resistor shouldn't be too big, say 2-10 ohms. Make sure it can dissipate the power. If your load is going to draw 10 amps, and you have a 10 ohm resistor, it is going to dissipate 1000 Watts. In use, you set the output of the variac to get the load voltage to be whatever its rated input voltage is, e.g. 115Volts. To do the calculation, you'll need the following measurements:</P>
+
+<UL>
+<LI>The RMS voltage at the load (call that V1) </LI>
+<LI>The RMS voltage out of the variac (call that V2) </LI>
+<LI>The RMS current through the load (call that I) </LI>
+<LI>The resistance of the series resistor (call that Rseries) </LI></UL>
+
+<P>Now do the calculation:</P>
+<P>Resistive component of load</P>
+
+<UL>
+<LI>Rload = ((V2/I)^2 - (V1/I)^2 - Rseries^2)/(2 * Rseries) </LI></UL>
+
+<P>Reactive Component of Load </P>
+
+<UL>
+<LI>Xload = sqrt( (V2/I)^2 - Rload^2) </LI></UL>
+
+<P>(Of course, you don't know the sign of the reactive component from this measurement.)&nbsp;</P>
+<P>Active power = Rload * I^2</P>
+<P>Reactive Power = Xload * I^2</P>
+<P>&nbsp;</P>
+<P>If you want to determine if the reactive load is capacitive or inductive, you can add a small capacitor or inductor (the reactive impedance must be less than the existing circuit's) to the circuit, make the measurements again, and see if Xload got bigger or smaller. For instance, if you had measured a reactive impedance of 5 Ohms, and then you added a capacitor and got a reactive impedance of 6 Ohms, then the original reactive impedance was capacitive. If the reactive impedance decreased, then the original reactive impedance was inductive. </P>
+<P>&nbsp;</P>
+<H4>LIMITATION</H4>
+<P>The above technique does not necessarily work for non-sinusoidal waveforms. A good example of a non-sinusoidal waveform is the current drawn by a capacitor input filter (e.g. the input of a switching power supply) or the output of a phase controlled light dimmer.</P>
+<P>&nbsp;</P>
+<P>About <A HREF="pfc.htm">power factor correction</A>.</P>
+<P><HR></P>
+<FONT SIZE=1><ADDRESS>Copyright 1998, Jim Lux/ revised 30 Apr 1998/ </FONT><A HREF="hvmain.htm"><FONT SIZE=1>HV Handbook</FONT></A><FONT SIZE=1> / </FONT><A HREF="../index.htm"><FONT SIZE=1>Jim's Home Page</FONT></A><FONT SIZE=1> / </FONT><A HREF="mailto:jimlux@earthlink.net"><FONT SIZE=1>Email to Jim</FONT></A></ADDRESS></BODY>
+</HTML>

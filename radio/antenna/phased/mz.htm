@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>Mutual Impedance of Dipoles</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>Mutual Impedance of two dipoles</h2>
+<p>There are analytical solutions for this</p>
+<h3>Numerical models</h3>
+<p>A simple NEC 2 model was created of two dipoles in free space. The length of 
+  the dipoles was adjusted to make one resonant, when the other was opencircuited 
+  at the feed.</p>
+<p>Here's the feedpoint impedance as the spacing is varied, with the second dipole 
+  open. The thumbnails are small for fast loading. Click them for a much bigger 
+  version (about 25kB)</p>
+<table width="75%" border="0">
+  <tr> 
+    <td> 
+      <div align="center"><a href="images/mzopenrx.jpg" target="_blank"><img src="images/mzopenrx1.gif" width="179" height="93" border="2"></a><br>
+        R and X</div>
+    </td>
+    <td> 
+      <p align="center"><a href="images/mzopenmp.jpg" target="_blank"><img src="images/mzopenmp1.gif" width="180" height="94" border="2"></a><br>
+        Mag and Phase</p>
+    </td>
+  </tr>
+</table>
+<p>Note that the second dipole, though open, does have an effect on the feed point 
+  impedance of the first dipole. It kind of looks like as it moves far away, the 
+  reactance is about 2 ohms. I set the length so the reactance would be zero at 
+  0.05 spacing (which is quite close)</p>
+<p>And, here's the feedpoint impedance with the other element feedpoint shorted:</p>
+<table width="75%" border="0">
+  <tr> 
+    <td> 
+      <div align="center"><a href="images/mzshortrx.jpg" target="_blank"><img src="images/mzshortrx1.gif" width="179" height="93" border="2"></a><br>
+        R and X</div>
+    </td>
+    <td> 
+      <p align="center"><a href="images/mzshortmp.jpg" target="_blank"><img src="images/mzshortmp1.gif" width="179" height="94" border="2"></a><br>
+        Mag and Phase</p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp; </p>
+<p>The mutual impedance has a large effect at short distances, eventually going 
+  away as you get farther away, as you would expect.</p>
+<p>We can convert these open and shorted measurements to self and mutual impedances 
+  by using some arithmetic manipulation.</p>
+<p>Given:</p>
+<p>Ro,Xo = Impedance with other element open<br>
+  Rs,Xs = Impedance with other element shorted</p>
+<p>We get:</p>
+<p>&nbsp;</p>
+<p>Some observations</p>
+<p>Considering just the mutual impedance (i.e. the voltage induced in one element 
+  by the current in another), and looking at the curves of the real and imaginary 
+  components, it looks like maybe it's worth considering it in terms of magnitude 
+  and phase. After all, from a conceptual standpoint, you'd expect the magnitude 
+  to fall off as a functionof distance, and the phase to be somehow related to 
+  the time delay for the EM to propagate from one element to the other. </p>
+<p>In the &quot;far field&quot;, this would certainly be the case, and, in fact, 
+  Carter, among others, derived some standard relationships for this. However, 
+  in the near field, it's not so simple. I calculated the phase, and then fit 
+  a straight line to the phase vs distance. The difference between the straight 
+  line phase and the actual phase is shown in the figure below. The various traces 
+  are for frequencies varying from the nominal. Once you get more than a wavelength 
+  spacing (1.00) the residual settles down to a straight line, but in close, there's 
+  quite a bit of error. I'm not sure what the wiggles in the 0 frequency offset 
+  case are all about.</p>
+<p><img src="images/mzphase.gif" width="632" height="513"></p>
+</body>
+</html>

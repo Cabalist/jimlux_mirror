@@ -1,0 +1,181 @@
+<html>
+<head>
+<title>900 MHz Helical Antenna</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<h2>900 MHz Helical Antenna</h2>
+<p>The evaluation kit for the Linx Technologies units (which work at 908-928 MHz) 
+  only comes with two antennas. There is no T/R switch on the evaluation boards, 
+  so some additional antennas will be necessary to try a full duplex (or, at least, 
+  half duplex) link. After casting about for ideas on what sort of antenna to 
+  build (other than just a 1/4 wave ground plane...), I decided to build a pair 
+  of helical antennas, one for each circular sense. Helical antennas have broad 
+  bandwidth, loose construction tolerances, and for 900 MHz, wouldn't be too big. 
+  They also have a bit of gain (10-14 dBi), so they'd be a nice choice for talking 
+  to the robot at a distance (10 dB would be about a factor of 3 range increase).</p>
+<p>The basic design rules for helicals (in Kraus' book, or the ARRL antenna handbook) 
+  say that the circumference of the winding should be on the order of a wavelength 
+  (33 cm in this case). This works out to 10.5 cm, or about 4&quot;, a convenient 
+  size to wind. I found a 3&quot; PVC coupling that is 103 mm OD, which served 
+  as a nice form. I had some AWG 10 (or is it 6?) bare copper wire that I wound 
+  on the form. It springs back a bit after winding, so the resulting coil is 110mm 
+  in diameter, which is certainly in the right range. A typical winding pitch 
+  is a quarter of a wavelength per turn, or, in this case, about 8 cm/turn (3 
+  1/4 inches). I have 11 turns of the copper wire total, so if I split it into 
+  5.5 turns per antenna, I can have a left and right pair. The approximate axial 
+  ratio is 2n/(2n+1), so I should get an axial ratio around 0.9. To make the opposite 
+  sense, I will have to rewind the coil though (slightly...)</p>
+<p> Actually, I foolishly thought the winding pitch was a quarter of the diameter 
+  at first (25 mm, 1 inch), and ran a bunch of NEC models at that pitch, and the 
+  gain is still reasonably good (9dBi), but the axial ratio wasn't that hot. </p>
+<p>The ground plane should be on the order of a wavelength in diameter (i.e. a 
+  pizza pan 14&quot; in diameter should work nicely). I picked up some inexpensive 
+  steel pans at the super market ($4 each). They're plated with some sort of shiny 
+  metal and not real thick. Copper sheet or some strips of copper tape might be 
+  necessary to get the ground plane resistance down, but without a calibrated 
+  antenna range, it will be hard to tell. </p>
+<p>Supporting the helix is a bit tricky, depending on how rugged I want it to 
+  be. Finding a suitable piece of pipe and just gluing it to the ground plane 
+  might be one approach. This has the advantage of being quite rugged. Another 
+  approach is to use struts, which makes it a bit more fragile, but a lot lighter 
+  weight. Making a tube from thin plastic sheet rolled up (like a plastic placemat, 
+  for instance) is another possibility.</p>
+<p>For now, I've chosen to cut some lengths of 3&quot; PVC Sch 40 pipe. (3.5 inches 
+  OD, 3.068 ID) 45 cm long ( a bit less than 18&quot;) and epoxy them to the steel 
+  pizza pans. A TNC connector is used to feed through and connect to the helix 
+  (it's a bit more rugged than an SMA, and they also match what I have for old 
+  cell phone antennas). The pair of ground planes are bolted with 10-32 machine 
+  screws (4 places) to a piece of 1&quot;x2&quot;x1/8&quot; aluminum channel that 
+  is 2 feet long. It looks like some sort of science fiction death ray, and will 
+  probably get the &quot;homeland security&quot; folks after me. Upon an improvised 
+  stress test (I dropped it), the epoxy failed between the PVC and the steel (probably 
+  not enough epoxy in the right place, and not cured long enough). I'll re-epoxy 
+  it, and put some small screws into the PVC. [Note from 10 Nov, reglued, added 
+  some #4 wood screws, and it's pretty rugged, although with the heavy PVC pipe 
+  on it, the ground planes are now the &quot;weakest link&quot;.]</p>
+<p>The actual helix is wound from 1&quot; copper foil tape. I marked the tubing 
+  at the appropriate spacing (8 cm) on two roughly opposite sides. I then wound 
+  the tape (with its paper backing) to hit the marks, adjusting the pitch and 
+  windings so that the tape lays flat. The paper doesn't stretch, so when you're 
+  done, it is a truly even spaced helix. A small piece of tape at each end holds 
+  it in place. Then, I marked along the edge of the foil tape with a marker to 
+  give me a guide for when I stuck the tape down for real. Peel the backing, stick 
+  the tape, and it's done.</p>
+<p>To tune it and adjust the feed impedance, a standard technique is to bend the 
+  first turn a bit so that it is closer to the ground plane, and forms a transformer 
+  to change the nominal 140 ohm input to 75 or 50 ohms, as needed. With the copper 
+  foil tape, I just set the helix so it ended right before the connector, and 
+  then trimmed it back a bit. Some <a href="helixmatch.htm">more</a> on matching 
+  calculations.</p>
+<h4>The finished product</h4>
+<p>It's a bit heavy (3 feet of 3&quot; Sch 40 PVC pipe weighs a lot!). With no 
+  adjustment, I checked out the match using a fancy network analyzer. The return 
+  loss on both was better than -10 dB, and more like -14 to -15 dB. Part of the 
+  reason the match is so poor is that it was tested sitting on a bench next to 
+  me, a shelf, and the rack with the network analyzer, as you can tell from the 
+  overall waviness in the return loss curve (particularly look at the Left Hand 
+  helix, which was closer to me). Even aggravating this is that the test was done 
+  in a shielded room, so the antenna was pointing at the metal ceiling about 1 
+  meter away (although, given that the antenna is CP, the first reflection shouldn't 
+  make any difference).</p>
+<p>Here are thumbnails of the return loss plots (5 dB/div) (click them for the 
+  full size picture in a new window)</p>
+<table width="75%" border="1">
+  <tr>
+    <td>
+      <p align="center"><a href="images/lefthelix.gif" target="_blank">Left Hand 
+        helix</a><br>
+        <a href="images/lefthelix.gif" target="_blank"><img src="../images/xlefthelix.gif" width="196" height="145" border="1"></a></p>
+      </td>
+    <td>
+      <p align="center"><a href="../images/righthelix.gif" target="_blank">Right 
+        Hand Helix</a><br>
+        <a href="../images/righthelix.gif" target="_blank"><img src="../images/xrighthelix.gif" width="191" height="142" border="1"></a></p>
+      </td>
+  </tr>
+</table>
+<p>10 dB return loss = 1.95:1 VSWR, 14 dB return loss = 1.5:1 VSWR</p>
+<h3>Photos</h3>
+<p>The following are a series of thumbnail photos of the completed antenna. Clicking 
+  on the links gives you the full res JPEG image in a new browser window. The 
+  scale in the photo is a 12&quot; long machinist's scale. The full size images 
+  are about 100K.</p>
+<table width="75%" border="0">
+  <tr>
+    <td width="50%"> 
+      <div align="center"><a href="../images/helix/bothhelix.jpg" target="_blank">Overall 
+        View<br>
+        <img src="../images/helix/xbothhelix.jpg" width="159" height="119" border="2"></a></div>
+    </td>
+    <td width="50%"> 
+      <div align="center"><a href="../images/helix/bothhelixside.jpg" target="_blank">Overall 
+        View<br>
+        <img src="../images/helix/xbothhelixside.jpg" width="159" height="119" border="2"></a></div>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%"> 
+      <div align="center"><a href="../images/helix/lefthelix1.jpg" target="_blank">Left 
+        Helix<br>
+        <img src="../images/helix/xlefthelix1.jpg" width="119" height="159" border="2"></a></div>
+    </td>
+    <td width="50%"> 
+      <div align="center"><a href="../images/helix/righthelix1.jpg" target="_blank">Right 
+        Helix<br>
+        <img src="../images/helix/xrighthelix1.jpg" width="119" height="159" border="2"> 
+        </a> </div>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%"> 
+      <div align="center"><a href="../images/helix/lefthelixfeed.jpg" target="_blank">Feed 
+        detail on Left Hand Helix<br>
+        <img src="../images/helix/xlefthelixfeed.jpg" width="159" height="119" border="2"></a></div>
+    </td>
+    <td width="50%"> 
+      <div align="center"><a href="../images/helix/helixconn.jpg" target="_blank">Connector 
+        on back side of left helix, including TNC to SMA Adapter<br>
+        <img src="../images/helix/xhelixconn.jpg" width="159" height="119" border="2"></a></div>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h3>NEC Model</h3>
+<p> This is a NEC model (for a modified version of NEC2 using P3)</p>
+<pre>CM 918 MHz Helix
+CM 110 mm in diameter, 5.5 turns, 2.54 mm (AWG 10) conductors
+CM pitch is 82.5 mm/turn
+CM groundplane 36 cm (14") in diameter
+CM Pattern at 918
+CE Evaluated at 08 through 928 MHz
+SZ 1800,0
+GW, 200,36, 0,0,0, 0.18,0,0,.00127
+GM, 1, 17, 0,0,20, 0,0,0, 200
+GM,0,0, 0,0,0, .18,0,0,200
+GW, 400,36, 0,0,0, 0.18,0,0,.00127
+GM, 1, 17, 0,0,20, 0,0,0, 400
+GM,0,0, 0,0,0, -.18,0,0,400
+GM, 0,0, 0,0,0, 0,0,-.005
+GH, 300, 201,.0825, -.45375, .055,0, .055,0, 0.00127
+GM, 0,0, 0,0,0, 0.18,0,0, 300
+GH, 100, 201,.0825, .45375, .055,0,.055,0,0.00127
+GM, 0,0, 0,0,0, -0.18,0,0, 100
+GW, 999, 3, .235,0,-.005, .235,0,0,0.00127
+GW, 900, 3, .125,0,-.005, .125,0,0,0.00127
+GE
+EK
+GN,-1
+PT,-1
+EX,0,999,3,1,1,0
+FR,0,1,0,0,918
+RP,0,91,1,1000,0,0,1,3
+EN</pre>
+<p></p>
+<hr>
+/radio/helix900.htm - 16 November 2001 - <a href="mailto:jimlux@earthlink.net?900%20MHz%20Helical">Jim 
+Lux</a> - <a href="../index.htm">radio home page</a> - <a href="http://home.earthlink.net/%7Ejimlux/index.htm">Jim's 
+home page</a> 
+</body>
+</html>
