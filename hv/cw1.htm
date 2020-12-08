@@ -3,8 +3,7 @@
 
 <head>
 
-    <meta name="keywords"
-          content="HV, high voltage, voltage multiplier, cockroft, walton, doubler, tripler">
+    <meta name="keywords" content="HV, high voltage, voltage multiplier, cockroft, walton, doubler, tripler">
     <title>Cockroft Walton Voltage Multipliers</title>
 </head>
 
@@ -50,8 +49,7 @@
 
 <p>The voltage drop under load can be calculated as:</p>
 
-<p><font face="Times New Roman"><code><kbd>Edrop = I1/ (f*C) * (2
-    /3*n^3 + n^2/2- n/6)</kbd></code></font></p>
+<p><code><kbd>Edrop = I1/ (f*C) * (2 /3*n^3 + n^2/2- n/6)</kbd></code></p>
 
 <p>where:<br>
     Iload is the load current<br>
@@ -61,15 +59,15 @@
 
 <p>The ripple voltage, in the case where all stage capacitances
     (C1 through C(2*n)) may be calculated from:<br>
-    <font face="Times New Roman"><code>Eripple = Iload/(f *
-        C)*n*(n+1)/2</code></font></p>
+    <code>Eripple = Iload/(f *
+        C)*n*(n+1)/2</code></p>
 
 <p>As you can see from this equation, the ripple grows quite
     rapidly as the number of stages increases (as n squared, in
     fact). A common modification to the design is to make the stage
     capacitances larger at the bottom, with C1 &amp; C2 = nC, C3
     &amp; C4= (n-1)C, and so forth. In this case, the ripple is:<br>
-    <font face="Times New Roman"><code>Eripple = Iload/(f*C)</code></font></p>
+    <code>Eripple = Iload/(f*C)</code></p>
 
 <p>For large values of n (&gt;= 5), the n<sup>2</sup>/2 and n/6
     terms in the voltage drop equation become small compared to the
@@ -77,8 +75,7 @@
     to the number of stages gives an equation for the optimum number
     of stages (for the equal valued capacitor design:</p>
 
-<p><font face="Times New Roman"><code>Noptimum = SQRT( Vmax * f *
-    C/Iload)</code></font></p>
+<p><code>Noptimum = SQRT( Vmax * f * C/Iload)</code></p>
 
 <p>Increasing the frequency can dramatically reduce the ripple,
     and the voltage drop under load, which accounts for the popularity driving
@@ -106,10 +103,10 @@
 
 <hr>
 
-<p><font size="1">Copyright 1999, Jim Lux / cw1.htm / 14 Dec 2001 / <a href="hvmain.htm"><font size="1">Back
-    to HV Home</font></a><font size="1"> / <a href="../index.htm"><font size="1">Back
-    to home page</font></a><font size="1"> /<a href="mailto:jimlux@earthlink.net">Mail
-    to Jim</a> </font></font></font></p>
+<p>Copyright 1999, Jim Lux / cw1.htm / 14 Dec 2001 / <a href="hvmain.htm">Back
+    to HV Home</a> / <a href="../index.htm">Back
+    to home page</a> /<a href="mailto:jimlux@earthlink.net">Mail
+    to Jim</a></p>
 
 </body>
 </html>
