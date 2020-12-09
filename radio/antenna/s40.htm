@@ -2,9 +2,7 @@
 <html lang="en">
 <head>
     <title>Shorty 40 analysis</title>
-
 </head>
-
 <body>
 <h2>Shorty 40 analysis</h2>
 <p>A Shorty 40 is a shortened 40 meter dipole which uses a matching transformer/loading
@@ -26,109 +24,109 @@
     <tr>
         <td>feed L (uH)</td>
         <td>
-            <div align="right">0.46</div>
+            <div style="text-align: right">0.46</div>
         </td>
         <td>
-            <div align="right">0.90</div>
+            <div style="text-align: right">0.90</div>
         </td>
     </tr>
     <tr>
         <td>feed R</td>
         <td>
-            <div align="right">0</div>
+            <div style="text-align: right">0</div>
         </td>
         <td>
-            <div align="right">0</div>
+            <div style="text-align: right">0</div>
         </td>
     </tr>
     <tr>
         <td>sec 1 L (uH)</td>
         <td>
-            <div align="right">7.95</div>
+            <div style="text-align: right">7.95</div>
         </td>
         <td>
-            <div align="right">7.13</div>
+            <div style="text-align: right">7.13</div>
         </td>
     </tr>
     <tr>
         <td>sec 1 R</td>
         <td>
-            <div align="right">0.01</div>
+            <div style="text-align: right">0.01</div>
         </td>
         <td>
-            <div align="right">0.01</div>
+            <div style="text-align: right">0.01</div>
         </td>
     </tr>
     <tr>
         <td>sec 2 L (uH)</td>
         <td>
-            <div align="right">9.61</div>
+            <div style="text-align: right">9.61</div>
         </td>
         <td>
-            <div align="right">9.61</div>
+            <div style="text-align: right">9.61</div>
         </td>
     </tr>
     <tr>
         <td>sec 2 R</td>
         <td>
-            <div align="right">0.02</div>
+            <div style="text-align: right">0.02</div>
         </td>
         <td>
-            <div align="right">0.02</div>
+            <div style="text-align: right">0.02</div>
         </td>
     </tr>
     <tr>
         <td>M Feed:sec1 (uH)</td>
         <td>
-            <div align="right">0.57</div>
+            <div style="text-align: right">0.57</div>
         </td>
         <td>
-            <div align="right">0.75</div>
+            <div style="text-align: right">0.75</div>
         </td>
     </tr>
     <tr>
         <td>k</td>
         <td>
-            <div align="right">.2981</div>
+            <div style="text-align: right">.2981</div>
         </td>
         <td>
-            <div align="right">.2970</div>
+            <div style="text-align: right">.2970</div>
         </td>
     </tr>
     <tr>
         <td>M feed: sec 2 (uH)</td>
         <td>
-            <div align="right">0.59</div>
+            <div style="text-align: right">0.59</div>
         </td>
         <td>
-            <div align="right">0.79</div>
+            <div style="text-align: right">0.79</div>
         </td>
     </tr>
     <tr>
         <td>k</td>
         <td>
-            <div align="right">.2788</div>
+            <div style="text-align: right">.2788</div>
         </td>
         <td>
-            <div align="right">.2685</div>
+            <div style="text-align: right">.2685</div>
         </td>
     </tr>
     <tr>
         <td>M sec 1: sec 2 (uH)</td>
         <td>
-            <div align="right">1.10</div>
+            <div style="text-align: right">1.10</div>
         </td>
         <td>
-            <div align="right">0.90</div>
+            <div style="text-align: right">0.90</div>
         </td>
     </tr>
     <tr>
         <td>k</td>
         <td>
-            <div align="right">.1255</div>
+            <div style="text-align: right">.1255</div>
         </td>
         <td>
-            <div align="right">.1082</div>
+            <div style="text-align: right">.1082</div>
         </td>
     </tr>
 </table>
@@ -139,40 +137,27 @@
 ; 6 tpi, 30 turns on 5" long 2.5" diam form
 ; 
 ; A closely coupled helical impedance matching transformer
-
 feed {
-
    radius .03175
-
    height1  0.0
    height2  3/6*0.0254
-
    conductor  12 awg  ; wire radius
    turns 3
 }
-
 sec1 {
-
    radius 0.03175		; 2.5 inch diam
-
    height1 3/6*0.0254
    height2 0.0635
-
    conductor 12 awg
    turns 12
 }
-
 sec2 {
-
    radius 0.03175		; 2.5 inch diam
-
-   height1 -0.0635 
+   height1 -0.0635
    height2 0.0
-
    conductor 12 awg
    turns 15
 }
-
 </pre>
 <p>ACMI output</p>
 <p>
@@ -187,19 +172,14 @@ sec2 {
 |   FD-SC2.M|   FD-SC2.K|  SC1-SC2.M|  SC1-SC2.K
    0.90 uH|   0.00|   7.13 uH|   0.01|   9.61 uH|   0.02|    0.75 uH|     0.2970
 |    0.79 uH|     0.2685|    0.90 uH|     0.1082
-
 </pre>
 <p></p>
-<p>Here's a NEC analysis of the antenna itself, with the feed point impedances..<BR>
-    CE <BR>
-    GW 1 41 0 -5.716 0 0 5.716 0 .001<BR>
-
-    GE 0<BR>
-    EX 0 1 21 0 1 0<BR>
-
-    FR 0 1 0 0 7.2 1<BR>
-
-
+<p>Here's a NEC analysis of the antenna itself, with the feed point impedances..<br>
+    CE <br>
+    GW 1 41 0 -5.716 0 0 5.716 0 .001<br>
+    GE 0<br>
+    EX 0 1 21 0 1 0<br>
+    FR 0 1 0 0 7.2 1<br>
 <pre>
 F	R	X
 6.90	15.08	-837.11
@@ -215,8 +195,6 @@ F	R	X
 7.40	17.68	-738.19
 7.45	17.96	-728.83
 7.50	18.24	-719.55
-
-
 </pre>
 <p>&nbsp;</p>
 <h3>Some other links:</h3>

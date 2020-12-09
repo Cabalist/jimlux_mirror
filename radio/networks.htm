@@ -1,50 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<HEAD>
-
+<head>
     <META NAME="Author" CONTENT="Jim Lux">
-    <META NAME="GENERATOR" CONTENT="Mozilla/4.03 [en] (WinNT; U) [Netscape]">
-    <TITLE>Passive beamforming - Matching and Phase Shift</TITLE>
-</HEAD>
+    <title>Passive beamforming - Matching and Phase Shift</title>
+</head>
 <BODY>
-
-<H2>
-    Matching and Phase Shift</H2>
+<h2>
+    Matching and Phase Shift</h2>
 &nbsp;
 <H4>
     Network Synthesis</H4>
 The primary challenge in a passive beamformer is creating the correct element
 currents to create the desired pattern. The basic technique I use is to
 do it in the following&nbsp; steps:
-<UL>
-    <LI>
+<ul>
+    <li>
         Determine the element feedpoint impedances
-    </LI>
-
-    <LI>
+    </li>
+    <li>
         Transform that impedance to a purely resistive high impedance with a low
         pass L network
-    </LI>
-
-    <LI>
+    </li>
+    <li>
         Use a pi network to get the necessary phase shift
-    </LI>
-
-    <LI>
+    </li>
+    <li>
         Combine the L and pi networks into a single T network
-    </LI>
-
-    <LI>
+    </li>
+    <li>
         Transform the T network into an equivalent pi network
-    </LI>
-</UL>
+    </li>
+</ul>
 The element feedpoint impedances are calculated using the array of element
 mutual impedances. The element currents are set to the desired magnitude
 and phase to create the desired pattern. The voltages at each element are
 calculated with the mutual impedances. The feed point impedance at each
 element is then simply the Voltage over the Current.
-
-<P>A low pass L network is then used to transform the complex feed point
+<p>A low pass L network is then used to transform the complex feed point
     impedance to a high resistive impedance. And, the effect of the transmission
     line connecting the beamformer to the antenna must be taken into account,
     since it is unlikely that the feedpoint impedance will happen to just match
@@ -56,56 +48,46 @@ element is then simply the Voltage over the Current.
     feed point (the jX component) to be absorbed by making the series L larger
     or smaller. The input C value is not critical, as it is later combined
     with the C of the phase shift network.
-
-<P>A pi network is then calculated to create the proper phase shift&nbsp;
+<p>A pi network is then calculated to create the proper phase shift&nbsp;
     from the common feed point to the element feedpoing. The L network will
     have some phase shift, so the phase shift necessary in the pi network needs
     to take that additional shift into account.&nbsp; Finally, the input impedance
     to the pi network needs to be adjusted so that element receives the correct
-    amount of power which is discussed in the <A HREF="pwrdiv.htm">page on
-        power division</A>. More information is available on <A HREF="wyedelta.htm#synth">pi
-        and L network synthesis.</A>
-
-<P><IMG SRC="images/pi2l.gif"  HEIGHT=168 WIDTH=480>
-    <BR>We now have a low pass pi network feeding a low pass L network. The
+    amount of power which is discussed in the <a HREF="pwrdiv.htm">page on
+        power division</a>. More information is available on <a HREF="wyedelta.htm#synth">pi
+        and L network synthesis.</a>
+<p><IMG SRC="images/pi2l.gif"  HEIGHT=168 WIDTH=480>
+    <br>We now have a low pass pi network feeding a low pass L network. The
     output capacitor on the pi network and the input capacitor on the L network
     can be combined.&nbsp; All of the feed sides of the pi networks will be
     connected in parallel. So, we redraw the circuit to show it as a capacitor
     (at the feed end) feeding a lowpass T network which then feeds the antenna.
-
-<P><IMG SRC="images/candt.gif"  HEIGHT=82 WIDTH=350>
-
-<P>The next step is to transform the T network into an equivalent pi network,
-    using a standard transformation which is also <A HREF="wyedelta.htm#pit">documented</A>.
-
-<P><IMG SRC="images/ttopi.gif"  HEIGHT=103 WIDTH=285>
-    <BR>And, the final step is to pull the first shunt C of the pi out and
+<p><IMG SRC="images/candt.gif"  HEIGHT=82 WIDTH=350>
+<p>The next step is to transform the T network into an equivalent pi network,
+    using a standard transformation which is also <a HREF="wyedelta.htm#pit">documented</a>.
+<p><IMG SRC="images/ttopi.gif"  HEIGHT=103 WIDTH=285>
+    <br>And, the final step is to pull the first shunt C of the pi out and
     combine it with the original pi network shunt C, leaving just an L network
-
-<P><IMG SRC="images/adjl.gif"  HEIGHT=107 WIDTH=278>
-
-<P>Of course, in an actual system, some of the shunt X of the pi networks
+<p><IMG SRC="images/adjl.gif"  HEIGHT=107 WIDTH=278>
+<p>Of course, in an actual system, some of the shunt X of the pi networks
     will turn out to be positive (i.e. inductive). However, since they wind
     up being combined in parallel with other shunt X's, some of which will
     be negative, the net effect is to require only one reactive shunt component
     for the entire beamformer input.
-
-<P>In practice, an iterative approach may be necessary to find the virtual
+<p>In practice, an iterative approach may be necessary to find the virtual
     R in the step where the L network is synthesized to transform the antenna/feedline
     to a resistive impedance, and some iteration will be necessary to find
     a set of phase shifts which produce element impedances of the correct signs
     for all networks. Recall that it is only the relative phases between element
     currents that are important, so adding a constant phase shift to all elements
     has no effect on the pattern.
-
-<P>Another approach to calculating the network component values is to create
+<p>Another approach to calculating the network component values is to create
     a matrix equation of the beamformer and the elements, then solve for the
     values of the variable elements, subject to suitable constraints. Some
     initial work has been done in this area, however, experimentally, I have
     found that the Excel 97 solver (which is essentially a gradient search
     solver) often does not converge to a solution.
-
-<P>Another thing to consider is that the adjustable networks have discrete
+<p>Another thing to consider is that the adjustable networks have discrete
     values and are not continuously adjustable. Probably the best approach
     in the long run is to iteratively solve the matrix equation attempting
     to find a set of discrete element values that results in the element currents
@@ -113,20 +95,18 @@ element is then simply the Voltage over the Current.
     in the initial mutual element impedance values (either by calculation or
     measurement) this approach, done in real time, will probably be the most
     successful.
-
-<P>The network synthesis and development described above, though, is useful,
+<p>The network synthesis and development described above, though, is useful,
     in that it shows that it is possible to create a passive beamforming network
     using a whole bunch of adjustable L networks, as available from LDG and
     others.
-
-<P>
-<HR WIDTH="100%">
-<BR>networks.htm - revised 11 March 1999, Jim Lux
-<BR><A HREF="passive1.htm">return to Passive Beamforming</A>
-<BR><A HREF="phased1.htm">back to Phased Arrays</A>
-<BR><A HREF="index.htm">radio home</A>
-<BR><A HREF="../index.htm">Jim Lux home</A>
-<BR>email comments <A HREF="mailto:jimlux@earthlink.net?subject=Passive Beamformer - networks">jimlux@earthlink.net</A>
-<BR>&nbsp;
+<p>
+<HR style="width: 100%">
+<br>networks.htm - revised 11 March 1999, Jim Lux
+<br><a HREF="passive1.htm">return to Passive Beamforming</a>
+<br><a HREF="phased1.htm">back to Phased Arrays</a>
+<br><a HREF="index.htm">radio home</a>
+<br><a HREF="../index.htm">Jim Lux home</a>
+<br>email comments <a HREF="mailto:jimlux@earthlink.net?subject=Passive Beamformer - networks">jimlux@earthlink.net</a>
+<br>&nbsp;
 </BODY>
-</HTML>
+</html>

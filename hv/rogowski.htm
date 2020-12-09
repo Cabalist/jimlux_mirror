@@ -1,17 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta http-equiv="Content-Type"
-          content="text/html; charset=iso-8859-1">
-    <meta name="GENERATOR" content="Microsoft FrontPage 2.0">
     <title>Rogowski Profiles</title>
 </head>
-
 <body>
-
 <h2>Rogowski profiles</h2>
-
 <p>There are applications which require a uniform electrical
     field between two electrodes such as breakdown voltage testing
     and large volume laser discharge cavities. The ideal infinite
@@ -19,7 +12,6 @@
     reasonable dimensions. Finite sized plates produce a uniform
     field at the middle of the plate, but the high field at the edges
     creates a problem.</p>
-
 <p>Rogowski (also variously spelled Rogovski, which is closer to
     the Russian pronounciation) developed a technique that starts by
     determining a realizable field, then constructing an electrode
@@ -28,13 +20,11 @@
     the field due to a finite plane plate parallel to an infinite
     plane. A more empirical approach was taken by Bruce, described <a
             href="bruce.htm">elsewhere</a>.</p>
-
 <p>Taken to an extreme, the field at a large (d&gt;&gt;x)
     distance from any charge distribution approximates the field from
     a point charge, i.e. a sphere. The arbitrary charge could be
     replaced by a sphere of appropriate size and voltage/charge, and
     the E field would be the same.</p>
-
 <p>For example, consider the field between two finite flat
     plates. In the center region, the field is quite uniform.
     However, if one actually constructed such electrodes, you would
@@ -44,7 +34,6 @@
     equipotential surface which is some distance from the flat plate
     electrode. Since it is farther away, the field strength is lower,
     and breakdown is not as much of an issue.</p>
-
 <p>For an arbitrary shaped electrode, determining the electric
     field, particularly in the dynamic case, is quite difficult, and
     would normally need to be done by numerical techniques. However,
@@ -55,23 +44,18 @@
     3rd Ed, Vol I), and further extended by Rogowski (W. Rogowski, <em>Arch.
         f. Elekt.</em> v.12, p. 1, 1923, also v. 12, p.73, 1926, and v.
     16, p76, 1926).</p>
-
 <p>&nbsp; </p>
-
 <p><img src="images/rogows1.gif" width="130" height="60"></p>
-
 <p>Rogowski showed that the gradient (i.e. the E field strength)
     between the electrodes is greater than the gradient outside the
     plane portion for any value of psi &lt;= PI/2. In this situation,
     the above equation reduces to:<br>
     <img src="images/rogows2.gif" width="101" height="88"></p>
-
 <p>If psi &lt;= 0.4pi, the field is greatest in the center region
     between the plates, and less everywhere else. If you make the
     electrode follow this contour, the breakdown voltage between the
     electrodes will be the same as if they were an infinite uniform
     field.</p>
-
 <p>Rengier (who worked with Rogowski) created electrodes by
     revolving surfaces for psi = PI/2 and 2/3 PI. He found that the
     sparks always occurred within the central planar part, and not
@@ -79,30 +63,24 @@
     the edges. The 2/3 PI profile, while not as ideal as the PI/2 (or
     less) profile, will work adequately. The back surface of the
     electrode must also be smoothly curved.</p>
-
 <p><a href="hvrefs.htm#cobine">Cobine</a>, p. 177 has quite a bit
     of detail on this, as well as other references. Craggs &amp; Meek
     also make some references to Rogowski's work.</p>
-
 <p>An MS Excel spreadsheet to calculate electrode profiles can be
     downloaded from <a
             href="http://home.earthlink.net/~jimlux/download/rogowski.xls">http://home.earthlink.net/~jimlux/download/rogowski.xls</a>
     (58K). If you want to download it without running Excel
     automatically, right click on the link, and use the <em>Save
         Target as</em> option.</p>
-
 <p>A graph from the above spreadsheet, showing equipotentials at
     intervals of .2, .4, .6, .8 and 1.0 as well as flux lines for a
     normalized case is shown below (it's 16 K, so it takes a while to
     load) <em>(it is also 911x623 pixels, until I scale it down a bit
         so it fits better.)</em></p>
-
 <p><img src="images/rogplot1.gif"
         alt="Plot of equipotentials and flux per Rogowski (16 kBytes)"
         width="911" height="623"></p>
-
 <hr>
-
 <p>Copyright 1998, Jim Lux / rogowski.htm / 10 May
     1998 / <a href="hvmain.htm">Back to HV Home</a> / <a href="../index.htm">Back to
         home page</a> / <a

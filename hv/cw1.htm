@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta name="keywords" content="HV, high voltage, voltage multiplier, cockroft, walton, doubler, tripler">
     <title>Cockroft Walton Voltage Multipliers</title>
 </head>
-
 <body>
-
 <h2>Cockroft Walton Voltage Multipliers</h2>
-
 <p>The classic multistage diode/capacitor voltage multipler,
     popularized by Cockroft and Walton, is probably the most popular
     means of generating high voltages at low currents at low cost. It
@@ -21,7 +16,6 @@
     insulate. It also inherently produces a series of stepped
     voltages which is useful in some forms of particle accelerators,
     and for biasing photomultipler tube dynodes.</p>
-
 <p>The CW multiplier has the disadvantage of having very poor
     voltage regulation, that is, the voltage drops rapidly as a
     function the output current. In some applications, this is an
@@ -29,84 +23,64 @@
     so it serves well for charging capacitor banks to high voltages
     at roughly constant charging power. Furthermore, the ripple on
     the output, particularly at high loads, is quite high.</p>
-
 <p>It is quite popular for relatively low powered particle
     accelerators for injecting into another accelerator, particularly
     for heavy ions. The high ripple means that there is a signficant
     energy spread in the ion beam, though, and for applications where
     low ripple is important at megavolt potentials, electrostatic
     systems like Van de Graaf and Pelletron machines are preferred.</p>
-
 <p>&nbsp;<img src="images/cw11.gif" width="390" height="365"></p>
-
 <p>The output voltage (Eout) is nominally the twice the peak input voltage (Eac)
     multiplied by the number of stages, 4 in the above diagram. That is, the circuit above
     is a voltage octupler, Eout = 8 * 1.4 * Erms
     In practice, the output is significantly lower,
     particularly with a large number of stages.</p>
-
 <h3>Regulation and ripple calculations</h3>
-
 <p>The voltage drop under load can be calculated as:</p>
-
 <p><code><kbd>Edrop = I1/ (f*C) * (2 /3*n^3 + n^2/2- n/6)</kbd></code></p>
-
 <p>where:<br>
     Iload is the load current<br>
     C is the stage capacitance<br>
     f is the AC frequency<br>
     n is the number of stages.</p>
-
 <p>The ripple voltage, in the case where all stage capacitances
     (C1 through C(2*n)) may be calculated from:<br>
     <code>Eripple = Iload/(f *
         C)*n*(n+1)/2</code></p>
-
 <p>As you can see from this equation, the ripple grows quite
     rapidly as the number of stages increases (as n squared, in
     fact). A common modification to the design is to make the stage
     capacitances larger at the bottom, with C1 &amp; C2 = nC, C3
     &amp; C4= (n-1)C, and so forth. In this case, the ripple is:<br>
     <code>Eripple = Iload/(f*C)</code></p>
-
 <p>For large values of n (&gt;= 5), the n<sup>2</sup>/2 and n/6
     terms in the voltage drop equation become small compared to the
     2/3n<sup>3</sup>. Differentiating the drop equation with respect
     to the number of stages gives an equation for the optimum number
     of stages (for the equal valued capacitor design:</p>
-
 <p><code>Noptimum = SQRT( Vmax * f * C/Iload)</code></p>
-
 <p>Increasing the frequency can dramatically reduce the ripple,
     and the voltage drop under load, which accounts for the popularity driving
     a multipler stack with a switching power supply.</p>
-
 <h4>A modification to the basic Cockroft Walton multipler</h4>
-
 <p>In some applications, an addtional capacitor stack is
     connected to the output capacitor stack in the above design. This
     is particularly popular in electrostatic accelerator applications
     and high voltage x-ray systems, where low ripple desired.</p>
-
 <h3>Another modification to the basic Cockroft Walton design</h3>
-
 <p>A modification to the classic CW multiplier, popularized by XXX, uses two charging
     stacks driven by out of phase input voltages. This is particularly useful when
     the charging stack capacitors are significantly smaller than the output filter
     capacitors. The XXX modification is illustrated in the following figure.</p>
-
 <p><img src="images/cw12.gif" width="462" height="432"></p>
 <h3>A three phase multiplier</h3>
 <p>Taken from the High Power Microwave Transmitters report by North, here is a
     three phase multiplier circuit</p>
 <p><img src="images/3phmult.gif" width="576" height="355" alt="3 phase multiplier (7K)"></p>
-
 <hr>
-
 <p>Copyright 1999, Jim Lux / cw1.htm / 14 Dec 2001 / <a href="hvmain.htm">Back
     to HV Home</a> / <a href="../index.htm">Back
     to home page</a> /<a href="mailto:jimlux@earthlink.net">Mail
     to Jim</a></p>
-
 </body>
 </html>

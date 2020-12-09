@@ -1,61 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta http-equiv="Content-Type"
-          content="text/html; charset=iso-8859-1">
-    <meta name="GENERATOR" content="Microsoft FrontPage 2.0">
     <title>Capacitor Discharge Impulse Generators</title>
 </head>
-
 <body>
-
 <h2>Capacitor Discharge Impulse Generators</h2>
-
 <p>This is the simplest means of generating a high voltage
     impulse in a load. Practical considerations usually dictate that
     more sophisticated means be used (like <a href="marx.htm">Marx
         generators</a>, Transmission line pulse formers, Impulse
     transformers, etc.), but the basic capacitor discharge circuit is
     a good place to start.</p>
-
 <p><img src="images/cdimp.gif" width="413" height="119"></p>
-
 <p>The circuit above has all the essential components:</p>
-
 <p>Echg - A means of charging the capacitor. Often, either a
     current limited HV power supply and a switch to connect it to the
     capacitor, or a HV power supply and a large series resistor to
     limit the charging current.</p>
-
 <p>Cs - A capacitor to store the energy.</p>
-
 <p>S - A switch to apply the energy to the load</p>
-
 <p>R1 and L Series resistance and/or inductance, either parasitic
     or added for pulse shape control</p>
-
 <p>R2 - Load resistance</p>
-
 <p>Cload - Load capacitance</p>
-
 <h3>Waveforms and the effect of resistances and inductances</h3>
-
 <p>Assuming the parasitic inductances are small (often, this is
     not a valid assumption), the output of a capacitive impulse
     generator can be represented by a pair of exponentials,
     reflecting the charging of the load capacitance and then, the
     discharge of the storage and load capacitance. The most common
     way to describe the waveform is by it's rise and fall times.</p>
-
 <p>A standard waveform for lightning impulse testing would be a
     2/50, where the load voltage reaches its peak in 2 microseconds,
     and the decay to half the peak voltage takes 50 microseconds.</p>
-
 <p>&nbsp;</p>
-
 <h3>Energy Discharge Capacitors</h3>
-
 <p>In these systems, the capacitor is used to store the energy to
     be used for the impulse. Since fast rise times are usually
     desired, the capacitor should have low parasitic inductance.
@@ -64,9 +43,7 @@
     specific capacitance. The manufacturer then tests them, and their
     actual characteristics (capacitance, stored energy) are marked on
     the label.</p>
-
 <h3>Switches</h3>
-
 <p>The switches for an impulse generator fall into two general
     categories. The first is those that are primarily mechanical in
     nature, consisting of contacts that are closed by some means such
@@ -74,9 +51,7 @@
     second is those that have no moving parts, with the triggered
     spark gap being very popular, although in some applications,
     devices such as thyratrons or SCR's are used.</p>
-
 <h3>Capacitor Charging considerations</h3>
-
 <p>The rectified output of a high voltage transformer is probably
     the simplest system used for charging the capacitor. Some form of
     current limiting is necessary because the capacitor looks like a
@@ -85,7 +60,6 @@
     inductive or resistive and can either be in the primary side of
     the transformer or the secondary (or be in sort of both, in the
     form of leakage inductance in the transformer).</p>
-
 <p>A resistive current limiter is simple, but the energy
     dissipated in the resistor is signficant, being equal to the
     stored energy in the capacitor. Inductive current limiters don't
@@ -94,7 +68,6 @@
     parasitic reactances. A resonant charging scheme using a diode
     and an inductor is very popular for capacitor discharge circuits
     that are fired repeatedly.</p>
-
 <p>Fruengel recommends the use of a voltage multipler
     (Cockroft-Walton type), because it has a hyperbolic
     voltage/current characteristic that lends itself to capacitor
@@ -103,9 +76,7 @@
     the input frequency reduces the size of capacitor required, and
     the stored energy. In fact, a logical outgrowth of this trend is
     the use of switching power supplies.</p>
-
 <h4>Switchers as capacitor chargers</h4>
-
 <p>In recent years, switching power supplies have become popular
     for capacitor charging. The generally high (tens of kHz)
     switching frequency reduces the stored energy in the supply,
@@ -116,9 +87,7 @@
     develops or a capacitor fails (shorted) during charging. HV power
     supply manufacturers such as Maxwell have power supplies designed
     specifically for charging capacitors.</p>
-
 <h4>Watch out for voltage reversals during discharge</h4>
-
 <p>The system for charging should take into account the voltage
     reversal on the storage capacitor if any. For instance, a
     currrent limited HV transformer feeding a bridge rectifier is a
@@ -127,12 +96,8 @@
     bridge will be forward biased in parallel with the capacitor, and
     the resulting high peak currents will most likely destroy the
     diodes.</p>
-
 <p>&lt;figure here&gt;</p>
-
-
 <hr>
-
 <p>
     Copyright 1999, Jim Lux / cdimp.htm / 7 Sep 1999
     / <a href="hvmain.htm">Back to HV Home</a>
