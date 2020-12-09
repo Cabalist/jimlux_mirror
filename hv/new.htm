@@ -1,256 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta http-equiv="Content-Type"
-          content="text/html; charset=iso-8859-1">
-    <meta name="GENERATOR" content="Microsoft FrontPage 2.0">
     <title>What's New</title>
 </head>
-
 <body>
-<script language="JavaScript"><!--
-//    begin script
-function getCookieVal(offset) {
-  var endstr = document.cookie.indexOf(';', offset);
-  if (endstr == -1)
-    endstr = document.cookie.length;
-  return unescape(document.cookie.substring(offset, endstr));
-}
-
-function GetCookie(name) {
-  var arg = name + '=';
-  var alen = arg.length;
-  var clen = document.cookie.length;
-  var i = 0;
-  while (i < clen) {
-    var j = i + alen;
-    if (document.cookie.substring(i, j) == arg)
-      return getCookieVal(j);
-    i = document.cookie.indexOf(' ', i) + 1;
-    if (i == 0) break;
-  }
-  return null;
-}
-
-function SetCookie(name, value, expires, path, domain, secure) {
-  document.cookie = name + '=' + escape(value) +
-      ((expires) ? '; expires=' + expires.toGMTString() : '') +
-      ((path) ? '; path =' + path : '') +
-      ((domain) ? '; domain=' + domain : '') +
-      ((secure) ? '; secure' : '');
-}
-
-function DeleteCookie(name, path, domain) {
-  if (GetCookie(name)) {
-    document.cookie = name + '=' +
-        ((path) ? '; path=' + path : '') +
-        ((domain) ? '; domain=' + domain : '') +
-        '; expires=Thu, 01-Jan-70 00:00:01 GMT';
-  }
-}
-
-var exp = new Date();
-exp.setTime(exp.getTime() + (90 * 24 * 60 * 60 * 1000));
-
-function lastvisit() {
-  var ld = GetCookie('lastdate');
-  var datenow = new Date();
-  if (ld == null) {
-    SetCookie('lastdate', datenow.getTime(), exp);
-    return datenow.getTime();
-  } else {
-    DeleteCookie('lastdate');
-    SetCookie('lastdate', datenow.getTime(), exp);
-    return ld;
-  }
-}
-
-// -- End Hiding Here --></script>
-
-
-<h2>What's new on the high
-    voltage page</h2>
-
-<p>The last time you were here it was:
-    <script language="javascript"><!--
-    Hide;
-    var lv = lastvisit();
-    var td = new Date();
-    td.setTime(lv);
-    document.write(' ' + td);
-    // --></script>
-
-<FORM name="resetCookie" method="post">
-    <INPUT type="button" value="Click to set last visit date to 1 Jan 1970"
-           onClick="DeleteCookie('lastdate');SetCookie('lastdate',0,0);lv = 0"
-    >
-
-</FORM>
-<script language="javascript"><!--
-Hide;
-td = new Date(1998, 4, 3);
-if (lv <= td.getTime())
-  document.write('<dl><dt>2 May 1998 </dt><dd>Test</dd></dl>');
-// --></script>
-
-
-<script language="JavaScript">
-  <!--
-  Hide;
-  td = new Date(1998, 4, 4);
-  if (lv <= td.getTime()) {
-    document.write('<dl><dt>3 May 1998 </dt>');
-    document.write('<dd>Added pages for ');
-    document.write(' Capacitive Discharge Impulse Generators (<a href=cdimp.htm>cdimp.htm</a>), ');
-    document.write(' Marx Generators (<a href=marx.htm>marx.htm</a>),');
-    document.write(' and Fitch Generators (<a href=fitch.htm>fitch.htm</a>).</dd>');
-    document.write('<dd>Added equations for voltage drop and ripple for <a href=cw1.htm>Cockroft-Walton generators</a>.</dd>');
-    document.write(' <dd>Added this page (new.htm)</dd></dl>');
-  }
-  // -->
-</script>
-
-<script language="javascript"><!--
-Hide;
-td = new Date(1998, 4, 6);
-if (lv <= td.getTime()) {
-  document.write('<dl><dt>5 May 1998 </dt>');
-  document.write('<dd>Revised pages for ');
-  document.write(' Sphere gaps (added diagrams) (<a href=sphgap.htm>sphgap.htm</a>), ');
-  document.write(' Sphere gap voltages(<a href=spherev.htm>spherev.htm</a>) ');
-  document.write(' and Rod gap voltages(<a href=rodv.htm>rodv.htm</a>).</dd>');
-  document.write('<dd> Revised download page to use http: instead of ftp: (<a href=download.htm>download.htm</a>).</dd></dl>');
-}
-// --></script>
-
-<script language="javascript"><!--
-Hide;
-td = new Date(1998, 4, 10);
-if (lv <= td.getTime()) {
-  document.write('<dl><dt>9 May 1998 </dt>');
-  document.write('<dd>New page: ');
-  document.write(' Pulse discharge capacitor life (<a href=caplife.htm>caplife.htm</a>).</dd></dl>');
-}
-// --></script>
-
-<script language="JavaScript">
-  <!--
-  Hide;
-  td = new Date(1998, 5, 10);
-  if (lv <= td.getTime()) {
-    document.write('<dl><dt>10 May 1998 </dt>');
-    document.write('<dd>Revised page: ');
-    document.write(' Rogowski profiles(<a href=rogowski.htm>rogowski.htm</a>).');
-    document.write(' Revised equation GIF\'s, added link to Excel spreadsheet to calculate profiles.</dd></dl>');
-  }
-  // -->
-</script>
-
-<script language="JavaScript">
-  <!--
-  Hide;
-  td = new Date(1999, 8, 16);
-  if (lv <= td.getTime()) {
-    document.write('<dl><dt>16 August 1999 </dt>');
-    document.write('<dd>Revised page: ');
-    document.write(' Paschen equations(<a href=paschen2.htm>paschen2.htm</a>). (fixed error in equation for C)</dl>');
-
-  }
-  // -->
-</script>
-
-<script language="JavaScript">
-  <!--
-  Hide;
-  td = new Date(1999, 9, 20);
-  if (lv <= td.getTime()) {
-    document.write('<dl><dt>20 September1999 </dt>');
-    document.write('<dd>New page: ');
-    document.write(' Flexible cord ampacities (<a href=cordamp.htm>cordamp.htm</a>).</dl>');
-
-  }
-  // -->
-</script>
-<script language="JavaScript">
-  <!--
-  Hide;
-  td = new Date(2000, 2, 3);
-  if (lv <= td.getTime()) {
-    document.write('<dl><dt>3 February 2000 </dt>');
-    document.write('<dd>New page: ');
-    document.write(' Litz wire (<a href=litz.htm>litz.htm</a>).');
-    document.write(' Sparkplugs as HV Feedthroughs (<a href=sparkplug.htm>sparkplug.htm</a>).</dl>');
-
-  }
-  // -->
-</script>
-<script language="JavaScript">
-  <!--
-  Hide;
-  td = new Date(2000, 4, 21);
-  if (lv <= td.getTime()) {
-    document.write('<dl><dt>21 April 2000 </dt>');
-    document.write('<dd>New page: ');
-    document.write(' Automotive Ignition Coils (<a href=igncoil.htm>igncoil.htm</a>).</dl>');
-
-  }
-  // -->
-</script>
-<script language="JavaScript">
-  <!--
-  Hide;
-  td = new Date(2000, 9, 25);
-  if (lv <= td.getTime()) {
-    document.write('<dl><dt>25 September 2000 </dt>');
-    document.write('<dd>New page: ');
-    document.write(' Current Measurements (<a href=imeas.htm>imeas.htm</a>).</dl>');
-
-  }
-  // -->
-</script>
-<script language="JavaScript">
-  <!--
-  Hide;
-  td = new Date(2000, 9, 26);
-  if (lv <= td.getTime()) {
-    document.write('<dl><dt>26 September 2000 </dt>');
-    document.write('<dd>Revised page: ');
-    document.write(' Current Measurements (<a href=imeas.htm>imeas.htm</a>).');
-    document.write('<dd>New page: ');
-    document.write(' Loop Shunt design(<a href=loopshunt.htm>loopshunt.htm</a>).</dl>');
-  }
-  // -->
-</script>
-<script language="JavaScript">
-  <!--
-  Hide;
-  td = new Date(2001, 4, 24);
-  if (lv <= td.getTime()) {
-    document.write('<dl><dt>24 April 2001 </dt>');
-    document.write('<dd>Revised page: ');
-    document.write(' Paschen (<a href=paschen.htm>paschen.htm</a>).');
-    document.write('</dl>');
-  }
-  // -->
-</script>
-<script language="JavaScript">
-  <!--
-  Hide;
-  td = new Date(2002, 3, 21);
-  if (lv <= td.getTime()) {
-    document.write('<dl><dt>21 March 2002 </dt>');
-    document.write('<dd>New page: ');
-    document.write(' Multipactoring (<a href=multipact.htm>multipact.htm</a>).');
-    document.write('</dl>');
-  }
-  // -->
-</script>
+<h2>What's new on the high voltage page</h2>
+<dl>
+    <dt>3 May 1998</dt>
+    <dd>Added pages for
+        Capacitive Discharge Impulse Generators (<a href=cdimp.htm>cdimp.htm</a>),
+        Marx Generators (<a href=marx.htm>marx.htm</a>),
+        and Fitch Generators (<a href=fitch.htm>fitch.htm</a>).
+    </dd>
+    <dd>Added equations for voltage drop and ripple for <a href=cw1.htm>Cockroft-Walton generators</a>.</dd>
+    <dd>Added this page (new.htm)</dd>
+</dl>
+<dl>
+    <dt>5 May 1998</dt>
+    <dd>Revised pages for
+        Sphere gaps (added diagrams) (<a href=sphgap.htm>sphgap.htm</a>),
+        Sphere gap voltages(<a href=spherev.htm>spherev.htm</a>)
+        and Rod gap voltages(<a href=rodv.htm>rodv.htm</a>).
+    </dd>
+    <dd> Revised download page to use http: instead of ftp: (<a href=download.htm>download.htm</a>).</dd>
+</dl>
+<dl>
+    <dt>9 May 1998</dt>
+    <dd>New page:
+        Pulse discharge capacitor life (<a href=caplife.htm>caplife.htm</a>).
+    </dd>
+</dl>
+<dl>
+    <dt>10 May 1998</dt>
+    <dd>Revised page:
+        Rogowski profiles(<a href=rogowski.htm>rogowski.htm</a>).
+        Revised equation GIF\'s, added link to Excel spreadsheet to calculate profiles.
+    </dd>
+</dl>
+<dl>
+    <dt>16 August 1999</dt>
+    <dd>Revised page:
+        Paschen equations(<a href=paschen2.htm>paschen2.htm</a>). (fixed error in equation for C)
+</dl>
+<dl>
+    <dt>20 September1999</dt>
+    <dd>New page:
+        Flexible cord ampacities (<a href=cordamp.htm>cordamp.htm</a>).
+</dl>
+<dl>
+    <dt>3 February 2000</dt>
+    <dd>New page:
+        Litz wire (<a href=litz.htm>litz.htm</a>).
+        Sparkplugs as HV Feedthroughs (<a href=sparkplug.htm>sparkplug.htm</a>).
+</dl>
+<dl>
+    <dt>21 April 2000</dt>
+    <dd>New page:
+        Automotive Ignition Coils (<a href=igncoil.htm>igncoil.htm</a>).
+</dl>
+<dl>
+    <dt>25 September 2000</dt>
+    <dd>New page:
+        Current Measurements (<a href=imeas.htm>imeas.htm</a>).
+</dl>
+<dl>
+    <dt>26 September 2000</dt>
+    <dd>Revised page:
+        Current Measurements (<a href=imeas.htm>imeas.htm</a>).
+    <dd>New page:
+        Loop Shunt design(<a href=loopshunt.htm>loopshunt.htm</a>).
+</dl>
+<dl>
+    <dt>24 April 2001</dt>
+    <dd>Revised page:
+        Paschen (<a href=paschen.htm>paschen.htm</a>).
+</dl>
+<dl>
+    <dt>21 March 2002</dt>
+    <dd>New page:
+        Multipactoring (<a href=multipact.htm>multipact.htm</a>).
+</dl>
 <hr>
-
-<p>Copyright 1998, Jim Lux / new.htm / 18 March 2002 / <a href="hvmain.htm">Back
-    to HV Home</a> / <a href="../index.htm">Back to home page</a>
-    / <a
-            href="mailto:jimlux@earthlink.net">Mail to Jim</a></p>
+<p>Copyright 1998, Jim Lux / new.htm / 18 March 2002 / <a href="hvmain.htm">Back to HV Home</a> / <a href="../index.htm">Back to home page</a>/ <a href="mailto:jimlux@earthlink.net">Mail to Jim</a></p>
 </body>
 </html>
